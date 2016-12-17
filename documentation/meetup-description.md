@@ -1,3 +1,5 @@
+# Getting Started with ES6 JavaScript
+
 ES6 is the latest and greatest version of JavaScript. It's hailed for its readability, flexibility, and exciting new features that will make your code cleaner, easier to read, faster, and more professional.
  
 Mastering ES6 syntax will impress your fellow coders and interviewers. Because ES6 is so new, it's a skill that will give you an upper edge in the web development industry, especially given its heavy use in modern frameworks such as React.js and Angular 2.
