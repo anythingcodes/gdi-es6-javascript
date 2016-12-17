@@ -1,6 +1,8 @@
-> Remove this line, then fill in the below details for your course. Some example content is included for reference.
+ES6 is the latest and greatest version of JavaScript. It's hailed for its readability, flexibility, and exciting new features that will make your code cleaner, easier to read, faster, and more professional.
+ 
+Mastering ES6 syntax will impress your fellow coders and interviewers. Because ES6 is so new, it's a skill that will give you an upper edge in the web development industry, especially given its heavy use in modern frameworks such as React.js and Angular 2.
 
-Your intro here. Optionally, include a relevant image to drum up some interest!
+Through hands-on coding exercises, this comprehensive course will help you reformat current ES5 JavaScript code to its nice new ES6 format and get you up and running using ES6 in practical situations. We'll also wave 'bye' to `for` loops and start coding more efficiently!
 
 ## Dates
 
@@ -14,30 +16,33 @@ Your payment registers you for the entire series.
 
 ## Takeaways
 
-- Learn the purpose of X
-- Master skills X, Y, and Z
-- Learn Z through hands-on coding exercises
-- Start working with A, the latest and greatest version of B
+- Start working with Node.js and Babel to compile your new ES6 code
+- Convert current/ES5 code into ES6, step by step
 - Write better-looking, more professional code that's easier for other developers to read and understand
+- Understand the major features of ES6, including new variable types, Array helpers, arrow functions, string templates, generators, promises, classes, rest/spread operators, and more!
+- Learn about tools that will help you reinforce best JavaScript practices
+- Never use a `for` loop again!
+
 
 ## Prerequisites
 
-You should have:
+**Required:** Understanding of JavaScript is required. You should be familiar with JavaScript syntax, functions, objects and arrays, conditionals, for and while loops, AJAX requests, and handling JSON responses.
 
-- Taken Intro or Intermediate HTML/CSS through Girl Develop It, or
-- Built and managed websites on your own,
+**Not Required:** You do not need any experience with Node.js or Babel; we will introduce these tools as part of the course.
 
-And also:
-- Taken intro to JavaScript through Girl Develop It, or
-- Be familiar with syntax, arrays, conditionals, for and while loops, event handling, jQuery, AJAX requests, and handling JSON responses.
+ If you have any questions about requirements, please post a comment or message the organizers. We're happy to help!
+
+_Note: All attendees are expected to abide by the [Girl Develop It Code of Conduct](http://www.girldevelopit.com/codeofconduct)._
+
 
 ## Tech Requirements
 
 Please bring the following to each class:
 
-- Your laptop (Mac, PC, or Linux are all okay)
-- A modern web browser, preferrably Chrome
-- A text editor. We recommend Sublime Text 2 or Atom (both free; available for Mac, PC, and Linux)
+- Laptop (Mac, PC, or Linux are all okay) and charger
+- [Node.js](https://nodejs.org/en/) version 6 or higher
+- A modern web browser such as Google Chrome
+- A text editor. We recommend Atom or Sublime Text 2 (both free; available for Mac, PC, and Linux).
 
 ### Instructor
 
