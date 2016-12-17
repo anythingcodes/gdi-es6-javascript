@@ -41,14 +41,26 @@ module.exports = function(grunt) {
 			main: {
 				files: {
 					'css/theme/default.css': 'css/theme/source/default.scss',
-					'css/theme/beige.css': 'css/theme/source/beige.scss',
-					'css/theme/night.css': 'css/theme/source/night.scss',
-					'css/theme/serif.css': 'css/theme/source/serif.scss',
-					'css/theme/simple.css': 'css/theme/source/simple.scss',
-					'css/theme/sky.css': 'css/theme/source/sky.scss',
-					'css/theme/moon.css': 'css/theme/source/moon.scss',
-					'css/theme/solarized.css': 'css/theme/source/solarized.scss',
-					'css/theme/blood.css': 'css/theme/source/blood.scss'
+                    'css/theme/beige.css': 'css/theme/source/beige.scss',
+                    'css/theme/night.css': 'css/theme/source/night.scss',
+                    'css/theme/serif.css': 'css/theme/source/serif.scss',
+                    'css/theme/simple.css': 'css/theme/source/simple.scss',
+                    'css/theme/sky.css': 'css/theme/source/sky.scss',
+                    'css/theme/moon.css': 'css/theme/source/moon.scss',
+                    'css/theme/solarized.css': 'css/theme/source/solarized.scss',
+                    'css/theme/blood.css': 'css/theme/source/blood.scss',
+                    'css/theme/gdidarkblue.css': 'css/theme/source/gdidarkblue.scss'
+				}
+			}
+		},
+
+		autoprefixer: {
+			options: {
+				// Task-specific options go here.
+			},
+			dist:{
+				files:{
+					'css/**/*.css': 'css/**/*.scss'
 				}
 			}
 		},
@@ -105,6 +117,19 @@ module.exports = function(grunt) {
 				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
 				tasks: 'themes'
 			}
+		},
+
+		browserSync: {
+			bsFiles: {
+				src : [
+					'css/**/*.css',
+					'*.html'
+				]
+			},
+			options: {
+				watchTask: true,
+				server: './'
+			}
 		}
 
 	});
@@ -116,20 +141,18 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
-	grunt.loadNpmTasks( 'grunt-contrib-connect' );
+	grunt.loadNpmTasks( 'grunt-browser-sync' );
+	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
-	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify', 'qunit' ] );
+	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify', 'qunit', 'browserSync', 'watch' ] );
 
 	// Theme task
 	grunt.registerTask( 'themes', [ 'sass' ] );
 
 	// Package presentation to archive
 	grunt.registerTask( 'package', [ 'default', 'zip' ] );
-
-	// Serve presentation locally
-	grunt.registerTask( 'serve', [ 'connect', 'watch' ] );
 
 	// Run tests
 	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );
