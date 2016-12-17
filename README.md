@@ -1,7 +1,10 @@
 # Getting Started with ES6 JavaScript
 
-The future home of a Girl Develop It ES6 course. Stay tuned for details!
+Materials and slides for a Girl Develop It ES6 JavaScript course. 
 
+### Got a pull request?
+
+Pull requests are encouraged. Do your part to help us keep this curriculum up-to-date and relevant!
 
 ### Table of Contents
 1. [Details for Course Organizers](#details-for-course-organizers)
