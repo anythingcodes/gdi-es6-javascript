@@ -56,12 +56,7 @@ body {
 .reveal a:not(.image) {
 	color: $linkColor;
 	text-decoration: none;
-
-	-webkit-transition: color .15s ease;
-	   -moz-transition: color .15s ease;
-	    -ms-transition: color .15s ease;
-	     -o-transition: color .15s ease;
-	        transition: color .15s ease;
+	transition: color .15s ease;
 }
 	.reveal a:not(.image):hover {
 		color: $linkColorHover;

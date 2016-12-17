@@ -1,0 +1,6 @@
+{
+"version": 3,
+"sources": ["source/beige.scss","template/theme.scss","template/mixins.scss","template/settings.scss"],
+"names": [],
+"file": "beige.css"
+}
