@@ -1,12 +1,29 @@
-# gdi-es6-javascript
+# Getting Started with ES6 JavaScript
 
-The future home of a Girl Develop It ES6 course
+The future home of a Girl Develop It ES6 course. Stay tuned for details!
 
-### Check back soon!
+### Course Organizer Details
 
-| Col 1 | <span style="font-weight:normal">Col 2</span> | <span style="font-weight:normal">Col 3</span> |
-| ------------- |:-------------:| -----:|
-| **Row 1** | 0 | 1 |
-| **Row 2** | 2 | 3 |
-| **Row 3** | 4 | 5 |
+| Topic | Slides | Hours | Format | Additional Notes |
+| ----- |:-----:| -----:| -----:| -----:|
+| ES6 JavaScript | [View](http://anything.codes/gdi-es6-javascript) | 6 | Three 2-hour classes | Print cheatsheets for each class — PDFs can be found in the `/cheatsheets` directory. Originally run for GDI Boston. |
 
+### Meetup Details
+
+| Title | Suggested Cost | Description | Example URL |
+| ----- |:-----:| -----:| -----:|
+| Getting Started with ES6 | $60 per student | [View Description](documentation/meetup-description.md) | TBA |
+
+### Instructor Details
+
+To run slides locally:
+
+... TBA
+
+To enter instructor view:
+
+... TBA
+
+Tips on teaching this class:
+
+... TBA
