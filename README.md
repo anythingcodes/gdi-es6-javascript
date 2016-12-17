@@ -23,14 +23,14 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 
 | Slides | Hours | Format | Content Creator | Additional Notes |
 | ----- |:-----:| -----:| -----:| -----:|
-| [View](http://anything.codes/gdi-es6-javascript) | 6 | Three 2-hour classes | [@anythingcodes](http://github.com/anythingcodes) | Print cheatsheets for each class — PDFs can be found in the [`/cheatsheets`](cheatsheets) directory. Originally run for GDI Boston. |
+| [View](http://anything.codes/gdi-es6-javascript) | 6 | Three 2-hour classes | [@anythingcodes](http://github.com/anythingcodes) | Print cheatsheets for each class — PDFs can be found in the [`/resources/cheatsheets`](/resources/cheatsheets) directory. Originally run for GDI Boston. |
 
 
 ##### Meetup Content
 
 | Title | Suggested Cost | Suggested # of TAs | Description and Prereqs | Example URL |
 | ----- |:-----:| -----:| -----:| -----:|
-| Getting Started with ES6 JavaScript | $60/student | 2 | [View](documentation/meetup-description.md) | TBA |
+| Getting Started with ES6 JavaScript | $60/student | 2 | [View](resources/meetup-description.md) | TBA |
 
 ---
 

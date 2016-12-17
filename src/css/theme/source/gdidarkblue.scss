@@ -45,7 +45,7 @@ div.left-align{
 .reveal h6 {
   margin: 0 0 20px 0;
   color: $gdiDarkBlue;
-  line-height: 0.9em;
+  line-height: 1;
   letter-spacing: 0.02em;
 }
 
@@ -168,16 +168,13 @@ div.left-align{
 /*********************************************
 * OVERRIDES
 **********************************************/
-.left-align{text-align:left}
-.right-align{ text-align:right}
-.left{float:left}
-.right{float:right}
-.clear{clear:both}
-.blue{color:#01A9B4 }
-.green{color:#92BB44}
-.yellow{color:#EDAB23}
-.pink{color:#F05B62}
-.red{color:#8B0036}
+.reveal ul, .reveal ol {
+  list-style-position: inside;
+}
+
+code {
+  text-align: left;
+}
 
 /*********************************************
  * Accessibility
