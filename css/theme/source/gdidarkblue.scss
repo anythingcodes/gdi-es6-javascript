@@ -1,42 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
 @import "../template/settings";
-
-@font-face {
-  font-family: "Gotham";
-  src: local("Gotham"), url("/css/theme/fonts/Gotham/Gotham-Medium.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Gotham-Book";
-  src: local("Gotham-Book"), url("/css/theme/fonts/Gotham/Gotham-Book.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Gotham-Italic";
-  src: local("Gotham-Italic"), url("/css/theme/fonts/Gotham/Gotham-MediumItalic.otf") format("opentype");
-  font-weight: normal;
-  font-style: italic; }
-
-@font-face {
-  font-family: "Gotham-Bold";
-  src: local("Gotham-Bold"), url("/css/theme/fonts/Gotham/Gotham-Bold.otf") format("opentype");
-  font-weight: bold;}
-
-@font-face {
-  font-family: "Gotham-Round";
-  src: local("Gotham-Round"), url("/css/theme/fonts/Gotham/gothamrnd-light-webfont.ttf") format("truetype");
-  font-weight: bold;}
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
   background: white;
-  background: radial-gradient(center, circle cover, #f2f2f2 0%, white 100%); }
+  background: radial-gradient(center, circle cover, #f2f2f2 0%, white 100%);font-family: 'Lato', sans-serif;
+  line-height: 1.35;
+}
 
 .reveal {
-  font-family: "Gotham-Round", "Helvetica", Arial, sans-serif;
   font-size: 36px;
   font-weight: 200;
   letter-spacing: -0.02em;
@@ -70,7 +44,6 @@ div.left-align{
 .reveal h6 {
   margin: 0 0 20px 0;
   color: $gdiDarkBlue;
-  font-family: "Gotham-Round", Impact, sans-serif;
   line-height: 0.9em;
   letter-spacing: 0.02em;
 }
