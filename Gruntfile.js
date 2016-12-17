@@ -24,25 +24,25 @@ module.exports = function(grunt) {
 				banner: '<%= meta.banner %>\n'
 			},
 			build: {
-				src: 'js/reveal.js',
-				dest: 'js/reveal.min.js'
+				src: 'src/js/reveal.js',
+				dest: 'dist/js/reveal.min.js'
 			}
 		},
 
 		sass: {
 			main: {
 				files: {
-				    'lib/css/reveal.css': 'css/theme/reveal.scss',
-					'lib/css/default.css': 'css/theme/source/default.scss',
-                    'lib/css/beige.css': 'css/theme/source/beige.scss',
-                    'lib/css/night.css': 'css/theme/source/night.scss',
-                    'lib/css/serif.css': 'css/theme/source/serif.scss',
-                    'lib/css/simple.css': 'css/theme/source/simple.scss',
-                    'lib/css/sky.css': 'css/theme/source/sky.scss',
-                    'lib/css/moon.css': 'css/theme/source/moon.scss',
-                    'lib/css/solarized.css': 'css/theme/source/solarized.scss',
-                    'lib/css/blood.css': 'css/theme/source/blood.scss',
-                    'lib/css/gdidarkblue.css': 'css/theme/source/gdidarkblue.scss'
+				    'dist/css/reveal.css': 'src/css/theme/reveal.scss',
+					'dist/css/default.css': 'src/css/theme/source/default.scss',
+                    'dist/css/beige.css': 'src/css/theme/source/beige.scss',
+                    'dist/css/night.css': 'src/css/theme/source/night.scss',
+                    'dist/css/serif.css': 'src/css/theme/source/serif.scss',
+                    'dist/css/simple.css': 'src/css/theme/source/simple.scss',
+                    'dist/css/sky.css': 'src/css/theme/source/sky.scss',
+                    'dist/css/moon.css': 'src/css/theme/source/moon.scss',
+                    'dist/css/solarized.css': 'src/css/theme/source/solarized.scss',
+                    'dist/css/blood.css': 'src/css/theme/source/blood.scss',
+                    'dist/css/gdidarkblue.css': 'src/css/theme/source/gdidarkblue.scss'
 				}
 			}
 		},
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 			},
 			dist:{
 				files:{
-					'lib/css/**/*.css': 'css/**/*.scss'
+					'dist/css/**/*.css': 'src/css/**/*.scss'
 				}
 			}
 		},
@@ -93,9 +93,9 @@ module.exports = function(grunt) {
 		zip: {
 			'reveal-js-presentation.zip': [
 				'index.html',
-				'css/**',
+				'src/css/**',
 				'js/**',
-				'lib/**',
+				'dist/**',
 				'images/**',
 				'plugin/**'
 			]
@@ -103,11 +103,11 @@ module.exports = function(grunt) {
 
 		watch: {
 			main: {
-				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
+				files: [ 'Gruntfile.js', 'js/reveal.js', 'src/css/reveal.css' ],
 				tasks: 'default'
 			},
 			theme: {
-				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
+				files: [ 'src/css/theme/source/*.scss', 'src/css/theme/template/*.scss' ],
 				tasks: 'themes'
 			}
 		},
@@ -115,7 +115,7 @@ module.exports = function(grunt) {
 		browserSync: {
 			bsFiles: {
 				src : [
-					'lib/css/**/*.css',
+					'dist/css/**/*.css',
 					'*.html'
 				]
 			},

@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
   background: white;
   background: radial-gradient(center, circle cover, #f2f2f2 0%, white 100%);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.35; }
 
 .reveal {
@@ -150,7 +150,7 @@ div.left-align {
   z-index: 10;
   font-size: 35%;
   text-align: right;
-  background-image: url(../images/pink-logo.png);
+  background-image: url(../img/wordmark-tagline.png);
   background-repeat: no-repeat;
   background-size: auto 100%; }
 
