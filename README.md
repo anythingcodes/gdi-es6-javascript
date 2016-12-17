@@ -43,7 +43,7 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 3. Run `gem install sass` to install Sass. Note: You will need to [download Ruby](https://www.ruby-lang.org/en/documentation/installation) to run this `gem` command.
 4. Run `grunt` from this repository's directory to compile files. A window will open with the slides running locally. Any changes will automatically refresh.
 
-Make CSS changes to the source files, **not** the compiled CSS files. Source files can be found in `/css` as `.scss` files.
+Make CSS changes to the source files, **not** the compiled CSS files (i.e. **not** those in `/dist`). Source files can be found in `/src/css` as `.scss` files.
 
 ### Teaching Recommendations
 Place any recommendations or tips for future instructors here.
