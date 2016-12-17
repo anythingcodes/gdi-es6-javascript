@@ -16,7 +16,7 @@ The future home of a Girl Develop It ES6 course. Stay tuned for details!
 
 | Slides | Hours | Format | Additional Notes |
 | ----- |:-----:| -----:| -----:|
-| [View](http://anything.codes/gdi-es6-javascript) | 6 | Three 2-hour classes | Print cheatsheets for each class — PDFs can be found in the `/cheatsheets` directory. Originally run for GDI Boston. |
+| [View](http://anything.codes/gdi-es6-javascript) | 6 | Three 2-hour classes | Print cheatsheets for each class — PDFs can be found in the [`/cheatsheets`](cheatsheets) directory. Originally run for GDI Boston. |
 
 
 ##### Meetup Content
