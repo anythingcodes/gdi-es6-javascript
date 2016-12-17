@@ -10,9 +10,10 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 1. [Details for Course Organizers](#details-for-course-organizers)
     1. [Meetup Content](#meetup-content)
 2. [Details for Instructors](#details-for-instructors)
-    1. [Teaching Recommendations](#teaching-recommendations)
-    2. [Instructor Notes](#instructor-notes)
-    3. [How to Use Reveal.js Slides](#how-to-use-revealjs-slides)
+    1. [Compiling Slides and Running Locally](#compiling-slides-and-running-locally)
+    2. [Teaching Recommendations](#teaching-recommendations)
+    3. [Instructor Notes](#instructor-notes)
+    4. [How to Use Reveal.js Slides](#how-to-use-revealjs-slides)
 
 
 ---
@@ -34,6 +35,13 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 ---
 
 ## Details for Instructors
+
+### Compiling Slides and Running Locally
+
+1. Install [Node.js](https://nodejs.org)
+2. Run `npm install` from this repository's directory
+3. Run `grunt` from this repository's directory to compile files.
+4. 
 
 ### Teaching Recommendations
 Place any recommendations or tips for future instructors here.

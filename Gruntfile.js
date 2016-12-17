@@ -73,7 +73,7 @@ module.exports = function(grunt) {
 					unescape: false
 				}
 			},
-			files: [ 'Gruntfile.js', 'js/reveal.js' ]
+			files: [ 'Gruntfile.js' ]
 		},
 
 		connect: {
