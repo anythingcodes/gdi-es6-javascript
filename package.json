@@ -27,8 +27,9 @@
     "socket.io": "~0.9.13"
   },
   "devDependencies": {
+    "autoprefixer": "^6.5.4",
+    "cssnano": "^3.9.1",
     "grunt": "^1.0.1",
-    "grunt-autoprefixer": "^3.0.4",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-cssmin": "^1.0.2",
@@ -37,6 +38,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
     "grunt-zip": "~0.7.0"
   },
   "licenses": [

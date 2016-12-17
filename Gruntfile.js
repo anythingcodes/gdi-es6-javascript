@@ -47,16 +47,18 @@ module.exports = function(grunt) {
 			}
 		},
 
-		autoprefixer: {
-			options: {
-				// Task-specific options go here.
-			},
-			dist:{
-				files:{
-					'dist/css/**/*.css': 'src/css/**/*.scss'
-				}
-			}
-		},
+        postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require('autoprefixer')({browsers: 'last 2 versions'}),
+                    require('cssnano')()
+                ]
+            },
+            dist: {
+                src: 'dist/css/*.css'
+            }
+        },
 
 		jshint: {
 			options: {
@@ -65,6 +67,7 @@ module.exports = function(grunt) {
 				immed: true,
 				latedef: true,
 				newcap: true,
+                node: true,
 				noarg: true,
 				sub: true,
 				undef: true,
@@ -134,11 +137,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
 	grunt.loadNpmTasks( 'grunt-browser-sync' );
-	grunt.loadNpmTasks( 'grunt-autoprefixer' );
-	grunt.loadNpmTasks( 'grunt-zip' );
+    grunt.loadNpmTasks( 'grunt-postcss' );
+    grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
-	grunt.registerTask( 'default', [ 'jshint', 'sass', 'uglify', 'qunit', 'browserSync', 'watch' ] );
+	grunt.registerTask( 'default', [ 'jshint', 'sass', 'postcss', 'uglify', 'qunit', 'browserSync', 'watch' ] );
 
 	// Theme task
 	grunt.registerTask( 'themes', [ 'sass' ] );
