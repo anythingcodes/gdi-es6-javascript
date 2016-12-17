@@ -29,27 +29,20 @@ module.exports = function(grunt) {
 			}
 		},
 
-		cssmin: {
-			compress: {
-				files: {
-					'css/reveal.min.css': [ 'css/reveal.css' ]
-				}
-			}
-		},
-
 		sass: {
 			main: {
 				files: {
-					'css/theme/default.css': 'css/theme/source/default.scss',
-                    'css/theme/beige.css': 'css/theme/source/beige.scss',
-                    'css/theme/night.css': 'css/theme/source/night.scss',
-                    'css/theme/serif.css': 'css/theme/source/serif.scss',
-                    'css/theme/simple.css': 'css/theme/source/simple.scss',
-                    'css/theme/sky.css': 'css/theme/source/sky.scss',
-                    'css/theme/moon.css': 'css/theme/source/moon.scss',
-                    'css/theme/solarized.css': 'css/theme/source/solarized.scss',
-                    'css/theme/blood.css': 'css/theme/source/blood.scss',
-                    'css/theme/gdidarkblue.css': 'css/theme/source/gdidarkblue.scss'
+				    'lib/css/reveal.css': 'css/theme/reveal.scss',
+					'lib/css/default.css': 'css/theme/source/default.scss',
+                    'lib/css/beige.css': 'css/theme/source/beige.scss',
+                    'lib/css/night.css': 'css/theme/source/night.scss',
+                    'lib/css/serif.css': 'css/theme/source/serif.scss',
+                    'lib/css/simple.css': 'css/theme/source/simple.scss',
+                    'lib/css/sky.css': 'css/theme/source/sky.scss',
+                    'lib/css/moon.css': 'css/theme/source/moon.scss',
+                    'lib/css/solarized.css': 'css/theme/source/solarized.scss',
+                    'lib/css/blood.css': 'css/theme/source/blood.scss',
+                    'lib/css/gdidarkblue.css': 'css/theme/source/gdidarkblue.scss'
 				}
 			}
 		},
@@ -60,7 +53,7 @@ module.exports = function(grunt) {
 			},
 			dist:{
 				files:{
-					'css/**/*.css': 'css/**/*.scss'
+					'lib/css/**/*.css': 'css/**/*.scss'
 				}
 			}
 		},
@@ -122,7 +115,7 @@ module.exports = function(grunt) {
 		browserSync: {
 			bsFiles: {
 				src : [
-					'css/**/*.css',
+					'lib/css/**/*.css',
 					'*.html'
 				]
 			},
@@ -137,7 +130,6 @@ module.exports = function(grunt) {
 	// Dependencies
 	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
-	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-contrib-sass' );
@@ -146,7 +138,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
-	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify', 'qunit', 'browserSync', 'watch' ] );
+	grunt.registerTask( 'default', [ 'jshint', 'sass', 'uglify', 'qunit', 'browserSync', 'watch' ] );
 
 	// Theme task
 	grunt.registerTask( 'themes', [ 'sass' ] );
