@@ -4,7 +4,7 @@ The future home of a Girl Develop It ES6 course. Stay tuned for details!
 
 ## Table of Contents
 1. [Details for Course Organizers](#details-for-course-organizers)
-⋅⋅* [Meetup Info](#meetup-info)
+    1. [Meetup Info](#meetup-info)
 2. [Details for Instructors](#details-for-instructors)
 
 ## Details for Course Organizers
