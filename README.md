@@ -7,6 +7,9 @@ The future home of a Girl Develop It ES6 course. Stay tuned for details!
 1. [Details for Course Organizers](#details-for-course-organizers)
     1. [Meetup Content](#meetup-content)
 2. [Details for Instructors](#details-for-instructors)
+    1. [Teaching Recommendations](#teaching-recommendations)
+    2. [Instructor Notes](#instructor-notes)
+    3. [How to Use Reveal.js Slides](#how-to-use-revealjs-slides)
 
 
 ---
@@ -14,30 +17,32 @@ The future home of a Girl Develop It ES6 course. Stay tuned for details!
 
 ## Details for Course Organizers
 
-| Slides | Hours | Format | Additional Notes |
-| ----- |:-----:| -----:| -----:|
-| [View](http://anything.codes/gdi-es6-javascript) | 6 | Three 2-hour classes | Print cheatsheets for each class — PDFs can be found in the [`/cheatsheets`](cheatsheets) directory. Originally run for GDI Boston. |
+| Slides | Hours | Format | Content Creator | Additional Notes |
+| ----- |:-----:| -----:| -----:| -----:|
+| [View](http://anything.codes/gdi-es6-javascript) | 6 | Three 2-hour classes | [@anythingcodes](http://github.com/anythingcodes) | Print cheatsheets for each class — PDFs can be found in the [`/cheatsheets`](cheatsheets) directory. Originally run for GDI Boston. |
 
 
 ##### Meetup Content
 
-| Title | Suggested Cost | Suggested # of TAs | Description | Example URL |
+| Title | Suggested Cost | Suggested # of TAs | Description and Prereqs | Example URL |
 | ----- |:-----:| -----:| -----:| -----:|
-| Getting Started with ES6 | $60/student | 2 | [View](documentation/meetup-description.md) | TBA |
-
+| Getting Started with ES6 JavaScript | $60/student | 2 | [View](documentation/meetup-description.md) | TBA |
 
 ---
 
 ## Details for Instructors
 
-To run slides locally:
+### Teaching Recommendations
+Place any recommendations or tips for future instructors here.
 
-... TBA
+### Instructor Notes
+If there are notes for instructors, link to them here.
 
-To enter instructor view:
+### How to Use Reveal.js Slides
+Please read our slide creation guidelines in [the wiki](https://github.com/girldevelopit/gdi-slides-template/wiki). Be sure to make your course's content as reusable as possible -- remove any information about yourself or your chapter.
 
-... TBA
 
-Tips on teaching this class:
 
-... TBA
+
+
+
