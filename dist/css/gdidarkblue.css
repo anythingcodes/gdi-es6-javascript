@@ -44,7 +44,7 @@ div.left-align {
  * HEADERS
  *********************************************/
 h1, h2, h3, h4, h5, h6 {
-  color: #f05b62; }
+  color: #01a9b4; }
 
 .reveal h1,
 .reveal h2,
@@ -214,6 +214,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .right {
   float: right; }
+
+.reveal .activity {
+  color: #f05b62; }
+
+.reveal .activity:after {
+  content: ' \1F4BB'; }
 
 .reveal code {
   font-family: "Courier New";

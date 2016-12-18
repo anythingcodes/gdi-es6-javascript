@@ -51,7 +51,7 @@ div.left-align{
  * HEADERS
  *********************************************/
 h1, h2, h3, h4, h5, h6 {
-  color: $gdiPink;
+  color: $lightBlue;
 }
 
 .reveal h1,
@@ -64,7 +64,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   letter-spacing: 0.02em;
 }
-
 
 .reveal h1 {font-size: 2.5em;}
 
@@ -219,6 +218,13 @@ h1, h2, h3, h4, h5, h6 {
 .orange {color: #EDAB23;}
 .left {float: left;}
 .right {float: right;}
+
+.reveal .activity {
+  color: $gdiPink;
+}
+.reveal .activity:after {
+  content: ' \1F4BB';
+}
 
 .reveal code {
   font-family: "Courier New";
