@@ -34,6 +34,9 @@ $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: #FF5E99;
 $selectionColor: #fff;
 
+// Progress Bar
+$lightBlue: #01a9b4;
+
 // Generates the presentation background, can be overridden
 // to return a background image or gradient
 @mixin bodyBackground() {

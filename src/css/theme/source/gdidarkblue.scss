@@ -159,6 +159,45 @@ div.left-align{
   vertical-align: middle;
 }
 
+
+/*********************************************
+* CTAS
+**********************************************/
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.flex .cta {
+  width: 40%;
+  margin: 10px 0;
+}
+.reveal .cta {
+  display: inline-block;
+  padding: 20px;
+  color: $gdiEarthYellow;
+  border-radius: 6px;
+  background-color: $lightBlue;
+  text-transform: uppercase;
+  font-size: .6em;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.reveal .cta.inactive {
+  background: $gdiDarkGray;
+}
+.reveal .inactive {
+  pointer-events: none;
+}
+.reveal .cta:not(.image) {
+  color: white;
+  transition: 1s ease background-color;
+}
+.reveal .cta:not(.image):hover {
+  background-color: $gdiDarkBlue;
+  color: white;
+}
+
 /*********************************************
 * OVERRIDES
 **********************************************/
