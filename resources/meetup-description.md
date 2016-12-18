@@ -4,7 +4,7 @@ ES6 is the latest and greatest version of JavaScript. It's hailed for its readab
  
 Mastering ES6 syntax will impress your fellow coders and interviewers. Because ES6 is so new, it's a skill that will give you an upper edge in the web development industry, especially given its heavy use in modern frameworks such as React.js and Angular 2.
 
-Through hands-on coding exercises, this comprehensive course will help you reformat current ES5 JavaScript code to its nice new ES6 format and get you up and running using ES6 in practical situations. We'll also wave 'bye' to `for` loops and start coding more efficiently!
+Through hands-on coding exercises, this comprehensive course will help you reformat current ES5 JavaScript code to its nice new ES6 format and get you up and running using ES6 in practical situations. We'll also wave 'bye' to `for` loops and start coding more efficiently! If you haven’t learned ES6 yet, the time is now.
 
 ## Dates
 
