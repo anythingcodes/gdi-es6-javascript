@@ -1,10 +1,10 @@
 # Getting Started with ES6 JavaScript
 
-ES6 is the latest and greatest version of JavaScript. It's hailed for its readability, flexibility, and exciting new features that will make your code cleaner, easier to read, faster, and more professional.
+ES6 is a ground-breaking new JavaScript release that will change the way you code. ES6 is hailed for its readability, flexibility, and exciting new features that will make your code cleaner, easier to read, faster, and more professional. If you haven’t learned ES6 yet, the time is now.
  
 Mastering ES6 syntax will impress your fellow coders and interviewers. Because ES6 is so new, it's a skill that will give you an upper edge in the web development industry, especially given its heavy use in modern frameworks such as React.js and Angular 2.
 
-Through hands-on coding exercises, this comprehensive course will help you reformat current ES5 JavaScript code to its nice new ES6 format and get you up and running using ES6 in practical situations. We'll also wave 'bye' to `for` loops and start coding more efficiently! If you haven’t learned ES6 yet, the time is now.
+Through hands-on coding exercises, this comprehensive course will help you reformat current ES5 JavaScript code to its nice new ES6 format and get you up and running using ES6 in practical situations. We'll also wave 'bye' to `for` loops and start coding more efficiently!
 
 ## Dates
 
@@ -22,6 +22,7 @@ Your payment registers you for the entire series.
 - Convert current/ES5 code into ES6, step by step
 - Write better-looking, more professional code that's easier for other developers to read and understand
 - Understand the major features of ES6, including new variable types, Array helpers, arrow functions, string templates, generators, promises, classes, rest/spread operators, and more!
+- Review ES7's two new features
 - Learn about tools that will help you reinforce best JavaScript practices
 - Never use a `for` loop again!
 

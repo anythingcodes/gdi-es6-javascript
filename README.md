@@ -1,6 +1,6 @@
 # Getting Started with ES6 JavaScript
 
-Materials and slides for a Girl Develop It ES6 JavaScript course. 
+Materials and slides for a Girl Develop It ES6 JavaScript course. Includes ES7's minor additions.
 
 ### Got a pull request?
 
