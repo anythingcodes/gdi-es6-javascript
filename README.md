@@ -28,9 +28,9 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 
 ##### Meetup Content
 
-| Title | Suggested Cost | Suggested # of TAs | Description and Prereqs | Example URL |
-| ----- |:-----:| -----:| -----:| -----:|
-| Getting Started with ES6 JavaScript | $60/student | 2 | [View](resources/meetup-description.md) | TBA |
+| Title | Suggested Cost | Suggested # of TAs | Questions for Attendees | Description and Prereqs | Example URL |
+| ----- |:-----:| -----:| -----:| -----:| -----:|
+| Getting Started with ES6 JavaScript | $60/student | 2 | Have you used Node.js and npm before? | [View](resources/meetup-description.md) | TBA |
 
 ---
 

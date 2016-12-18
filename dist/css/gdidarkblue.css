@@ -1,16 +1,21 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@font-face {
+  font-family: "Gotham-Round";
+  src: local("Gotham-Round"), url("../fonts/gothamrnd-light-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.35; }
+  font-family: 'Gotham-Round', sans-serif;
+  line-height: 1.35;
+  color: #333; }
 
 .reveal {
   font-size: 36px;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: -0.02em;
-  color: #333333; }
+  color: #53555C; }
 
 ::selection {
   color: white;
@@ -26,12 +31,18 @@ div.halfblock {
 div.left-align {
   text-align: left; }
 
+.reveal strong {
+  font-weight: bold; }
+
 .clear {
   clear: both; }
 
 /*********************************************
  * HEADERS
  *********************************************/
+h1, h2, h3, h4, h5, h6 {
+  color: #f05b62; }
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -39,12 +50,11 @@ div.left-align {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #2a4758;
   line-height: 1;
   letter-spacing: 0.02em; }
 
 .reveal h1 {
-  font-size: 2.3em; }
+  font-size: 2.5em; }
 
 .reveal h2 {
   font-size: 1.8em; }
@@ -194,8 +204,32 @@ div.left-align {
 /*********************************************
 * OVERRIDES
 **********************************************/
+.blue {
+  color: #00A9B4; }
+
+.green {
+  color: #92BB44; }
+
+.orange {
+  color: #EDAB23; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.reveal code {
+  font-family: "Courier New";
+  background: #333;
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold; }
+
 .reveal ul, .reveal ol {
-  list-style-position: inside; }
+  text-align: left;
+  display: inline-block;
+  margin: 0 0 0 1em; }
 
 code {
   text-align: left; }
