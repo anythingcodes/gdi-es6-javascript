@@ -44,7 +44,7 @@ div.left-align {
   letter-spacing: 0.02em; }
 
 .reveal h1 {
-  font-size: 2.5em; }
+  font-size: 2.3em; }
 
 .reveal h2 {
   font-size: 1.8em; }
@@ -82,7 +82,7 @@ div.left-align {
   -ms-transition: all .2s linear;
   -o-transition: all .2s linear;
   transition: all .2s linear;
-  max-height: 500px;
+  max-height: 375px;
   max-width: 80%; }
 
 .reveal a:hover img {
