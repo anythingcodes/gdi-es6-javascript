@@ -1,6 +1,6 @@
 > **Note:** This class is still being developed. When it is ready for reuse, this warning will be removed.
 
-# Getting Started with ES6 JavaScript
+# Getting Started with ES6 and ES7 JavaScript
 
 Materials and slides for a Girl Develop It ES6 JavaScript course. Includes ES7's minor additions.
 
