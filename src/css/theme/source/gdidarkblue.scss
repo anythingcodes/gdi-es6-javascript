@@ -23,6 +23,9 @@ body {
   color: #53555C;
    }
 
+.reveal .small {
+  font-size: 80%;
+}
 ::selection {
   color: white;
   background: rgba(11, 79, 81, 0.99);
@@ -30,9 +33,13 @@ body {
 
 div.halfblock{
   float: left;
-  width: 45%;
+  width: 47.5%;
   text-align: left;
-  margin-right: 5%;}
+  margin-left: 2.5%;}
+
+div.halfblock:first-child {
+  margin-left: 0
+}
 
 div.left-align{
   text-align: left;}
@@ -93,10 +100,10 @@ h1, h2, h3, h4, h5, h6 {
  * IMAGES
  *********************************************/
 .reveal section img {
-  margin: 15px;
+  margin: 5px;
   transition: all .2s linear;
-  max-height: 375px;
-  max-width: 80%;
+  max-height: 50vh;
+  max-width: 90vw;
 }
 
 .reveal a:hover img {
@@ -219,6 +226,14 @@ h1, h2, h3, h4, h5, h6 {
 .left {float: left;}
 .right {float: right;}
 
+.reveal .underlined {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+
 .reveal .activity {
   color: $gdiPink;
 }
@@ -238,6 +253,12 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
   display: inline-block;
   margin: 0 0 0 1em;
+}
+
+.reveal ul ul {
+  display: block;
+  list-style-type: square;
+  margin-bottom: 20px;
 }
 
 code {

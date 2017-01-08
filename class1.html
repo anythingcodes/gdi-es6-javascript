@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Getting Started with ES6</title>
+		<title>Getting Started with ES6 and ES7 JavaScript</title>
 
 		<meta name="description" content="Materials and slides for a Girl Develop It ES6 JavaScript course. Includes ES7's minor additions.">
 		<meta name="author" content="Girl Develop It">
@@ -49,9 +49,9 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
         <!-- Opening -->
-				<section>
-					<h1>Getting Started with ES6 and ES7</h1>
-					<img src="dist/img/slide1-es6.jpg" alt="ECMAScript 2016 Intro Image" class="noborder"/>
+				<section class="small">
+					<h1>Getting Started with ES6 and ES7 JavaScript</h1>
+					<img src="dist/img/es6-gdi.jpg" alt="ES6 and ES7 Intro Image" class="noborder"/>
 					<h3>Class 1</h3>
 				</section>
         <!-- Compatibility-->
@@ -90,17 +90,16 @@
 				<!-- Get Started -->
 				<section>
 					<h2>Get Started: Tools</h2>
-					<p>We'll be using the following tools in class today:</p>
+					<p>We'll be using the following tools in class:</p>
 					<p>&nbsp;</p>
 					<ul>
 						<li>
 							<div class="orange"><strong>Environment</strong>
 							</div>
-							<ul>
+							<ol>
 								<li><a href="https://nodejs.org/">Node.js</a> (version 6 or higher)</li>
-								<li>Your favorite command line application (examples include <em>Terminal</em>, <em>cmd</em>, <em>X11</em>, and <em>Git Bash</em>)</li>
-							</ul>
-							<br />
+								<li>Your favorite command line application (examples include <em>Terminal</em>, <em>cmd</em>, <em>X11</em>, and <em>Git Bash</em>)<p>&nbsp;</p></li>
+							</ol>
 						</li>
 						<li>
 							<div class="orange"><strong>Text Editor (your preference)</strong>
@@ -119,13 +118,82 @@
 				</section>
 
 				<section>
-					<h2>What is ES6 and ES7?</h2>
+					<h2>Terms</h2>
+					<div class="small clear">
+						<div class="halfblock">
+							<p class="blue underlined">📄 Standard:</p>
+							<ul>
+								<li><span class="green">ECMAScript</span>, abbreviated <span class="green">ES</span></li>
+								<li class="fragment">Describes features, syntax, and behavior of all <span class="blue">implementations</span></li>
+								<li class="fragment">Think of it as a ruleset</li>
+							</ul>
+
+							<p class="blue underlined"><br />✍ Implementation:</p>
+							<ul>
+								<li><span class="green">JavaScript</span>, the implementation of the <span class="green">ECMAScript</span> standard</li>
+								<li class="fragment">Implementations <span class="blue">track</span> standards</li>
+							</ul>
+						</div>
+						<div class="halfblock">
+							<img src="/dist/img/flowchart-es-js.svg" alt="ES6's relationship to JavaScript" />
+							<p class="fragment" style="margin-top:15px;">
+								📝 We'll implement the new features from versions <span class="orange">6 and 7 of ECMAScript</span> using <span class="orange">JavaScript</span>
+							</p>
+						</div>
+					</div>
+
+
+					<aside class="notes">
+						<ul>
+							<li>ECMAScript and ES terms are interchangeable</li>
+							<li>There are plenty of other implementations of ECMAScript, including ActionScript</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>History</h2>
+					<p><span class="orange">ES6</span> = ECMAScript 2015</p>
+					<p><span class="orange">ES7</span> = ECMAScript 2016</p>
+					<p><span class="orange">ES.Next</span> = Any upcoming version of ECMAScript</p>
+					<p><br /><img src="/dist/img/history-es6.png" alt="The history of ECMAScript and JavaScript" /></p>
+
+					<aside class="notes">
+						<ul>
+							<li>ES6 is sometimes called ECMAScript 2015 because it was released in 2015. ES6 and ECMAScript are the same thing. This is true for ES7, a.k.a. ECMAScript 2016.</li>
+							<li>ES6 gets the most attention because it was a huge spec overhaul. It introduced a ton of new features. ES7 and all versions going forward will be smaller, more incremental changes; ES7 only introduced two new features, so we'll discuss them as part of this class.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>The Pros</h2>
+					<span class="green">Tons</span> of new features that will help us:
+					<p>&nbsp;</p>
 					<ul>
-						<li><span class="green">ECMAScript</span> is abbreviated as <span class="green">ES</span></li>
-						<li class="fragment"><span class="green">ES</span> is a specification, or standard</li>
-						<li class="fragment"><span class="orange">JavaScript</span> is a language that uses <span class="green">ES</span></li>
-						<li class="fragment">The latest release was on June 2016, with version 7 (<span class="green">ES7</span>)</li>
+						<li class="fragment">Cut down on unnecessary code</li>
+						<li class="fragment">Load pages and apps faster</li>
+						<li class="fragment">Make our code much cleaner and easy to read, which is perfect for developing in a team setting</li>
+						<li class="fragment">More easily follow best coding practices</li>
+						<li class="fragment">Stay ahead of the curve, professionally</li>
 					</ul>
+					<aside class="notes">
+						Ultimately, makes us better, more professional developers. If you bust out ES6/7 in an interview, they're going to know you're staying ahead of the curve.
+					</aside>
+				</section>
+
+				<section>
+					<h2>The Cons</h2>
+					<ul>
+						<li class="fragment"><em class="blue">Wait &mdash; no cross-browser issues?</em> 😱
+							<ul>
+								<li class="fragment"><span class="blue">Of course there are!</span> We'll use <span class="green">Babel</span>, a <span class="orange">compiler</span> that transforms our ES6/ES7 code into ES5. Enables us to use futuristic ES6/ES7 features without worrying about browser support!</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						Browsers don’t yet implement natively a lot of ES6+ features, and developers want to innovate on what JavaScript is. This means they’ve gone to building tools like Babel that implement futuristic JavaScript features and compile down to ES5.
+					</aside>
 				</section>
 
 				<!-- Node.js Check -->
@@ -173,7 +241,7 @@
 			</div>
   		<footer>
         <div class="copyright">
-          Getting Started with ECMAScript 2016 JavaScript
+          Getting Started with ES6 and ES7 JavaScript
           <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
         </div>
       </footer>
