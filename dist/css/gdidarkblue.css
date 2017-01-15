@@ -206,6 +206,9 @@ h1, h2, h3, h4, h5, h6 {
 /*********************************************
 * OVERRIDES
 **********************************************/
+.light {
+  color: #eee; }
+
 .blue {
   color: #00A9B4; }
 
@@ -227,12 +230,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 5px;
   margin-bottom: 5px;
   display: block; }
-
-.reveal .activity {
-  color: #f05b62; }
-
-.reveal .activity:after {
-  content: ' \1F4BB'; }
 
 .reveal code {
   font-family: "Courier New";
@@ -282,5 +279,27 @@ code {
   overflow: visible;
   position: static;
   width: auto; }
+
+/*********************************************
+ * ACTIVITY SLIDES
+ *********************************************/
+.reveal .activity {
+  color: #fff; }
+  .reveal .activity a {
+    color: #eee; }
+  .reveal .activity h3 {
+    color: #fff;
+    margin-bottom: 1em; }
+  .reveal .activity h2:after {
+    content: ' \1F4BB'; }
+  .reveal .activity img {
+    background: rgba(255, 255, 255, 0.3); }
+  .reveal .activity .halfblock {
+    text-align: center; }
+
+.reveal .solution {
+  display: none;
+  font-size: .8em;
+  font-weight: bold; }
 
 /*# sourceMappingURL=gdidarkblue.css.map */

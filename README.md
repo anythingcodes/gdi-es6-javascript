@@ -47,11 +47,10 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 
 Make CSS changes to the source files, **not** the compiled CSS files (i.e. **not** those in `/dist`). Source files can be found in `/src/css` as `.scss` files.
 
-### Teaching Recommendations
-Place any recommendations or tips for future instructors here.
+### Teaching Tips and Recommendations
 
-### Instructor Notes
-If there are notes for instructors, link to them here.
+- Slide-specific notes can be found in presenter mode. To enter presenter mode, press the `S` key when viewing the slides in a browser.
+- All CodePen solutions have a class of `solution solution__lesson-X` where X is the lesson number (1, 2, or 3) and are hidden from the slides by default. When you're ready to reveal solutions for a given class, uncomment out `display: inline;` in the `src/css/theme/source/gdidarkblue.scss` file. Typically solutions are revealed after each lesson ends.
 
 ### How to Use Reveal.js Slides
 Please read our slide creation guidelines in [the wiki](https://github.com/girldevelopit/gdi-slides-template/wiki). Be sure to make your course's content as reusable as possible -- remove any information about yourself or your chapter.

@@ -219,7 +219,7 @@ h1, h2, h3, h4, h5, h6 {
 /*********************************************
 * OVERRIDES
 **********************************************/
-
+.light { color: $mainColor }
 .blue {color:#00A9B4;}
 .green {color: #92BB44;}
 .orange {color: #EDAB23;}
@@ -234,12 +234,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-.reveal .activity {
-  color: $gdiPink;
-}
-.reveal .activity:after {
-  content: ' \1F4BB';
-}
+
 
 .reveal code {
   font-family: "Courier New";
@@ -295,3 +290,43 @@ code {
   overflow: visible;
   position: static;
   width: auto;}
+
+
+/*********************************************
+ * ACTIVITY SLIDES
+ *********************************************/
+.reveal .activity {
+  color: #fff;
+  a {
+    color: $mainColor
+  }
+  h3 {
+    color: #fff;
+    margin-bottom: 1em;
+  }
+  h2 {
+    &:after {
+      content: ' \1F4BB';
+    }
+  }
+  img {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .halfblock {
+    text-align: center;
+  }
+}
+.reveal .solution {
+  display: none;
+  font-size: .8em;
+  font-weight: bold;
+  &.solution__lesson-1 {
+    //display: inline-block;
+  }
+  &.solution__lesson-2 {
+    // display: inline-block;
+  }
+  &.solution__lesson-3 {
+    // display: inline-block;
+  }
+}
