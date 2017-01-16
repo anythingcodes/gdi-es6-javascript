@@ -261,7 +261,7 @@
 					<p class="fragment"><code>arr.forEach(iteratorFunction)</code></p>
 					<div class="clear fragment">
 						<div class="halfblock">
-							<h3 class="green">ES5: For Loop</h3>
+							<h3 class="green">ES5</h3>
 							<pre><code contenteditable class ="javascript">var names = ['Morgan', 'Taylor', 'Lesley'];
 
 for (var i = 0; i < names.length; i++) {
@@ -323,7 +323,7 @@ names.forEach(function(name) {
 					<p class="fragment">You can <span class="blue">assign the resulting array</span> to a variable:<br /><code>var newArr = arr.map(iteratorFunction);</code></p>
 					<div class="clear fragment">
 						<div class="halfblock">
-							<h3 class="green">ES5: For Loop</h3>
+							<h3 class="green">ES5</h3>
 							<pre><code contenteditable class ="javascript">var numbers = [2, 6, 10];
 var halvedNumbers = [];
 
@@ -405,48 +405,127 @@ pluck(cats, 'name'); // returns ['Colonel Meow', 'Lil Bub', 'Grumpy Cat'];
 
 				<section>
 					<h2>filter</h2>
-					<p>The <em>filter</em> helper <span class="blue">returns an array of filtered elements</span></p>
-					<p class="fragment">Use an iterator function that returns <span class="green">true</span> or <span class="orange">false</span></p>
+					<p>The <em>filter</em> helper <span class="green">returns an array of filtered elements</span></p>
+					<p class="fragment">Use an iterator function that returns <span class="blue">true</span> or <span class="orange">false</span></p>
 					<p class="fragment"><code>var newArr = arr.filter(iteratorFunction);</code></p>
 					<div class="clear fragment">
 						<div class="halfblock">
-							<h3 class="green">ES5: For Loop</h3>
-							<pre><code contenteditable class ="javascript">var homes = [
-  { price: 500000, beds: 2, baths: 1 },
-  { price: 600000, beds: 3, baths: 1 },
-  { price: 450000, beds: 2, baths: 1.5 }
+							<h3 class="green">ES5</h3>
+							<pre><code contenteditable class ="javascript">var users = [
+  { username: 'ryan10', active: true },
+  { username: 'morgan', active: false }
 ];
-var filteredHomes = [];
-
-for (var i = 0; i < homes.length; i++) {
-  if (homes[i].price < 600000) {
-    filteredHomes.push(homes[i]);
+var activeUsers = [];
+for (var i = 0; i < users.length; i++) {
+  if (users[i].active) {
+    activeUsers.push(users[i]);
   }
+  return false;
 }
-
-console.log(filteredHomes);</code></pre>
+console.log(activeUsers);</code></pre>
 						</div>
 						<div class="halfblock fragment">
-							<h3 class="green">ES6: filter</h3>
-							<pre><code contenteditable class ="javascript">var homes = [
-  { price: 500000, beds: 2, baths: 1 },
-  { price: 600000, beds: 3, baths: 1 },
-  { price: 450000, beds: 2, baths: 1.5 }
+							<h3 class="green">ES6</h3>
+							<pre><code contenteditable class ="javascript">var users = [
+  { username: 'ryan10', active: true },
+  { username: 'morgan', active: false }
 ];
-
-var filteredHomes = homes.filter(function(home) {
-  if (home.price < 600000) {
-    return home;
-  }
+var activeUsers = users.filter(function(user) {
+  return user.active;
 });
+console.log(activeUsers);</code></pre>
+							<p class="small"><a href="http://codepen.io/anythingcodes/pen/mRrazP?editors=0012" target="_blank">CodePen Example &raquo;</a></p>
+							<p class="small fragment"><a href="http://codepen.io/anythingcodes/pen/LxRqOZ?editors=0012" target="_blank">CodePen example with non-boolean &raquo;</a></p>
+						</div>
 
-console.log(filteredHomes);</code></pre>
+					</div>
+					<aside class="notes">
+						Don't need to use an if statement, since <code>user.active</code> returns a boolean. Also <code>home.price < 600000</code> returns a boolean.
+					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activities</h2>
+					<h3>Using the filter helper</h3>
+					<div class="clear">
+						<div class="halfblock">
+							<h6 class="light">Activity 1</h6>
+							<p data-height="250" data-theme-id="0" data-slug-hash="GrNKXy" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: filter #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/GrNKXy/">ES6 Lesson 1: filter #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<p>
+								<a class="solution solution__lesson-1" href="" target="_blank">View Solution</a>
+							</p>
+						</div>
+						<div class="halfblock">
+							<h6 class="light">Activity 2</h6>
+							<p data-height="250" data-theme-id="0" data-slug-hash="NdRoML" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: filter #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/NdRoML/">ES6 Lesson 1: filter #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<p>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/ggwERZ?editors=0012" target="_blank">View Solution</a>
+							</p>
 						</div>
 					</div>
-					<p class="small orange fragment">No need to create an empty array! 🎉</p>
+					<p class="clear blue small" style="background-color: #fff;border: 1px solid black;padding: 5px 0;margin:15px 0"><strong>Tip:</strong> Try to use more than one array helper for Activity 2</p>
+					<p>&nbsp;</p>
+				</section>
+
+				<section>
+					<h2>filter</h2>
+					<h3>Filtering API Responses</h3>
+					<p>
+						<img src="dist/img/comments-post-data.svg" alt="The data relationship between comments and posts" style="max-height: 55vh;" />
+					</p>
+
+					<p>
+						<a href="http://codepen.io/anythingcodes/pen/ggLYoX?editors=0012" target="_blank">CodePen Example &raquo;</a>
+					</p>
+
 					<aside class="notes">
-						Primary difference between forEach and map: <em>forEach</em> iterates through an array but <span class="orange">doesn't return anything</span>
+						Describe one common use case for the filter helper, including filtering JSON to only reveal the comments associated with a specific post (e.g. postId 23 for post with ID for 23). Mention that we'll code an example of this on the next slide.
 					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activities</h2>
+					<h3>Filtering API responses</h3>
+					<h6 class="light">Activity 3</h6>
+					<p data-height="250" data-theme-id="0" data-slug-hash="PWGLeg" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: filter #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/PWGLeg/">ES6 Lesson 1: filter #3</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+					<p>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/LxRqaW?editors=1010" target="_blank">View Solution</a>
+					</p>
+
+
+					<p class="clear blue small" style="background-color: #fff;border: 1px solid black;padding: 5px 0;margin:15px 0"><strong>Tip:</strong> Try to use more than one array helper</p>
+					<p>&nbsp;</p>
+
+
+				</section>
+
+				<section class="activity__challenge" data-background="#d2ccfc">
+					<h2>At-Home Challenge: Implement a <code>reject</code> function</h2>
+					<div class="clear">
+						<div class="halfblock">
+							<pre><code contenteditable class ="javascript" >function reject(array, iteratorFunction) {
+  // your code here
+}</code></pre>
+							<div class="fragment small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+								<p><strong>Hint:</strong> You may use <em>filter</em>.
+							</div>
+
+						</div>
+						<div class="halfblock">
+							<p class="small">Reject should work opposite to filter; if a function returns <code>true</code>, the item should <em>not</em> be included in the new array, for example:<br />&nbsp;</p>
+							<pre><code contenteditable class ="javascript" >var numbers = [ 5, 10, 15, 20 ];
+var lessThanEighteen = reject(numbers, function(number) {
+  return number >= 18;
+});
+console.log(lessThanEighteen); // returns [ 5, 10, 15 ];</code></pre>
+
+						</div>
+					</div>
+
+					<div>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/VPmZNz?editors=0012" target="_blank">View Solution</a>
+					</div>
 				</section>
 
 				<section>
@@ -457,6 +536,7 @@ console.log(filteredHomes);</code></pre>
 					</ul>
 					<p><img src="dist/img/iterator-functions.svg" alt="Iterator functions" style="margin:0;" /></p>
 				</section>
+
 				<!-- TODO: Is this worth including? -->
 				<section>
 					<h2>Iterator Functions</h2>
