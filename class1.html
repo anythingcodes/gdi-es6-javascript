@@ -79,6 +79,7 @@
 						<li>What's your spirit animal, and why?</li>
 					</ul>
 				</section>
+
 				<section>
 					<h2>First Things First</h2>
 					<p>&nbsp;</p>
@@ -93,7 +94,6 @@
 					<p>We'll be using the following tools in class:</p>
 					<p>&nbsp;</p>
 					<ul>
-
 						<li>
 							<div class="orange"><strong>Environment</strong>
 							</div>
@@ -119,6 +119,21 @@
 						</li>
 					</ul>
 					<aside class="notes">Ask if everyone was able to download everything. If not, no big deal. download now.</aside>
+				</section>
+
+				<section>
+					<h2>History</h2>
+					<p><span class="orange">ES6</span> = ECMAScript 2015</p>
+					<p><span class="orange">ES7</span> = ECMAScript 2016</p>
+					<p><span class="orange">ES.Next</span> = Any upcoming version of ECMAScript</p>
+					<p><br /><img src="dist/img/history-es6.png" alt="The history of ECMAScript and JavaScript" /></p>
+
+					<aside class="notes">
+						<ul>
+							<li>ES6 is sometimes called ECMAScript 2015 because it was released in 2015. ES6 and ECMAScript are the same thing. This is true for ES7, a.k.a. ECMAScript 2016.</li>
+							<li>ES6 gets the most attention because it was a huge spec overhaul. It introduced a ton of new features. ES7 and all versions going forward will be smaller, more incremental changes; ES7 only introduced two new features, so we'll discuss them as part of this class.</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -155,21 +170,23 @@
 				</section>
 
 				<section>
-					<h2>History</h2>
-					<p><span class="orange">ES6</span> = ECMAScript 2015</p>
-					<p><span class="orange">ES7</span> = ECMAScript 2016</p>
-					<p><span class="orange">ES.Next</span> = Any upcoming version of ECMAScript</p>
-					<p><br /><img src="dist/img/history-es6.png" alt="The history of ECMAScript and JavaScript" /></p>
-
-					<aside class="notes">
-						<ul>
-							<li>ES6 is sometimes called ECMAScript 2015 because it was released in 2015. ES6 and ECMAScript are the same thing. This is true for ES7, a.k.a. ECMAScript 2016.</li>
-							<li>ES6 gets the most attention because it was a huge spec overhaul. It introduced a ton of new features. ES7 and all versions going forward will be smaller, more incremental changes; ES7 only introduced two new features, so we'll discuss them as part of this class.</li>
-						</ul>
-					</aside>
+					<h2>Why use ES6 and ES7?</h2>
 				</section>
 
-				<section>
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activity</h2>
+					<h3>Node.js Check</h3>
+					<ol>
+						<li>Open your favorite command line application (such as <em>Terminal</em> or <em>cmd</em>)</li>
+						<li>Type in <code>node -v</code> and press <em>Enter</em></li>
+						<li>If your version is <em>6.0.0</em> or above, you're good to go!</li>
+					</ol>
+
+					<p><img src="dist/img/nodejs.png" alt="NodeJS logo" style="max-height: 150px;background-color:#fff;" /></p>
+					<p class="small"><em>No luck? No problem &mdash; we won't be using Node.js until a later session. See a TA or instructor after class and we'll help you out!</em></p>
+				</section>
+
+				<!--<section>
 					<h2>The Pros</h2>
 					<span class="green">Tons</span> of new features that will help us:
 					<p>&nbsp;</p>
@@ -197,52 +214,263 @@
 					<aside class="notes">
 						Browsers don’t yet implement natively a lot of ES6+ features, and developers want to innovate on what JavaScript is. This means they’ve gone to building tools like Babel that implement futuristic JavaScript features and compile down to ES5.
 					</aside>
-				</section>
+				</section>-->
 
-				<!-- Node.js Check -->
-				<section class="activity" data-background="#00A9B4" color="#fff">
-					<h2 style="color:#fff">Activity</h2>
-					<h3>Node.js Check</h3>
-					<ol>
-						<li>Open your favorite command line application (such as <em>Terminal</em> or <em>cmd</em>)</li>
-						<li>Type in <code>node -v</code> and press <em>Enter</em></li>
-						<li>If your version is <em>6.0.0</em> or above, you're good to go!</li>
-					</ol>
-					<p><img src="dist/img/nodejs.png" alt="NodeJS logo" /></p>
-				</section>
 
 				<section data-background="#f05b62">
 					<h1 style="color: #fafafa;font-size:3.7em;">Array Helpers</h1>
 				</section>
 
 				<section>
-					<h2>CodePen Primer</h2>
+					<h2>Array Helpers</h2>
+					<ul>
+						<li>List of helpers</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Array Helpers</h2>
+					<h3>Commonalities</h3>
+				</section>
+
+				<section>
+					<h2>Array Helpers</h2>
+					<h3>Moving away from for loops</h3>
+					<ul>
+						<li>Functional programming</li>
+						<li>Readability: Easier for other devs to understand</li>
+						<li>Much more compact code</li>
+						<li>Maintainability</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Before We Begin</h2>
+					<h3>CodePen Primer</h3>
 					<ol>
+						<li>Log into <a href="http://codepen.io" target="_blank">http://codepen.io</a></li>
 						<li>For each CodePen exercise, click <code>Edit on CodePen</code></li>
 						<li>Click the <code>Fork</code> button at the top</li>
-						<li>Edit away! Your changes will save under your CodePen account</li>
+						<li>Edit away! Your changes will save to a new pen in your CodePen account</li>
 					</ol>
 				</section>
 
-				<section class="activity" data-background="#00A9B4" color="#fff">
-					<h2 style="color:#fff">Activities</h2>
+				<section>
+					<h2>forEach</h2>
+					<p>Loop through elements in an array</p>
+					<p class="fragment"><code>arr.forEach(iteratorFunction)</code></p>
+					<div class="clear fragment">
+						<div class="halfblock">
+							<h3 class="green">ES5: For Loop</h3>
+							<pre><code contenteditable class ="javascript">var names = ['Morgan', 'Taylor', 'Lesley'];
+
+for (var i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6: forEach</h3>
+							<pre><code contenteditable class ="javascript">var names = ['Morgan', 'Taylor', 'Lesley'];
+
+names.forEach(function(name) {
+  console.log(name);
+});</code></pre>
+						</div>
+						<p><a href="http://codepen.io/anythingcodes/pen/KagmxL?editors=0012" target="_blank">View CodePen &raquo;</a></p>
+					</div>
+				</section>
+
+				<section>
+					<h2>forEach</h2>
+					<code class="fragment">arr.forEach(iteratorFunction)</code><span class="fragment"> The iterator function runs once for each element in the array.</span>
+					<div class="fragment">
+						<p data-height="400" data-theme-id="0" data-slug-hash="ZLpKOZ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Iterator Functions" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/NdRpVX/">ES6 Iterator Functions</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					</div>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<aside class="notes">
+						Code the ES6 version in front of students. Clarify how the iterator function automatically receives the current element, in this case <code>number</code>.
+					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activities</h2>
 					<h3>Using the forEach Helper</h3>
 					<div class="clear">
 						<div class="halfblock">
 							<h6 class="light">Activity 1</h6>
-							<p data-height="350" data-theme-id="0" data-slug-hash="mRrdEQ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: forEach" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/mRrdEQ/">ES6 Lesson 1: forEach #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<p data-height="350" data-theme-id="0010" data-slug-hash="mRrdEQ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: forEach #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/mRrdEQ/">ES6 Lesson 1: forEach #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 							<div>
-								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/jyMOeM?editors=1010#0">View Solution</a>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/jyMOeM?editors=0010" target="_blank">View Solution</a>
 							</div>
 						</div>
 						<div class="halfblock">
 							<h6 class="light">Activity 2</h6>
 							<p data-height="350" data-theme-id="0" data-slug-hash="rjMNEJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: forEach #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/rjMNEJ/">ES6 Lesson 1: forEach #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 							<div>
-								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/XpjJJq?editors=1010#0">View Solution</a>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/XpjJJq?editors=0010#0" target="_blank">View Solution</a>
 							</div>
 						</div>
 					</div>
+				</section>
+
+				<section>
+					<h2>map</h2>
+					<p>The <em>map</em> helper <span class="green">returns an array of results</span> after iterating through an array</p>
+					<p class="fragment">You can <span class="blue">assign the resulting array</span> to a variable:<br /><code>var newArr = arr.map(iteratorFunction);</code></p>
+					<div class="clear fragment">
+						<div class="halfblock">
+							<h3 class="green">ES5: For Loop</h3>
+							<pre><code contenteditable class ="javascript">var numbers = [2, 6, 10];
+var halvedNumbers = [];
+
+for (var i = 0; i < numbers.length; i++) {
+  halvedNumbers.push(numbers[i] / 2);
+}
+
+console.log(halvedNumbers); // 1, 3, 5
+</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6: map</h3>
+							<pre><code contenteditable class ="javascript" >var numbers = [2, 6, 10];
+
+var halvedNumbers = numbers.map(function(number){
+  return number / 2;
+});
+
+console.log(halvedNumbers); // 1, 3, 5
+</code></pre>
+						</div>
+						<p><a href="http://codepen.io/anythingcodes/pen/MJjoxm?editors=0012" target="_blank">View CodePen &raquo;</a></p>
+					</div>
+					<p class="small orange fragment">No need to create an empty array! 🎉</p>
+					<aside class="notes">
+						Primary difference between forEach and map: <em>forEach</em> iterates through an array but <span class="orange">doesn't return anything</span>
+					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activities</h2>
+					<h3>Using the map Helper</h3>
+					<div class="clear">
+						<div class="halfblock">
+							<h6 class="light">Activity 1</h6>
+							<p data-height="350" data-theme-id="0" data-slug-hash="RKGZQW" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: map #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/JERyKw/">ES6 Lesson 1: map #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/xgELgm?editors=0012" target="_blank">View Solution</a>
+							</div>
+						</div>
+						<div class="halfblock">
+							<h6 class="light">Activity 2</h6>
+							<p data-height="350" data-theme-id="0" data-slug-hash="JERyKw" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: map #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/JERyKw/">ES6 Lesson 1: map #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/QdKMaq?editors=0012" target="_blank">View Solution</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="activity__challenge" data-background="#d2ccfc">
+					<h2>At-Home Challenge: Implement a <code>pluck</code> function</h2>
+					<div class="clear">
+						<div class="halfblock">
+							<pre><code contenteditable class ="javascript" >function pluck(array, property) {
+  // your code here
+}</code></pre>
+							<div class="fragment small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+								<p><strong>Hint:</strong> Access a property on an object by using square bracket notation. For example:<br />&nbsp;</p>
+								<pre><code contenteditable class ="javascript" >var person = { name: 'Jordan' };
+person['name']; // returns 'Jordan'</code></pre>
+							</div>
+
+						</div>
+						<div class="halfblock">
+							<p class="small">Pluck should accept an array and a string representing a property name and return an array containing that property from each object, for example:<br />&nbsp;</p>
+							<pre><code contenteditable class ="javascript" >var cats = [ { name: 'Colonel Meow' }, { name: 'Lil Bub' }, { name: 'Grumpy Cat' }];
+
+pluck(cats, 'name'); // returns ['Colonel Meow', 'Lil Bub', 'Grumpy Cat'];
+</code></pre>
+
+						</div>
+					</div>
+
+					<div>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/pRErMO?editors=0012" target="_blank">View Solution</a>
+					</div>
+				</section>
+
+				<section>
+					<h2>filter</h2>
+					<p>The <em>filter</em> helper <span class="blue">returns an array of filtered elements</span></p>
+					<p class="fragment">Use an iterator function that returns <span class="green">true</span> or <span class="orange">false</span></p>
+					<p class="fragment"><code>var newArr = arr.filter(iteratorFunction);</code></p>
+					<div class="clear fragment">
+						<div class="halfblock">
+							<h3 class="green">ES5: For Loop</h3>
+							<pre><code contenteditable class ="javascript">var homes = [
+  { price: 500000, beds: 2, baths: 1 },
+  { price: 600000, beds: 3, baths: 1 },
+  { price: 450000, beds: 2, baths: 1.5 }
+];
+var filteredHomes = [];
+
+for (var i = 0; i < homes.length; i++) {
+  if (homes[i].price < 600000) {
+    filteredHomes.push(homes[i]);
+  }
+}
+
+console.log(filteredHomes);</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6: filter</h3>
+							<pre><code contenteditable class ="javascript">var homes = [
+  { price: 500000, beds: 2, baths: 1 },
+  { price: 600000, beds: 3, baths: 1 },
+  { price: 450000, beds: 2, baths: 1.5 }
+];
+
+var filteredHomes = homes.filter(function(home) {
+  if (home.price < 600000) {
+    return home;
+  }
+});
+
+console.log(filteredHomes);</code></pre>
+						</div>
+					</div>
+					<p class="small orange fragment">No need to create an empty array! 🎉</p>
+					<aside class="notes">
+						Primary difference between forEach and map: <em>forEach</em> iterates through an array but <span class="orange">doesn't return anything</span>
+					</aside>
+				</section>
+
+				<section>
+					<h2>All Array Helpers</h2>
+					<h3>Commonalities</h3>
+					<ul>
+						<li class="fragment">Iterator functions</li>
+					</ul>
+					<p><img src="dist/img/iterator-functions.svg" alt="Iterator functions" style="margin:0;" /></p>
+				</section>
+				<!-- TODO: Is this worth including? -->
+				<section>
+					<h2>Iterator Functions</h2>
+					<p>All iterator functions receive three <span class="green">optional</span> arguments in this order:</p>
+					<ul>
+						<li class="fragment">the <span class="orange">current element</span> in the array</li>
+						<li class="fragment">the <span class="orange">index</span> of that element</li>
+						<li class="fragment">the <span class="orange">array</span> being traversed</li>
+					</ul>
+					<pre class="fragment"><code contenteditable class ="javascript">function iteratorFunction(current, index, arr) {
+  console.log(current + ' is at index ' + index);
+  console.log(arr);
+}</code></pre>
+
 				</section>
 
 				<!-- Terms -->

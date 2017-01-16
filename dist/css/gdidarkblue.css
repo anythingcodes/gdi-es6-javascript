@@ -236,7 +236,18 @@ h1, h2, h3, h4, h5, h6 {
   background: #333;
   color: white;
   padding: 5px 10px;
-  font-weight: bold; }
+  font-weight: bold;
+  white-space: pre-wrap;
+  text-align: left;
+  font-size: 65%; }
+
+.reveal .halfblock code {
+  font-size: 17px; }
+.reveal .halfblock h2, .reveal .halfblock h3, .reveal .halfblock h4, .reveal .halfblock h5 {
+  text-align: center; }
+
+.reveal * + .clear {
+  margin-top: 2em; }
 
 .reveal ul, .reveal ol {
   text-align: left;
@@ -247,9 +258,6 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   list-style-type: square;
   margin-bottom: 20px; }
-
-code {
-  text-align: left; }
 
 /*********************************************
  * Accessibility
@@ -287,19 +295,25 @@ code {
   color: #fff; }
   .reveal .activity a {
     color: #eee; }
+  .reveal .activity h1, .reveal .activity h2, .reveal .activity h3, .reveal .activity h4, .reveal .activity h5 {
+    color: #fff; }
   .reveal .activity h3 {
-    color: #fff;
     margin-bottom: 1em; }
   .reveal .activity h2:after {
     content: ' \1F4BB'; }
-  .reveal .activity img {
-    background: rgba(255, 255, 255, 0.3); }
   .reveal .activity .halfblock {
     text-align: center; }
+
+.reveal .activity__challenge {
+  color: #5C4884; }
+  .reveal .activity__challenge h1, .reveal .activity__challenge h2, .reveal .activity__challenge h3, .reveal .activity__challenge h4, .reveal .activity__challenge h5, .reveal .activity__challenge h6 {
+    color: #5C4884; }
 
 .reveal .solution {
   display: none;
   font-size: .8em;
   font-weight: bold; }
+  .reveal .solution.solution__lesson-1 {
+    display: inline-block; }
 
 /*# sourceMappingURL=gdidarkblue.css.map */
