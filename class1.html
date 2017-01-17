@@ -492,12 +492,8 @@ console.log(activeUsers);</code></pre>
 					<p>
 						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/LxRqaW?editors=1010" target="_blank">View Solution</a>
 					</p>
-
-
 					<p class="clear blue small" style="background-color: #fff;border: 1px solid black;padding: 5px 0;margin:15px 0"><strong>Tip:</strong> Try to use more than one array helper</p>
 					<p>&nbsp;</p>
-
-
 				</section>
 
 				<section class="activity__challenge" data-background="#d2ccfc">
@@ -514,11 +510,11 @@ console.log(activeUsers);</code></pre>
 						</div>
 						<div class="halfblock">
 							<p class="small">Reject should work opposite to filter; if a function returns <code>true</code>, the item should <em>not</em> be included in the new array, for example:<br />&nbsp;</p>
-							<pre><code contenteditable class ="javascript" >var numbers = [ 5, 10, 15, 20 ];
+							<pre><code contenteditable class ="javascript" >var numbers = [ 5, 10, 15, 17, 18, 20 ];
 var lessThanEighteen = reject(numbers, function(number) {
   return number >= 18;
 });
-console.log(lessThanEighteen); // returns [ 5, 10, 15 ];</code></pre>
+console.log(lessThanEighteen); // returns [ 5, 10, 15, 17 ];</code></pre>
 
 						</div>
 					</div>
@@ -526,6 +522,65 @@ console.log(lessThanEighteen); // returns [ 5, 10, 15 ];</code></pre>
 					<div>
 						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/VPmZNz?editors=0012" target="_blank">View Solution</a>
 					</div>
+				</section>
+
+				<section>
+					<h2>find</h2>
+					<p>Iterates though an array <span class="green">until a specific object is found</span></p>
+					<p class="fragment"><code>var matchingObject = arr.find(iteratorFunction);</code></p>
+					<p class="fragment">When the iterator function returns <span class="blue">true</span>, the corresponding object is returned</p>
+					<div class="clear fragment">
+						<div class="halfblock">
+							<h3 class="green">ES5</h3>
+							<pre><code contenteditable class ="javascript">var jobs = [
+  { title: 'Electrician' },
+  { title: 'Developer' },
+  { title: 'Barista' }
+];
+var job;
+for (var i = 0; i < jobs.length; i++) {
+  if (jobs[i].title === 'Developer') {
+    job = jobs[i];
+    break;
+  }
+}
+console.log(job); // returns { title: 'Developer' }</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6</h3>
+							<pre><code contenteditable class ="javascript">var jobs = [
+  { title: 'Electrician' },
+  { title: 'Developer' },
+  { title: 'Barista' }
+];
+var job = jobs.find(function(job) {
+    return job.title === 'Developer';
+});
+console.log(job); // returns { title: 'Developer' }</code></pre>
+							<p class="small"><a href="http://codepen.io/anythingcodes/pen/ggLbMO?editors=0012" target="_blank">CodePen Example &raquo;</a></p>
+						</div>
+
+					</div>
+					<aside class="notes">
+						Don't need to use an if statement, since <code>user.active</code> returns a boolean. Also <code>home.price < 600000</code> returns a boolean.
+					</aside>
+				</section>
+
+				<section>
+					<h2>find</h2>
+					<p>
+						<img src="dist/img/array-helper__find.svg" alt="The find array helper" />
+					</p>
+					<aside class="notes">
+						Explain how, once true returns, the iteration stops and the matching object ({ title: 'Developer' }) returns to the overall find function.
+					</aside>
+				</section>
+
+				<section>
+					<h2>find</h2>
+					<p>Commonly used for single-page web apps</p>
+					<p>&nbsp;</p>
+					<p><img src="dist/img/single-page-app__find.png" alt="The find helper in a single-page web app" /></p>
 				</section>
 
 				<section>
