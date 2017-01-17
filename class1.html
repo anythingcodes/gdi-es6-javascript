@@ -526,9 +526,8 @@ console.log(lessThanEighteen); // returns [ 5, 10, 15, 17 ];</code></pre>
 
 				<section>
 					<h2>find</h2>
-					<p>Iterates though an array <span class="green">until a specific object is found</span></p>
+					<p>Iterates though an array until an iterator function returns <span class="blue">true</span>, then <span class="green">returns the corresponding object</span></p>
 					<p class="fragment"><code>var matchingObject = arr.find(iteratorFunction);</code></p>
-					<p class="fragment">When the iterator function returns <span class="blue">true</span>, the corresponding object is returned</p>
 					<div class="clear fragment">
 						<div class="halfblock">
 							<h3 class="green">ES5</h3>
@@ -544,7 +543,7 @@ for (var i = 0; i < jobs.length; i++) {
     break;
   }
 }
-console.log(job); // returns { title: 'Developer' }</code></pre>
+console.log(job); // { title: 'Developer' }</code></pre>
 						</div>
 						<div class="halfblock fragment">
 							<h3 class="green">ES6</h3>
@@ -556,7 +555,7 @@ console.log(job); // returns { title: 'Developer' }</code></pre>
 var job = jobs.find(function(job) {
     return job.title === 'Developer';
 });
-console.log(job); // returns { title: 'Developer' }</code></pre>
+console.log(job); // { title: 'Developer' }</code></pre>
 							<p class="small"><a href="http://codepen.io/anythingcodes/pen/ggLbMO?editors=0012" target="_blank">CodePen Example &raquo;</a></p>
 						</div>
 
