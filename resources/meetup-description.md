@@ -4,7 +4,7 @@ If you've programmed in JavaScript, you've likely been coding in ES5. But there'
 
 Using ES6 will impress your fellow coders and interviewers. It also gives you an edge in the web development industry, since it's used heavily in popular modern frameworks such as React.js, Angular 2, and Vue.js.
 
-Through hands-on coding exercises, we'll use ES6 in practical, everyday situations and reformat old ES5 JavaScript to its nice new ES6 format. We'll also talk about ES7, a minor release that contains even more helpful features. If you haven’t learned ES6 yet, the time is now.
+Through hands-on coding exercises, we'll use ES6 in practical, everyday situations and reformat old ES5 JavaScript to its nice new ES6 format. We'll also talk about ES7, a minor release that contains even more helpful features. If you haven’t learned ES6 yet, this is your chance.
 
 ## Dates
 
