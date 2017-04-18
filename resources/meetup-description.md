@@ -1,8 +1,8 @@
 # Getting Started with ES6 JavaScript
 
-If you've programmed with JavaScript, you've likely been coding in ES5. But there's a new release in town: ES6. The ES6 release is a radical jump forward for the language. It contains exciting new features that will make your code cleaner, more scalable, easier to read, faster, and more professional.
+The ES6 release is a radical jump forward for the JavaScript language. Through new features, ES6 offers tons of new capabilities and will drastically reduce the number of lines of code you write. Through hands-on coding exercises, we'll use ES6 in practical, everyday situations and review how you can integrate ES6 with your current workflow.
 
-Using ES6 will impress your fellow coders and interviewers. Through hands-on coding exercises, we'll use ES6 in practical, everyday situations. If you haven’t learned ES6 yet, this is your chance.
+Using ES6 will impress your fellow coders and interviewers. It also gives you an edge in the web development industry, since it's used heavily in popular modern frameworks such as React.js, Angular 2, and Vue.js. If you haven’t learned ES6 yet, this is your chance.
 
 ## Dates
 
