@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 				banner: '<%= meta.banner %>\n'
 			},
 			build: {
-				src: 'src/js/reveal.js',
+				src: 'src/js/*.js',
 				dest: 'dist/js/reveal.min.js'
 			}
 		},
@@ -106,9 +106,9 @@ module.exports = function(grunt) {
 
 		watch: {
 			main: {
-				files: [ 'Gruntfile.js', 'js/reveal.js', 'src/css/reveal.css' ],
-				tasks: 'default'
-			},
+				files: [ 'Gruntfile.js', 'src/**/*.js', 'src/**/*.scss' ],
+				tasks:  [ 'jshint', 'sass', 'postcss', 'uglify' ]
+            },
 			theme: {
 				files: [ 'src/css/theme/source/**/*.scss', 'src/css/theme/template/*.scss' ],
 				tasks: 'themes'
@@ -118,6 +118,7 @@ module.exports = function(grunt) {
 		browserSync: {
 			bsFiles: {
 				src : [
+					'dist/js/**/*.js',
 					'dist/css/**/*.css',
 					'*.html'
 				]

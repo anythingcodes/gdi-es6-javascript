@@ -236,18 +236,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .reveal code {
   font-family: "Courier New";
-  background: $gdiDarkGray;
+  background: #000;
   color: white;
   padding: 5px 10px;
   font-weight: bold;
   white-space: pre-wrap;
   text-align: left;
   font-size: 65%;
+  &.error {
+    color: #ff684b;
+  }
 }
 
 .reveal .halfblock {
   code {
-    font-size: 17px;
+    font-size: .6em;
   }
   h2, h3, h4, h5 {
     text-align: center;

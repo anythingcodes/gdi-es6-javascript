@@ -42,7 +42,7 @@
 		<![endif]-->
 	</head>
 
-	<body>
+	<body spellcheck="false">
 
 		<div class="reveal">
 
@@ -253,6 +253,24 @@
 						<li>Click the <code>Fork</code> button at the top</li>
 						<li>Edit away! Your changes will save to a new pen in your CodePen account</li>
 					</ol>
+				</section>
+
+				<section>
+
+					<div class="transpiler clear" onLoad="bindEvents(this)">
+						<div class="halfblock">
+
+							<h3 class="green">Input</h3>
+							<pre><code contenteditable class ="javascript transpiler__input">const getMessage = () => 'Hello World';</code></pre>
+						</div>
+						<div class="halfblock">
+							<h3 class="green">Transformed code using Babel</h3>
+							<pre><code class="javascript transpiler__output">Waiting...</code></pre>
+						</div>
+					</div>
+
+
+
 				</section>
 
 				<section>
@@ -646,6 +664,7 @@ console.log(job); // { title: 'Developer' }</code></pre>
 
 
 		<script src="dist/js/head.min.js"></script>
+		<script src="dist/js/babel.min.js"></script>
 		<script src="dist/js/reveal.min.js"></script>
 
 		<script>
@@ -666,8 +685,7 @@ console.log(job); // { title: 'Developer' }</code></pre>
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
 
