@@ -4,7 +4,7 @@
 
 Materials and slides for a Girl Develop It ES6 JavaScript course. Includes ES7's minor additions.
 
-[View Slides](index.html) | [View Meetup Description](resources/meetup-description.md)
+[View Slides](http://anything.codes/gdi-es6-javascript) | [View Meetup Description](resources/meetup-description.md)
 
 ### Got a pull request?
 
