@@ -250,6 +250,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .reveal * + .clear {
   margin-top: 2em; }
+  .reveal * + .clear.transpiler {
+    margin-top: 1em; }
 
 .reveal ul, .reveal ol {
   text-align: left;
