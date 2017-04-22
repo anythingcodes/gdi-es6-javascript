@@ -97,36 +97,53 @@
 						<li>
 							<div class="orange"><strong>Environment</strong>
 							</div>
-							<ol>
-								<li>
-									Your own <a href="http://codepen.io" target="_blank">CodePen</a> account
-								</li>
-								<li><a href="https://nodejs.org/">Node.js</a> (version 6 or higher)</li>
-								<li>Your favorite command line application (examples include <em>Terminal</em>, <em>cmd</em>, <em>X11</em>, and <em>Git Bash</em>)<p>&nbsp;</p></li>
-							</ol>
+							<ul>
+								<!--<li>-->
+									<!--Your own <a href="http://codepen.io" target="_blank">CodePen</a> account-->
+								<!--</li>-->
+								<li><a href="https://nodejs.org/">Node.js</a> (version 6 or higher)<p>&nbsp;</p></li>
+								<li>An optional <a href="http://codepen.io" target="_blank">CodePen</a> account</li>
+							</ul>
+						</li>
+						<li>
+							<div class="orange"><strong>Command Line Interface (your preference)</strong></div>
+							<ul>
+								<li><em>Terminal</em>, <em>cmd</em>, <em>X11</em>, and <em>Git Bash</em>, etc.<p>&nbsp;</p></li>
+							</ul>
 						</li>
 						<li>
 							<div class="orange"><strong>Text Editor (your preference)</strong>
 							</div>
 							<ul>
-								<li>Mac: <a href="https://atom.io/" target="_blank">Atom</a>, <a href="http://www.sublimetext.com/2" target="_blank" class="roll"><span data-title="SublimeText">SublimeText</span></a>, <a href="http://www.barebones.com/products/textwrangler" target="_blank" class="roll"><span data-title="TextWrangler">TextWrangler</span></a>
-								</li>
-								<li>Windows: <a href="https://atom.io/" target="_blank">Atom</a>, <a href="http://www.sublimetext.com/2" target="_blank" class="roll"><span data-title="SublimeText">SublimeText</span></a>, <a href="https://notepad-plus-plus.org/download/v6.8.3.html" target="_blank" class="roll"><span data-title="Notepad++">Notepad++</span></a>
-								</li>
-								<li>Linux: <a href="https://atom.io/" target="_blank">Atom</a>, <a href="http://www.sublimetext.com/2" target="_blank" class="roll"><span data-title="SublimeText">SublimeText</span></a>, <a href="http://www.jedit.org/" target="_blank" class="roll"><span data-title="jEdit">jEdit</span></a>, <a href="https://wiki.gnome.org/Apps/Gedit#Download" target="_blank" class="roll"><span data-title="gedit">gedit</span></a>
+								<li><a href="https://atom.io/" target="_blank">Atom</a>, <a href="http://www.sublimetext.com/2" target="_blank"><span data-title="SublimeText">SublimeText</span></a>, <a href="https://www.jetbrains.com/webstorm/" target="_blank"><span data-title="WebStorm">WebStorm</span></a>, etc.
 								</li>
 							</ul>
 						</li>
 					</ul>
-					<aside class="notes">Ask if everyone was able to download everything. If not, no big deal. download now.</aside>
+					<aside class="notes">Ask if everyone was able to download everything. If not, no big deal. download now. CodePen recommended if they want to fork the practice exercises and save for later.</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activity</h2>
+					<h3>Node.js Check</h3>
+					<ol>
+						<li>Open your favorite command line application (such as <em>Terminal</em> or <em>cmd</em>)</li>
+						<li>Type in <code>node -v</code> and press <em>Enter</em></li>
+						<li>If your version is <em>6.0.0</em> or above, you're good to go!</li>
+					</ol>
+
+					<p><img src="dist/img/nodejs.png" alt="NodeJS logo" style="max-height: 150px;background-color:#fff;" /></p>
+					<p class="small"><em>No luck? No problem &mdash; we won't be using Node.js until a later session. See a TA or instructor after class and we'll help you out!</em></p>
 				</section>
 
 				<section>
 					<h2>History</h2>
-					<p><span class="orange">ES6</span> = ECMAScript 2015</p>
-					<p><span class="orange">ES7</span> = ECMAScript 2016</p>
-					<p><span class="orange">ES.Next</span> = Any upcoming version of ECMAScript</p>
 					<p><br /><img src="dist/img/history-es6.png" alt="The history of ECMAScript and JavaScript" /></p>
+					<ul>
+						<li class="fragment"><span class="orange">2015:</span> <span class="blue">ES6</span>, a.k.a. ECMAScript 2015</li>
+						<li class="fragment"><span class="orange">2016:</span> <span class="blue">ES7</span>, a.k.a. ECMAScript 2016</li>
+						<li class="fragment"><span class="orange">ES.Next</span> &mdash; The next upcoming release of ECMAScript</li>
+					</ul>
 
 					<aside class="notes">
 						<ul>
@@ -170,51 +187,69 @@
 				</section>
 
 				<section>
-					<h2>Why use ES6 and ES7?</h2>
-				</section>
-
-				<section class="activity" data-background="#00A9B4">
-					<h2>Activity</h2>
-					<h3>Node.js Check</h3>
-					<ol>
-						<li>Open your favorite command line application (such as <em>Terminal</em> or <em>cmd</em>)</li>
-						<li>Type in <code>node -v</code> and press <em>Enter</em></li>
-						<li>If your version is <em>6.0.0</em> or above, you're good to go!</li>
-					</ol>
-
-					<p><img src="dist/img/nodejs.png" alt="NodeJS logo" style="max-height: 150px;background-color:#fff;" /></p>
-					<p class="small"><em>No luck? No problem &mdash; we won't be using Node.js until a later session. See a TA or instructor after class and we'll help you out!</em></p>
-				</section>
-
-				<!--<section>
-					<h2>The Pros</h2>
-					<span class="green">Tons</span> of new features that will help us:
-					<p>&nbsp;</p>
-					<ul>
-						<li class="fragment">Cut down on unnecessary code</li>
-						<li class="fragment">Load pages and apps faster</li>
-						<li class="fragment">Make our code much cleaner and easy to read, which is perfect for developing in a team setting</li>
-						<li class="fragment">More easily follow best coding practices</li>
-						<li class="fragment">Stay ahead of the curve, professionally</li>
+					<h2>Why use ES6?</h2>
+					<ul style="font-size:90%;">
+						<li class="fragment">Simpler, less error-prone syntax</li>
+						<li class="fragment">Easier for other developers to pick up and understand your code</li>
+						<li class="fragment">Enforces best coding practices</li>
+						<li class="fragment">Top JavaScript libraries will be written in ES6. If you aren't familiar with ES6, you'll be at a disadvantage when trying to read documentation and build new features.</li>
+						<li class="fragment">Integrates nicely with modern build tools (WebPack, Gulp, Grunt, etc.)</li>
 					</ul>
+
+					<p class="fragment"><br /><span class="orange">🌟 Above all, it's the new standard.</span> This means that, in the near future, ES6 will be standard in each browser.</p>
 					<aside class="notes">
-						Ultimately, makes us better, more professional developers. If you bust out ES6/7 in an interview, they're going to know you're staying ahead of the curve.
+
 					</aside>
 				</section>
 
 				<section>
-					<h2>The Cons</h2>
-					<ul>
-						<li class="fragment"><em class="blue">Wait &mdash; no cross-browser issues?</em> 😱
-							<ul>
-								<li class="fragment"><span class="blue">Of course there are!</span> We'll use <span class="green">Babel</span>, a <span class="orange">compiler</span> that transforms our ES6/ES7 code into ES5. Enables us to use futuristic ES6/ES7 features without worrying about browser support!</li>
-							</ul>
-						</li>
-					</ul>
+					<h2>Transpiling</h2>
+					<img src="dist/img/transpiling.svg" alt="Transpiling" />
+					<div class="transpiler clear">
+						<div class="halfblock">
+							<h3 class="green">Before</h3>
+							<pre><code contenteditable class ="javascript transpiler__input">const getMessage = () => 'Hello World';</code></pre>
+						</div>
+						<div class="halfblock">
+							<h3 class="green">After</h3>
+							<pre><code class="javascript transpiler__output">Waiting...</code></pre>
+						</div>
+					</div>
+					<p class="fragment">You and your team can focus on writing readable, less error-prone code in less lines</p>
 					<aside class="notes">
-						Browsers don’t yet implement natively a lot of ES6+ features, and developers want to innovate on what JavaScript is. This means they’ve gone to building tools like Babel that implement futuristic JavaScript features and compile down to ES5.
+						Enforces good coding practices behind the scenes (<code>'use strict';</code>). Allows you to focus on writing readable code in less lines. Build tools (e.g. WebPack) integrate nicely with this workflow and can be used to minify the ES5 result, add linting, add prefixes to CSS automatically, etc. [[[Browsers don’t yet implement natively a lot of ES6+ features, and developers want to innovate on what JavaScript is. This means they’ve gone to building tools like Babel that implement futuristic JavaScript features and compile down to ES5.]]]
 					</aside>
-				</section>-->
+				</section>
+
+				<section>
+					<!-- TODO -->
+					<h2>Transpiling Setup</h2>
+				</section>
+
+				<section data-background="#f05b62">
+					<h1 style="color: #fafafa;font-size:3.7em;">New Variable Declarations</h1>
+				</section>
+
+				<section>
+					<h2>let</h2>
+				</section>
+
+				<section>
+					<h2>const</h2>
+				</section>
+
+				<section>
+					<div class="transpiler clear">
+						<div class="halfblock">
+							<h3 class="green">Before</h3>
+							<pre><code contenteditable class ="javascript transpiler__input">const getMessage = () => 'Hello World';</code></pre>
+						</div>
+						<div class="halfblock">
+							<h3 class="green">After</h3>
+							<pre><code class="javascript transpiler__output">Waiting...</code></pre>
+						</div>
+					</div>
+				</section>
 
 				<section data-background="#f05b62">
 					<h1 style="color: #fafafa;font-size:3.7em;">Array Helpers</h1>
@@ -254,28 +289,7 @@
 					<!--</ol>-->
 				<!--</section>-->
 
-				<section>
-					<h2>Transpiling</h2>
-					<div class="transpiler clear">
-						<div class="halfblock">
 
-							<h3 class="green">Input</h3>
-							<pre><code contenteditable class ="javascript transpiler__input">const getMessage = () => 'Hello World';</code></pre>
-						</div>
-						<div class="halfblock">
-							<h3 class="green">Transformed with Babel</h3>
-							<pre><code class="javascript transpiler__output">Waiting...</code></pre>
-						</div>
-
-
-
-					</div>
-
-
-
-
-
-				</section>
 
 				<section>
 					<h2>forEach</h2>
