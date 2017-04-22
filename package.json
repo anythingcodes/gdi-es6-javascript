@@ -1,5 +1,5 @@
 {
-  "name": "reveal.js",
+  "name": "gdi-es6-javascript",
   "version": "2.6.2",
   "description": "Slides for a Girl Develop It ES6 JavaScript course",
   "homepage": "http://anything.codes/gdi-es6-javascript",
@@ -43,8 +43,7 @@
   },
   "licenses": [
     {
-      "type": "MIT",
-      "url": "https://github.com/hakimel/reveal.js/blob/master/LICENSE"
+      "type": "MIT"
     }
   ]
 }
