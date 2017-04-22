@@ -25,14 +25,14 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 
 | Slides | Hours | Format | Content Creator | Additional Notes |
 | ----- |:-----:| -----:| -----:| -----:|
-| [View](http://anything.codes/gdi-es6-javascript) | 6 | Three 2-hour classes | [@anythingcodes](http://github.com/anythingcodes) | Print cheatsheets for each class — PDFs can be found in the [`/resources/cheatsheets`](/resources/cheatsheets) directory. Originally run for GDI Boston. |
+| [View](http://anything.codes/gdi-es6-javascript) | 8 | Two 2-hour classes | [@anythingcodes](http://github.com/anythingcodes) | Print cheatsheets for each class — PDFs can be found in the [`/resources/cheatsheets`](/resources/cheatsheets) directory. Originally run for GDI Boston. |
 
 
 ##### Meetup Content
 
 | Title | Suggested Cost | Suggested # of TAs | Questions for Attendees | Description and Prereqs | Example URL |
 | ----- |:-----:| -----:| -----:| -----:| -----:|
-| Getting Started with ES6 JavaScript | $60/student | 2 | Have you used Node.js and npm before? | [View](resources/meetup-description.md) | TBA |
+| Getting Started with ES6 JavaScript | $90/student | 2 | Have you used Node.js before? | [View](resources/meetup-description.md) | TBA |
 
 ---
 
@@ -53,7 +53,14 @@ Make CSS changes to the source files, **not** the compiled CSS files (i.e. **not
 - All CodePen solutions have a class of `solution solution__lesson-X` where X is the lesson number (1, 2, or 3) and are hidden from the slides by default. When you're ready to reveal solutions for a given class, uncomment out `display: inline;` in the `src/css/theme/source/gdidarkblue.scss` file. Typically solutions are revealed after each lesson ends.
 
 ### How to Use Reveal.js Slides
-Please read our slide creation guidelines in [the wiki](https://github.com/girldevelopit/gdi-slides-template/wiki). Be sure to make your course's content as reusable as possible -- remove any information about yourself or your chapter.
+
+**Key Functions:**
+- Enter speaker view by pressing `s`
+- View PDF/print mode by going to `http://yourslidesurl/?print-pdf` 
+
+**Additional Info:**
+
+Please read our slide creation guidelines in [the wiki](https://github.com/girldevelopit/gdi-slides-template/wiki). Be sure to make your course's content as reusable as possible &mdash; remove any information about yourself or your chapter.
 
 
 

@@ -12,6 +12,10 @@ This class takes place over the following dates:
 
 **Day, Month Xth, H:MM - H:MM tt**
 
+**Day, Month Xth, H:MM - H:MM tt**
+
+**Day, Month Xth, H:MM - H:MM tt**
+
 Your payment registers you for the entire series.
 
 ## Takeaways
