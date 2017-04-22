@@ -4,6 +4,8 @@
 
 Materials and slides for a Girl Develop It ES6 JavaScript course. Includes ES7's minor additions.
 
+[View Slides](index.html) | [View Meetup Description](resources/meetup-description.md)
+
 ### Got a pull request?
 
 Pull requests are encouraged. Do your part to help us keep this curriculum up-to-date and relevant!
@@ -25,14 +27,14 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 
 | Slides | Hours | Format | Content Creator | Additional Notes |
 | ----- |:-----:| -----:| -----:| -----:|
-| [View](http://anything.codes/gdi-es6-javascript) | 8 | Two 2-hour classes | [@anythingcodes](http://github.com/anythingcodes) | Print cheatsheets for each class — PDFs can be found in the [`/resources/cheatsheets`](/resources/cheatsheets) directory. Originally run for GDI Boston. |
+| [View](http://anything.codes/gdi-es6-javascript) | 8 | Four 2-hour classes | [@anythingcodes](http://github.com/anythingcodes) | Print cheatsheets for each class — PDFs can be found in the [`/resources/cheatsheets`](/resources/cheatsheets) directory. Originally run for GDI Boston. |
 
 
 ##### Meetup Content
 
-| Title | Suggested Cost | Suggested # of TAs | Questions for Attendees | Description and Prereqs | Example URL |
+| Title | Suggested Cost | Suggested # of TAs | Questions for Attendees | Meetup Description | Example URLs |
 | ----- |:-----:| -----:| -----:| -----:| -----:|
-| Getting Started with ES6 JavaScript | $90/student | 2 | Have you used Node.js before? | [View](resources/meetup-description.md) | TBA |
+| Getting Started with ES6 JavaScript | $90/student | 2 | Have you used Node.js before? | [View](resources/meetup-description.md) | [View](https://www.meetup.com/Girl-Develop-It-Boston/events/239315429/) |
 
 ---
 
