@@ -270,23 +270,23 @@
 					<ol class="small">
 						<li>
 							<strong class="green">Function Scopes:</strong>
-							<pre><code>function() {
+							<pre><code contenteditable class="javascript">function() {
   // code
 }</code></pre>
 							<p>Code wrapped in a function effectively "hides" any enclosed variable or function declarations from the outside scope</p>
 						</li>
 						<li class="fragment">
 							<strong class="green">Block Scopes:</strong>
-							<pre><code class="javascript">{
+							<pre><code contenteditable class="javascript">{
   // code
 }
 for (var i = 0; i < 5; i++) {
   console.log(i);
 }</code></pre>
-							<p>Declaring variables as close as possible, as local as possible, to where they will be used</p>
+							<p>Declaring variables as close as possible, as local as possible, to where they will be used. <code>{ }</code> creates a new scope.</p>
 						</li>
 					</ol>
-					<p style="margin-top:.3em;" class="fragment">Before ES6, you could only use function scopes</p>
+					<p style="margin-top:.3em;" class="fragment">Before ES6, you could <span class="orange">only use function scopes</span></p>
 					<aside class="notes">
 						Most languages use block scopes. This made programming in JavaScript unintuitive and inconsistent for many who were used to block scoping.
 					</aside>
@@ -295,7 +295,7 @@ for (var i = 0; i < 5; i++) {
 				<section>
 					<h2>Function Scoping Problems</h2>
 					<p><code>var</code> variables are <span class="green">function-scoped</span>.</p>
-					<p>They ignore block-scoping.</p>
+					<p>They ignore block scoping.</p>
 					<div>
 						<p data-height="120" data-theme-id="dark" data-slug-hash="GmqavN" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping: ES5 (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/GmqavN/">Block-scoping: ES5 (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/zwBQEX?editors=0010" target="_blank">View Solution</a>
@@ -305,7 +305,7 @@ for (var i = 0; i < 5; i++) {
 
 					<div class="fragment">
 						<p data-height="120" data-theme-id="dark" data-slug-hash="RVRmOV" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping: let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/RVRmOV/">Block-scoping: let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/zwBQEX?editors=0010" target="_blank">View Solution</a>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/vmKoNQ?editors=0011" target="_blank">View Solution</a>
 					</div>
 
 					<aside class="notes">
@@ -317,17 +317,16 @@ for (var i = 0; i < 5; i++) {
 				</section>
 
 				<section>
-					<h2>let</h2>
-					<p>The <code>let</code> declaration:</p>
-					<p>&nbsp;</p>
+					<h2><code>let</code></h2>
 					<ul>
-						<li>block-scoped, unlike <code>var</code></li>
-						<li>prevents errors before they happen</li>
+						<li><span class="green">block-scoped</span>, unlike <code>var</code></li>
 						<li>value <span class="green">can</span> be reassigned</li>
 					</ul>
-					<p>&nbsp;</p>
-					<div style="height:160px">
-						<p data-height="160" data-theme-id="dark" data-slug-hash="WjxBLy" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping: let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/WjxBLy/">Block-scoping: let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					<p data-height="120" data-theme-id="dark" data-slug-hash="WjxBLy" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping with let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/WjxBLy/">Block-scoping with let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/WjxVQb?editors=0011" target="_blank">View Solution</a>
+					<div class="fragment">
+						<p data-height="120" data-theme-id="dark" data-slug-hash="LyZwRr" data-default-tab="html,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping with let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/LyZwRr/">Block-scoping with let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/OmXKRK?editors=0011" target="_blank">View Solution</a>
 					</div>
 				</section>
 
