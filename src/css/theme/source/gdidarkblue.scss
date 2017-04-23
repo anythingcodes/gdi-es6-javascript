@@ -248,6 +248,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.reveal p code {
+  line-height: 1;
+  display: inline;
+  vertical-align: middle;
+}
+
 .reveal .halfblock {
   code {
     font-size: .6em;
@@ -350,4 +356,40 @@ h1, h2, h3, h4, h5, h6 {
   &.solution__lesson-3 {
     // display: inline-block;
   }
+}
+
+/* Table Styles */
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding-right: .3em;
+}
+
+.reveal table th {
+  font-weight: bold;
+}
+
+table.data{
+  border-collapse: collapse;
+  font-size: .8em;
+  max-width: none;
+  width: 100%;
+}
+table.data th{
+  text-transform: uppercase;
+  text-align:center;
+}
+table.data th, table.data td, table.data tr{
+  padding: 1em;
+  text-align:center;
+}
+table.data.compact th, table.data.compact td, table.data.compact tr{
+  padding: .5em;
+  font-size: .9em;
+  line-height: 1.4;
+}
+.table.data.compact td, table.data.compact th{padding:0}
+table.data tr td:first-child{
+  text-align: left;
 }
