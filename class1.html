@@ -138,15 +138,19 @@
 
 				<section>
 					<h2>History</h2>
-					<p><br /><img src="dist/img/history-es6.png" alt="The history of ECMAScript and JavaScript" /></p>
+					<p>JavaScript's standard referred to as <span class="green">ECMAScript</span>, abbreviated <span class="green">ES</span>. Was eventually versioned by ordinal number (e.g. ES<span class="blue">3</span>).</p>
+					<p class="fragment"><img src="dist/img/history-es6.png" alt="The history of ECMAScript and JavaScript" /></p>
+					<p>&nbsp;</p>
+					<h3 class="fragment">2015 and Beyond</h3>
 					<ul>
-						<li class="fragment"><span class="orange">2015:</span> <span class="blue">ES6</span>, a.k.a. ECMAScript 2015</li>
-						<li class="fragment"><span class="orange">2016:</span> <span class="blue">ES7</span>, a.k.a. ECMAScript 2016</li>
+						<li class="fragment"><span class="orange">2015:</span> <span class="blue">ES6</span> / ECMAScript 2015 / ES2015</li>
+						<li class="fragment"><span class="orange">2016:</span> <span class="blue">ES7</span> / ECMAScript 2016 / ES2016</li>
 						<li class="fragment"><span class="orange">ES.Next</span> &mdash; The next upcoming release of ECMAScript</li>
 					</ul>
 
 					<aside class="notes">
 						<ul>
+							<li>ES4 never released due to political reasons we won't get into :)</li>
 							<li>ES6 is sometimes called ECMAScript 2015 because it was released in 2015. ES6 and ECMAScript are the same thing. This is true for ES7, a.k.a. ECMAScript 2016.</li>
 							<li>ES6 gets the most attention because it was a huge spec overhaul. It introduced a ton of new features. ES7 and all versions going forward will be smaller, more incremental changes; ES7 only introduced two new features, so we'll discuss them as part of this class.</li>
 						</ul>
@@ -190,12 +194,12 @@
 					<h2>Why use ES6?</h2>
 					<ul style="font-size:90%;">
 						<li class="fragment">Simpler, less error-prone syntax</li>
-						<li class="fragment">Easier for other developers to pick up and understand your code</li>
+						<li class="fragment">Easier for other developers to understand your code</li>
 						<li class="fragment">Enforces best coding practices</li>
 						<li class="fragment">Top JavaScript libraries will be written in ES6. If you aren't familiar with ES6, you'll be at a disadvantage when trying to read documentation and build new features.</li>
-						<li class="fragment">Integrates nicely with modern build tools (WebPack, Gulp, Grunt, etc.)</li>
+						<li class="fragment">Backwards compatible: Take advantage of new features without worrying about ripping apart existing projects</li>
+						<li class="fragment">Integrates nicely with modern build tools &mdash; easily add linting, minification, and other handy optimizations</li>
 					</ul>
-
 					<p class="fragment"><br /><span class="orange">🌟 Above all, it's the new standard.</span> This means that, in the near future, ES6 will be standard in each browser.</p>
 					<aside class="notes">
 
@@ -204,6 +208,8 @@
 
 				<section>
 					<h2>Transpiling</h2>
+					<h3>Transpiling = Transformation + Compiling</h3>
+					<p>&nbsp;</p>
 					<img src="dist/img/transpiling.svg" alt="Transpiling" />
 					<div class="transpiler clear">
 						<div class="halfblock">
@@ -215,15 +221,24 @@
 							<pre><code class="javascript transpiler__output">Waiting...</code></pre>
 						</div>
 					</div>
-					<p class="fragment">You and your team can focus on writing readable, less error-prone code in less lines</p>
-					<aside class="notes">
-						Enforces good coding practices behind the scenes (<code>'use strict';</code>). Allows you to focus on writing readable code in less lines. Build tools (e.g. WebPack) integrate nicely with this workflow and can be used to minify the ES5 result, add linting, add prefixes to CSS automatically, etc. [[[Browsers don’t yet implement natively a lot of ES6+ features, and developers want to innovate on what JavaScript is. This means they’ve gone to building tools like Babel that implement futuristic JavaScript features and compile down to ES5.]]]
+					<p>&nbsp;</p>
+					<aside class="notes">You and your team can focus on writing readable, less error-prone code in less lines. <code>src</code> and <code>dist</code> folder workflow. Enforces good coding practices behind the scenes (<code>'use strict';</code>). Allows you to focus on writing readable code in less lines. Build tools (e.g. WebPack) integrate nicely with this workflow and can be used to minify the ES5 result, add linting, add prefixes to CSS automatically, etc. [[[Browsers don’t yet implement natively a lot of ES6+ features, and developers want to innovate on what JavaScript is. This means they’ve gone to building tools like Babel that implement futuristic JavaScript features and compile down to ES5.]]]
 					</aside>
 				</section>
 
 				<section>
+					<h2>Benefits to Transpiling</h2>
+					<ul>
+						<li class="fragment">Browser support</li>
+						<li class="fragment">No need to wait for browsers/engines to catch up with the ECMAScript specification</li>
+						<li class="fragment">Focus on writing clean, easy-to-read code &mdash; compile it to a cross-browser-compatible format</li>
+					</ul>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
 					<!-- TODO -->
-					<h2>Transpiling Setup</h2>
+					<h2>Activity</h2>
+					<h3>Transpiling Setup</h3>
 				</section>
 
 				<section data-background="#f05b62">
