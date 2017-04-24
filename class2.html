@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Getting Started with ES6 and ES7 JavaScript</title>
+
+		<meta name="description" content="Materials and slides for a Girl Develop It ES6 JavaScript course. Includes ES7's minor additions.">
+		<meta name="author" content="Girl Develop It">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="dist/css/reveal.css">
+		<link rel="stylesheet" href="dist/css/gdidarkblue.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<!-- light editor --><link rel="stylesheet" href="dist/css/light.css">
+		<!-- dark editor <link rel="stylesheet" href="dist/css/dark.css">-->
+		<!-- <link rel="stylesheet" href="dist/css/zenburn.css"> -->
+
+		<link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'dist/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!-- If use the PDF print sheet so students can print slides-->
+
+		<link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<!--[if lt IE 9]>
+		<script src="dist/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body spellcheck="false">
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+        <!-- Opening -->
+				<section class="small">
+					<h1>Getting Started with ES6 and ES7 JavaScript</h1>
+					<img src="dist/img/es6-gdi.jpg" alt="ES6 and ES7 Intro Image" class="noborder"/>
+					<h3>Class 2</h3>
+				</section>
+
+				<section data-background="#f05b62">
+					<h1 style="color: #fafafa;font-size:3.7em;">Array Helpers</h1>
+				</section>
+
+				<section>
+					<h2>Array Helpers</h2>
+					<p>Convenient methods applied to arrays</p>
+					<p>&nbsp;</p>
+					<table class="data compact fragment">
+						<tr>
+							<th>Method</th>
+							<th>Parameters</th>
+							<th>Returns</th>
+						</tr>
+						<tr>
+							<td><strong>forEach</strong></td>
+							<td>function(element, index, array)</td>
+							<td>undefined <span style="color:red">&#x2717;</span></td>
+						</tr>
+						<tr>
+							<td><strong>every</strong></td>
+							<td>function(element, index, array)</td>
+							<td>true or false</td>
+						</tr>
+						<tr>
+							<td><strong>some</strong></td>
+							<td>function(element, index, array)</td>
+							<td>true or false</td>
+						</tr>
+						<tr>
+							<td><strong>filter</strong></td>
+							<td>function(element, index, array)</td>
+							<td>filtered array (i.e. items from the original array that share a common characteristic)</td>
+						</tr>
+						<tr>
+							<td><strong>map</strong></td>
+							<td>function(element, index, array)</td>
+							<td>manipulated array (i.e. each item in the original array is manipulated)</td>
+						</tr>
+						<tr>
+							<td><strong>find</strong></td>
+							<td>function(element, index, array)</td>
+							<td>1 element</td>
+						</tr>
+						<tr>
+							<td><strong>reduce</strong></td>
+							<td>function(accumulator, element, index, array), initialElement</td>
+							<td>1 reduced value</td>
+						</tr>
+					</table>
+					<aside class="notes">
+						We'll go over each of these individually, and run through exercises. Point out that reduce() is the odd one out. It takes different parameters.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Array Helpers</h2>
+					<h3>Commonalities</h3>
+				</section>
+
+				<section>
+					<h2>Array Helpers</h2>
+					<h3>Moving away from for loops</h3>
+					<ul>
+						<li>Functional programming</li>
+						<li>Readability: Easier for other devs to understand</li>
+						<li>Much more compact code</li>
+						<li>Maintainability</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>forEach</h2>
+					<p>Loop through elements in an array</p>
+					<p class="fragment"><code>arr.forEach(iteratorFunction)</code></p>
+					<div class="clear fragment">
+						<div class="halfblock">
+							<h3 class="green">ES5</h3>
+							<pre><code contenteditable class ="javascript">var names = ['Morgan', 'Taylor', 'Lesley'];
+
+for (var i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6: forEach</h3>
+							<pre><code contenteditable class ="javascript">var names = ['Morgan', 'Taylor', 'Lesley'];
+
+names.forEach(function(name) {
+  console.log(name);
+});</code></pre>
+						</div>
+						<p><a href="http://codepen.io/anythingcodes/pen/KagmxL?editors=0012" target="_blank">View CodePen &raquo;</a></p>
+					</div>
+				</section>
+
+				<section>
+					<h2>forEach</h2>
+					<code class="fragment">arr.forEach(iteratorFunction)</code><span class="fragment"> The iterator function runs once for each element in the array.</span>
+					<div class="fragment">
+						<p data-height="400" data-theme-id="0" data-slug-hash="ZLpKOZ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Iterator Functions" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/NdRpVX/">ES6 Iterator Functions</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					</div>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<aside class="notes">
+						Code the ES6 version in front of students. Clarify how the iterator function automatically receives the current element, in this case <code>number</code>.
+					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activities</h2>
+					<h3>Using the forEach Helper</h3>
+					<div class="clear">
+						<div class="halfblock">
+							<h6 class="light">Activity 1</h6>
+							<p data-height="350" data-theme-id="0010" data-slug-hash="mRrdEQ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: forEach #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/mRrdEQ/">ES6 Lesson 1: forEach #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/jyMOeM?editors=0010" target="_blank">View Solution</a>
+							</div>
+						</div>
+						<div class="halfblock">
+							<h6 class="light">Activity 2</h6>
+							<p data-height="350" data-theme-id="0" data-slug-hash="rjMNEJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: forEach #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/rjMNEJ/">ES6 Lesson 1: forEach #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/XpjJJq?editors=0010#0" target="_blank">View Solution</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>map</h2>
+					<p>The <em>map</em> helper <span class="green">returns an array of results</span> after iterating through an array</p>
+					<p class="fragment">You can <span class="blue">assign the resulting array</span> to a variable:<br /><code>var newArr = arr.map(iteratorFunction);</code></p>
+					<div class="clear fragment">
+						<div class="halfblock">
+							<h3 class="green">ES5</h3>
+							<pre><code contenteditable class ="javascript">var numbers = [2, 6, 10];
+var halvedNumbers = [];
+
+for (var i = 0; i < numbers.length; i++) {
+  halvedNumbers.push(numbers[i] / 2);
+}
+
+console.log(halvedNumbers); // 1, 3, 5
+</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6: map</h3>
+							<pre><code contenteditable class ="javascript" >var numbers = [2, 6, 10];
+
+var halvedNumbers = numbers.map(function(number){
+  return number / 2;
+});
+
+console.log(halvedNumbers); // 1, 3, 5
+</code></pre>
+						</div>
+						<p><a href="http://codepen.io/anythingcodes/pen/MJjoxm?editors=0012" target="_blank">View CodePen &raquo;</a></p>
+					</div>
+					<p class="small orange fragment">No need to create an empty array! 🎉</p>
+					<aside class="notes">
+						Primary difference between forEach and map: <em>forEach</em> iterates through an array but <span class="orange">doesn't return anything</span>
+					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activities</h2>
+					<h3>Using the map Helper</h3>
+					<div class="clear">
+						<div class="halfblock">
+							<h6 class="light">Activity 1</h6>
+							<p data-height="350" data-theme-id="0" data-slug-hash="RKGZQW" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: map #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/JERyKw/">ES6 Lesson 1: map #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/xgELgm?editors=0012" target="_blank">View Solution</a>
+							</div>
+						</div>
+						<div class="halfblock">
+							<h6 class="light">Activity 2</h6>
+							<p data-height="350" data-theme-id="0" data-slug-hash="JERyKw" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: map #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/JERyKw/">ES6 Lesson 1: map #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/QdKMaq?editors=0012" target="_blank">View Solution</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="activity__challenge" data-background="#d2ccfc">
+					<h2>At-Home Challenge: Implement a <code>pluck</code> function</h2>
+					<div class="clear">
+						<div class="halfblock">
+							<pre><code contenteditable class ="javascript" >function pluck(array, property) {
+  // your code here
+}</code></pre>
+							<div class="fragment small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+								<p><strong>Hint:</strong> Access a property on an object by using square bracket notation. For example:<br />&nbsp;</p>
+								<pre><code contenteditable class ="javascript" >var animal = { type: 'Dinosaur', status: 'Extinct' };
+animal['type']; // returns 'Dinosaur'</code></pre>
+							</div>
+
+						</div>
+						<div class="halfblock">
+							<p class="small">Pluck should accept an array and a string representing a property name and return an array containing that property from each object, for example:<br />&nbsp;</p>
+							<pre><code contenteditable class ="javascript" >var cats = [ { name: 'Colonel Meow' }, { name: 'Lil Bub' }, { name: 'Grumpy Cat' }];
+
+pluck(cats, 'name'); // returns ['Colonel Meow', 'Lil Bub', 'Grumpy Cat'];
+</code></pre>
+
+						</div>
+					</div>
+
+					<div>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/pRErMO?editors=0012" target="_blank">View Solution</a>
+					</div>
+				</section>
+
+				<section>
+					<h2>filter</h2>
+					<p>The <em>filter</em> helper <span class="green">returns an array of filtered elements</span></p>
+					<p class="fragment">Use an iterator function that returns <span class="blue">true</span> or <span class="orange">false</span></p>
+					<p class="fragment"><code>var newArr = arr.filter(iteratorFunction);</code></p>
+					<div class="clear fragment">
+						<div class="halfblock">
+							<h3 class="green">ES5</h3>
+							<pre><code contenteditable class ="javascript">var users = [
+  { username: 'ryan10', active: true },
+  { username: 'morgan', active: false }
+];
+var activeUsers = [];
+for (var i = 0; i < users.length; i++) {
+  if (users[i].active) {
+    activeUsers.push(users[i]);
+  }
+  return false;
+}
+console.log(activeUsers);</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6</h3>
+							<pre><code contenteditable class ="javascript">var users = [
+  { username: 'ryan10', active: true },
+  { username: 'morgan', active: false }
+];
+var activeUsers = users.filter(function(user) {
+  return user.active;
+});
+console.log(activeUsers);</code></pre>
+							<p class="small"><a href="http://codepen.io/anythingcodes/pen/mRrazP?editors=0012" target="_blank">CodePen Example &raquo;</a></p>
+							<p class="small fragment"><a href="http://codepen.io/anythingcodes/pen/LxRqOZ?editors=0012" target="_blank">CodePen example with non-boolean &raquo;</a></p>
+						</div>
+
+					</div>
+					<aside class="notes">
+						Don't need to use an if statement, since <code>user.active</code> returns a boolean. Also <code>home.price < 600000</code> returns a boolean.
+					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activities</h2>
+					<h3>Using the filter helper</h3>
+					<div class="clear">
+						<div class="halfblock">
+							<h6 class="light">Activity 1</h6>
+							<p data-height="250" data-theme-id="0" data-slug-hash="GrNKXy" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: filter #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/GrNKXy/">ES6 Lesson 1: filter #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<p>
+								<a class="solution solution__lesson-1" href="" target="_blank">View Solution</a>
+							</p>
+						</div>
+						<div class="halfblock">
+							<h6 class="light">Activity 2</h6>
+							<p data-height="250" data-theme-id="0" data-slug-hash="NdRoML" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: filter #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/NdRoML/">ES6 Lesson 1: filter #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<p>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/ggwERZ?editors=0012" target="_blank">View Solution</a>
+							</p>
+						</div>
+					</div>
+					<p class="clear blue small" style="background-color: #fff;border: 1px solid black;padding: 5px 0;margin:15px 0"><strong>Tip:</strong> Try to use more than one array helper for Activity 2</p>
+					<p>&nbsp;</p>
+				</section>
+
+				<section>
+					<h2>filter</h2>
+					<h3>Filtering API Responses</h3>
+					<p>
+						<img src="dist/img/comments-post-data.svg" alt="The data relationship between comments and posts" style="max-height: 45vh;" />
+					</p>
+
+					<p class="small">
+						<a href="https://jsonplaceholder.typicode.com/comments" target="_blank">API Response Example &raquo;</a><br /><a href="http://codepen.io/anythingcodes/pen/ggLYoX?editors=0012" target="_blank">CodePen Example &raquo;</a>
+					</p>
+
+					<aside class="notes">
+						Describe one common use case for the filter helper, including filtering JSON to only reveal the comments associated with a specific post (e.g. postId 23 for post with ID for 23). Mention that we'll code an example of this on the next slide.
+					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activities</h2>
+					<h3>Filtering API responses</h3>
+					<h6 class="light">Activity 3</h6>
+					<p data-height="250" data-theme-id="0" data-slug-hash="PWGLeg" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: filter #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/PWGLeg/">ES6 Lesson 1: filter #3</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+					<p>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/LxRqaW?editors=1010" target="_blank">View Solution</a>
+					</p>
+					<p class="clear blue small" style="background-color: #fff;border: 1px solid black;padding: 5px 0;margin:15px 0"><strong>Tip:</strong> Try to use more than one array helper</p>
+					<p>&nbsp;</p>
+				</section>
+
+				<section class="activity__challenge" data-background="#d2ccfc">
+					<h2>At-Home Challenge: Implement a <code>reject</code> function</h2>
+					<div class="clear">
+						<div class="halfblock">
+							<pre><code contenteditable class ="javascript" >function reject(array, iteratorFunction) {
+  // your code here
+}</code></pre>
+							<div class="fragment small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+								<p><strong>Hint:</strong> You may use <em>filter</em>.
+							</div>
+
+						</div>
+						<div class="halfblock">
+							<p class="small">Reject should work opposite to filter; if a function returns <code>true</code>, the item should <em>not</em> be included in the new array, for example:<br />&nbsp;</p>
+							<pre><code contenteditable class ="javascript" >var numbers = [ 5, 10, 15, 17, 18, 20 ];
+var lessThanEighteen = reject(numbers, function(number) {
+  return number >= 18;
+});
+console.log(lessThanEighteen); // returns [ 5, 10, 15, 17 ];</code></pre>
+
+						</div>
+					</div>
+
+					<div>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/VPmZNz?editors=0012" target="_blank">View Solution</a>
+					</div>
+				</section>
+
+				<section>
+					<h2>find</h2>
+					<p>Iterates though an array until an iterator function returns <span class="blue">true</span>, then <span class="green">returns the corresponding object</span></p>
+					<p class="fragment"><code>var matchingObject = arr.find(iteratorFunction);</code></p>
+					<div class="clear fragment">
+						<div class="halfblock">
+							<h3 class="green">ES5</h3>
+							<pre><code contenteditable class ="javascript">var jobs = [
+  { title: 'Electrician' },
+  { title: 'Developer' },
+  { title: 'Barista' }
+];
+var job;
+for (var i = 0; i < jobs.length; i++) {
+  if (jobs[i].title === 'Developer') {
+    job = jobs[i];
+    break;
+  }
+}
+console.log(job); // { title: 'Developer' }</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6</h3>
+							<pre><code contenteditable class ="javascript">var jobs = [
+  { title: 'Electrician' },
+  { title: 'Developer' },
+  { title: 'Barista' }
+];
+var job = jobs.find(function(job) {
+    return job.title === 'Developer';
+});
+console.log(job); // { title: 'Developer' }</code></pre>
+							<p class="small"><a href="http://codepen.io/anythingcodes/pen/ggLbMO?editors=0012" target="_blank">CodePen Example &raquo;</a></p>
+						</div>
+
+					</div>
+					<aside class="notes">
+						Don't need to use an if statement, since <code>user.active</code> returns a boolean. Also <code>home.price < 600000</code> returns a boolean.
+					</aside>
+				</section>
+
+				<section>
+					<h2>find</h2>
+					<p>
+						<img src="dist/img/array-helper__find.svg" alt="The find array helper" />
+					</p>
+					<aside class="notes">
+						Explain how, once true returns, the iteration stops and the matching object ({ title: 'Developer' }) returns to the overall find function.
+					</aside>
+				</section>
+
+				<section>
+					<h2>find</h2>
+					<p>Commonly used for single-page web apps</p>
+					<p>&nbsp;</p>
+					<p><img src="dist/img/single-page-app__find.png" alt="The find helper in a single-page web app" /></p>
+				</section>
+
+				<section>
+					<h2>All Array Helpers</h2>
+					<h3>Commonalities</h3>
+					<ul>
+						<li class="fragment">Iterator functions</li>
+					</ul>
+					<p><img src="dist/img/iterator-functions.svg" alt="Iterator functions" style="margin:0;" /></p>
+				</section>
+
+				<!-- TODO: Is this worth including? -->
+				<section>
+					<h2>Iterator Functions</h2>
+					<p>All iterator functions receive three <span class="green">optional</span> arguments in this order:</p>
+					<ul>
+						<li class="fragment">the <span class="orange">current element</span> in the array</li>
+						<li class="fragment">the <span class="orange">index</span> of that element</li>
+						<li class="fragment">the <span class="orange">array</span> being traversed</li>
+					</ul>
+					<pre class="fragment"><code contenteditable class ="javascript">function iteratorFunction(current, index, arr) {
+  console.log(current + ' is at index ' + index);
+  console.log(arr);
+}</code></pre>
+
+				</section>
+
+				<!-- Terms -->
+				<!--<section>
+					<h2>Terms</h2>
+					<ul>
+						<li>
+							<div class="green">Web design</div>
+							<div>The process of planning, structuring and creating a website</div>
+						</li>
+						<li>
+							<div class="green">Web development</div>
+							<div>The process of programming dynamic web applications</div>
+							<ul>
+								<li>
+									<div class="orange">Front end development &#128077;</div>
+									<div>The outwardly visible elements of a website or application</div>
+								</li>
+								<li>
+									<div class="green">Back end development</div>
+									<div>The inner workings and functionality of a website or application.</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						Analogy: Architect makes blueprints (designer). Carpenter makes building (developer). Shoutout to Nhori for backend development.
+					</aside>
+				</section>-->
+
+			</div>
+  		<footer>
+        <div class="copyright">
+          Getting Started with ES6 and ES7 JavaScript
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+      </footer>
+		</div>
+
+
+		<script src="dist/js/head.min.js"></script>
+		<script src="dist/js/babel.min.js"></script>
+		<script src="dist/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+		<script async src="//production-assets.codepen.io/assets/embed/ei.js"></script>
+	</body>
+</html>
