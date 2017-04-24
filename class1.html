@@ -310,41 +310,72 @@ for (var i = 0; i < 5; i++) {
 					<aside class="notes">
 						<ol>
 							<li>{ ... } is perfectly valid JavaScript, but you probably don't see it often &mdash; before ES6, it was basically useless. Not anymore!</li>
-							<li>Second problem is a common interview question. Essentially happening because the <code>for</code> loop has already completed and the variable <code>i</code> already has a value of 2.</li>
+							<li>Second problem is a common interview question. Essentially happening because there's only one <code>i</code> in the outer scope that was closed over, instead of a new <code>i</code> for each iteration's function to close over.</li>
 						</ol>
 					</aside>
 				</section>
 
 				<section>
-					<h2><code>let</code></h2>
+					<h2>The <em>let</em> Declaration</h2>
 					<ul>
-						<li><span class="blue">Block-scoped</span>, unlike <code>var</code></li>
-						<li>Value <span class="green">can</span> be reassigned</li>
+						<li class="fragment"><span class="blue">Block-scoped</span>, unlike the function-scoped <code>var</code></li>
+						<li class="fragment">Value <span class="green">can</span> be reassigned</li>
 					</ul>
-					<p data-height="120" data-theme-id="dark" data-slug-hash="WjxBLy" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping with let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/WjxBLy/">Block-scoping with let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-					<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/WjxVQb?editors=0011" target="_blank">View Solution</a>
 					<div class="fragment">
+						<p data-height="120" data-theme-id="dark" data-slug-hash="WjxBLy" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping with let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/WjxBLy/">Block-scoping with let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/WjxVQb?editors=0011" target="_blank">View Solution</a>
+					</div>
+						<div class="fragment">
 						<p data-height="120" data-theme-id="dark" data-slug-hash="LyZwRr" data-default-tab="html,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping with let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/LyZwRr/">Block-scoping with let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/OmXKRK?editors=0011" target="_blank">View Solution</a>
 					</div>
 					<p class="fragment">Way easier than using an IIFE! 🏆</p>
+					<aside class="notes">
+						<ul>
+							<li>Second example: The <code>let i</code> in the <code>for</code> header declares an <code>i</code> for each iteration of the loop. Closures created inside the loop iteration close over those per-iteration vars as expected.</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
-					<h2>const</h2>
-				</section>
-
-				<section>
-					<div class="transpiler clear">
-						<div class="halfblock">
-							<h3 class="green">Before</h3>
-							<pre><code contenteditable class ="javascript transpiler__input">const getMessage = () => 'Hello World';</code></pre>
-						</div>
-						<div class="halfblock">
-							<h3 class="green">After</h3>
-							<pre><code class="javascript transpiler__output">Waiting...</code></pre>
-						</div>
+					<h2>The <em>const</em> Declaration</h2>
+					<ul>
+						<li class="fragment"><span class="blue">Block-scoped</span>, like <code>let</code></li>
+						<li class="fragment">The variable's value <span style="color:red;">cannot</span> be reassigned
+							<ul>
+								<li class="fragment"><code>const</code> stands for <span class="orange">constant</span></li>
+							</ul>
+						</li>
+						<li class="fragment">Communicates your variable's intent to other developers</li>
+						<li class="fragment">Helps catch unintended changes</li>
+						<li class="fragment">No more <pre style="display: inline-block"><code class="javascript">var PLZ_DONT_CHANGE = 42;</code></pre>🎉</li>
+					</ul>
+					<p>&nbsp;</p>
+					<div class="fragment">
+						<p data-height="120" data-theme-id="dark" data-slug-hash="bWwbKa" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="const (Before)" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/bWwbKa/">const (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+						<a class="solution solution__lesson-1" href="https://codepen.io/anythingcodes/pen/jmMNpK?editors=0010" target="_blank">View Solution</a>
 					</div>
+				</section>
+
+				<section>
+					<h2>Using <em>const</em> to Store Complex Values</h2>
+					<p class="fragment">
+						Although you can't <span class="orange">reassign</span> a <code>const</code>'s value, <span class="green">contents of complex values (objects &amp; arrays) <strong>can</strong> be modified</span></p>
+					<p>&nbsp;</p>
+					<div class="fragment">
+						<p data-height="140" data-theme-id="dark" data-slug-hash="WjGeaJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Updating the contents of const values" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/WjGeaJ/">Updating the contents of const values</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					</div>
+					<aside class="notes">
+						The variable doesn't hold a constant array/object. Rather, it holds a constant reference to the array/object. The array/object itself is freely mutable.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Do you still need <code>var</code>?</h2>
+					<p class="fragment">No 😊</p>
+					<aside class="notes">
+						Reality is that ES6 has brought much-needed functionality to the table. Block-scoping is a game-changer.
+					</aside>
 				</section>
 
 				<section data-background="#f05b62">
