@@ -419,7 +419,7 @@ for (var i = 0; i < 5; i++) {
 
 				<section>
 					<h2>String Helper Methods</h2>
-					<p>Step aside, <code>indexOf</code> &mdash; there are now easier ways to identify substrings:</p>
+					<p>Step aside, <code>indexOf()</code> &mdash; there are now easier ways to identify substrings:</p>
 					<ol>
 						<li class="fragment"><code>includes()</code> returns <span class="green">true</span> or <span class="green">false</span> depending on if the given text is found anywhere within the string</li>
 						<li class="fragment"><code>startsWith()</code> returns <span class="green">true</span> or <span class="green">false</span> depending on if the given text is found at the beginning of the string</li>
@@ -446,6 +446,34 @@ for (var i = 0; i < 5; i++) {
 
 				<section>
 					<h2>Template Strings</h2>
+					<p>This:</p>
+					<pre><code class="xml">'<div>' +
+  '<h1>Hello ' + str + '!</h1>' +
+'</div>';</code></pre>
+					<div class="fragment">
+					<p>... becomes:</p>
+					<pre><code class="xml">`<div>
+  <h1>Hello ${str}!</h1>
+</div>`;</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<h2>Using Template Strings</h2>
+					<pre><code class="javascript">const message = `User ${name} scored ${score * 100}% on the exam`;</code></pre>
+					<p>&nbsp;</p>
+					<ul>
+						<li>Use backticks (<code>` `</code>) around the string</li>
+						<li class="fragment">Use <code>${ }</code> around any variable or expression</li>
+					</ul>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activity</h2>
+					<p>Refactor this code to use template strings.</p>
+					<div style="min-height: 300px">
+						<p data-height="300" data-theme-id="0" data-slug-hash="MmmoWo" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Template Strings Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/MmmoWo/">Template Strings Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					</div>
 				</section>
 
 				<section>
