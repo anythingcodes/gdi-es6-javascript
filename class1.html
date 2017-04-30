@@ -418,6 +418,33 @@ for (var i = 0; i < 5; i++) {
 				</section>
 
 				<section>
+					<h2>String Helper Methods</h2>
+					<p>Step aside, <code>indexOf</code> &mdash; there are now easier ways to identify substrings:</p>
+					<ol>
+						<li class="fragment"><code>includes()</code> returns <span class="green">true</span> or <span class="green">false</span> depending on if the given text is found anywhere within the string</li>
+						<li class="fragment"><code>startsWith()</code> returns <span class="green">true</span> or <span class="green">false</span> depending on if the given text is found at the beginning of the string</li>
+						<li class="fragment"><code>endsWith()</code> returns <span class="green">true</span> or <span class="green">false</span> depending on if the given text is found at the end of the string</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>String Helper Methods</h2>
+					<p class="fragment">Each method accepts two arguments:</p>
+					<ol>
+						<li class="fragment">the <span class="green">text to search for</span></li>
+						<li class="fragment">an <span class="green">optional index</span> from which to start the search
+							<ul>
+								<li class="small fragment"><code>includes()</code> and <code>startsWith()</code> <span class="orange">include</span> the character at that index, while <code>endsWith()</code>  <span class="orange">excludes</span> the character at that index</li>
+							</ul>
+						</li>
+					</ol>
+					<div class="fragment" style="min-height: 300px;">
+						<p data-height="270" data-theme-id="0" data-slug-hash="aWWJPZ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="String helper methods: includes(), startsWith(), endsWith()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/aWWJPZ/">String helper methods: includes(), startsWith(), endsWith()</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					</div>
+					<aside class="notes">Case sensitivity still matters</aside>
+				</section>
+
+				<section>
 					<h2>Template Strings</h2>
 				</section>
 
