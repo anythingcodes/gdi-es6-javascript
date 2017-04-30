@@ -283,7 +283,7 @@
 for (var i = 0; i < 5; i++) {
   console.log(i);
 }</code></pre>
-							<p>Block scope is created any time <code>{ }</code> is used. Declare variables as close as possible, as local as possible, to where they will be used.</p>
+							<p><span class="blue">Anything</span> that uses <code>{ }</code> creates a block scope (<code>if () { }</code>, <code>for() {}</code>, <code>while() { }</code>, etc.). Used to declare variables as close as possible, as local as possible, to where they will be used.</p>
 						</li>
 					</ol>
 					<p style="margin-top:.3em;" class="fragment">Before ES6, you could <span class="orange">only use function scopes</span></p>
@@ -295,22 +295,17 @@ for (var i = 0; i < 5; i++) {
 				<section>
 					<h2>Function Scope Problems</h2>
 					<p><code>var</code> variables are <span class="green">function-scoped</span>.<br />They ignore block scoping.</p>
-					<div>
-						<p data-height="120" data-theme-id="dark" data-slug-hash="GmqavN" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping: ES5 (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/GmqavN/">Block-scoping: ES5 (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					<div style="min-height: 200px;">
+						<p data-height="200" data-theme-id="dark" data-slug-hash="GmqavN" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping: ES5 (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/GmqavN/">Block-scoping: ES5 (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/zwBQEX?editors=0010" target="_blank">View Solution</a>
 					</div>
 
-					<p class="fragment">To fake block scoping, an <span class="green">immediately-invoked function expression (IIFE)</span> is often used</p>
-
-					<div class="fragment">
-						<p data-height="120" data-theme-id="dark" data-slug-hash="RVRmOV" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping: let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/RVRmOV/">Block-scoping: let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/vmKoNQ?editors=0011" target="_blank">View Solution</a>
-					</div>
+					<p>To fake block scoping, an <span class="green">immediately-invoked function expression (IIFE)</span> is often used</p>
 
 					<aside class="notes">
 						<ol>
 							<li>{ ... } is perfectly valid JavaScript, but you probably don't see it often &mdash; before ES6, it was basically useless. Not anymore!</li>
-							<li>Second problem is a common interview question. Essentially happening because there's only one <code>i</code> in the outer scope that was closed over, instead of a new <code>i</code> for each iteration's function to close over.</li>
+
 						</ol>
 					</aside>
 				</section>
@@ -318,7 +313,9 @@ for (var i = 0; i < 5; i++) {
 				<section>
 					<h2>The <em>let</em> Declaration</h2>
 					<ul>
-						<li class="fragment"><span class="blue">Block-scoped</span> <code>{ }</code>, unlike the function-scoped <code>var</code></li>
+						<li class="fragment"><span class="blue">Block-scoped</span> <code>{ }</code>, unlike the function-scoped <code>var</code>
+						</li>
+
 						<li class="fragment">Value <span class="green">can</span> be reassigned</li>
 					</ul>
 					<div class="fragment" style="min-height:200px;">
@@ -326,23 +323,24 @@ for (var i = 0; i < 5; i++) {
 						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/WjxVQb?editors=0011" target="_blank">View Solution</a>
 					</div>
 					<p class="fragment">Way easier than using an IIFE! 🏆</p>
-					<aside class="notes">
-						<ul>
-							<li>Second example: The <code>let i</code> in the <code>for</code> header declares an <code>i</code> for each iteration of the loop. Closures created inside the loop iteration close over those per-iteration vars as expected.</li>
-						</ul>
-					</aside>
+
 				</section>
 
 				<section class="activity" data-background="#00A9B4">
 					<h2>Activity</h2>
 
-					<p>Be sure to fork the pen first if you'd like to save your work to your account!</p>
+					<p>Instructions can be found by editing the below pen on CodePen. Be sure to fork the pen first if you'd like to save your work to your account!</p>
 					<p>&nbsp;</p>
 					<div style="min-height: 280px;">
 					<p data-height="280" data-theme-id="dark" data-slug-hash="LyZwRr" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping with let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/LyZwRr/">Block-scoping with let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 					</div>
-					<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/OmXKRK?editors=0011" target="_blank">View Solution</a>
+					<!--<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/OmXKRK?editors=0011" target="_blank">View Solution</a>-->
 
+					<aside class="notes">
+						<ul>
+							<li>A common interview question. Essentially happening because there's only one <code>i</code> in the outer scope that was closed over, instead of a new <code>i</code> for each iteration's function to close over.</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
