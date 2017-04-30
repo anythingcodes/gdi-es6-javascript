@@ -271,19 +271,19 @@
 						<li>
 							<strong class="green">Function Scopes:</strong>
 							<pre><code contenteditable class="javascript">function() {
-  // code
+  // function required
 }</code></pre>
-							<p>Code wrapped in a function effectively "hides" any enclosed variable or function declarations from the outside scope</p>
+							<p>Code wrapped in a function effectively "hides" any enclosed variable or function declarations from the outside scope.</p>
 						</li>
 						<li class="fragment">
-							<strong class="green">Block Scopes:</strong>
+							<strong class="green">Block Scopes (a.k.a. lexical scopes):</strong>
 							<pre><code contenteditable class="javascript">{
-  // code
+  // anything within { } is a block scope
 }
 for (var i = 0; i < 5; i++) {
   console.log(i);
 }</code></pre>
-							<p>Declaring variables as close as possible, as local as possible, to where they will be used. <code>{ }</code> creates a new scope.</p>
+							<p>Block scope is created any time <code>{ }</code> is used. Declare variables as close as possible, as local as possible, to where they will be used.</p>
 						</li>
 					</ol>
 					<p style="margin-top:.3em;" class="fragment">Before ES6, you could <span class="orange">only use function scopes</span></p>
@@ -318,7 +318,7 @@ for (var i = 0; i < 5; i++) {
 				<section>
 					<h2>The <em>let</em> Declaration</h2>
 					<ul>
-						<li class="fragment"><span class="blue">Block-scoped</span>, unlike the function-scoped <code>var</code></li>
+						<li class="fragment"><span class="blue">Block-scoped</span> <code>{ }</code>, unlike the function-scoped <code>var</code></li>
 						<li class="fragment">Value <span class="green">can</span> be reassigned</li>
 					</ul>
 					<div class="fragment">
@@ -341,12 +341,13 @@ for (var i = 0; i < 5; i++) {
 					<h2>The <em>const</em> Declaration</h2>
 					<ul>
 						<li class="fragment"><span class="blue">Block-scoped</span>, like <code>let</code></li>
-						<li class="fragment">The variable's value <span style="color:red;">cannot</span> be reassigned
+						<li class="fragment">Value <span style="color:red;">cannot</span> be reassigned
 							<ul>
 								<li class="fragment"><code>const</code> stands for <span class="orange">constant</span></li>
 							</ul>
 						</li>
-						<li class="fragment">Communicates your variable's intent to other developers</li>
+						<li class="fragment">Must be initialized on declaration</li>
+						<li class="fragment">Communicates your variable's intent to other devs</li>
 						<li class="fragment">Helps catch unintended changes</li>
 						<li class="fragment">No more <pre style="display: inline-block"><code class="javascript">var PLZ_DONT_CHANGE = 42;</code></pre>🎉</li>
 					</ul>
@@ -358,33 +359,62 @@ for (var i = 0; i < 5; i++) {
 				</section>
 
 				<section>
-					<h2>Using <em>const</em> to Store Complex Values</h2>
+					<h2>Modifying Complex Values</h2>
 					<p class="fragment">
-						Although you can't <span class="orange">reassign</span> a <code>const</code>'s value, <span class="green">contents of complex values (objects &amp; arrays) <strong>can</strong> be modified</span></p>
-					<p>&nbsp;</p>
-					<div class="fragment">
-						<p data-height="140" data-theme-id="dark" data-slug-hash="WjGeaJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Updating the contents of const values" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/WjGeaJ/">Updating the contents of const values</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+						Although you can't <span class="orange">reassign</span> a <code>const</code>'s value, <span class="green">contents of complex values</span> (objects &amp; arrays) <strong>can</strong> be modified</p>
+					<div class="fragment-progression">
+						<p class="fragment"><img src="dist/img/const-bindings__step1.gif" alt="const bindings and reassignments" /></p>
+						<p class="fragment">
+							<img src="dist/img/const-bindings__step2.gif" alt="const bindings and reassignments" />
+						</p>
+						<p class="fragment">
+							<img src="dist/img/const-bindings__step3.gif" alt="const bindings and reassignments" />
+						</p>
+						<p class="fragment">
+							<img src="dist/img/const-bindings__step4.gif" alt="const bindings and reassignments" />
+						</p>
+						<p class="fragment">
+							<img src="dist/img/const-bindings__step5.gif" alt="const bindings and reassignments" />
+						</p>
 					</div>
+
+					<aside class="notes">
+						The variable doesn't hold a constant array/object. Rather, it holds a constant reference to the array/object. The array/object itself is freely mutable. A const binding that references an object can’t later reference a different value, but the underlying object can indeed mutate.
+					</aside>
+
+				</section>
+
+				<section>
+					<h2>Modifying Complex Values</h2>
+					<h3>Examples</h3>
+						<p data-height="280" data-theme-id="dark" data-slug-hash="WjGeaJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Updating the contents of const values" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/WjGeaJ/">Updating the contents of const values</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
 					<aside class="notes">
 						The variable doesn't hold a constant array/object. Rather, it holds a constant reference to the array/object. The array/object itself is freely mutable.
 					</aside>
 				</section>
-
 				<section>
 					<h2>Do you still need <code>var</code>?</h2>
 					<p class="fragment">No 😊</p>
+					<p class="fragment"><span class="orange">Only one potential case:</span> If you have code that should be available from the global object (<code>window</code> in browsers), e.g. if you need to access code across frames or windows</p>
+					<p class="fragment">👆 This is rare and should generally be avoided</p>
 					<aside class="notes">
-						Reality is that ES6 has brought much-needed functionality to the table. Block-scoping is a game-changer.
+						Reality is that ES6 has brought much-needed functionality to the table. Block-scoping is a game-changer. Huge benefit to const/let is that they do not pollute your global scope (<code>window</code> in browsers). Much safer.
 					</aside>
 				</section>
 
 				<section class="activity" data-background="#00A9B4">
 					<h2>Activity</h2>
 					<ol>
-						<li>Refactor the following code to use <code>const</code> and <code>let</code> based on what you would expect to change.</li>
+						<li>Complete activities 1 and 2 in CodePen. Be sure to fork the pen first if you'd like to save your work to your account!</li>
 						<!-- TODO -->
 					</ol>
+					<p data-height="265" data-theme-id="0" data-slug-hash="rmmjXP" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="const and let exercise" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/rmmjXP/">const and let exercise</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
+				</section>
+
+				<section data-background="#f05b62">
+					<h1 style="color: #fafafa;font-size:3.7em;">Strings</h1>
 				</section>
 
 				<section>

@@ -393,3 +393,19 @@ table.data.compact th, table.data.compact td, table.data.compact tr{
 table.data tr td:first-child{
   text-align: left;
 }
+
+
+/* Fragment Progression */
+.fragment-progression {
+  position: relative;
+  .fragment {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    &:first-of-type {
+      position: static;
+    }
+  }
+}
