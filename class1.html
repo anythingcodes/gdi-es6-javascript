@@ -466,12 +466,14 @@ for (var i = 0; i < 5; i++) {
 
 				<section>
 					<h2>Using Template Strings</h2>
-					<pre><code class="javascript">const message = `User ${name} scored ${score * 100}% on the exam`;</code></pre>
+					<pre><code class="javascript">const message = `User ${name} scored ${score} on the exam`;</code></pre>
 					<p>&nbsp;</p>
 					<ul>
 						<li>Use backticks (<code>` `</code>) around the string</li>
-						<li class="fragment">Use <code>${ }</code> around any variable or expression</li>
+						<li>Use <code>${ }</code> around any <span class="orange">variable</span> or <span class="orange">expression</span></li>
+						<li class="fragment">Works well with <span class="blue">ternary operators</span></li>
 					</ul>
+					<pre class="fragment"><code class="javascript">const message = `User ${name} ${score >= 60 ? 'passed' : 'failed'} the exam`;</code></pre>
 				</section>
 
 				<section class="activity" data-background="#00A9B4">
