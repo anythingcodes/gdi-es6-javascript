@@ -267,25 +267,28 @@
 				<section>
 					<h2>Scopes 🔬</h2>
 					<ol class="small">
+
 						<li>
-							<strong class="green">Function Scopes:</strong>
-							<pre><code contenteditable class="javascript">function func() {
-  // function required
-}</code></pre>
-							<p>Code wrapped in a function effectively "hides" any enclosed variable or function declarations from the outside scope.</p>
-						</li>
-						<li class="fragment">
 							<strong class="green">Block Scopes (a.k.a. lexical scopes):</strong>
 							<pre><code contenteditable class="javascript">{
-  // anything within { } is a block scope
+  // anything within { } that isn't a function
 }
 for (var i = 0; i < 5; i++) {
   console.log(i);
 }</code></pre>
-							<p><span class="blue">Anything</span> that uses <code>{ }</code> creates a block scope (<code>if () { }</code>, <code>for() {}</code>, <code>while() { }</code>, etc.). Used to declare variables as close as possible, as local as possible, to where they will be used.</p>
+							<ul class="small">
+								<li><span class="blue">Examples:</span> <code>{ }</code>, <code>if () { }</code>, <code>for() {}</code>, <code>while() { }</code>, etc.</li><li><span class="blue">Purpose:</span> Declare variables as close as possible, as local as possible, to where they will be used.</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							<strong class="green">Function Scopes:</strong>
+							<pre><code contenteditable class="javascript">function func() {
+  // function required
+}</code></pre>
+							<ul class="small"><li><span class="blue">Purpose:</span> Code wrapped in a function effectively "hides" any enclosed variable or function declarations from the outside scope.</li></ul>
 						</li>
 					</ol>
-					<p style="margin-top:.3em;" class="fragment">Before ES6, you could <span class="orange">only use function scopes</span></p>
+					<p style="margin-top:.3em;" class="fragment"><code>var</code> <span class="orange">only respects function scopes</span></p>
 					<aside class="notes">
 						Most languages use block scopes. This made programming in JavaScript unintuitive and inconsistent for many who were used to block scoping.
 					</aside>
@@ -414,8 +417,9 @@ for (var i = 0; i < 5; i++) {
 						<li>Complete activities 1 and 2 in CodePen. Be sure to fork the pen first if you'd like to save your work to your account!</li>
 						<!-- TODO -->
 					</ol>
+					<div style="min-height:265px;">
 					<p data-height="265" data-theme-id="0" data-slug-hash="rmmjXP" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="const and let exercise" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/rmmjXP/">const and let exercise</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
+				</div>
 				</section>
 
 				<section data-background="#f05b62">
@@ -470,8 +474,9 @@ for (var i = 0; i < 5; i++) {
 					<ul>
 						<li>Use backticks (<code>` `</code>) around the string</li>
 						<li>Use <code>${ }</code> around any <span class="orange">variable</span> or <span class="orange">expression</span></li>
-						<li class="fragment">Works well with <span class="blue">ternary operators</span></li>
+						<li class="fragment">Work well with <span class="green">ternary operators</span>, for example<br /><code class="javascript">userIsYoungerThan21 ? serveGrapeJuice() : serveWine()</code></li>
 					</ul>
+					<p>&nbsp;</p>
 					<pre class="fragment"><code class="javascript">const message = `User ${name} ${score >= 60 ? 'passed' : 'failed'} the exam`;</code></pre>
 				</section>
 
@@ -483,8 +488,108 @@ for (var i = 0; i < 5; i++) {
 					</div>
 				</section>
 
+				<section data-background="#f05b62">
+					<h1 style="color: #fafafa;font-size:3.7em;">Arrow Functions</h1>
+				</section>
+
 				<section>
 					<h2>Arrow Functions</h2>
+					<div class="clear small">
+						<div class="halfblock">
+							<h3 class="fragment">Making an arrow function:</h3>
+							<ol>
+								<li class="fragment">Remove the word <code>function</code></li>
+								<li class="fragment">Place a fat arrow (<code>=></code>) after parameters</li>
+							</ol>
+						</div>
+						<div class="halfblock">
+							<h3 class="blue fragment">Trimming it down:</h3>
+							<ul>
+								<li class="fragment">If there's only <span class="green">one parameter</span>, remove the surrounding parentheses <code>()</code></li>
+								<li class="fragment">If there's only <span class="green">one expression</span> in the function body, remove <code>{ }</code> and <code>return</code> (<span class="orange">implicit return</span>)</li>
+							</ul>
+						</div>
+					</div>
+					<div class="clear fragment">
+						<div class="halfblock">
+							<h3 class="green underlined">ES5</h3>
+							<pre><code class="javascript" contenteditable>const sum = function(a, b) {
+    return a + b;
+}</code></pre>
+							<p class="right small fragment">becomes</p>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES6</h3>
+							<pre><code class="javascript" contenteditable>const sum = (a, b) => a + b;</code></pre>
+						</div>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>Skinny arrow is <code>-></code> like in Ruby and Coffeescript</li>
+							<li>If there are zero or more than one args, you need to include parentheses, e.g. <code>const sum = () => retVal;</code></li>
+						</ul>
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>There's <code>this</code> One Problem</h2>
+					<p><code>this</code> determines context</p>
+					<pre class="small"><code class="javascript">const person = {
+  name: 'Wesley',
+  getName: function() {
+    return this.name;
+  }
+};
+console.log(person.getName()); // Wesley</code></pre>
+					<p class="fragment">Binding and changing <code>this</code> in functions is one of the most common JavaScript errors</p>
+					<div class="fragment clear" style="margin-top:.5em;">
+						<p><img src="dist/img/computer-frustration.gif" alt="Computer frustration" class="right" />It's possible to mistakenly affect one object when you meant to affect another</p>
+
+					</div>
+				</section>
+
+				<section>
+					<h2>Arrow Functions and <code>this</code></h2>
+
+					<ul>
+
+						<li class="fragment">Arrow functions <span class="green">do not have a <code>this</code> 🌟</li>
+						<li class="fragment">The value of <code>this</code> is <span class="orange">lexically fetched</span> from the scope the arrow function sits inside</li>
+					</ul>
+					<div style="min-height:200px;" class="fragment">
+						<p data-height="200" data-theme-id="0" data-slug-hash="qmPGJN" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Arrow functions and `this`" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qmPGJN/">Arrow functions and `this`</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+						<a class="solution solution__lesson-1" href="https://codepen.io/anythingcodes/pen/QvqReo?editors=0010#0" target="_blank">View Solution</a>
+
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>The call to this.logEvent() is broken because <code>this</code> is a reference to the object that was the target of the event (<code>document</code>)</li>
+							<li>Ask students to transform existing code to arrow function per earlier steps
+								<ul>
+									<li>Can fix by binding <code>this</code> to logEvent(), but this creates a new function whose <code>this</code> is bound to the current <code>this</code>.</li>
+									<li>Could also declare <code>var self = this;</code></li>
+								</ul>
+							</li>
+							<li>Arrow functions are a better way to fix the issue! ES6's purpose is to solve this problem and stop worrying about context.</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activity</h2>
+					<h3>Creating a sort function</h3>
+					<ol>
+						<li>Refactor the following code to use arrow functions. Start by removing the <code>var self = this;</code> line (line 18)</li>
+						<li>Get the <code>sort()</code> function (line 20) on one line only</li>
+						<li>Use template strings whenever possible</li>
+						<li>Replace <code>var</code> with <code>const</code> and <code>let</code></li>
+					</ol>
+					<div style="min-height: 150px;">
+						<p data-height="150" data-theme-id="0" data-slug-hash="qmPzPP" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Arrow Functions Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qmPzPP/">Arrow Functions Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					</div>
+					<a href="https://codepen.io/anythingcodes/pen/eWGwbv?editors=0010" class="solution__lesson-1 solution" target="_blank">View Solution</a>
+
 				</section>
 
 				<section>
