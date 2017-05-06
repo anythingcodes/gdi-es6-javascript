@@ -267,7 +267,6 @@
 				<section>
 					<h2>Scopes 🔬</h2>
 					<ol class="small">
-
 						<li>
 							<strong class="green">Block Scopes (a.k.a. lexical scopes):</strong>
 							<pre><code contenteditable class="javascript">{
@@ -423,7 +422,7 @@ for (var i = 0; i < 5; i++) {
 				</section>
 
 				<section data-background="#f05b62">
-					<h1 style="color: #fafafa;font-size:3.7em;">Strings</h1>
+					<h1 style="color: #fafafa;font-size:3.7em;">String Helpers</h1>
 				</section>
 
 				<section>
@@ -605,63 +604,56 @@ console.log(person.getName()); // Wesley</code></pre>
 				</section>
 
 				<section data-background="#f05b62">
-					<h1 style="color: #fafafa;font-size:3.7em;">Iterator Functions</h1>
+					<h1 style="color: #fafafa;font-size:3.7em;">Array Helpers</h1>
 				</section>
 
 				<section>
 					<h2>Array Helpers</h2>
-					<p>Convenient methods applied to arrays</p>
-					<p>&nbsp;</p>
-					<table class="data compact fragment">
+					<table class="data compact">
 						<tr>
-							<th>Method</th>
-							<th>Parameters</th>
+							<th>Array Helper</th>
+							<th>Purpose</th>
 							<th>Returns</th>
 						</tr>
 						<tr>
-							<td><strong>forEach</strong></td>
-							<td>function(element, index, array)</td>
-							<td>undefined <span style="color:red">&#x2717;</span></td>
+							<td><code class="javascript">arr.forEach((element, index, array) => { });</code></td>
+							<td>Loop through elements in an array</td>
+							<td><code>undefined</code></td>
 						</tr>
 						<tr>
-							<td><strong>every</strong></td>
-							<td>function(element, index, array)</td>
-							<td>true or false</td>
+							<td><code class="javascript">arr.every((element, index, array) => { });</code></td>
+							<td>Do <span class="blue">all</span> array elements pass a test?</td>
+							<td><code>true||false</code></td>
 						</tr>
 						<tr>
-							<td><strong>some</strong></td>
-							<td>function(element, index, array)</td>
-							<td>true or false</td>
+							<td><code class="javascript">arr.some((element, index, array) => { });</code></td>
+							<td>Does <span class="blue">at least one</span> array element pass a test?</td>
+							<td><code>true||false</code></td>
 						</tr>
 						<tr>
-							<td><strong>filter</strong></td>
-							<td>function(element, index, array)</td>
-							<td>filtered array (i.e. items from the original array that share a common characteristic)</td>
+							<td><code class="javascript">arr.filter((element, index, array) => { });</code></td>
+							<td>Loop through <code>arr</code> to generate an array of <span class="blue">elements that pass a test</span></td>
+							<td><code>Array</code></td>
 						</tr>
 						<tr>
-							<td><strong>map</strong></td>
-							<td>function(element, index, array)</td>
-							<td>manipulated array (i.e. each item in the original array is manipulated)</td>
+							<td><code class="javascript">arr.map((element, index, array) => { });</code></td>
+							<td>Loop through <code>arr</code> to generate an array of <span class="blue">modified elements</span></td>
+							<td><code>Array</code></td>
 						</tr>
 						<tr>
-							<td><strong>find</strong></td>
-							<td>function(element, index, array)</td>
+							<td><code class="javascript">arr.find((element, index, array) => { });</code></td>
+							<td>Loop through <code>arr</code> to find the <span class="blue">first element that passes a test</span></td>
 							<td>1 element</td>
 						</tr>
 						<tr>
-							<td><strong>reduce</strong></td>
-							<td>function(accumulator, element, index, array), initialElement</td>
+							<td><code class="javascript">arr.reduce((accumulator, element, index, array) => { }, initialValue);</code></td>
+							<td>Starting with a value of <code>initialValue</code>, loop through <code>arr</code> to calculate a return value</td>
 							<td>1 reduced value</td>
 						</tr>
 					</table>
 					<aside class="notes">
-						We'll go over each of these individually, and run through exercises. Point out that reduce() is the odd one out. It takes different parameters.
+						Convenient methods applied to arrays. We'll go over each of these individually, and run through exercises. Point out that reduce() is the odd one out. It takes different parameters.
 					</aside>
-				</section>
-
-				<section>
-					<h2>Array Helpers</h2>
-					<h3>Commonalities</h3>
 				</section>
 
 				<section>
@@ -677,11 +669,22 @@ console.log(person.getName()); // Wesley</code></pre>
 
 				<section>
 					<h2>forEach</h2>
-					<p>Loop through elements in an array</p>
+					<table class="small data compact">
+						<tr>
+							<th>Array Helper</th>
+							<th>Purpose</th>
+							<th>Returns</th>
+						</tr>
+						<tr>
+							<td><code class="javascript">arr.forEach((element, index, array) => { });</code></td>
+							<td>Loop through elements in an array</td>
+							<td>undefined</td>
+						</tr>
+					</table>
 					<p class="fragment"><code>arr.forEach(iteratorFunction)</code></p>
-					<div class="clear fragment">
+					<div class="small clear fragment">
 						<div class="halfblock">
-							<h3 class="green">ES5</h3>
+							<h3 class="green">ES5: for loop</h3>
 							<pre><code contenteditable class ="javascript">var names = ['Morgan', 'Taylor', 'Lesley'];
 
 for (var i = 0; i < names.length; i++) {
@@ -699,13 +702,16 @@ names.forEach(function(name) {
 						</div>
 						<p><a href="http://codepen.io/anythingcodes/pen/KagmxL?editors=0012" target="_blank">View CodePen &raquo;</a></p>
 					</div>
+					<aside class="notes">
+						Activity on this slide: Ask class to arrow functionitize the right-hand ES6 block
+					</aside>
 				</section>
 
 				<section>
 					<h2>forEach</h2>
-					<code class="fragment">arr.forEach(iteratorFunction)</code><span class="fragment"> The iterator function runs once for each element in the array.</span>
-					<div class="fragment">
-						<p data-height="400" data-theme-id="0" data-slug-hash="ZLpKOZ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Iterator Functions" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/NdRpVX/">ES6 Iterator Functions</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					<code>arr.forEach(iteratorFunction)</code><span class="fragment"><br />iteratorFunction runs once for each element in the array</span>
+					<div class="fragment" style="min-height:370px;">
+						<p data-height="370" data-theme-id="0" data-slug-hash="ZLpKOZ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Iterator Functions" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/NdRpVX/">ES6 Iterator Functions</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 					</div>
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
@@ -719,17 +725,17 @@ names.forEach(function(name) {
 				<section class="activity" data-background="#00A9B4">
 					<h2>Activities</h2>
 					<h3>Using the forEach Helper</h3>
-					<div class="clear">
+					<div class="clear" style="min-height:300px;">
 						<div class="halfblock">
 							<h6 class="light">Activity 1</h6>
-							<p data-height="350" data-theme-id="0010" data-slug-hash="mRrdEQ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: forEach #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/mRrdEQ/">ES6 Lesson 1: forEach #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<p data-height="300" data-theme-id="0010" data-slug-hash="mRrdEQ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: forEach #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/mRrdEQ/">ES6 Lesson 1: forEach #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 							<div>
 								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/jyMOeM?editors=0010" target="_blank">View Solution</a>
 							</div>
 						</div>
 						<div class="halfblock">
 							<h6 class="light">Activity 2</h6>
-							<p data-height="350" data-theme-id="0" data-slug-hash="rjMNEJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: forEach #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/rjMNEJ/">ES6 Lesson 1: forEach #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<p data-height="300" data-theme-id="0" data-slug-hash="rjMNEJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: forEach #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/rjMNEJ/">ES6 Lesson 1: forEach #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 							<div>
 								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/XpjJJq?editors=0010#0" target="_blank">View Solution</a>
 							</div>
@@ -741,7 +747,7 @@ names.forEach(function(name) {
 					<h2>map</h2>
 					<p>The <em>map</em> helper <span class="green">returns an array of results</span> after iterating through an array</p>
 					<p class="fragment">You can <span class="blue">assign the resulting array</span> to a variable:<br /><code>var newArr = arr.map(iteratorFunction);</code></p>
-					<div class="clear fragment">
+					<div class="small clear fragment">
 						<div class="halfblock">
 							<h3 class="green">ES5</h3>
 							<pre><code contenteditable class ="javascript">var numbers = [2, 6, 10];
@@ -796,7 +802,7 @@ console.log(halvedNumbers); // 1, 3, 5
 
 				<section class="activity__challenge" data-background="#d2ccfc">
 					<h2>At-Home Challenge: Implement a <code>pluck</code> function</h2>
-					<div class="clear">
+					<div class="small clear">
 						<div class="halfblock">
 							<pre><code contenteditable class ="javascript" >function pluck(array, property) {
   // your code here
@@ -828,7 +834,7 @@ pluck(cats, 'name'); // returns ['Colonel Meow', 'Lil Bub', 'Grumpy Cat'];
 					<p>The <em>filter</em> helper <span class="green">returns an array of filtered elements</span></p>
 					<p class="fragment">Use an iterator function that returns <span class="blue">true</span> or <span class="orange">false</span></p>
 					<p class="fragment"><code>var newArr = arr.filter(iteratorFunction);</code></p>
-					<div class="clear fragment">
+					<div class="clear fragment small">
 						<div class="halfblock">
 							<h3 class="green">ES5</h3>
 							<pre><code contenteditable class ="javascript">var users = [
@@ -948,7 +954,7 @@ console.log(lessThanEighteen); // returns [ 5, 10, 15, 17 ];</code></pre>
 					<h2>find</h2>
 					<p>Iterates though an array until an iterator function returns <span class="blue">true</span>, then <span class="green">returns the corresponding object</span></p>
 					<p class="fragment"><code>var matchingObject = arr.find(iteratorFunction);</code></p>
-					<div class="clear fragment">
+					<div class="small clear fragment">
 						<div class="halfblock">
 							<h3 class="green">ES5</h3>
 							<pre><code contenteditable class ="javascript">var jobs = [
@@ -987,9 +993,25 @@ console.log(job); // { title: 'Developer' }</code></pre>
 
 				<section>
 					<h2>find</h2>
-					<p>
-						<img src="dist/img/array-helper__find.svg" alt="The find array helper" />
-					</p>
+					<div class="clear small">
+						<div class="halfblock">
+							<pre><code contenteditable class ="javascript">var jobs = [
+  { title: 'Electrician' },
+  { title: 'Developer' },
+  { title: 'Barista' }
+];
+var job = jobs.find(function(job) {
+    return job.title === 'Developer';
+});
+console.log(job); // { title: 'Developer' }</code></pre>
+						</div>
+						<div class="halfblock">
+							<p>
+								<img src="dist/img/array-helper__find.svg" alt="The find array helper" />
+							</p>
+						</div>
+					</div>
+
 					<aside class="notes">
 						Explain how, once true returns, the iteration stops and the matching object ({ title: 'Developer' }) returns to the overall find function.
 					</aside>

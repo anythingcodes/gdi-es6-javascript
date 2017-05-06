@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .reveal code {
-  font-family: "Courier New";
+  font-family: 'Operator Mono SSm', MonoSpace;
   background: #000;
   color: white;
   padding: 5px 10px;
@@ -250,6 +250,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 65%;
   &.error {
     color: #ff684b;
+  }
+  .comment, .attribute {
+    font-style: italic;
   }
 }
 
@@ -380,25 +383,36 @@ table.data{
   font-size: .8em;
   max-width: none;
   width: 100%;
+  tr {
+    border-bottom: 1px solid rgba(102, 51, 153, 0.2);
+  }
+  th, td, tr {
+    padding: 1em;
+    text-align: center;
+  }
+  td {
+    vertical-align: middle;
+  }
+  th{
+    text-transform: uppercase;
+    text-align:center;
+  }
+  code {
+    padding: 0;
+    background-color: transparent;
+    color: rebeccapurple;
+    &.javascript {
+      white-space: nowrap;
+    }
+  }
+  &.compact {
+    th, td, tr {
+      padding: .15em;
+      font-size: .8em;
+      line-height: 1.3;
+    }
+  }
 }
-table.data th{
-  text-transform: uppercase;
-  text-align:center;
-}
-table.data th, table.data td, table.data tr{
-  padding: 1em;
-  text-align:center;
-}
-table.data.compact th, table.data.compact td, table.data.compact tr{
-  padding: .5em;
-  font-size: .9em;
-  line-height: 1.4;
-}
-.table.data.compact td, table.data.compact th{padding:0}
-table.data tr td:first-child{
-  text-align: left;
-}
-
 
 /* Fragment Progression */
 .fragment-progression {
