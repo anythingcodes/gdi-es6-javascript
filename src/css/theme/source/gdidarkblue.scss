@@ -256,6 +256,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.reveal {
+  ol, ul {
+    code {
+      padding: 0;
+      background-color: transparent;
+      color: rebeccapurple;
+    }
+  }
+}
+
 .reveal p code {
   line-height: 1;
   display: inline;
@@ -325,24 +335,33 @@ h1, h2, h3, h4, h5, h6 {
 /*********************************************
  * ACTIVITY SLIDES
  *********************************************/
-.reveal .activity {
-  color: #fff;
-  a {
-    color: $mainColor
-  }
-  h1, h2, h3, h4, h5 {
+.reveal {
+  .activity, .quiz {
     color: #fff;
-  }
-  h3 {
-    margin-bottom: 1em;
-  }
-  h2 {
-    &:after {
-      content: ' \1F4BB';
+    a {
+      color: $mainColor
+    }
+    h1, h2, h3, h4, h5 {
+      color: #fff;
+    }
+    h3 {
+      margin-bottom: 1em;
+    }
+    h2 {
+      &:after {
+        content: ' \1F4BB';
+      }
+    }
+    .halfblock {
+      text-align: center;
     }
   }
-  .halfblock {
-    text-align: center;
+  .quiz {
+    h2 {
+      &:after {
+        content: ' \1F64B'
+      }
+    }
   }
 }
 .reveal .activity__challenge {

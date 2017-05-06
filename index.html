@@ -712,10 +712,6 @@ names.forEach(function(name) {
 					<div class="fragment" style="min-height:370px;">
 						<p data-height="370" data-theme-id="0" data-slug-hash="ZLpKOZ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Iterator Functions" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/NdRpVX/">ES6 Iterator Functions</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 					</div>
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
 					<aside class="notes">
 						Code the ES6 version in front of students. Clarify how the iterator function automatically receives the current element, in this case <code>number</code>.
 					</aside>
@@ -743,100 +739,11 @@ names.forEach(function(name) {
 				</section>
 
 				<section>
-					<h2>map</h2>
-					<table class="data compact">
-						<tr>
-							<th>Array Helper</th>
-							<th>Use it to...</th>
-							<th>Returns</th>
-						</tr>
-						<tr>
-							<td><code class="javascript">arr.map((element, index, array) => { });</code></td>
-							<td><span class="blue">translate</span> values in an array into another set of values</td>
-							<td><code>Array</code></td>
-						</tr>
-					</table>
-					<p>&nbsp;</p>
-					<p class="fragment">You can <span class="blue">assign the resulting array</span> to a variable:<br /><code>const translatedArr = arr.map(iteratorFunction);</code></p>
-					<div class="small clear fragment">
-						<div class="halfblock">
-							<h3 class="green">ES5: for loop</h3>
-							<pre><code contenteditable class ="javascript">var numbers = [2, 6, 10];
-var halvedNumbers = [];
-
-for (var i = 0; i < numbers.length; i++) {
-  halvedNumbers.push(numbers[i] / 2);
-}
-
-console.log(halvedNumbers); // 1, 3, 5
-</code></pre>
-						</div>
-						<div class="halfblock fragment">
-							<h3 class="green">ES6: map</h3>
-							<pre><code contenteditable class ="javascript" >const numbers = [2, 6, 10];
-
-const halvedNumbers = numbers.map(number => number / 2);
-
-console.log(halvedNumbers); // 1, 3, 5
-</code></pre>
-						</div>
-						<p><a href="http://codepen.io/anythingcodes/pen/MJjoxm?editors=0012" target="_blank">View CodePen &raquo;</a></p>
-					</div>
-					<p class="small orange fragment">No need to create an empty array first! 🎉</p>
-					<aside class="notes">
-						Primary difference between forEach and map: <em>forEach</em> iterates through an array but <span class="orange">doesn't return anything</span>
-					</aside>
+					<h2>every</h2>
 				</section>
 
-				<section class="activity" data-background="#00A9B4">
-					<h2>Activities</h2>
-					<h3>Using the map Helper</h3>
-					<div class="clear">
-						<div class="halfblock">
-							<h6 class="light">Activity 1</h6>
-							<p data-height="350" data-theme-id="0" data-slug-hash="RKGZQW" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: map #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/JERyKw/">ES6 Lesson 1: map #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-							<div>
-								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/xgELgm?editors=0012" target="_blank">View Solution</a>
-							</div>
-						</div>
-						<div class="halfblock">
-							<h6 class="light">Activity 2</h6>
-							<p data-height="350" data-theme-id="0" data-slug-hash="JERyKw" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: map #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/JERyKw/">ES6 Lesson 1: map #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-							<div>
-								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/QdKMaq?editors=0012" target="_blank">View Solution</a>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="activity__challenge" data-background="#d2ccfc">
-					<h2>At-Home Challenge: Implement a <code>pluck</code> function</h2>
-					<div class="small clear">
-						<div class="halfblock">
-							<pre><code contenteditable class ="javascript" >function pluck(array, property) {
-  // your code here
-}</code></pre>
-							<div class="fragment small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
-								<p><strong>Hint:</strong> Access a property on an object by using square bracket notation. For example:<br />&nbsp;</p>
-								<pre><code contenteditable class ="javascript" >const animal = { type: 'Dinosaur', status: 'Extinct' };
-animal['type']; // returns 'Dinosaur'</code></pre>
-							</div>
-
-						</div>
-						<div class="halfblock">
-							<p class="small">Pluck should accept an array and a string representing a property name and return an array containing that property from each object, for example:<br />&nbsp;</p>
-							<pre><code contenteditable class ="javascript" >var cats = [ { name: 'Colonel Meow' }, { name: 'Lil Bub' }, { name: 'Grumpy Cat' }];
-
-pluck(cats, 'name');
-// returns ['Colonel Meow', 'Lil Bub', 'Grumpy Cat'];
-</code></pre>
-
-						</div>
-					</div>
-
-					<div>
-						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/pRErMO?editors=0012" target="_blank">View Solution</a>
-					</div>
+				<section>
+					<h2>some</h2>
 				</section>
 
 				<section>
@@ -967,6 +874,103 @@ console.log(lessThanEighteen);
 				</section>
 
 				<section>
+					<h2>map</h2>
+					<table class="data compact">
+						<tr>
+							<th>Array Helper</th>
+							<th>Use it to...</th>
+							<th>Returns</th>
+						</tr>
+						<tr>
+							<td><code class="javascript">arr.map((element, index, array) => { });</code></td>
+							<td><span class="blue">translate</span> values in an array into another set of values</td>
+							<td><code>Array</code></td>
+						</tr>
+					</table>
+					<p>&nbsp;</p>
+					<p class="fragment">You can <span class="blue">assign the resulting array</span> to a variable:<br /><code>const translatedArr = arr.map(iteratorFunction);</code></p>
+					<div class="small clear fragment">
+						<div class="halfblock">
+							<h3 class="green">ES5: for loop</h3>
+							<pre><code contenteditable class ="javascript">var numbers = [2, 6, 10];
+var halvedNumbers = [];
+
+for (var i = 0; i < numbers.length; i++) {
+  halvedNumbers.push(numbers[i] / 2);
+}
+
+console.log(halvedNumbers); // 1, 3, 5
+</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6: map</h3>
+							<pre><code contenteditable class ="javascript" >const numbers = [2, 6, 10];
+
+const halvedNumbers = numbers.map(number => number / 2);
+
+console.log(halvedNumbers); // 1, 3, 5
+</code></pre>
+						</div>
+						<p><a href="http://codepen.io/anythingcodes/pen/MJjoxm?editors=0012" target="_blank">View CodePen &raquo;</a></p>
+					</div>
+					<p class="small orange fragment">No need to create an empty array first! 🎉</p>
+					<aside class="notes">
+						Primary difference between forEach and map: <em>forEach</em> iterates through an array but <span class="orange">doesn't return anything</span>
+					</aside>
+				</section>
+
+				<section class="activity" data-background="#00A9B4">
+					<h2>Activities</h2>
+					<h3>Using the map Helper</h3>
+					<div class="clear">
+						<div class="halfblock">
+							<h6 class="light">Activity 1</h6>
+							<p data-height="350" data-theme-id="0" data-slug-hash="RKGZQW" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: map #1" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/JERyKw/">ES6 Lesson 1: map #1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/xgELgm?editors=0012" target="_blank">View Solution</a>
+							</div>
+						</div>
+						<div class="halfblock">
+							<h6 class="light">Activity 2</h6>
+							<p data-height="350" data-theme-id="0" data-slug-hash="JERyKw" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="ES6 Lesson 1: map #2" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/JERyKw/">ES6 Lesson 1: map #2</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/QdKMaq?editors=0012" target="_blank">View Solution</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="activity__challenge" data-background="#d2ccfc">
+					<h2>At-Home Challenge: Implement a <code>pluck</code> function</h2>
+					<div class="small clear">
+						<div class="halfblock">
+							<pre><code contenteditable class ="javascript" >function pluck(array, property) {
+  // your code here
+}</code></pre>
+							<div class="fragment small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+								<p><strong>Hint:</strong> Access a property on an object by using square bracket notation. For example:<br />&nbsp;</p>
+								<pre><code contenteditable class ="javascript" >const animal = { type: 'Dinosaur', status: 'Extinct' };
+animal['type']; // returns 'Dinosaur'</code></pre>
+							</div>
+
+						</div>
+						<div class="halfblock">
+							<p class="small">Pluck should accept an array and a string representing a property name and return an array containing that property from each object, for example:<br />&nbsp;</p>
+							<pre><code contenteditable class ="javascript" >var cats = [ { name: 'Colonel Meow' }, { name: 'Lil Bub' }, { name: 'Grumpy Cat' }];
+
+pluck(cats, 'name');
+// returns ['Colonel Meow', 'Lil Bub', 'Grumpy Cat'];
+</code></pre>
+
+						</div>
+					</div>
+
+					<div>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/pRErMO?editors=0012" target="_blank">View Solution</a>
+					</div>
+				</section>
+
+				<section>
 					<h2>find</h2>
 					<table class="data compact">
 						<tr>
@@ -1046,6 +1050,137 @@ console.log(job); // { title: 'Developer' }</code></pre>
 					<p><img src="dist/img/single-page-app__find.png" alt="The find helper in a single-page web app" /></p>
 				</section>
 
+				<!--<section class="activity__challenge" data-background="#d2ccfc">-->
+					<!--<h2>At-Home Challenge: Implement a <code>findWhere</code> function</h2>-->
+					<!--<div class="small clear">-->
+						<!--<div class="halfblock">-->
+							<!--<pre><code contenteditable class ="javascript" >function reject(array, iteratorFunction) {-->
+  <!--// your code here-->
+<!--}</code></pre>-->
+							<!--<div class="fragment small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">-->
+								<!--<p><strong>Hint:</strong> You may use <em>filter</em>.-->
+							<!--</div>-->
+
+						<!--</div>-->
+						<!--<div class="halfblock">-->
+							<!--<p class="small">Reject should work opposite to filter; if a function returns <code>true</code>, the item should <em>not</em> be included in the new array, for example:<br />&nbsp;</p>-->
+							<!--<pre><code contenteditable class ="javascript" >const numbers = [ 5, 10, 15, 17, 18, 20 ];-->
+<!--const lessThanEighteen = reject(numbers, number => number >= 18);-->
+<!--console.log(lessThanEighteen);-->
+<!--// returns [ 5, 10, 15, 17 ];</code></pre>-->
+
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div>-->
+						<!--<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/VPmZNz?editors=0012" target="_blank">View Solution</a>-->
+					<!--</div>-->
+				<!--</section>-->
+
+				<section>
+					<h2>reduce</h2>
+					<table class="data compact">
+						<tr>
+							<th>Array Helper</th>
+							<th>Use it to...</th>
+							<th>Returns</th>
+						</tr>
+						<tr>
+							<td><code class="javascript">arr.reduce((calculatedValue, element, index, array) => { }, initialValue);</code></td>
+							<td>pass in an <code>initialValue</code> and modify it according to the current <code>element</code> value</td>
+							<td>1 reduced value</td>
+						</tr>
+					</table>
+					<p class="fragment"><code>const reducedValue = arr.reduce(iteratorFunction, initialValue);</code></p>
+					<p>&nbsp;</p>
+					<p class="fragment small blue">reduce is slightly different from the other array helpers:</p>
+					<ul class="small">
+						<li class="fragment">Other helpers have one parameter (<code>iteratorFunction</code>). <code>reduce</code> has two:
+							<ol class="fragment">
+								<li><code>iteratorFunction</code></li>
+								<li><code>initialValue</code> &mdash; used during the first iteration to calculate the next iteration's <code>calculatedValue</code></li>
+							</ol>
+					</ul>
+
+				</section>
+
+				<section>
+					<h2>reduce</h2>
+					<h3 class="green">ES5: for loop</h3>
+					<pre class="small"><code contenteditable class ="javascript">var numbers = [2, 6, 10];
+
+var sum = 0;
+for (var i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+}
+
+console.log(sum); // 18
+</code></pre>
+					<p>&nbsp;</p>
+					<div class="fragment">
+						<h3 class="green">ES6: reduce</h3>
+						<pre class="small"><code contenteditable class ="javascript" >const numbers = [2, 6, 10];
+
+const sum = numbers.reduce((currentSum, number) => currentSum + number, 0);
+
+console.log(sum); // 18
+</code></pre>
+						<p><a href="http://codepen.io/anythingcodes/pen/qmVrdK?editors=0012" target="_blank">View CodePen &raquo;</a></p>
+					</div>
+				</section>
+
+
+				<section class="activity__challenge" data-background="#d2ccfc">
+					<h2>At-Home Challenge: Implement a <code>unique</code> function</h2>
+					<div class="clear">
+						<div class="halfblock">
+							<pre><code contenteditable class ="javascript" >function unique(array) {
+  // your code here
+}</code></pre>
+							<div class="fragment small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+								<p><strong>Hint:</strong> Use <em>reduce</em> and <em>find</em>.
+							</div>
+
+						</div>
+						<div class="halfblock">
+							<p class="small">Write a function that will remove duplicate values from an array. For example:<br />&nbsp;</p>
+							<pre class="small"><code class ="javascript" >const arr = [ 5, 5, 10, 10, 15, 20, 20 ];
+const uniqueArr = unique(arr);
+console.log(uniqueArr);
+// returns [ 5, 10, 15, 20 ];</code></pre>
+
+						</div>
+					</div>
+
+					<div>
+						<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/QvOpKE?editors=0012" target="_blank">View Solution</a>
+					</div>
+				</section>
+
+				<section class="quiz" data-background="#00A9B4">
+					<h2>Quiz</h2>
+					<h3>Which array helper would be most suitable for each situation? <span class="small">(<code>forEach</code>, <code>every</code>, <code>some</code>, <code>filter</code>, <code>map</code>, <code>find</code>, or <code>reduce</code>)</span></h3>
+					<ol class="small">
+						<li class="fragment">You need to check if all elements in an array are integers.</li>
+						<li class="fragment">Let's say you built Gmail. Someone checks the box next to several emails and clicks the <em>Archive</em> button.</li>
+						<li class="fragment">You need to check if an array has at least one element that isn't null.</li>
+						<li class="fragment">You have an array of expenses and need to calculate your total expenses last month.</li>
+						<li class="fragment">You need a new array to store the square root of each item in an existing array.</li>
+						<li class="fragment">You have an array of computers, but only need computers with more than 16 GB of RAM.</li>
+						<li class="fragment">You need to retrieve an object in an array by ID.</li>
+					</ol>
+				</section>
+				<aside class="notes">
+					<ol>
+						<li>every()</li>
+						<li>forEach()</li>
+						<li>some()</li>
+						<li>reduce()</li>
+						<li>map()</li>
+						<li>filter()</li>
+						<li>find()</li>
+					</ol>
+				</aside>
 			</div>
   		<footer>
         <div class="copyright">

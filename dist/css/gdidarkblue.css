@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Gotham-Round";
   src: local("Gotham-Round"), url("../fonts/gothamrnd-light-webfont.ttf") format("truetype");
@@ -247,6 +248,11 @@ h1, h2, h3, h4, h5, h6 {
   .reveal code .comment, .reveal code .attribute {
     font-style: italic; }
 
+.reveal ol code, .reveal ul code {
+  padding: 0;
+  background-color: transparent;
+  color: rebeccapurple; }
+
 .reveal p code {
   line-height: 1;
   display: inline;
@@ -304,18 +310,20 @@ h1, h2, h3, h4, h5, h6 {
 /*********************************************
  * ACTIVITY SLIDES
  *********************************************/
-.reveal .activity {
+.reveal .activity, .reveal .quiz {
   color: #fff; }
-  .reveal .activity a {
+  .reveal .activity a, .reveal .quiz a {
     color: #eee; }
-  .reveal .activity h1, .reveal .activity h2, .reveal .activity h3, .reveal .activity h4, .reveal .activity h5 {
+  .reveal .activity h1, .reveal .activity h2, .reveal .activity h3, .reveal .activity h4, .reveal .activity h5, .reveal .quiz h1, .reveal .quiz h2, .reveal .quiz h3, .reveal .quiz h4, .reveal .quiz h5 {
     color: #fff; }
-  .reveal .activity h3 {
+  .reveal .activity h3, .reveal .quiz h3 {
     margin-bottom: 1em; }
-  .reveal .activity h2:after {
+  .reveal .activity h2:after, .reveal .quiz h2:after {
     content: ' \1F4BB'; }
-  .reveal .activity .halfblock {
+  .reveal .activity .halfblock, .reveal .quiz .halfblock {
     text-align: center; }
+.reveal .quiz h2:after {
+  content: " 🙋"; }
 
 .reveal .activity__challenge {
   color: #5C4884; }
