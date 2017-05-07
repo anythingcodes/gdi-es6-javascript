@@ -275,8 +275,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .reveal ul ul {
   display: block;
-  list-style-type: square;
-  margin-bottom: 20px; }
+  list-style-type: square; }
 
 /*********************************************
  * Accessibility
