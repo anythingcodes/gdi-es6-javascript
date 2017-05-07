@@ -250,8 +250,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .reveal ol code, .reveal ul code {
   padding: 0;
+  vertical-align: middle;
   background-color: transparent;
   color: rebeccapurple; }
+.reveal .activity code, .reveal .quiz code {
+  vertical-align: middle;
+  color: wheat; }
 
 .reveal p code {
   line-height: 1;
