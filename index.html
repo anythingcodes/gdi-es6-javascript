@@ -1390,6 +1390,70 @@ console.log(uniqueArr);
 					</aside>
 				</section>
 
+				<section data-background="#f05b62">
+					<h1 style="color: #fafafa;font-size:3.7em;">Function Parameters</h1>
+				</section>
+
+				<section>
+					<h2>Default Parameter Values</h2>
+					<h3 class="green underlined">ES5:</h3>
+					<div class="clear" style="margin-top:0;">
+						<div class="halfblock">
+							<pre class="small"><code class="javascript">function makeRequest(url, timeout, callback) {
+  timeout = timeout || 2000;
+  callback = callback || function() {};
+  // more code here
+}</code></pre>
+							<p class="fragment small right">becomes</p>
+						</div>
+						<div class="halfblock fragment">
+							<pre class="small"><code class="javascript">function makeRequest(url, timeout, callback) {
+  timeout = (typeof timeout !== 'undefined') ? timeout : 2000;
+  callback = (typeof callback !== 'undefined') ? callback : function() {};
+  // more code here
+}</code></pre>
+						</div>
+					</div>
+
+					<div class="fragment" style="margin-top:.5em;">
+						<h3 class="green underlined">ES6:</h3>
+						<pre class="small"><code class="javascript">function makeRequest(url, timeout = 2000, callback = () => {}) {
+  // more code here
+}</code></pre>
+					</div>
+					<div class="small fragment" style="margin-top:.5em;">
+						<img src="dist/img/its-beautiful.gif" alt="It's beautiful" />
+						<p><em>It's beautiful</em></p>
+					</div>
+					<aside class="notes">
+						<ul>
+							<li>The problem with the first ES5 makeRequest() is that 0 &mdash; a valid timeout &mdash; would be considered falsy and would then change to 2000 instead of 0. So we have to account for undefined specifically and then assign values. Too much code! ES6 can handle this error-checking for us.</li>
+							<li>makeRequest() expects only the first parameter to always be passed</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Calling functions with default parameters</h2>
+					<p>Given the following function:</p>
+					<pre class="small"><code class="javascript" contenteditable>function makeRequest(url, timeout = 2000, callback = () => {}) {
+  // more code here
+}</code></pre>
+					<div class="fragment">
+						<p>Only <code>url</code> is required. The following calls all work:</p>
+						<pre class="small"><code class="javascript">makeRequest('/gdi');
+
+makeRequest('/gdi', 500);
+
+makeRequest('/gdi', 500, requestData => updateDatabase(requestData));
+
+makeRequest('/gdi', undefined, requestData => updateDatabase(requestData));</code></pre>
+					</div>
+					<aside class="notes">
+						Point out that you can pass in <code>undefined</code>. However, <code>null</code> is a valid value so the function will use <code>null</code> instead of the default parameter.
+					</aside>
+				</section>
+
 			</div>
   		<footer>
         <div class="copyright">
