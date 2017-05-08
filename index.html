@@ -1476,7 +1476,7 @@ function doSomething(mustBeProvided = mandatory()) {
 
 				<section>
 					<h2>Rest Parameters</h2>
-					<p>Placing <code>...</code> before a parameter transforms that parameter and the <span class="green">rest</span> (i.e. all following parameters) into an array</p>
+					<p>Placing <code>...</code> <span class="orange">before a function parameter</span> transforms that parameter and the <span class="blue">rest</span> (i.e. all following parameters) into an array</p>
 					<pre class="small"><code class="javascript">function giveItARest(part1, ...part2) {
   console.log(part1);
   console.log(part2);
@@ -1505,6 +1505,21 @@ giveItARest(1, 2, 3, 4, 5, 6);
 
 				<section>
 					<h2>Spread operator</h2>
+					<p>Placing <code>...</code> <span class="orange">before an array</span> <span class="blue">spreads</span> the array into its individual elements</p>
+					<pre class="small"><code class="javascript" contenteditable>const arr = [2, 3, 4];
+
+console.log([1, arr]); // nested array: [1, [2, 3, 4]]
+
+console.log([1, ...arr]); // normal array: [1, 2, 3, 4]</code></pre>
+				</section>
+
+				<section class="activity" data-background="rgb(6, 116, 123)">
+					<h2>Activity</h2>
+					<h3>Using rest parameters with the spread operator</h3>
+					<div style="min-height:265px;">
+						<p data-height="265" data-theme-id="0" data-slug-hash="PmOXaq" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Spread and Rest Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/PmOXaq/">Spread and Rest Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					</div>
+					<p><a href="https://codepen.io/anythingcodes/pen/aWVPja?editors=0010" target="_blank" class="solution__lesson-1 solution">View Solution &raquo;</a></p>
 				</section>
 
 				<section data-background="#f05b62">
