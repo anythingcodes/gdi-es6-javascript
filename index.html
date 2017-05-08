@@ -1454,12 +1454,81 @@ makeRequest('/gdi', undefined, requestData => updateDatabase(requestData));</cod
 					</aside>
 				</section>
 
+				<section>
+					<h2>Enforcing mandatory parameters</h2>
+					<p>Since default values are only evaluated when used, you can use it to enforce that a certain parmeter is provided:</p>
+					<pre><code class="javascript">function mandatory() {
+  throw new Error('You forgot a parameter!');
+}
+
+function doSomething(mustBeProvided = mandatory()) {
+  return mustBeProvided;
+}</code></pre>
+				</section>
+
+				<section class="activity" data-background="rgb(6, 116, 123)">
+					<h2>Activity</h2>
+					<h3>Using default parameters</h3>
+					<div style="min-height:265px;">
+						<p data-height="265" data-theme-id="0" data-slug-hash="LyOXoQ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Default parameters activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/LyOXoQ/">Default parameters activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>Rest Parameters</h2>
+					<p>Placing <code>...</code> before a parameter transforms that parameter and the <span class="green">rest</span> (i.e. all following parameters) into an array</p>
+					<pre class="small"><code class="javascript">function giveItARest(part1, ...part2) {
+  console.log(part1);
+  console.log(part2);
+}
+
+giveItARest(1, 2, 3, 4, 5, 6);
+// 1
+// [2, 3, 4, 5, 6]</code></pre>
+					<p class="fragment">Useful when you don't know how many arguments will be passed to a function</p>
+					<aside class="notes">
+						To change a method name after deploying, when tons of existing apps are using a method by that name, e.g. changing calculateProduct() to multiply(). You can pass the call of one method to another and use the spread operator.
+					</aside>
+				</section>
+
+				<section class="activity" data-background="rgb(6, 116, 123)">
+					<h2>Activity</h2>
+					<h3>Using rest parameters</h3>
+					<div style="min-height:265px;">
+						<p data-height="265" data-theme-id="0" data-slug-hash="mmqaVo" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Rest parameter activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/mmqaVo/">Rest parameter activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>Tagged template literals</h2>
+				</section>
+
+				<section>
+					<h2>Spread operator</h2>
+				</section>
+
+				<section data-background="#f05b62">
+					<h1 style="color: #fafafa;font-size:3.7em;">Object Syntax</h1>
+				</section>
+
+				<section>
+					<h2>Destructuring</h2>
+				</section>
+
+				<section>
+					<h2>Property initializer shorthand</h2>
+				</section>
+
+				<section>
+					<h2>Concise methods</h2>
+				</section>
+
 			</div>
   		<footer>
-        <div class="copyright">
-          Getting Started with ES6 and ES7 JavaScript
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
-        </div>
+			<div class="copyright">
+			  Getting Started with ES6 and ES7 JavaScript
+			  <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+			</div>
       </footer>
 		</div>
 
