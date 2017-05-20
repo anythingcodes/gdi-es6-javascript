@@ -83,8 +83,9 @@
 					<h2>First Things First</h2>
 					<p>&nbsp;</p>
 					<p><strong>Thank you to our wonderful TAs!</strong></p>
-					<p>&nbsp;</p>
+					<p>Class Format</p> <!-- TODO: Info about class format here -->
 					<p><span class="orange">Need help?</span> Note the course website &amp; instructor contact info on the whiteboard</p>
+					<aside class="notes">Mention that there will be HW. Will review the solution before each class, and talk about potential other solutions.</aside>
 				</section>
 
 				<!-- Get Started -->
@@ -1499,6 +1500,8 @@ giveItARest(1, 2, 3, 4, 5, 6);
 					</div>
 				</section>
 
+
+				<!-- TODO: Mention tagged template literals? -->
 				<section>
 					<h2>Tagged template literals</h2>
 				</section>
@@ -1527,16 +1530,260 @@ console.log([1, ...arr]); // normal array: [1, 2, 3, 4]</code></pre>
 				</section>
 
 				<section>
-					<h2>Destructuring</h2>
-				</section>
-
-				<section>
 					<h2>Property initializer shorthand</h2>
+
 				</section>
 
 				<section>
 					<h2>Concise methods</h2>
 				</section>
+
+				<section data-background="#f05b62">
+					<h1 style="color: #fafafa;font-size:3.7em;">Destructuring</h1>
+				</section>
+
+				<section>
+					<h2>Destructuring Objects</h2>
+					<p>Unpack properties from objects into distinct variables</p>
+					<div class="clear small">
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES5:</h3>
+							<pre><code class="javascript">var person = {
+  name: 'Whitney Doe',
+  frequentFlyerMember: true
+};
+
+var name = person.name;
+var frequentFlyerMember = person.frequentFlyerMember;
+
+console.log(name, frequentFlyerMember);
+// Whitney Doe, true</code></pre>
+							<p class="right small fragment">becomes</p>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES6:</h3>
+							<pre><code class="javascript">const person = {
+  name: 'Whitney Doe',
+  frequentFlyerMember: true
+};
+
+const { name, frequentFlyerMember } = person;
+console.log(name, frequentFlyerMember);
+// Whitney Doe, true</code></pre>
+						</div>
+					</div>
+					<ul class="small">
+						<li class="fragment"><span class="green">Left-hand side of the equal sign (<code>=</code>)</span><br />A comma-separated list of the object's keys you'd like to unpack, wrapped in <code>{ }</code></li>
+						<li class="fragment"><span class="green">Right-hand side of the equal sign (<code>=</code>)</span><br />The object</li>
+					</ul>
+				</section>
+
+				<section class="activity" data-background="rgb(6, 116, 123)">
+					<h2>Activity</h2>
+					<h2>Using Object Destructuring</h2>
+					<div class="clear" style="min-height:300px;">
+						<div class="halfblock">
+							<h6 class="light">Activity 1</h6>
+							<p data-height="265" data-theme-id="0" data-slug-hash="LyXxpy" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Object Destructuring Activity 1" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/LyXxpy/">Object Destructuring Activity 1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/gWQgPK?editors=0010#0" target="_blank">View Solution</a>
+							</div>
+						</div>
+						<div class="halfblock">
+							<h6 class="light">Activity 2</h6>
+							<p data-height="265" data-theme-id="0" data-slug-hash="EmONGj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Activity: Object Destructuring" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmONGj/">Activity: Object Destructuring</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/LyXbqR?editors=0010" target="_blank">View Solution</a>
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Default Values</h2>
+					<p>What if an object doesn't contain a key with that name?</p>
+					<p class="fragment">Set a default value with equal signs (<code>=</code>)</p>
+					<div class="clear small">
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES5:</h3>
+							<pre><code class="javascript">var person = {
+  name: 'Whitney Doe'
+};
+
+var name = person.name;
+var frequentFlyerMember = person.frequentFlyerMember; // undefined
+
+console.log(name, frequentFlyerMember);
+// Whitney Doe, undefined</code></pre>
+							<p class="right small fragment">becomes</p>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES6:</h3>
+							<pre><code class="javascript">const person = {
+  name: 'Whitney Doe'
+};
+
+const { name, frequentFlyerMember = false } = person;
+console.log(name, frequentFlyerMember);
+// Whitney Doe, false</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Assigning to different local variable names</h2>
+					<p>What if you want to use a different name for the variable?</p>
+					<ol>
+						<li class="fragment">Use a <code>:</code> in the comma-separated list of keys</li>
+						<li class="fragment">The <span class="green">name after <code>:</code></span> can now be referenced</li>
+					</ol>
+					<div class="clear small">
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES5:</h3>
+							<pre><code class="javascript">var person = {
+  name: 'Whitney Doe'
+};
+
+var localName = person.name;
+
+console.log(name); // Whitney Doe</code></pre>
+							<p class="right small fragment">becomes</p>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES6:</h3>
+							<pre><code class="javascript">const person = {
+  name: 'Whitney Doe'
+};
+
+const { name: localName } = person;
+console.log(localName); // Whitney Doe</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Destructuring Arrays</h2>
+					<p>Unpack values from arrays into distinct variables</p>
+					<div class="clear small">
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES5:</h3>
+							<pre><code class="javascript">var scores = [ 94, 89, 73 ];
+
+var first = scores[0];
+var second = scores[1];
+var third = scores[2];
+
+console.log(first, second, third); // 94, 89, 73</code></pre>
+							<p class="right small fragment">becomes</p>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES6:</h3>
+							<pre><code class="javascript">const scores = [ 94, 89, 73 ];
+
+const [ first, second, third ] = scores;
+
+console.log(first, second, third); // 94, 89, 73</code></pre>
+						</div>
+					</div>
+					<ul class="small">
+						<li class="fragment"><span class="green">Left-hand side of the equal sign (<code>=</code>)</span><br />A comma-separated list of the values you'd like to unpack, wrapped in <code>[]</code></li>
+						<li class="fragment"><span class="green">Right-hand side of the equal sign (<code>=</code>)</span><br />The array</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Default Values</h2>
+					<p>What if an array doesn't contain a value at that index?</p>
+					<p class="fragment">Set a default value with equal signs (<code>=</code>)</p>
+					<div class="clear small">
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES5:</h3>
+							<pre><code class="javascript">var scores = [ 94, 89, 73 ];
+
+var first = scores[0];
+var second = scores[1];
+var third = scores[2];
+var fourth = scores[3] === undefined ? 0 : scores[3];
+
+console.log(first, second, third, fourth); // 94, 89, 73, 0</code></pre>
+							<p class="right small fragment">becomes</p>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES6:</h3>
+							<pre><code class="javascript">const scores = [ 94, 89, 73 ];
+
+const [ first, second, third, fourth = 0 ] = scores;
+
+console.log(first, second, third, fourth); // 94, 89, 73, 0</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Swapping Variables</h2>
+					<div class="clear small">
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES5:</h3>
+							<pre><code class="javascript">var a = 1;
+var b = 2;
+var temp = a;
+
+a = b;
+b = temp;
+
+console.log(a); // 2
+console.log(b); // 1</code></pre>
+							<p class="right small fragment">becomes</p>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES6:</h3>
+							<pre><code class="javascript">let a = 1;
+let b = 2;
+
+[ a, b ] = [ b, a ];
+
+console.log(a); // 2
+console.log(b); // 1</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Rest & Spread</h2>
+					<pre><code class="javascript">const scores = [ 94, 89, 73 ];
+
+const [ first, ...otherScores ] = scores;
+
+console.log(first, otherScores); // What would this output?
+</code></pre>
+<pre class="fragment"><code class="javascript">console.log(first, ...otherScores); // 94, 89, 73
+</code></pre>
+					<aside class="notes">Ask students what the first item would output and how they could counteract that if they wanted a 1-D array.</aside>
+				</section>
+
+
+				<section class="activity" data-background="rgb(6, 116, 123)">
+					<h2>Activity</h2>
+					<h2>Using Array Destructuring</h2>
+					<div class="clear" style="min-height:300px;">
+						<div class="halfblock">
+							<h6 class="light">Activity 1</h6>
+							<p data-height="265" data-theme-id="0" data-slug-hash="EmOZZN" data-default-tab="result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Array Destructuring - Converting to Object - Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmOZZN/">Array Destructuring - Converting to Object - Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/pPQReo?editors=0010#0" target="_blank">View Solution</a>
+							</div>
+						</div>
+						<div class="halfblock">
+							<h6 class="light">Activity 2</h6>
+							<div>
+								<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/?editors=0010" target="_blank">View Solution</a>
+							</div>
+
+						</div>
+					</div>
+				</section>
+
 
 			</div>
   		<footer>
@@ -1575,6 +1822,7 @@ console.log([1, ...arr]); // normal array: [1, 2, 3, 4]</code></pre>
 			});
 
 		</script>
-		<script async src="//production-assets.codepen.io/assets/embed/ei.js"></script>
+		<!-- TODO uncomment -->
+		<!--<script async src="//production-assets.codepen.io/assets/embed/ei.js"></script>-->
 	</body>
 </html>
