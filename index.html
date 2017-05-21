@@ -1531,7 +1531,28 @@ console.log([1, ...arr]); // normal array: [1, 2, 3, 4]</code></pre>
 
 				<section>
 					<h2>Property initializer shorthand</h2>
-
+					<p>When an object property name is the same as the local variable name, you can include the name without a colon and value.</p>
+					<div class="clear small">
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES5:</h3>
+							<pre><code class="javascript">function createAccount(id, username){
+  return {
+    id: id,
+    username: username
+  };
+}</code></pre>
+							<p class="right small fragment">becomes</p>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green underlined">ES6:</h3>
+							<pre><code class="javascript">function createAccount(id, username){
+  return {
+    id,
+    username
+  };
+}</code></pre>
+						</div>
+					</div>
 				</section>
 
 				<section>
