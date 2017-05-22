@@ -81,10 +81,16 @@
 
 				<section>
 					<h2>First Things First</h2>
+					<h3>Course Format</h3>
+					<ul class="small">
+						<li>In-Class Activities</li>
+						<li>Homework</li>
+						<li>Course Website: <a href="http://anything.codes" target="_blank">http://anything.codes</a></li>
+						<li>Slides: <a href="http://tiny.cc/gdies6" target="_blank">http://tiny.cc/gdies6</a></li>
+					</ul>
 					<p>&nbsp;</p>
+					<p><span class="orange">Need help?</span><br />Note the instructor contact info on the whiteboard</p>
 					<p><strong>Thank you to our wonderful TAs!</strong></p>
-					<p>Class Format</p> <!-- TODO: Info about class format here -->
-					<p><span class="orange">Need help?</span> Note the course website &amp; instructor contact info on the whiteboard</p>
 					<aside class="notes">Mention that there will be HW. Will review the solution before each class, and talk about potential other solutions.</aside>
 				</section>
 
@@ -161,7 +167,7 @@
 					<h1 style="color: #fafafa;font-size:3.7em;">Background</h1>
 				</section>
 
-				<section>
+				<!--<section>
 					<h2>History</h2>
 					<p>JavaScript's standard referred to as <span class="green">ECMAScript</span>, abbreviated <span class="green">ES</span>. Was eventually versioned by ordinal number (e.g. ES<span class="blue">3</span>).</p>
 					<p class="fragment"><img src="dist/img/history-es6.png" alt="The history of ECMAScript and JavaScript" /></p>
@@ -178,10 +184,10 @@
 							<li>ES6 gets the most attention because it was a huge spec overhaul. It introduced a ton of new features. ES7 and all versions going forward will be smaller, more incremental changes; ES7 only introduced two new features, so we'll discuss them as part of this class.</li>
 						</ul>
 					</aside>
-				</section>
+				</section>-->
 
 				<section>
-					<h2>Terms</h2>
+					<h2>What is ES6?</h2>
 					<div class="small clear">
 						<div class="halfblock">
 							<p class="blue underlined">📄 Standard:</p>
@@ -198,6 +204,7 @@
 							</ul>
 						</div>
 						<div class="halfblock">
+							<!-- TODO: Blueprint image -->
 							<img src="dist/img/flowchart-es-js.svg" alt="ES6's relationship to JavaScript" />
 							<p class="fragment" style="margin-top:15px;">
 								📝 We'll implement the new features from versions <span class="orange">6 and 7 of ECMAScript</span> using <span class="orange">JavaScript</span>
@@ -216,12 +223,10 @@
 				<section>
 					<h2>Why use ES6?</h2>
 					<ul style="font-size:90%;">
-						<li class="fragment">Simpler, less error-prone syntax</li>
-						<li class="fragment">Easier for other developers to understand your code</li>
-						<li class="fragment">Enforces best coding practices</li>
+						<li>Sure, there are handy new methods, syntax, and easier-to-read code, but...</li>
 						<li class="fragment">Top JavaScript libraries will be written in ES6. If you aren't familiar with ES6, you'll be at a disadvantage when trying to read documentation and build new features.</li>
-						<li class="fragment">Backwards compatible: Take advantage of new features without worrying about ripping apart existing projects</li>
-						<li class="fragment">Integrates nicely with modern build tools &mdash; easily add linting, minification, and other handy optimizations</li>
+						<li class="fragment">Backwards compatible</li>
+						<li class="fragment">Integrates nicely with modern build tools</li>
 					</ul>
 					<p class="fragment"><br /><span class="orange">🌟 Above all, it's the new standard.</span> This means that, in the near future, ES6 will be standard in each browser.</p>
 					<aside class="notes">
@@ -230,22 +235,38 @@
 				</section>
 
 				<section>
-					<h2>Transpiling</h2>
-					<h3>Transpiling = Transformation + Compiling</h3>
+					<h2>Today's Topics</h2>
+					<ol>
+						<li>Transpiling</li>
+						<li>Scopes &amp; Variables</li>
+						<li>String Helpers</li>
+						<li>Arrow Functions</li>
+					</ol>
+					<aside class="notes">
+						These are the things that I'd like to try and cover today. We may not get to all of it, or we may blow through all of it, but this is what we're aiming for.
+					</aside>
+				</section>
+
+				<section data-background="#f05b62">
+					<h1 style="color: #fafafa;font-size:3.7em;">Transpiling</h1>
+				</section>
+
+				<section>
+					<h2><span class="green">Transpiling</span> = Transformation + Compiling</h2>
 					<p>&nbsp;</p>
 					<img src="dist/img/transpiling.svg" alt="Transpiling" />
 					<div class="transpiler clear">
 						<div class="halfblock">
-							<h3 class="green">Before</h3>
+							<h3 class="green">Before: ES6</h3>
 							<pre><code contenteditable class ="javascript transpiler__input">const getMessage = () => 'Hello World';</code></pre>
 						</div>
 						<div class="halfblock">
-							<h3 class="green">After</h3>
+							<h3 class="green">After: ES5</h3>
 							<pre><code class="javascript transpiler__output">Waiting...</code></pre>
 						</div>
 					</div>
 					<p>&nbsp;</p>
-					<aside class="notes">You and your team can focus on writing readable, less error-prone code in less lines. <code>src</code> and <code>dist</code> folder workflow. Enforces good coding practices behind the scenes (<code>'use strict';</code>). Allows you to focus on writing readable code in less lines. Build tools (e.g. WebPack) integrate nicely with this workflow and can be used to minify the ES5 result, add linting, add prefixes to CSS automatically, etc. [[[Browsers don’t yet implement natively a lot of ES6+ features, and developers want to innovate on what JavaScript is. This means they’ve gone to building tools like Babel that implement futuristic JavaScript features and compile down to ES5.]]]
+					<aside class="notes">Break the ES6 code as an example. Ask who's seen a <code>src</code> and <code>dist</code> folder. Both of these are creating a function that returns 'Hello World'. You and your team can focus on writing readable, less error-prone code in fewer lines. Enforces good coding practices behind the scenes (<code>'use strict';</code>). Allows you to focus on writing readable code in less lines. Build tools (e.g. WebPack) integrate nicely with this workflow and can be used to minify the ES5 result, add linting, add prefixes to CSS automatically, etc. [[[Browsers don’t yet implement natively a lot of ES6+ features, and developers want to innovate on what JavaScript is. This means they’ve built tools like Babel that implement futuristic JavaScript features and compile down to ES5.]]]
 					</aside>
 				</section>
 
@@ -255,8 +276,16 @@
 						<li class="fragment">Browser support</li>
 						<li class="fragment">No need to wait for browsers/engines to catch up with the ECMAScript specification</li>
 						<li class="fragment">Focus on writing clean, easy-to-read code &mdash; compile it to a cross-browser-compatible format</li>
-						<li class="fragment">JavaScript will continue to evolve constantly; without transpilation, you'll miss out on innovations that make JavaScript more effective, efficient, and robust</li>
+						<li class="fragment">JavaScript will continue to <a href="https://dayssincelastjavascriptframework.com/" target="_blank">evolve constantly</a>; without transpilation, you'll miss out on innovations that make JavaScript more effective, efficient, and robust</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Transpiling Setup</h2>
+					<p>We'll do this later!</p>
+					<aside class="notes">
+						You'll be able to use everything from this course later via transpiling.
+					</aside>
 				</section>
 
 				<!-- TODO -->
@@ -267,6 +296,7 @@
 
 				<section data-background="#f05b62">
 					<h1 style="color: #fafafa;font-size:3.7em;">Scopes & Variables</h1>
+					<aside class="notes">Can someone tell me what scope means in the context of programming in general?</aside>
 				</section>
 
 				<section>
@@ -294,7 +324,7 @@ for (var i = 0; i < 5; i++) {
 					</ol>
 					<p style="margin-top:.3em;" class="fragment"><code>var</code> <span class="orange">only respects function scopes</span></p>
 					<aside class="notes">
-						Most languages use block scopes. This made programming in JavaScript unintuitive and inconsistent for many who were used to block scoping.
+						Ask what the other form of scope is. Most languages use block scopes. This made programming in JavaScript unintuitive and inconsistent for many who were used to block scoping.
 					</aside>
 				</section>
 
@@ -368,6 +398,9 @@ for (var i = 0; i < 5; i++) {
 						<p data-height="120" data-theme-id="dark" data-slug-hash="bWwbKa" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="const (Before)" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/bWwbKa/">const (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 						<a class="solution solution__lesson-1" href="https://codepen.io/anythingcodes/pen/jmMNpK?editors=0010" target="_blank">View Solution</a>
 					</div>
+					<aside class="notes">
+						Change the CodePen on screen
+					</aside>
 				</section>
 
 				<section>
@@ -508,7 +541,21 @@ for (var i = 0; i < 5; i++) {
 
 				<section>
 					<h2>Arrow Functions</h2>
+					<div class="clear">
+						<div class="halfblock">
+							<h3 class="green">ES5</h3>
+							<pre><code contenteditable class ="javascript">var getMessage = function(name) {
+  return 'Hello ' + name + '!';
+}								</code></pre>
+						</div>
+						<div class="halfblock fragment">
+							<h3 class="green">ES6</h3>
+							<pre><code contenteditable class ="javascript">const getMessage = name => `Hello ${name}!`;</code></pre>
+						</div>
+
+					</div>
 					<div class="clear small">
+
 						<div class="halfblock">
 							<h3 class="fragment">Making an arrow function:</h3>
 							<ol>
@@ -524,19 +571,7 @@ for (var i = 0; i < 5; i++) {
 							</ul>
 						</div>
 					</div>
-					<div class="clear fragment">
-						<div class="halfblock">
-							<h3 class="green underlined">ES5</h3>
-							<pre><code class="javascript" contenteditable>const sum = function(a, b) {
-    return a + b;
-}</code></pre>
-							<p class="right small fragment">becomes</p>
-						</div>
-						<div class="halfblock fragment">
-							<h3 class="green underlined">ES6</h3>
-							<pre><code class="javascript" contenteditable>const sum = (a, b) => a + b;</code></pre>
-						</div>
-					</div>
+
 					<aside class="notes">
 						<ul>
 							<li>Skinny arrow is <code>-></code> like in Ruby and Coffeescript</li>
@@ -589,6 +624,7 @@ console.log(person.getName()); // Wesley</code></pre>
 					</div>
 					<aside class="notes">
 						<ul>
+							<li>Refer to it as 'the this keyword' and then 'the keyword' going forward</li>
 							<li>The call to this.logEvent() is broken because <code>this</code> is a reference to the object that was the target of the event (<code>document</code>)</li>
 							<li>Ask students to transform existing code to arrow function per earlier steps
 								<ul>
@@ -1843,7 +1879,6 @@ console.log(first, otherScores); // What would this output?
 			});
 
 		</script>
-		<!-- TODO uncomment -->
-		<!--<script async src="//production-assets.codepen.io/assets/embed/ei.js"></script>-->
+		<script async src="//production-assets.codepen.io/assets/embed/ei.js"></script>
 	</body>
 </html>
