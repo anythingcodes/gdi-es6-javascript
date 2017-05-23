@@ -204,8 +204,15 @@
 							</ul>
 						</div>
 						<div class="halfblock">
-							<!-- TODO: Blueprint image -->
-							<img src="dist/img/flowchart-es-js.svg" alt="ES6's relationship to JavaScript" />
+							<!--<img src="dist/img/flowchart-es-js.svg" alt="ES6's relationship to JavaScript" />-->
+							<div class="fragment-progression">
+								<div class="fragment">
+									<img src="dist/img/house1.png" alt="The standard, ECMAScript, is the ruleset, or blueprint" />
+								</div>
+								<div class="fragment">
+									<img src="dist/img/house2.png" alt="The implementation, JavaScript, is the language that uses that ruleset's plan, or built house/product" />
+								</div>
+							</div>
 							<p class="fragment" style="margin-top:15px;">
 								📝 We'll implement the new features from versions <span class="orange">6 and 7 of ECMAScript</span> using <span class="orange">JavaScript</span>
 							</p>
@@ -230,7 +237,10 @@
 					</ul>
 					<p class="fragment"><br /><span class="orange">🌟 Above all, it's the new standard.</span> This means that, in the near future, ES6 will be standard in each browser.</p>
 					<aside class="notes">
-
+						<ul>
+							<li>Bigger leap than what existed in previous standards</li>
+							<li>Everything relevant going forward will use ES6</li>
+						</ul>
 					</aside>
 				</section>
 
@@ -282,17 +292,12 @@
 
 				<section>
 					<h2>Transpiling Setup</h2>
-					<p>We'll do this later!</p>
+					<p>We'll set this up on our machine later! For now, CodePen can use Babel to transpile ES6 for us.</p>
+					<p><img src="dist/img/codepen-babel.gif" style="border: 1px solid black;max-height:40vh;" alt="Using the Babel transpiler in CodePen" /></p>
 					<aside class="notes">
 						You'll be able to use everything from this course later via transpiling.
 					</aside>
 				</section>
-
-				<!-- TODO -->
-				<!--<section class="activity" data-background="rgb(6, 116, 123)">-->
-					<!--<h2>Activity</h2>-->
-					<!--<h3>Transpiling Setup</h3>-->
-				<!--</section>-->
 
 				<section data-background="#f05b62">
 					<h1 style="color: #fafafa;font-size:3.7em;">Scopes & Variables</h1>
