@@ -312,8 +312,9 @@
 							<pre><code contenteditable class="javascript">{
   // anything within { } that isn't a function
 }
-for (var i = 0; i < 5; i++) {
-  console.log(i);
+
+if (isPhiladelphia) {
+  var alwaysSunny = true;
 }</code></pre>
 							<ul class="small">
 								<li><span class="blue">Examples:</span> <code>{ }</code>, <code>if () { }</code>, <code>for() {}</code>, <code>while() { }</code>, etc.</li><li><span class="blue">Purpose:</span> Declare variables as close as possible, as local as possible, to where they will be used.</li>
@@ -346,7 +347,7 @@ for (var i = 0; i < 5; i++) {
 					<aside class="notes">
 						<ol>
 							<li>{ ... } is perfectly valid JavaScript, but you probably don't see it often &mdash; before ES6, it was basically useless. Not anymore!</li>
-
+							<li>Ask what the output would be. DON'T open the console first.</li>
 						</ol>
 					</aside>
 				</section>
@@ -600,18 +601,23 @@ for (var i = 0; i < 5; i++) {
 				<section>
 					<h2>There's <code>this</code> One Problem</h2>
 					<p><code>this</code> determines context</p>
-					<pre class="small"><code class="javascript">const person = {
-  name: 'Wesley',
-  getName: function() {
-    return this.name;
+					<pre class="small"><code class="javascript" contenteditable>const person = {
+  firstName: 'Wesley',
+  getFirstName: function() {
+    setTimeout(function() {
+      console.log(this.firstName);
+    }, 1000);
   }
 };
-console.log(person.getName()); // Wesley</code></pre>
+
+person.getFirstName();</code></pre>
+
 					<p class="fragment">Binding and changing <code>this</code> in functions is one of the most common JavaScript errors</p>
 					<div class="fragment clear" style="margin-top:.5em;">
 						<p><img src="dist/img/computer-frustration.gif" alt="Computer frustration" class="right" />It's possible to mistakenly affect one object when you meant to affect another</p>
 
 					</div>
+					<aside class="notes">Ask students what the code would output and how they would solve the issue here - <a href="https://codepen.io/anythingcodes/pen/BRvYQp/">CodePen: Problems with 'this' binding</a></aside>
 				</section>
 
 				<section>
