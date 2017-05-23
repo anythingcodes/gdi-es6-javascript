@@ -85,7 +85,7 @@
 					<h3>Course Format</h3>
 					<ul class="small">
 						<li>In-Class Activities</li>
-						<li>Homework</li>
+						<li>At-Home Challenges</li>
 						<li>Course Website: <a href="http://anything.codes" target="_blank">http://anything.codes</a></li>
 						<li>Slides: <a href="http://tiny.cc/gdies6" target="_blank">http://tiny.cc/gdies6</a></li>
 					</ul>
@@ -459,11 +459,47 @@ if (isPhiladelphia) {
 					<h2>Activity</h2>
 					<ol>
 						<li>Complete activities 1 and 2 in CodePen. Be sure to fork the pen first if you'd like to save your work to your account!</li>
-						<!-- TODO -->
+						<!-- TODO: solution -->
 					</ol>
+
 					<div style="min-height:265px;">
-					<p data-height="265" data-theme-id="0" data-slug-hash="rmmjXP" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="const and let exercise" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/rmmjXP/">const and let exercise</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					<p data-height="265" data-theme-id="0" data-slug-hash="rmmjXP" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="const and let exercise" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/rmmjXP/">const and let exercise</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 				</div>
+				</section>
+
+				<section class="activity__challenge" data-background="#d2ccfc">
+					<h2>At-Home Challenge</h2>
+					<h3>Fruit Basket</h3>
+					<div class="small clear">
+						<div class="halfblock">
+							<pre><code contenteditable class ="javascript" >var fruit = 'apple';
+
+(function basket(){
+    var fruit = 'banana';
+    console.log(fruit);
+})();
+
+console.log(fruit);
+
+var fruitBasket = {
+    fruit: 'mango',
+    getFruit: function(){
+      console.log(fruit);
+      fruit = 'orange';
+    }
+};
+fruitBasket.getFruit();
+console.log(fruit);</code></pre>
+
+						</div>
+						<div class="halfblock">
+							<p>What would the following output to the console and why?</p>
+						</div>
+					</div>
+
+					<aside class="notes">
+						Common interview question!
+					</aside>
 				</section>
 
 				<section data-background="#f05b62">
