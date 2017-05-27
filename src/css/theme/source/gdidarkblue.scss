@@ -362,6 +362,20 @@ h1, h2, h3, h4, h5, h6 {
       text-align: center;
     }
   }
+  .info {
+    &:before {
+      color: white;
+      background: #1e96ff;
+      border-radius: 50%;
+      width: 1em;
+      height: 1em;
+      display: inline-block;
+      content: '\2139';
+      margin-right: .5em;
+      line-height: 1;
+      vertical-align: baseline;
+    }
+  }
   .quiz {
     h2 {
       &:after {
@@ -384,7 +398,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
   }
   &.solution__lesson-2 {
-    // display: inline-block;
+    display: inline-block;
   }
   &.solution__lesson-3 {
     // display: inline-block;
