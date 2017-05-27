@@ -164,7 +164,9 @@ h1, h2, h3, h4, h5, h6 {
   background-size: auto 100%; }
 
 .reveal footer .copyright {
-  margin: 15px 5px 0 100px; }
+  margin: 15px 5px 0 100px;
+  font-size: 1.3em;
+  font-weight: 600; }
 
 .reveal footer .copyright a img {
   vertical-align: middle; }
