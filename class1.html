@@ -655,16 +655,10 @@ console.log(fruit);</code></pre>
 				<section>
 					<h2>There's <code>this</code> One Problem</h2>
 					<p><code>this</code> determines context</p>
-					<pre class="small"><code class="javascript" contenteditable>const person = {
-  firstName: 'Wesley',
-  getFirstName: function() {
-    setTimeout(function() {
-      console.log(this.firstName);
-    }, 1000);
-  }
-};
+					<div style="min-height:150px">
+						<p data-height="150" data-theme-id="0" data-slug-hash="XRwqOm" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Problems with this" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/XRwqOm/">Problems with this</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</div>
 
-person.getFirstName();</code></pre>
 
 					<p class="fragment">Binding and changing <code>this</code> in functions is one of the most common JavaScript errors</p>
 					<div class="fragment clear" style="margin-top:.5em;">
