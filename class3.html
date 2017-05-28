@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Getting Started with ES6 and ES7 JavaScript</title>
+
+    <meta name="description" content="Materials and slides for a Girl Develop It ES6 JavaScript course. Includes ES7's minor additions.">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="dist/css/reveal.css">
+    <link rel="stylesheet" href="dist/css/gdidarkblue.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor --><link rel="stylesheet" href="dist/css/light.css">
+    <!-- dark editor <link rel="stylesheet" href="dist/css/dark.css">-->
+    <!-- <link rel="stylesheet" href="dist/css/zenburn.css"> -->
+
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'dist/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="dist/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body spellcheck="false">
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <!-- Opening -->
+        <section class="small">
+            <h1>Getting Started with ES6 and ES7 JavaScript</h1>
+            <img src="dist/img/es6-gdi.jpg" alt="ES6 and ES7 Intro Image" class="noborder"/>
+            <h2 class="green">Class 3</h2>
+        </section>
+
+        <section>
+            <h2>Today's Topics</h2>
+            <ol>
+                <li>Function Parameters</li>
+                <li>Expanded Object Functionality</li>
+                <li>Destructuring</li>
+            </ol>
+        </section>
+
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h2>Review</h2>
+            <h3>Implement a <code>reject</code> function</h3>
+
+        </section>
+
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h2>Review</h2>
+            <h3>Implement a <code>pluck</code> function</h3>
+
+        </section>
+
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h2>Review</h2>
+            <h3>Implement a <code>unique</code> function</h3>
+
+        </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Function Parameters</h1>
+        </section>
+
+        <section>
+            <h2>Default Parameter Values</h2>
+            <h3 class="green underlined">ES5:</h3>
+            <div class="clear" style="margin-top:0;">
+                <div class="halfblock">
+							<pre class="small"><code class="javascript">function makeRequest(url, timeout, callback) {
+  timeout = timeout || 2000;
+  callback = callback || function() {};
+  // more code here
+}</code></pre>
+                    <p class="fragment small right">becomes</p>
+                </div>
+                <div class="halfblock fragment">
+							<pre class="small"><code class="javascript">function makeRequest(url, timeout, callback) {
+  timeout = (typeof timeout !== 'undefined') ? timeout : 2000;
+  callback = (typeof callback !== 'undefined') ? callback : function() {};
+  // more code here
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="fragment" style="margin-top:.5em;">
+                <h3 class="green underlined">ES6:</h3>
+                <pre class="small"><code class="javascript">function makeRequest(url, timeout = 2000, callback = () => {}) {
+  // more code here
+}</code></pre>
+            </div>
+            <div class="small fragment" style="margin-top:.5em;">
+                <img src="dist/img/its-beautiful.gif" alt="It's beautiful" />
+                <p><em>It's beautiful</em></p>
+            </div>
+            <aside class="notes">
+                <ul>
+                    <li>The problem with the first ES5 makeRequest() is that 0 &mdash; a valid timeout &mdash; would be considered falsy and would then change to 2000 instead of 0. So we have to account for undefined specifically and then assign values. Too much code! ES6 can handle this error-checking for us.</li>
+                    <li>makeRequest() expects only the first parameter to always be passed</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section>
+            <h2>Calling functions with default parameters</h2>
+            <p>Given the following function:</p>
+            <pre class="small"><code class="javascript" contenteditable>function makeRequest(url, timeout = 2000, callback = () => {}) {
+  // more code here
+}</code></pre>
+            <div class="fragment">
+                <p>Only <code>url</code> is required. The following calls all work:</p>
+                <pre class="small"><code class="javascript">makeRequest('/gdi');
+
+makeRequest('/gdi', 500);
+
+makeRequest('/gdi', 500, requestData => updateDatabase(requestData));
+
+makeRequest('/gdi', undefined, requestData => updateDatabase(requestData));</code></pre>
+            </div>
+            <aside class="notes">
+                Point out that you can pass in <code>undefined</code>. However, <code>null</code> is a valid value so the function will use <code>null</code> instead of the default parameter.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Enforcing mandatory parameters</h2>
+            <p>Since default values are only evaluated when used, you can use it to enforce that a certain parmeter is provided:</p>
+            <pre><code class="javascript">function mandatory() {
+  throw new Error('You forgot a parameter!');
+}
+
+function doSomething(mustBeProvided = mandatory()) {
+  return mustBeProvided;
+}</code></pre>
+        </section>
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <h3>Using default parameters</h3>
+            <div style="min-height:265px;">
+                <p data-height="265" data-theme-id="0" data-slug-hash="LyOXoQ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Default parameters activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/LyOXoQ/">Default parameters activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Rest Parameters</h2>
+            <p>Placing <code>...</code> <span class="orange">before a function parameter</span> transforms that parameter and the <span class="blue">rest</span> (i.e. all following parameters) into an array</p>
+            <pre class="small"><code class="javascript">function giveItARest(part1, ...part2) {
+  console.log(part1);
+  console.log(part2);
+}
+
+giveItARest(1, 2, 3, 4, 5, 6);
+// 1
+// [2, 3, 4, 5, 6]</code></pre>
+            <p class="fragment">Useful when you don't know how many arguments will be passed to a function</p>
+            <aside class="notes">
+                To change a method name after deploying, when tons of existing apps are using a method by that name, e.g. changing calculateProduct() to multiply(). You can pass the call of one method to another and use the spread operator.
+            </aside>
+        </section>
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <h3>Using rest parameters</h3>
+            <div style="min-height:265px;">
+                <p data-height="265" data-theme-id="0" data-slug-hash="mmqaVo" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Rest parameter activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/mmqaVo/">Rest parameter activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            </div>
+        </section>
+
+
+        <!-- TODO: Mention tagged template literals? -->
+        <section>
+            <h2>Tagged template literals</h2>
+        </section>
+
+        <section>
+            <h2>Spread operator</h2>
+            <p>Placing <code>...</code> <span class="orange">before an array</span> <span class="blue">spreads</span> the array into its individual elements</p>
+            <pre class="small"><code class="javascript" contenteditable>const arr = [2, 3, 4];
+
+console.log([1, arr]); // nested array: [1, [2, 3, 4]]
+
+console.log([1, ...arr]); // normal array: [1, 2, 3, 4]</code></pre>
+        </section>
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <h3>Using rest parameters with the spread operator</h3>
+            <div style="min-height:265px;">
+                <p data-height="265" data-theme-id="0" data-slug-hash="PmOXaq" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Spread and Rest Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/PmOXaq/">Spread and Rest Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            </div>
+            <p><a href="https://codepen.io/anythingcodes/pen/aWVPja?editors=0010" target="_blank" class="solution__lesson-2 solution">View Solution &raquo;</a></p>
+        </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Object Syntax</h1>
+        </section>
+
+        <section>
+            <h2>Property initializer shorthand</h2>
+            <p>When an object property name is the same as the local variable name, you can include the name without a colon and value.</p>
+            <div class="clear small">
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES5:</h3>
+                    <pre><code class="javascript">function createAccount(id, username){
+  return {
+    id: id,
+    username: username
+  };
+}</code></pre>
+                    <p class="right small fragment">becomes</p>
+                </div>
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES6:</h3>
+                    <pre><code class="javascript">function createAccount(id, username){
+  return {
+    id,
+    username
+  };
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Concise methods</h2>
+        </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Destructuring</h1>
+        </section>
+
+        <section>
+            <h2>Destructuring Objects</h2>
+            <p>Unpack properties from objects into distinct variables</p>
+            <div class="clear small">
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES5:</h3>
+                    <pre><code class="javascript">var person = {
+  name: 'Whitney Doe',
+  frequentFlyerMember: true
+};
+
+var name = person.name;
+var frequentFlyerMember = person.frequentFlyerMember;
+
+console.log(name, frequentFlyerMember);
+// Whitney Doe, true</code></pre>
+                    <p class="right small fragment">becomes</p>
+                </div>
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES6:</h3>
+                    <pre><code class="javascript">const person = {
+  name: 'Whitney Doe',
+  frequentFlyerMember: true
+};
+
+const { name, frequentFlyerMember } = person;
+console.log(name, frequentFlyerMember);
+// Whitney Doe, true</code></pre>
+                </div>
+            </div>
+            <ul class="small">
+                <li class="fragment"><span class="green">Left-hand side of the equal sign (<code>=</code>)</span><br />A comma-separated list of the object's keys you'd like to unpack, wrapped in <code>{ }</code></li>
+                <li class="fragment"><span class="green">Right-hand side of the equal sign (<code>=</code>)</span><br />The object</li>
+            </ul>
+        </section>
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <h2>Using Object Destructuring</h2>
+            <div class="clear" style="min-height:300px;">
+                <div class="halfblock">
+                    <h6 class="light">Activity 1</h6>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="LyXxpy" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Object Destructuring Activity 1" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/LyXxpy/">Object Destructuring Activity 1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                    <div>
+                        <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/gWQgPK?editors=0010#0" target="_blank">View Solution</a>
+                    </div>
+                </div>
+                <div class="halfblock">
+                    <h6 class="light">Activity 2</h6>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="EmONGj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Activity: Object Destructuring" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmONGj/">Activity: Object Destructuring</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                    <div>
+                        <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/LyXbqR?editors=0010" target="_blank">View Solution</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Default Values</h2>
+            <p>What if an object doesn't contain a key with that name?</p>
+            <p class="fragment">Set a default value with equal signs (<code>=</code>)</p>
+            <div class="clear small">
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES5:</h3>
+                    <pre><code class="javascript">var person = {
+  name: 'Whitney Doe'
+};
+
+var name = person.name;
+var frequentFlyerMember = person.frequentFlyerMember; // undefined
+
+console.log(name, frequentFlyerMember);
+// Whitney Doe, undefined</code></pre>
+                    <p class="right small fragment">becomes</p>
+                </div>
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES6:</h3>
+                    <pre><code class="javascript">const person = {
+  name: 'Whitney Doe'
+};
+
+const { name, frequentFlyerMember = false } = person;
+console.log(name, frequentFlyerMember);
+// Whitney Doe, false</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Assigning to different local variable names</h2>
+            <p>What if you want to use a different name for the variable?</p>
+            <ol>
+                <li class="fragment">Use a <code>:</code> in the comma-separated list of keys</li>
+                <li class="fragment">The <span class="green">name after <code>:</code></span> can now be referenced</li>
+            </ol>
+            <div class="clear small">
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES5:</h3>
+                    <pre><code class="javascript">var person = {
+  name: 'Whitney Doe'
+};
+
+var localName = person.name;
+
+console.log(name); // Whitney Doe</code></pre>
+                    <p class="right small fragment">becomes</p>
+                </div>
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES6:</h3>
+                    <pre><code class="javascript">const person = {
+  name: 'Whitney Doe'
+};
+
+const { name: localName } = person;
+console.log(localName); // Whitney Doe</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Destructuring Arrays</h2>
+            <p>Unpack values from arrays into distinct variables</p>
+            <div class="clear small">
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES5:</h3>
+                    <pre><code class="javascript">var scores = [ 94, 89, 73 ];
+
+var first = scores[0];
+var second = scores[1];
+var third = scores[2];
+
+console.log(first, second, third); // 94, 89, 73</code></pre>
+                    <p class="right small fragment">becomes</p>
+                </div>
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES6:</h3>
+                    <pre><code class="javascript">const scores = [ 94, 89, 73 ];
+
+const [ first, second, third ] = scores;
+
+console.log(first, second, third); // 94, 89, 73</code></pre>
+                </div>
+            </div>
+            <ul class="small">
+                <li class="fragment"><span class="green">Left-hand side of the equal sign (<code>=</code>)</span><br />A comma-separated list of the values you'd like to unpack, wrapped in <code>[]</code></li>
+                <li class="fragment"><span class="green">Right-hand side of the equal sign (<code>=</code>)</span><br />The array</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Default Values</h2>
+            <p>What if an array doesn't contain a value at that index?</p>
+            <p class="fragment">Set a default value with equal signs (<code>=</code>)</p>
+            <div class="clear small">
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES5:</h3>
+                    <pre><code class="javascript">var scores = [ 94, 89, 73 ];
+
+var first = scores[0];
+var second = scores[1];
+var third = scores[2];
+var fourth = scores[3] === undefined ? 0 : scores[3];
+
+console.log(first, second, third, fourth); // 94, 89, 73, 0</code></pre>
+                    <p class="right small fragment">becomes</p>
+                </div>
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES6:</h3>
+                    <pre><code class="javascript">const scores = [ 94, 89, 73 ];
+
+const [ first, second, third, fourth = 0 ] = scores;
+
+console.log(first, second, third, fourth); // 94, 89, 73, 0</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Swapping Variables</h2>
+            <div class="clear small">
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES5:</h3>
+                    <pre><code class="javascript">var a = 1;
+var b = 2;
+var temp = a;
+
+a = b;
+b = temp;
+
+console.log(a); // 2
+console.log(b); // 1</code></pre>
+                    <p class="right small fragment">becomes</p>
+                </div>
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES6:</h3>
+                    <pre><code class="javascript">let a = 1;
+let b = 2;
+
+[ a, b ] = [ b, a ];
+
+console.log(a); // 2
+console.log(b); // 1</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Rest & Spread</h2>
+            <pre><code class="javascript">const scores = [ 94, 89, 73 ];
+
+const [ first, ...otherScores ] = scores;
+
+console.log(first, otherScores); // What would this output?
+</code></pre>
+            <pre class="fragment"><code class="javascript">console.log(first, ...otherScores); // 94, 89, 73
+</code></pre>
+            <aside class="notes">Ask students what the first item would output and how they could counteract that if they wanted a 1-D array.</aside>
+        </section>
+
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <h2>Using Array Destructuring</h2>
+            <div class="clear" style="min-height:300px;">
+                <div class="halfblock">
+                    <h6 class="light">Activity 1</h6>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="EmOZZN" data-default-tab="result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Array Destructuring - Converting to Object - Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmOZZN/">Array Destructuring - Converting to Object - Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                    <div>
+                        <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/pPQReo?editors=0010#0" target="_blank">View Solution</a>
+                    </div>
+                </div>
+                <div class="halfblock">
+                    <h6 class="light">Activity 2</h6>
+                    <div>
+                        <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/?editors=0010" target="_blank">View Solution</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+    <footer>
+        <div class="copyright">
+            View Slides at <a href="http://tiny.cc/gdies6">tiny.cc/gdies6</a> &nbsp; - &nbsp;
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+    </footer>
+</div>
+
+
+<script src="dist/js/head.min.js"></script>
+<script src="dist/js/babel.min.js"></script>
+<script src="dist/js/reveal.min.js"></script>
+
+<script>
+
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+<script async src="//production-assets.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>
