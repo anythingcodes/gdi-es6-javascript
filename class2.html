@@ -1113,6 +1113,8 @@ console.log(uniqueArr);
 
         <section>
             <h2>Altering Arrays</h2>
+            <p>New methods that alter existing arrays</p>
+            <p>&nbsp;</p>
             <table class="data compact fragment">
                 <tr>
                     <th>Array Method</th>
@@ -1134,8 +1136,8 @@ console.log(uniqueArr);
         </section>
 
         <section>
-            <h2>fill()</h2>
-            <table class="data compact fragment">
+            <h2>fill</h2>
+            <table class="data compact">
                 <tr>
                     <th>Array Method</th>
                     <th>Use it to...</th>
@@ -1147,11 +1149,49 @@ console.log(uniqueArr);
                     <td>the modified array</td>
                 </tr>
             </table>
+            <ul>
+                <li class="small fragment">If no <code>startIndex</code> or <code>endIndex</code> is given, the whole array is filled with the same value</li>
+            </ul>
+            <div class="small clear fragment">
+                <div class="halfblock">
+                    <h3 class="green">ES5: for loops</h3>
+                    <pre><code contenteditable class ="javascript">var numbers = [1, 2, 3];
+
+for (var i = 0; i < numbers.length; i++) {
+  numbers[i] = 4;
+}
+
+console.log(numbers); // [4, 4, 4]
+
+
+var numbers2 = [1, 2, 3];
+var startIndex = 1;
+var endIndex = 2;
+for (var j = 0; j < numbers2.length; j++) {
+  if (j >= startIndex && j < endIndex) {
+    numbers2[j] = 4;
+  }
+}
+
+console.log(numbers2); // [1, 4, 3]</code></pre>
+                </div>
+                <div class="halfblock fragment">
+                    <h3 class="green">ES6: fill</h3>
+                    <pre><code contenteditable class ="javascript">const numbers = [1, 2, 3];
+const numbers2 = [1, 2, 3];
+
+numbers.fill(4);
+console.log(numbers); // [4, 4, 4]
+
+numbers2.fill(4, 1, 2);
+console.log(numbers2); // [1, 4, 3]</code></pre>
+                </div>
+            </div>
         </section>
 
         <section>
-            <h2>copyWithin()</h2>
-            <table class="data compact fragment">
+            <h2>copyWithin</h2>
+            <table class="data compact">
                 <tr>
                     <th>Array Method</th>
                     <th>Use it to...</th>
@@ -1163,6 +1203,18 @@ console.log(uniqueArr);
                     <td>the modified array</td>
                 </tr>
             </table>
+            <ul>
+                <li class="small fragment">If no <code>startIndex</code> or <code>endIndex</code> is given, the whole array is filled with the same value</li>
+            </ul>
+            <p>&nbsp;</p>
+            <div class="fragment">
+                <pre><code contenteditable class ="javascript">const spells = ['hocus', 'pocus', 'wingardium', 'leviosa'];
+
+spells.copyWithin(2, 0);
+console.log(spells);
+// ['hocus', 'pocus', 'hocus', 'pocus']</code></pre>
+            </div>
+            <aside class="notes">Default value for endIndex is the array length</aside>
         </section>
 
         <!-- Next Week -->
