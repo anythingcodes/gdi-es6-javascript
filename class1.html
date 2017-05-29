@@ -251,7 +251,6 @@
 						<li>Transpiling</li>
 						<li>Scopes &amp; Variables</li>
 						<li>String Helpers</li>
-						<li>Arrow Functions</li>
 					</ol>
 					<aside class="notes">
 						These are the things that I'd like to try and cover today. We may not get to all of it, or we may blow through all of it, but this is what we're aiming for.
@@ -374,11 +373,20 @@ if (isPhiladelphia) {
 					<h2>Activity</h2>
 
 					<p>Instructions can be found by editing the below pen on CodePen. Be sure to fork the pen first if you'd like to save your work to your account!</p>
-					<p>&nbsp;</p>
-					<div style="min-height: 280px;">
-					<p data-height="280" data-theme-id="dark" data-slug-hash="LyZwRr" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping with let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/LyZwRr/">Block-scoping with let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+					<div class="clear">
+						<div class="halfblock" style="min-height: 280px;">
+							<h3>Activity 1</h3>
+							<p data-height="280" data-theme-id="dark" data-slug-hash="OmYGzQ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/OmYGzQ/">Block-scoping</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/zwQXRY?editors=0012" target="_blank">View Solution</a>
+						</div>
+						<div class="halfblock" style="min-height: 280px;">
+							<h3>Activity 2</h3>
+							<p data-height="280" data-theme-id="dark" data-slug-hash="LyZwRr" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Block-scoping with let (Before)" class="codepen">See the Pen <a href="http://codepen.io/anythingcodes/pen/LyZwRr/">Block-scoping with let (Before)</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/OmXKRK?editors=0011" target="_blank">View Solution</a>
+						</div>
 					</div>
-					<a class="solution solution__lesson-1" href="http://codepen.io/anythingcodes/pen/OmXKRK?editors=0011" target="_blank">View Solution</a>
+
+
 
 					<aside class="notes">
 						<ul>
@@ -469,41 +477,6 @@ if (isPhiladelphia) {
 					<a href="http://codepen.io/anythingcodes/pen/dWrgrB" target="_blank" class="solution solution__lesson-1">View Solution</a>
 				</section>
 
-				<section class="activity__challenge" data-background="#d2ccfc">
-					<h2>At-Home Challenge</h2>
-					<h3>Fruit Basket</h3>
-					<div class="small clear">
-						<div class="halfblock">
-							<pre><code contenteditable class ="javascript" >var fruit = 'apple';
-
-(function basket(){
-    var fruit = 'banana';
-    console.log(fruit);
-})();
-
-console.log(fruit);
-
-var fruitBasket = {
-    fruit: 'mango',
-    getFruit: function(){
-      console.log(fruit);
-      fruit = 'orange';
-    }
-};
-fruitBasket.getFruit();
-console.log(fruit);</code></pre>
-
-						</div>
-						<div class="halfblock">
-							<p>What would the following output to the console and why?</p>
-						</div>
-					</div>
-
-					<aside class="notes">
-						Common interview question!
-					</aside>
-				</section>
-
 				<section data-background="#f05b62">
 					<h1 style="color: #fafafa;font-size:3.7em;">String Helpers</h1>
 				</section>
@@ -581,134 +554,50 @@ console.log(fruit);</code></pre>
 					<a href="http://codepen.io/anythingcodes/pen/EmMdqG" target="_blank" class="solution__lesson-1 solution">View Solution</a>
 				</section>
 
-				<section data-background="#f05b62">
-					<h1 style="color: #fafafa;font-size:3.7em;">Arrow Functions</h1>
-				</section>
-
-				<section>
-					<h2>Arrow Functions</h2>
-					<div class="clear">
+				<section class="activity__challenge" data-background="#d2ccfc">
+					<h2>At-Home Challenge</h2>
+					<h3>Fruit Basket</h3>
+					<div class="small clear">
 						<div class="halfblock">
-							<h3 class="green">ES5</h3>
-							<pre><code contenteditable class ="javascript">var getMessage = function(name) {
-  return 'Hello ' + name + '!';
-}								</code></pre>
-						</div>
-						<div class="halfblock fragment">
-							<h3 class="green">ES6</h3>
-							<pre><code contenteditable class ="javascript">const getMessage = name => `Hello ${name}!`;</code></pre>
-						</div>
+							<pre><code contenteditable class ="javascript" >var fruit = 'apple';
 
-					</div>
-					<div class="clear small">
+(function basket(){
+    var fruit = 'banana';
+    console.log(fruit);
+})();
 
-						<div class="halfblock">
-							<h3 class="fragment">Making an arrow function:</h3>
-							<ol>
-								<li class="fragment">Remove the word <code>function</code></li>
-								<li class="fragment">Place a fat arrow (<code>=></code>) after parameters</li>
-							</ol>
+console.log(fruit);
+
+var fruitBasket = {
+    fruit: 'mango',
+    getFruit: function(){
+      console.log(fruit);
+      fruit = 'orange';
+    }
+};
+fruitBasket.getFruit();
+console.log(fruit);</code></pre>
+
 						</div>
 						<div class="halfblock">
-							<h3 class="blue fragment">Trimming it down:</h3>
-							<ul>
-								<li class="fragment">If there's only <span class="green">one parameter</span>, remove the surrounding parentheses <code>()</code></li>
-								<li class="fragment">If there's only <span class="green">one expression</span> in the function body, remove <code>{ }</code> and <code>return</code> (<span class="orange">implicit return</span>)</li>
-							</ul>
+							<p>What would the following output to the console and why?</p>
 						</div>
 					</div>
 
 					<aside class="notes">
-						<ul>
-							<li>Skinny arrow is <code>-></code> like in Ruby and Coffeescript</li>
-							<li>If there are zero or more than one args, you need to include parentheses, e.g. <code>const sum = () => retVal;</code></li>
-						</ul>
-
+						Common interview question!
 					</aside>
-				</section>
-
-				<section class="activity" data-background="rgb(6, 116, 123)">
-					<h2>Activity</h2>
-					<h3>Using arrow functions</h3>
-					<p>Refactor the following code to use arrow functions.</p>
-
-					<div class="clear" style="min-height:300px;">
-						<div class="halfblock">
-							<h6 class="light">Activity 1</h6>
-							<p data-height="200" data-theme-id="0" data-slug-hash="dWwdLM" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Arrow Function Exercise #1" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/dWwdLM/">Arrow Function Exercise #1</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-							<div>
-								<a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/NjeymY?editors=0010" target="_blank">View Solution</a>
-							</div>
-						</div>
-						<div class="halfblock">
-							<h6 class="light">Activity 2</h6>
-							<p data-height="200" data-theme-id="0" data-slug-hash="mmBZYo" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Arrow functions" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/mmBZYo/">Arrow functions</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-							<div>
-								<a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/JNwpqd?editors=0010#0" target="_blank">View Solution</a>
-							</div>
-						</div>
-					</div>
-
-
-				</section>
-
-				<section>
-					<h2>There's <code>this</code> One Problem</h2>
-					<p><code>this</code> determines context</p>
-					<div style="min-height:150px">
-						<p data-height="150" data-theme-id="0" data-slug-hash="XRwqOm" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Problems with this" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/XRwqOm/">Problems with this</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-					</div>
-
-
-					<p class="fragment">Binding and changing <code>this</code> in functions is one of the most common JavaScript errors</p>
-					<div class="fragment clear" style="margin-top:.5em;">
-						<p><img src="dist/img/computer-frustration.gif" alt="Computer frustration" class="right" />It's possible to mistakenly affect one object when you meant to affect another</p>
-
-					</div>
-					<aside class="notes">Ask students what the code would output and how they would solve the issue here - <a href="https://codepen.io/anythingcodes/pen/BRvYQp/">CodePen: Problems with 'this' binding</a></aside>
-				</section>
-
-				<section>
-					<h2>Arrow Functions and <code>this</code></h2>
-
-					<ul>
-
-						<li class="fragment">Arrow functions <span class="green">do not have a <code>this</code> 🌟</li>
-						<li class="fragment">The value of <code>this</code> is <span class="orange">lexically fetched</span> from the scope the arrow function sits inside</li>
-					</ul>
-					<div style="min-height:200px;" class="fragment">
-						<p data-height="200" data-theme-id="0" data-slug-hash="qmPGJN" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Arrow functions and `this`" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qmPGJN/">Arrow functions and `this`</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-						<a class="solution solution__lesson-1" href="https://codepen.io/anythingcodes/pen/QvqReo?editors=0010#0" target="_blank">View Solution</a>
-
-					</div>
-					<aside class="notes">
-						<ul>
-							<li>Refer to it as 'the this keyword' and then 'the keyword' going forward</li>
-							<li>The call to this.logEvent() is broken because <code>this</code> is a reference to the object that was the target of the event (<code>document</code>)</li>
-							<li>Ask students to transform existing code to arrow function per earlier steps
-								<ul>
-									<li>Can fix by binding <code>this</code> to logEvent(), but this creates a new function whose <code>this</code> is bound to the current <code>this</code>.</li>
-									<li>Could also declare <code>var self = this;</code></li>
-								</ul>
-							</li>
-							<li>Arrow functions are a better way to fix the issue! ES6's purpose is to solve this problem and stop worrying about context.</li>
-						</ul>
-					</aside>
-				</section>
-
-				<section class="activity" data-background="rgb(6, 116, 123)">
-					<h2>Activity</h2>
-					<h3>Fixing <code>this</code> scoping with arrow functions</h3>
-					<div style="min-height: 150px;">
-						<p data-height="150" data-theme-id="0" data-slug-hash="qmPzPP" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Arrow Functions Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qmPzPP/">Arrow Functions Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-					</div>
-					<a href="https://codepen.io/anythingcodes/pen/eWGwbv?editors=0010" class="solution__lesson-1 solution" target="_blank">View Solution</a>
 				</section>
 
 				<!-- Next Week -->
 				<section class="hide-pdf">
 					<h2>Next Week</h2>
-					<p class="blue">Array Helpers</p>
+					<ol>
+						<li>Arrow Functions</li>
+						<li>Arrow Functions and <code>this</code> scoping</li>
+						<li>Array Helpers</li>
+						<li>Altering Arrays</li>
+					</ol>
 
 					<p class="small"><em>Remember to do the at-home challenge!</em></p>
 				</section>
