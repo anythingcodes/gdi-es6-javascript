@@ -29,14 +29,3 @@
 ```const message = `User ${name} scored ${score} on the exam`;```
 
 - Use backticks (``) around the string and `${}` around variables or expressions
-
-## Arrow Functions
-
-```const getMessage = name => `Hello ${name}!`;```
-
-To make an arrow function:
-
-- Remove the word function
-- Place a fat arrow (`=>`) after parameters
-- If there's only one parameter, remove the surrounding parentheses `()`
-- If there's only one expression in the function body, remove `{ }` and `return`

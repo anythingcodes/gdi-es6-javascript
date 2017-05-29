@@ -157,7 +157,7 @@ orange</code></pre>
 
         <section class="activity" data-background="rgb(6, 116, 123)">
             <h2>Activity</h2>
-            <h3>Using arrow functions</h3>
+            <h3>Writing arrow functions</h3>
             <p>Refactor the following code to use arrow functions.</p>
 
             <div class="clear" style="min-height:300px;">
@@ -209,24 +209,21 @@ obj.getName(); // Zeta</code></pre>
                 <p class="fragment"><a href="https://twitter.com/bendhalpern/status/578925947245633536" target="_blank"><img src="dist/img/this-tweet-joke.png" alt="JavaScript `this` tweet by Ben Halpern" /></a></p>
             </div>
 
-            <p class="fragment"><a href="https://codepen.io/anythingcodes/pen/BRvYQp/?editors=0010" target="_blank">Let's take a look &raquo;</a></p>
+            <!--<p class="fragment"><a href="https://codepen.io/anythingcodes/pen/BRvYQp/?editors=0010" target="_blank">Let's take a look &raquo;</a></p>-->
 
             <aside class="notes">Ask students what the code would output and how they would solve the issue.</aside>
         </section>
 
         <section>
-            <h2>Arrow Functions and <code>this</code></h2>
+            <h2>What is <code>this</code> problem?</h2>
 
-            <ul>
-
-                <li class="fragment">Arrow functions <span class="green">do not have a <code>this</code> 🌟</li>
-                <li class="fragment">The value of <code>this</code> is <span class="orange">lexically fetched</span> from the scope the arrow function sits inside</li>
-            </ul>
+            <h3>Let's take a look</h3>
             <div style="min-height:200px;" class="fragment">
                 <p data-height="200" data-theme-id="0" data-slug-hash="qmPGJN" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Arrow functions and `this`" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qmPGJN/">Arrow functions and `this`</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-                <a class="solution solution__lesson-1" href="https://codepen.io/anythingcodes/pen/QvqReo?editors=0010#0" target="_blank">View Solution</a>
+                <a class="solution solution__lesson-2" href="https://codepen.io/anythingcodes/pen/QvqReo?editors=0010#0" target="_blank">View Solution</a>
 
             </div>
+
             <aside class="notes">
                 <ul>
                     <li>Refer to it as 'the this keyword' and then 'the keyword' going forward</li>
@@ -237,6 +234,27 @@ obj.getName(); // Zeta</code></pre>
                             <li>Could also declare <code>var self = this;</code></li>
                         </ul>
                     </li>
+                </ul>
+            </aside>
+        </section>
+
+        <section>
+            <h2>Can arrow functions help?</h2>
+
+            <ul>
+                <li class="fragment">Arrow functions <span class="green">do not have a <code>this</code> 🌟</li>
+                <li class="fragment">The value of <code>this</code> is <span class="orange">lexically fetched</span> from the scope the arrow function sits inside</li>
+            </ul>
+            <div style="min-height:200px;" class="fragment">
+                <p data-height="200" data-theme-id="0" data-slug-hash="qmPGJN" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Arrow functions and `this`" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qmPGJN/">Arrow functions and `this`</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                <a class="solution solution__lesson-2" href="https://codepen.io/anythingcodes/pen/QvqReo?editors=0010#0" target="_blank">View Solution</a>
+
+            </div>
+
+
+
+            <aside class="notes">
+                <ul>
                     <li>Arrow functions are a better way to fix the issue! ES6's purpose is to solve this problem and stop worrying about context.</li>
                 </ul>
             </aside>
@@ -1250,6 +1268,12 @@ function isBalanced(expression) {
             </aside>
         </section>
 
+        <section>
+            <h2>Map and Reduce</h2>
+            <h3>A Sandwich Metaphor</h3>
+            <p><img src="dist/img/sandwiches__map-reduce.jpg" alt="Map and Reduce with sandwiches" /></p>
+        </section>
+
         <section class="activity__challenge" data-background="#d2ccfc">
             <h2>At-Home Challenge: Implement a <code>unique</code> function</h2>
             <div class="clear">
@@ -1443,15 +1467,16 @@ console.log(spells);
             <aside class="notes">Default value for endIndex is the array length</aside>
         </section>
 
-        <!-- Next Week -->
-        <section class="hide-pdf">
-            <h2>Next Week</h2>
-            <ol>
-                <li>Function Parameters</li>
-                <li>Expanded Object Functionality</li>
-                <li>Destructuring</li>
-            </ol>
-        </section>
+        <!--<section class="hide-pdf">-->
+            <!--<h2>Next Week</h2>-->
+            <!--<ol>-->
+                <!--<li>Function Parameters</li>-->
+                <!--<li>Expanded Object Functionality</li>-->
+                <!--<li>Destructuring</li>-->
+                <!--<li>Classes and subclasses</li>-->
+                <!--<li>Iterators and Generators</li>-->
+            <!--</ol>-->
+        <!--</section>-->
         <section class="hide-pdf">
             <h2>Questions</h2>
             <div style="font-size:1200%; height:100%;" class="blue">?
