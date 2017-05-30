@@ -1144,13 +1144,11 @@ console.log(sum); // 18
 
         <section>
             <h2>reduce</h2>
-            <ul class="small" style="list-style: none;">
-                <li><pre><code class="javascript">// when iteratorFunction is a reference:
+            <pre class="small"><code class="javascript">// when iteratorFunction is a reference:
 arr.reduce(iteratorFunction, initialValue);
 
 // or when iteratorFunction isn't a reference:
-arr.reduce((calculatedValue, element, index, array) => { }, initialValue);</code></pre></li>
-            </ul>
+arr.reduce((calculatedValue, element, index, array) => { }, initialValue);</code></pre>
             <p>&nbsp;</p>
             <p class="fragment">reduce is <span class="orange">slightly different</span> from the other array helpers because it takes <span class="green">two parameters</span>:</p>
             <ol>
