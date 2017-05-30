@@ -58,28 +58,168 @@
         <section>
             <h2>Today's Topics</h2>
             <ol>
+                <li>Review at-home challenges from last class</li>
                 <li>Function Parameters</li>
                 <li>Expanded Object Functionality</li>
                 <li>Destructuring</li>
+                <li>Classes and Subclasses</li>
+                <li>Iterators and Generators</li>
+                <li>Modules</li>
             </ol>
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
             <h2>Review</h2>
             <h3>Implement a <code>reject</code> function</h3>
+            <div class="small clear">
+                <div class="halfblock">
+							<pre><code contenteditable class ="javascript" >function reject(array, iteratorFunction) {
+  // your code here
+}</code></pre>
+                    <div class="small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+                        <p><strong>Hint:</strong> You may use <em>filter</em>.
+                    </div>
 
+                </div>
+                <div class="halfblock">
+                    <p class="small">Reject should work opposite to filter; if a function returns <code>true</code>, the item should <em>not</em> be included in the new array, for example:<br />&nbsp;</p>
+                    <pre><code contenteditable class ="javascript" >const numbers = [ 5, 10, 15, 17, 18, 20 ];
+const lessThanEighteen = reject(numbers, number => number >= 18);
+console.log(lessThanEighteen);
+// returns [ 5, 10, 15, 17 ];</code></pre>
+
+                </div>
+            </div>
+
+            <div>
+                <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/VPmZNz?editors=0012" target="_blank">View Solution</a>
+            </div>
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
-            <h2>Review</h2>
-            <h3>Implement a <code>pluck</code> function</h3>
+            <h2>At-Home Challenge: Implement a <code>pluck</code> function</h2>
+            <div class="small clear">
+                <div class="halfblock">
+							<pre><code contenteditable class ="javascript" >function pluck(array, property) {
+  // your code here
+}</code></pre>
+                    <div class="small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+                        <p><strong>Hint:</strong> Access a property on an object by using square bracket notation. For example:<br />&nbsp;</p>
+                        <pre><code contenteditable class ="javascript" >const animal = { type: 'Dinosaur', status: 'Extinct' };
+animal['type']; // returns 'Dinosaur'</code></pre>
+                    </div>
 
+                </div>
+                <div class="halfblock">
+                    <p class="small">Pluck should accept an array and a string representing a property name and return an array containing that property from each object, for example:<br />&nbsp;</p>
+                    <pre><code contenteditable class ="javascript" >var cats = [ { name: 'Colonel Meow' }, { name: 'Lil Bub' }, { name: 'Grumpy Cat' }];
+
+pluck(cats, 'name');
+// returns ['Colonel Meow', 'Lil Bub', 'Grumpy Cat'];
+</code></pre>
+
+                </div>
+            </div>
+
+            <div>
+                <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/pRErMO?editors=0012" target="_blank">View Solution</a>
+            </div>
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
-            <h2>Review</h2>
-            <h3>Implement a <code>unique</code> function</h3>
+            <h2>At-Home Challenge: Write a <code>findWhere</code> function</h2>
 
+            <div class="clear small" style="margin-top:0">
+                <div class="halfblock">
+                    <p>Often we need to find an object with a given property and value. Write a <code>findWhere</code> function that accepts two parameters, the array and the criteria as an object, and returns the matching object. You may assume that the criteria is one key-value pair. Fork <a href="https://codepen.io/anythingcodes/pen/VbOoOz?editors=0012" style="font-weight: bold;" target="_blank">this CodePen</a> for some starter code.</p>
+
+                    <div style="font-size:70%;background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+                        <p><strong>Hint:</strong> Use <code style="background-color:white;color:black;">Object.keys(criteria)[0]</code> to figure out the name of the property on the object. For example, <code style="background-color:white;color:black;">Object.keys({ type: 'marsupial' })</code> would return <code style="background-color:white;color:black;">'type'</code>. You could then check to see if a given element in the array had a property equal to the criteria's value with something like <code style="background-color:white;color:black;">element[property] === criteria[property]</code>.</p>
+                    </div>
+                </div>
+                <div class="halfblock">
+                    <p>The following code ...</p>
+                    <pre><code contenteditable class="javascript">const animals = [
+  { id: 0, name: 'iguana', type: 'reptile' },
+  { id: 1, name: 'cardinal', type: 'bird' },
+  { id: 2, name: 'platypus', type: 'marsupial' },
+  { id: 3, name: 'frog', type: 'amphibian' }
+];
+
+findWhere(animals, { type: 'marsupial' });</code></pre>
+                    <p>would return one object ...</p>
+                    <pre><code class="javascript">{ id: 2, name: 'platypus', type: 'marsupial' }</code></pre>
+                </div>
+            </div>
+            <div>
+                <a class="solution solution__lesson-2" href="https://codepen.io/anythingcodes/pen/pPXzRv?editors=0012" target="_blank">View Solution</a>
+            </div>
+        </section>
+
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h2>At-Home Challenge: Write a <code>filterWhere</code> function</h2>
+            <div class="clear small" style="margin-top:0">
+                <div class="halfblock">
+                    <p style="font-size:85%;">Write a <code>filterWhere</code> function that accepts two parameters, the array and the criteria as an object, and returns an array of matching objects. All of the criteria must match for an object to be included in the resulting array. Assume that multiple criteria can be included, for example:</p>
+                    <pre><code class="javascript">filterWhere(animals, { name: 'kangaroo', type: 'marsupial' })</code></pre>
+                    <p style="font-size:85%;">Fork <a href="https://codepen.io/anythingcodes/pen/NjZKjZ?editors=0012" style="font-weight: bold;" target="_blank">this CodePen</a> for some starter code.</p>
+                    <div style="font-size:70%;background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+                        <p><strong>Hint:</strong> Although you may need different array helpers for this challenge, we recommend warming up with the previous slide's <code>findWhere</code> challenge first.</p>
+                    </div>
+
+                </div>
+                <div class="halfblock">
+                    <p>The following code ...</p>
+                    <pre><code contenteditable class="javascript">const animals = [
+  { id: 0, name: 'iguana', type: 'reptile' },
+  { id: 1, name: 'cardinal', type: 'bird' },
+  { id: 2, name: 'platypus', type: 'marsupial' },
+  { id: 3, name: 'kangaroo', type: 'marsupial' },
+  { id: 4, name: 'frog', type: 'amphibian' }
+];
+
+filterWhere(animals, { type: 'marsupial' });</code></pre>
+                    <p>would return an array of ...</p>
+                    <pre><code class="javascript">[
+  { id: 2, name: 'platypus', type: 'marsupial' },
+  { id: 3, name: 'kangaroo', type: 'marsupial' }
+]</code></pre>
+
+                </div>
+            </div>
+
+            <div>
+                <a class="solution solution__lesson-2" href="https://codepen.io/anythingcodes/pen/BReXEP?editors=0012" target="_blank">View Solution</a>
+            </div>
+
+            <aside class="notes">Much more difficult! Say it's optional and there are multiple ways you could solve this or the other challenge.</aside>
+        </section>
+
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h2>At-Home Challenge: Implement a <code>unique</code> function</h2>
+            <div class="clear">
+                <div class="halfblock">
+							<pre><code contenteditable class ="javascript" >function unique(array) {
+  // your code here
+}</code></pre>
+                    <div class="small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+                        <p><strong>Hint:</strong> Use <em>reduce</em> and <em>find</em>.
+                    </div>
+
+                </div>
+                <div class="halfblock">
+                    <p class="small">Write a function that will remove duplicate values from an array. For example:<br />&nbsp;</p>
+                    <pre class="small"><code class ="javascript" >const arr = [ 5, 5, 10, 10, 15, 20, 20 ];
+const uniqueArr = unique(arr);
+console.log(uniqueArr);
+// returns [ 5, 10, 15, 20 ];</code></pre>
+
+                </div>
+            </div>
+
+            <div>
+                <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/QvOpKE?editors=0012" target="_blank">View Solution</a>
+            </div>
         </section>
 
         <section data-background="#f05b62">
@@ -88,39 +228,46 @@
 
         <section>
             <h2>Default Parameter Values</h2>
-            <h3 class="green underlined">ES5:</h3>
-            <div class="clear" style="margin-top:0;">
+            <p>Using ES5, we could establish default parameter values, but there were some flaws</p>
+            <p><a href="https://codepen.io/anythingcodes/pen/LyKZRX?editors=0010" target="_blank">View CodePen &raquo;</a></p>
+
+            <div class="clear fragment" style="margin-top:.25em">
                 <div class="halfblock">
-							<pre class="small"><code class="javascript">function makeRequest(url, timeout, callback) {
-  timeout = timeout || 2000;
+                    <h3 class="green underlined">ES5:</h3>
+					<pre style="font-size:76%;"><code class="javascript" contenteditable>function makeRequest(url, timeout, callback) {
+  timeout = timeout || 2000; // what if timeout is 0?
   callback = callback || function() {};
-  // more code here
+  callback();
 }</code></pre>
-                    <p class="fragment small right">becomes</p>
+                    <p class="fragment">becomes</p>
+                    <pre style="font-size:76%;" class="fragment"><code class="javascript" contenteditable>function makeRequest(url, timeout, callback) {
+  timeout = (typeof timeout !== 'undefined') ? timeout : 2000;
+  callback = (typeof callback !== 'undefined') ? callback || function() {};
+  callback();
+}</code></pre>
                 </div>
                 <div class="halfblock fragment">
-							<pre class="small"><code class="javascript">function makeRequest(url, timeout, callback) {
-  timeout = (typeof timeout !== 'undefined') ? timeout : 2000;
-  callback = (typeof callback !== 'undefined') ? callback : function() {};
-  // more code here
+
+                    <h3 class="green underlined">ES6:</h3>
+                    <pre style="font-size:76%;"><code class="javascript" contenteditable>function makeRequest(url, timeout = 2000, callback = () => {}) {
+  callback();
 }</code></pre>
+                    <div class="small fragment" style="margin-top:.5em;">
+                        <img src="dist/img/its-beautiful.gif" alt="It's beautiful" />
+                        <p><em>It's beautiful</em></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="fragment" style="margin-top:.5em;">
-                <h3 class="green underlined">ES6:</h3>
-                <pre class="small"><code class="javascript">function makeRequest(url, timeout = 2000, callback = () => {}) {
-  // more code here
-}</code></pre>
-            </div>
-            <div class="small fragment" style="margin-top:.5em;">
-                <img src="dist/img/its-beautiful.gif" alt="It's beautiful" />
-                <p><em>It's beautiful</em></p>
-            </div>
+
+
             <aside class="notes">
                 <ul>
-                    <li>The problem with the first ES5 makeRequest() is that 0 &mdash; a valid timeout &mdash; would be considered falsy and would then change to 2000 instead of 0. So we have to account for undefined specifically and then assign values. Too much code! ES6 can handle this error-checking for us.</li>
-                    <li>makeRequest() expects only the first parameter to always be passed</li>
+                    <li>The logical OR operator (<code>||</code>) always returns the second operand when the first is falsy.</li>
+                    <li>Ask Class: What happens if timeout is 0? </li>
+                    <li>The problem with the first ES5 makeRequest() is that 0 &mdash; a valid timeout &mdash; would be considered falsy and would then change to 2000 instead of 0. Same for the function &mdash; if no callback is passed in, it's undefined. So we have to account for undefined specifically and then assign values.</li>
+                    <li>Too much code! ES6 can handle this error-checking for us.</li>
+                    <li>makeRequest() expects only the <code>url</code>, the first parameter, to always be passed, which is why there's no default</li>
                 </ul>
             </aside>
         </section>
@@ -129,17 +276,17 @@
             <h2>Calling functions with default parameters</h2>
             <p>Given the following function:</p>
             <pre class="small"><code class="javascript" contenteditable>function makeRequest(url, timeout = 2000, callback = () => {}) {
-  // more code here
+  callback();
 }</code></pre>
             <div class="fragment">
                 <p>Only <code>url</code> is required. The following calls all work:</p>
-                <pre class="small"><code class="javascript">makeRequest('/gdi');
+                <pre class="small"><code class="javascript">makeRequest('/api');
 
-makeRequest('/gdi', 500);
+makeRequest('/api', 500);
 
-makeRequest('/gdi', 500, requestData => updateDatabase(requestData));
+makeRequest('/api', 0, requestData => updateDatabase(requestData));
 
-makeRequest('/gdi', undefined, requestData => updateDatabase(requestData));</code></pre>
+makeRequest('/api', undefined, requestData => updateDatabase(requestData));</code></pre>
             </div>
             <aside class="notes">
                 Point out that you can pass in <code>undefined</code>. However, <code>null</code> is a valid value so the function will use <code>null</code> instead of the default parameter.
