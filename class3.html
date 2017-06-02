@@ -69,14 +69,20 @@
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
-            <h2>Review</h2>
-            <h3>Implement a <code>reject</code> function</h3>
+            <h3>Review: Implement a <code>reject</code> function</h3>
+
+            <div class="small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+
+                <strong>Answer:</strong> Use the <code>find()</code> array helper.<br /><a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/VPmZNz?editors=0012" target="_blank">View Solution &raquo;</a>
+
+            </div>
+
             <div class="small clear">
                 <div class="halfblock">
 							<pre><code contenteditable class ="javascript" >function reject(array, iteratorFunction) {
   // your code here
 }</code></pre>
-                    <div class="small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+                    <div class="small" style="background-color:rgba(255,255,255,0.3);border: 1px solid black;padding:15px;margin: 15px 0">
                         <p><strong>Hint:</strong> You may use <em>filter</em>.
                     </div>
 
@@ -91,19 +97,38 @@ console.log(lessThanEighteen);
                 </div>
             </div>
 
-            <div>
-                <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/VPmZNz?editors=0012" target="_blank">View Solution</a>
+
+        </section>
+
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h3>Review: Implement a <code>reject</code> function</h3>
+
+            <div class="fragment-progression">
+                <div class="fragment">
+                    <img src="dist/img/class2-diagram-reject__1.svg" style="max-width:80%;max-height:none" />
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/class2-diagram-reject__2.svg" style="max-width:80%;max-height:none" />
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/class2-diagram-reject__3.svg"  style="max-width:80%;max-height:none"/>
+                </div>
             </div>
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
-            <h2>At-Home Challenge: Implement a <code>pluck</code> function</h2>
+            <h3>Review: Implement a <code>pluck</code> function</h3>
+            <div class="small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+
+                <strong>Answer:</strong> Use the <code>map()</code> array helper.<br /><a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/pRErMO?editors=0012" target="_blank">View Solution &raquo;</a>
+
+            </div>
             <div class="small clear">
                 <div class="halfblock">
 							<pre><code contenteditable class ="javascript" >function pluck(array, property) {
   // your code here
 }</code></pre>
-                    <div class="small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+                    <div class="small" style="background-color:rgba(255,255,255,0.3);border: 1px solid black;padding:15px;margin: 15px 0">
                         <p><strong>Hint:</strong> Access a property on an object by using square bracket notation. For example:<br />&nbsp;</p>
                         <pre><code contenteditable class ="javascript" >const animal = { type: 'Dinosaur', status: 'Extinct' };
 animal['type']; // returns 'Dinosaur'</code></pre>
@@ -112,7 +137,7 @@ animal['type']; // returns 'Dinosaur'</code></pre>
                 </div>
                 <div class="halfblock">
                     <p class="small">Pluck should accept an array and a string representing a property name and return an array containing that property from each object, for example:<br />&nbsp;</p>
-                    <pre><code contenteditable class ="javascript" >var cats = [ { name: 'Colonel Meow' }, { name: 'Lil Bub' }, { name: 'Grumpy Cat' }];
+                    <pre><code contenteditable class ="javascript" >const cats = [ { name: 'Colonel Meow' }, { name: 'Lil Bub' }, { name: 'Grumpy Cat' }];
 
 pluck(cats, 'name');
 // returns ['Colonel Meow', 'Lil Bub', 'Grumpy Cat'];
@@ -120,10 +145,12 @@ pluck(cats, 'name');
 
                 </div>
             </div>
+        </section>
 
-            <div>
-                <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/pRErMO?editors=0012" target="_blank">View Solution</a>
-            </div>
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h3>Review: Implement a <code>pluck</code> function</h3>
+
+            <p><img src="dist/img/class2-diagram-pluck.svg" alt="pluck Function" /></p>
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
