@@ -154,13 +154,21 @@ pluck(cats, 'name');
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
-            <h2>At-Home Challenge: Write a <code>findWhere</code> function</h2>
+            <h3>Review: Write a <code>findWhere</code> function</h3>
+
+            <div class="small" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+
+                <strong>Answer:</strong> Use the <code>find()</code> array helper with <code>Object.keys()</code>.<br /><a class="solution solution__lesson-2" href="https://codepen.io/anythingcodes/pen/pPXzRv?editors=0012" target="_blank">View Solution</a>
+
+            </div>
+
+
 
             <div class="clear small" style="margin-top:0">
                 <div class="halfblock">
                     <p>Often we need to find an object with a given property and value. Write a <code>findWhere</code> function that accepts two parameters, the array and the criteria as an object, and returns the matching object. You may assume that the criteria is one key-value pair. Fork <a href="https://codepen.io/anythingcodes/pen/VbOoOz?editors=0012" style="font-weight: bold;" target="_blank">this CodePen</a> for some starter code.</p>
 
-                    <div style="font-size:70%;background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+                    <div style="font-size:70%;background-color:rgba(255,255,255,0.3);border: 1px solid black;padding:15px;margin: 15px 0">
                         <p><strong>Hint:</strong> Use <code style="background-color:white;color:black;">Object.keys(criteria)[0]</code> to figure out the name of the property on the object. For example, <code style="background-color:white;color:black;">Object.keys({ type: 'marsupial' })</code> would return <code style="background-color:white;color:black;">'type'</code>. You could then check to see if a given element in the array had a property equal to the criteria's value with something like <code style="background-color:white;color:black;">element[property] === criteria[property]</code>.</p>
                     </div>
                 </div>
@@ -177,9 +185,6 @@ findWhere(animals, { type: 'marsupial' });</code></pre>
                     <p>would return one object ...</p>
                     <pre><code class="javascript">{ id: 2, name: 'platypus', type: 'marsupial' }</code></pre>
                 </div>
-            </div>
-            <div>
-                <a class="solution solution__lesson-2" href="https://codepen.io/anythingcodes/pen/pPXzRv?editors=0012" target="_blank">View Solution</a>
             </div>
         </section>
 
@@ -255,8 +260,8 @@ console.log(uniqueArr);
 
         <section>
             <h2>Default Parameter Values</h2>
-            <p>Using ES5, we could establish default parameter values, but there were some flaws</p>
-            <p><a href="https://codepen.io/anythingcodes/pen/LyKZRX?editors=0010" target="_blank">View CodePen &raquo;</a></p>
+            <p class="fragment">Using ES5, we could establish default parameter values, but there were some flaws<br /><a href="https://codepen.io/anythingcodes/pen/LyKZRX?editors=0010" target="_blank">View CodePen &raquo;</a></p>
+            <p></p>
 
             <div class="clear fragment" style="margin-top:.25em">
                 <div class="halfblock">
@@ -322,8 +327,8 @@ makeRequest('/api', undefined, requestData => updateDatabase(requestData));</cod
 
         <section>
             <h2>Enforcing mandatory parameters</h2>
-            <p>Since default values are only evaluated when used, you can use it to enforce that a certain parmeter is provided:</p>
-            <pre><code class="javascript">function mandatory() {
+            <p class="info fragment">Since default values are only evaluated when used, use it to enforce that a certain parameter is provided:</p>
+            <pre class="fragment"><code class="javascript">function mandatory() {
   throw new Error('You forgot a parameter!');
 }
 
@@ -338,14 +343,15 @@ function doSomething(mustBeProvided = mandatory()) {
             <div style="min-height:265px;">
                 <p data-height="265" data-theme-id="0" data-slug-hash="LyOXoQ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Default parameters activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/LyOXoQ/">Default parameters activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
             </div>
+            <p><a href="https://codepen.io/anythingcodes/pen/WONEgj?editors=0010" class="solution solution__lesson-3" target="_blank">View Solution</a></p>
         </section>
 
         <section>
             <h2>Rest Parameters</h2>
-            <p>Placing <code>...</code> <span class="orange">before a function parameter</span> transforms that parameter and the <span class="blue">rest</span> (i.e. all following parameters) into an array</p>
-            <pre class="small"><code class="javascript">function giveItARest(part1, ...part2) {
-  console.log(part1);
-  console.log(part2);
+            <p class="fragment">Placing <code>...</code> <span class="green">before a function parameter</span> transforms that parameter and the <span class="blue">rest</span> (i.e. all following parameters) into an array</p>
+            <pre class="fragment small"><code class="javascript">function giveItARest(param1, ...allTheRest) {
+  console.log(param1);
+  console.log(allTheRest);
 }
 
 giveItARest(1, 2, 3, 4, 5, 6);
@@ -363,22 +369,39 @@ giveItARest(1, 2, 3, 4, 5, 6);
             <div style="min-height:265px;">
                 <p data-height="265" data-theme-id="0" data-slug-hash="mmqaVo" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Rest parameter activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/mmqaVo/">Rest parameter activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
             </div>
+            <p><a href="https://codepen.io/anythingcodes/pen/jwOLQL?editors=0010" target="_blank" class="solution__lesson-3 solution">View Solution</a></p>
         </section>
 
 
         <!-- TODO: Mention tagged template literals? -->
-        <section>
-            <h2>Tagged template literals</h2>
-        </section>
+        <!--<section>-->
+            <!--<h2>Tagged template literals</h2>-->
+        <!--</section>-->
 
         <section>
             <h2>Spread operator</h2>
-            <p>Placing <code>...</code> <span class="orange">before an array</span> <span class="blue">spreads</span> the array into its individual elements</p>
-            <pre class="small"><code class="javascript" contenteditable>const arr = [2, 3, 4];
+            <p>Placing <code>...</code> <span class="green">before an array</span> <span class="blue">spreads</span> the array into its individual elements</p>
+            <div class="fragment-progression">
+                <pre class="fragment small"><code class="javascript" contenteditable>const numbers = [2, 3, 4];
+</code></pre>
+                <pre class="fragment small"><code class="javascript" contenteditable>const numbers = [2, 3, 4];
 
-console.log([1, arr]); // nested array: [1, [2, 3, 4]]
+console.log([1, numbers]); // nested array: [1, [2, 3, 4]]</code></pre>
+                <pre class="fragment small"><code class="javascript" contenteditable>const numbers = [2, 3, 4];
 
-console.log([1, ...arr]); // normal array: [1, 2, 3, 4]</code></pre>
+console.log([1, numbers]); // nested array: [1, [2, 3, 4]]
+
+console.log([1, ...numbers]); // normal array: [1, 2, 3, 4]</code></pre>
+            </div>
+
+
+        </section>
+
+        <section>
+            <h2>Rest vs. Spread</h2>
+            <p><code>...</code></p>
+            <p class="fragment"><span class="blue">rest parameters</span> used in function parameters to transform parameters <span class="green">into an array</span></p>
+            <p class="fragment"><span class="blue">spread operator</span> used on an array to transform the array <span class="green">into individual elements</span></p>
         </section>
 
         <section class="activity" data-background="rgb(6, 116, 123)">
@@ -395,33 +418,56 @@ console.log([1, ...arr]); // normal array: [1, 2, 3, 4]</code></pre>
         </section>
 
         <section>
-            <h2>Property initializer shorthand</h2>
-            <p>When an object property name is the same as the local variable name, you can include the name without a colon and value.</p>
+            <h2>Redundant key-value Pairs</h2>
+            <p>When an object property name is the same as the local variable name, use the <span class="green">property initializer shorthand</span></p>
             <div class="clear small">
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES5:</h3>
-                    <pre><code class="javascript">function createAccount(id, username){
-  return {
-    id: id,
-    username: username
-  };
+                    <pre><code class="javascript">function saveData(url, data){
+  $.ajax({ method: 'POST', url: url, data: data });
 }</code></pre>
                     <p class="right small fragment">becomes</p>
                 </div>
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES6:</h3>
-                    <pre><code class="javascript">function createAccount(id, username){
-  return {
-    id,
-    username
-  };
+                    <pre><code class="javascript">function saveData(url, data){
+  $.ajax({ method: 'POST', url, data });
 }</code></pre>
                 </div>
             </div>
+            <p class="fragment">Sometimes this is called <span class="green">enhanced literal notation</span></p>
+        </section>
+
+        <section>
+            <h2>Default k-v p</h2>
         </section>
 
         <section>
             <h2>Concise methods</h2>
+            <p class="fragment">Object methods no longer need <code>: function</code></p>
+            <div class="clear">
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES5:</h3>
+                    <pre><code class="javascript">var dog = {
+  name: 'Boo',
+  bark: function() {
+    console.log('yip!');
+  }
+};
+dog.bark(); // yip!</code></pre>
+                    <p class="right small fragment">becomes</p>
+                </div>
+                <div class="halfblock fragment">
+                    <h3 class="green underlined">ES6:</h3>
+                    <pre><code class="javascript">const dog = {
+  name: 'Boo',
+  bark() {
+    console.log('yip!');
+  }
+};
+dog.bark(); // yip!</code></pre>
+                </div>
+            </div>
         </section>
 
         <section data-background="#f05b62">
@@ -435,32 +481,32 @@ console.log([1, ...arr]); // normal array: [1, 2, 3, 4]</code></pre>
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES5:</h3>
                     <pre><code class="javascript">var person = {
-  name: 'Whitney Doe',
-  frequentFlyerMember: true
+  name: 'Whitney',
+  frequentFlyer: true
 };
 
 var name = person.name;
-var frequentFlyerMember = person.frequentFlyerMember;
+var frequentFlyer = person.frequentFlyer;
 
-console.log(name, frequentFlyerMember);
-// Whitney Doe, true</code></pre>
+console.log(name, frequentFlyer);
+// Whitney, true</code></pre>
                     <p class="right small fragment">becomes</p>
                 </div>
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES6:</h3>
                     <pre><code class="javascript">const person = {
-  name: 'Whitney Doe',
-  frequentFlyerMember: true
+  name: 'Whitney',
+  frequentFlyer: true
 };
 
-const { name, frequentFlyerMember } = person;
-console.log(name, frequentFlyerMember);
-// Whitney Doe, true</code></pre>
+const { name, frequentFlyer } = person;
+console.log(name, frequentFlyer);
+// Whitney, true</code></pre>
                 </div>
             </div>
-            <ul class="small">
+            <ul class="">
                 <li class="fragment"><span class="green">Left-hand side of the equal sign (<code>=</code>)</span><br />A comma-separated list of the object's keys you'd like to unpack, wrapped in <code>{ }</code></li>
-                <li class="fragment"><span class="green">Right-hand side of the equal sign (<code>=</code>)</span><br />The object</li>
+                <li class="fragment"><span class="green">Right-hand side of the equal sign (<code>=</code>)</span><br />The object you're destructuring</li>
             </ul>
         </section>
 
