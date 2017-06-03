@@ -60,11 +60,11 @@
             <ol>
                 <li>Review at-home challenges from last class</li>
                 <li>Function Parameters</li>
-                <li>Expanded Object Functionality</li>
-                <li>Destructuring</li>
-                <li>Classes and Subclasses</li>
-                <li>Iterators and Generators</li>
-                <li>Modules</li>
+                <li>Object Syntax</li>
+                <li>Destructuring Objects</li>
+                <li>Destructuring Arrays</li>
+                <li>Promises</li>
+                <li>Fetch</li>
             </ol>
         </section>
 
@@ -757,15 +757,13 @@ console.log(a); // 2
 console.log(b); // 1</code></pre>
                 </div>
             </div>
-            <p class="fragment orange">🌟 No need to create a temporary variable!</p>
+            <p class="fragment small orange">🌟 No need to create a temporary variable!</p>
         </section>
 
         <section>
-            <h2>Object.entries() &amp; Array Destructuring</h2>
-            <div class="small">
-                <p class="fragment"><code>Object.entries()</code> returns an array. Each element is an array of <code>[ key, value ]</code>.</p>
-            </div>
-            <p>&nbsp;</p>
+            <h2>Object.entries()</h2>
+
+            <p class="small fragment">Use <code>Object.entries()</code> on an object to get an array representing that object. Each element is an array containing <code>[ key, value ]</code>.</p>
 
             <div class="small fragment fragment-progression">
                 <pre><code class="javascript">const animal = {
@@ -875,7 +873,7 @@ entries.forEach(entry => {
             <h2>At-Home Challenge</h2>
             <h3>Mixed Destructuring</h3>
             <div class="clear">
-                <div style="font-size:80%" class="halfblock">
+                <div class="halfblock small">
 							<pre><code contenteditable class ="javascript" >const node = {
   location: {
     start: {
@@ -911,43 +909,247 @@ console.log(index);</code></pre>
         </section>
 
         <section data-background="#f05b62">
-            <h1 style="color: #fafafa;font-size:3.7em;">Iterators and Generators</h1>
+            <h1 style="color: #fafafa;font-size:3.7em;">Promises</h1>
         </section>
 
         <section>
-            <h2>Terms</h2>
+            <h2>Problems with Asynchronous Requests</h2>
+            <div class="fragment-progression">
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises.svg" alt="Promises Start">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__1.svg" alt="Promises Step 1">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__2.svg" alt="Promises Step 2">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__3.svg" alt="Promises Step 3">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__4.svg" alt="Promises Final">
+                </div>
+            </div>
+            <aside class="notes">
+                <p>Promises address this problem. We don't know how long <code>makeRequest</code> will take</p>
+                <p>JavaScript has no way of pausing code</p>
+                <p>JavaScript engines are <span class="green">single-threaded</span> — only one piece of code is executed at a time and placed in a <span class="green">job queue</span></p>
+                <p>A promise specifies some code to be executed later, and whether the code succeeded or failed</p>
+                <p><span class="green">Promise</span>: An object with a <code>.then()</code> method that represents an operation whose result may be unknown. Whoever has access to the object can use the ".then()" method to add callbacks to be notified about the successful completion or failure of the operation.</p>
+            </aside>
+        </section>
+
+        <section>
+            <h2>The Ideal Scenario</h2>
+            <div class="fragment-progression">
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__es6__1.svg" alt="Promises Step 1">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__es6__2.svg" alt="Promises Step 2">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__es6__3.svg" alt="Promises Step 3">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__es6__4.svg" alt="Promises Final Step">
+                </div>
+            </div>
+
+            <aside class="notes">
+                ONLY after request is resolved, then work with the data variable. Main goal: execute line by line, but occasionally wait for network request to complete.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Three Promise States</h2>
+            <div class="fragment-progression">
+                <div class="fragment">
+                    <img src="dist/img/es6-promise-states.svg" alt="Promises States Initial Step" />
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/es6-promise-states__1.svg" alt="Promises Step 1" />
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/es6-promise-states__2.svg" alt="Promises Step 2" />
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/es6-promise-states__3.svg" alt="Promises Step 3" />
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Creating a Promise</h2>
+            <a class="fragment" href="https://codepen.io/anythingcodes/pen/awbKPO?editors=0010" target="_blank">View CodePen &raquo;</a>
+            <div class="fragment-progression">
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+
+});
+
+
+
+
+
+
+
+                </code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+
+});
+
+promise.then(() => {
+  console.log('my resolution message');
+});
+
+
+
+                </code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+
+});
+
+promise.then(() => {
+  console.log('my resolution message');
+});
+
+promise.catch(() => {
+  console.log('my rejection message');
+});</code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+  resolve(); // outputs 'my resolution message'
+});
+
+promise.then(() => {
+  console.log('my resolution message');
+});
+
+promise.catch(() => {
+  console.log('my rejection message');
+});</code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+  reject(); // outputs 'my rejection message'
+});
+
+promise.then(() => {
+  console.log('my resolution message');
+});
+
+promise.catch(() => {
+  console.log('my rejection message');
+});</code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+  resolve(5); // chain callbacks and pass info between them
+})
+  .then((value) => {
+    console.log(value); // 5
+  })
+  .catch(() => {
+    console.log('my rejection message');
+  });
+
+                </code></pre>
+            </div>
+
+            <p>&nbsp;</p>
+            <p class="orange info fragment">Always include a rejection handler! Otherwise your promise may silently fail.</p>
+
+            <aside class="notes">
+                <ul>
+                    <li>Recommendation is to chain them, and indent like so</li>
+                    <li>[[PromiseValue]] is a private symbol. It's an internal property. You cannot access it directly. Native promises may only be unwrapped in then() with promises or asynchronously in generally.</li>
+                </ul>
+
+            </aside>
+        </section>
+
+        <section>
+            <h2>Grouping Multiple Promises</h2>
+            <p class="fragment">Combine promises in an iterable, such as an array</p>
             <ol>
-                <li><span class="green">Iterator</span><span class="fragment">: An object designed for iteration</span>
-                    <ul>
-                        <li class="fragment">Has a <code>next()</code> method that <span class="orange">returns a result object</span> containing 2 properties:
-                            <ol>
-                                <li class="fragment"><code>value</code>: The next value</li>
-                              <li class="fragment"><code>done</code>: A boolean that's true when there are no more values to return</li>
-                            </ol>
-                    </ul>
+                <li class="fragment">
+                    <code>Promise.all()</code> waits for <span class="green">all</span> promises in the group to fulfill
                 </li>
-                <li><span class="green">Generator</span><span class="fragment">: A function that <span class="orange">returns an iterator</span></span>
-                    <ul>
-                        <li class="fragment">Made by placing a <code>*</code> after the <code>function</code> keyword</li>
-                        <li class="fragment">Uses a <code>yield</code> keyword, which specifies what values he resulting iterator should return when <code>next()</code> is called</li>
-                    </ul>
+                <li class="fragment">
+                    <code>Promise.race()</code> is fulfilled when <span class="green">the fastest</span> promise in the group is fulfilled
                 </li>
             </ol>
         </section>
 
         <section>
-            <h2>Why generators?</h2>
-            <p><img src="dist/img/but-why.gif" alt="But why?" /></p>
-            <p class="fragment">Generators can be entered and exited multiple times</p>
-            <p class="fragment">You may <span class="orange">pause</span> in the middle, one or many times, and <span class="orange">resume later</span>, allowing other code to run during pauses</p>
-
+            <h2>Promise.all()</h2>
+            <p class="fragment">The returned promise is fulfilled when <span class="green">all</span> promises in the iterable are fulfilled</p>
+            <div class="fragment" style="min-height:300px;">
+                <p data-height="300" data-theme-id="0" data-slug-hash="ZyEjOY" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promise.all()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/ZyEjOY/">Promise.all()</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </div>
             <aside class="notes">
-                <ul>
-                    <li>Normally a function runs and returns something and then is done. Generators can run some code, return a value, and go right back into the function at the same place that we left off.</li>
-                </ul>
+                If any promise passed to Promise.all() is rejected, the returned promise is immediately rejected without waiting for other promises to complete
             </aside>
+        </section>
+
+        <section>
+            <h2>Promise.race()</h2>
+            <p class="fragment">Instead of waiting for all promises to be fulfilled like in <code>Promise.all()</code>, a promise using <code>Promise.race()</code> is fulfilled as soon as <span class="green">any</span> promise in the array is fulfilled</p>
+            <div class="fragment" style="min-height:220px;">
+                <p data-height="220" data-theme-id="0" data-slug-hash="eRYjgp" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promise.race()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/eRYjgp/">Promise.race()</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </div>
+            <aside class="notes">
+                If any promise passed to Promise.all() is rejected, the returned promise is immediately rejected without waiting for other promises to complete
+            </aside>
+        </section>
+
+        <section>
+            <h2>Example HTTP Requests</h2>
+            <pre><code class="javascript" contenteditable>const promise = new Promise((resolve, reject) => {
+  const request = new XMLHttpRequest();
+  // make the request
+  request.onload = () => {
+    resolve();
+  };
+  request.onerror = () => {
+    reject();
+  };
+});</code></pre>
+            <aside class="notes">This is very jumbled though, which is why ES6 includes a brand spankin' new API called Fetch, which is automatically promisified</aside>
+        </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Fetch</h1>
+        </section>
+
+        <section>
+            <h2>Fetch</h2>
+            <p class="fragment">The <code>fetch()</code> helper is <span class="green">promise</span>-based</p>
+            <p class="fragment">Very useful for fetching data from endpoints</p>
+            <p class="fragment"><a href="https://codepen.io/anythingcodes/pen/vZYaaa?editors=0010" target="_blank">Let's take a look &raquo;</a></p>
+            <pre class="fragment"><code class="javascript">fetch('http://json.com')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err));</code></pre>
+            <aside class="notes">
+                Point out that the first return value is the response, so you need to return <code>response.json()</code> to a second <code>then()</code>
+            </aside>
+        </section>
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <p>Using Promises and the Fetch Helper</p>
+            <div class="clear">
+                <div class="halfblock">
+                    <h3>Activity 1: Promises Warmup</h3>
+                    <p data-height="187" data-theme-id="0" data-slug-hash="qjByPj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qjByPj/">Promises Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <a href="https://codepen.io/anythingcodes/pen/gROjGd?editors=0010" target="_blank" class="solution__lesson-3 solution">View Solution</a>
+                </div>
+                <div class="halfblock">
+                    <h3>Activity 2: Using the Fetch API</h3>
+                    <p data-height="187" data-theme-id="0" data-slug-hash="ZyEjmp" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Fetch Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/ZyEjmp/">Fetch Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <a href="https://codepen.io/anythingcodes/pen/XgWBxp" target="_blank" class="solution solution__lesson-3">View Solution</a>
+                </div>
+            </div>
 
         </section>
+
     </div>
     <footer>
         <div class="copyright">

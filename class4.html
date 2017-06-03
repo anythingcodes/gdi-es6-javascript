@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Getting Started with ES6 and ES7 JavaScript</title>
+
+    <meta name="description" content="Materials and slides for a Girl Develop It ES6 JavaScript course. Includes ES7's minor additions.">
+    <meta name="author" content="Girl Develop It">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="dist/css/reveal.css">
+    <link rel="stylesheet" href="dist/css/gdidarkblue.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor --><link rel="stylesheet" href="dist/css/light.css">
+    <!-- dark editor <link rel="stylesheet" href="dist/css/dark.css">-->
+    <!-- <link rel="stylesheet" href="dist/css/zenburn.css"> -->
+
+    <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'dist/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!-- If use the PDF print sheet so students can print slides-->
+
+    <link rel="stylesheet" href="dist/css/print/pdf.css" type="text/css" media="print">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script src="dist/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body spellcheck="false">
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <!-- Opening -->
+        <section class="small">
+            <h1>Getting Started with ES6 and ES7 JavaScript</h1>
+            <img src="dist/img/es6-gdi.jpg" alt="ES6 and ES7 Intro Image" class="noborder"/>
+            <h2 class="green">Class 3</h2>
+        </section>
+
+        <section>
+            <h2>Today's Topics</h2>
+            <ol>
+                <li>Review at-home challenges from last class</li>
+
+            </ol>
+        </section>
+
+
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Iterators and Generators</h1>
+        </section>
+
+        <section>
+            <h2>Terms</h2>
+            <ol>
+                <li><span class="green">Iterator</span><span class="fragment">: An object designed for iteration</span>
+                    <ul>
+                        <li class="fragment">Has a <code>next()</code> method that <span class="orange">returns a result object</span> containing 2 properties:
+                            <ol>
+                                <li class="fragment"><code>value</code>: The next value</li>
+                              <li class="fragment"><code>done</code>: A boolean that's true when there are no more values to return</li>
+                            </ol>
+                    </ul>
+                </li>
+                <li><span class="green">Generator Function</span><span class="fragment">: A function that <span class="orange">returns an iterator</span></span>
+                    <ul>
+                        <li class="fragment">Made by placing a <code>*</code> after the <code>function</code> keyword</li>
+                        <li class="fragment">Uses a <code>yield</code> keyword, which specifies what values he resulting iterator should return when <code>next()</code> is called</li>
+                        <li class="fragment">Sometimes called <span class="green">generators</span></li>
+                    </ul>
+                </li>
+            </ol>
+            <aside class="notes">Mind-bending and not very straightforward. Not the easiest thing in the world! Don't worry if you don't get it immediately.</aside>
+        </section>
+
+        <section>
+            <h2>Why generator functions?</h2>
+            <p class="fragment"><img src="dist/img/but-why.gif" alt="But why?" /></p>
+            <ol>
+                <li class="fragment">
+                    Can be entered and exited multiple times
+                    <ul>
+                        <li class="fragment"><span class="orange">Pause</span> in the middle, one or many times, and <span class="orange">resume later</span>, allowing other code to run during pauses</li>
+                    </ul>
+                </li>
+                <li class="fragment">
+                    Pairs well with <span class="green">asynchronous operations</span>
+                    <ul>
+                        <li class="fragment">Turn asynchronous code into more logical synchronous-looking code</li>
+                        <li class="fragment">Cancel asynchronous operations</li>
+                    </ul>
+                </li>
+            </ol>
+            <aside class="notes">
+                <ul>
+                    <li>Normally a function runs and returns something and then is done. Generator functions can run some code, return a value, and go right back into the function at the same place that we left off.</li>
+                </ul>
+            </aside>
+
+        </section>
+
+        <section>
+            <pre><code class="javascript" contenteditable>Artist.findByID(id).then(artist => {
+  artist.getSongs().then(songs => {
+    console.log(songs);
+  });
+});</code></pre>
+        </section>
+    </div>
+    <footer>
+        <div class="copyright">
+            View Slides at <a href="http://tiny.cc/gdies6">tiny.cc/gdies6</a> &nbsp; - &nbsp;
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+    </footer>
+</div>
+
+
+<script src="dist/js/head.min.js"></script>
+<script src="dist/js/babel.min.js"></script>
+<script src="dist/js/reveal.min.js"></script>
+
+<script>
+
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  });
+
+</script>
+<script async src="//production-assets.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>
