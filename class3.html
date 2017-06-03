@@ -418,8 +418,8 @@ console.log([1, ...numbers]); // normal array: [1, 2, 3, 4]</code></pre>
         </section>
 
         <section>
-            <h2>Redundant key-value Pairs</h2>
-            <p>When an object property name is the same as the local variable name, use the <span class="green">property initializer shorthand</span></p>
+            <h2>Property Initializer Shorthand</h2>
+            <p>When an object property name is the same as the local variable name, you can include the name without a colon and value</p>
             <div class="clear small">
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES5:</h3>
@@ -435,11 +435,7 @@ console.log([1, ...numbers]); // normal array: [1, 2, 3, 4]</code></pre>
 }</code></pre>
                 </div>
             </div>
-            <p class="fragment">Sometimes this is called <span class="green">enhanced literal notation</span></p>
-        </section>
-
-        <section>
-            <h2>Default k-v p</h2>
+            <p class="fragment">Sometimes referred to as <span class="green">enhanced literal notation</span></p>
         </section>
 
         <section>
@@ -470,8 +466,18 @@ dog.bark(); // yip!</code></pre>
             </div>
         </section>
 
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <h3>Using Enhanced Object Syntax</h3>
+
+            <p data-height="265" data-theme-id="0" data-slug-hash="OgJOzd" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Object Syntax" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/OgJOzd/">Object Syntax</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+            <a class="solution solution__lesson-2" href="https://codepen.io/anythingcodes/pen/awbVqW?editors=0012" target="_blank">View Solution</a>
+
+        </section>
+
         <section data-background="#f05b62">
-            <h1 style="color: #fafafa;font-size:3.7em;">Destructuring</h1>
+            <h1 style="color: #fafafa;font-size:3.7em;">Destructuring Objects</h1>
         </section>
 
         <section>
@@ -482,26 +488,26 @@ dog.bark(); // yip!</code></pre>
                     <h3 class="green underlined">ES5:</h3>
                     <pre><code class="javascript">var person = {
   name: 'Whitney',
-  frequentFlyer: true
+  age: 38
 };
 
 var name = person.name;
-var frequentFlyer = person.frequentFlyer;
+var age = person.age;
 
-console.log(name, frequentFlyer);
-// Whitney, true</code></pre>
+console.log(name, age);
+// Whitney 38</code></pre>
                     <p class="right small fragment">becomes</p>
                 </div>
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES6:</h3>
                     <pre><code class="javascript">const person = {
   name: 'Whitney',
-  frequentFlyer: true
+  age: 38
 };
 
-const { name, frequentFlyer } = person;
-console.log(name, frequentFlyer);
-// Whitney, true</code></pre>
+const { name, age } = person;
+console.log(name, age);
+// Whitney 38</code></pre>
                 </div>
             </div>
             <ul class="">
@@ -512,23 +518,10 @@ console.log(name, frequentFlyer);
 
         <section class="activity" data-background="rgb(6, 116, 123)">
             <h2>Activity</h2>
-            <h2>Using Object Destructuring</h2>
-            <div class="clear" style="min-height:300px;">
-                <div class="halfblock">
-                    <h6 class="light">Activity 1</h6>
-                    <p data-height="265" data-theme-id="0" data-slug-hash="LyXxpy" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Object Destructuring Activity 1" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/LyXxpy/">Object Destructuring Activity 1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-                    <div>
+            <p>Using Object Destructuring</p>
+            <div style="min-height:300px;">
+                <p data-height="265" data-theme-id="0" data-slug-hash="LyXxpy" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Object Destructuring Activity 1" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/LyXxpy/">Object Destructuring Activity 1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
                         <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/gWQgPK?editors=0010#0" target="_blank">View Solution</a>
-                    </div>
-                </div>
-                <div class="halfblock">
-                    <h6 class="light">Activity 2</h6>
-                    <p data-height="265" data-theme-id="0" data-slug-hash="EmONGj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Activity: Object Destructuring" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmONGj/">Activity: Object Destructuring</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-                    <div>
-                        <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/LyXbqR?editors=0010" target="_blank">View Solution</a>
-                    </div>
-
-                </div>
             </div>
         </section>
 
@@ -540,121 +533,206 @@ console.log(name, frequentFlyer);
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES5:</h3>
                     <pre><code class="javascript">var person = {
-  name: 'Whitney Doe'
+  name: 'Whitney'
 };
 
 var name = person.name;
-var frequentFlyerMember = person.frequentFlyerMember; // undefined
+var active = person.active; // undefined
 
-console.log(name, frequentFlyerMember);
-// Whitney Doe, undefined</code></pre>
+console.log(name, active);
+// Whitney undefined</code></pre>
                     <p class="right small fragment">becomes</p>
                 </div>
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES6:</h3>
                     <pre><code class="javascript">const person = {
-  name: 'Whitney Doe'
+  name: 'Whitney'
 };
 
-const { name, frequentFlyerMember = false } = person;
-console.log(name, frequentFlyerMember);
-// Whitney Doe, false</code></pre>
+const { name, active = false } = person;
+console.log(name, active);
+// Whitney false</code></pre>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>Assigning to different local variable names</h2>
-            <p>What if you want to use a different name for the variable?</p>
-            <ol>
-                <li class="fragment">Use a <code>:</code> in the comma-separated list of keys</li>
-                <li class="fragment">The <span class="green">name after <code>:</code></span> can now be referenced</li>
-            </ol>
-            <div class="clear small">
-                <div class="halfblock fragment">
-                    <h3 class="green underlined">ES5:</h3>
-                    <pre><code class="javascript">var person = {
-  name: 'Whitney Doe'
+            <h2>Destructuring in Function Parameters</h2>
+            <p>Destructuring is often used in function parameters</p>
+            <p>&nbsp;</p>
+            <div class="fragment-progression small">
+                <pre><code class="javascript">const user = {
+  username: 'TheGreatCatsby',
+  password: 'catlord',
+  email: 'catsby@catfancy.com',
+  dateOfBirth: '04/26/1984',
+  city: 'Boston'
 };
 
-var localName = person.name;
 
-console.log(name); // Whitney Doe</code></pre>
-                    <p class="right small fragment">becomes</p>
-                </div>
-                <div class="halfblock fragment">
-                    <h3 class="green underlined">ES6:</h3>
-                    <pre><code class="javascript">const person = {
-  name: 'Whitney Doe'
+
+
+
+                </code></pre>
+                <pre class="fragment"><code class="javascript">const user = {
+  username: 'TheGreatCatsby',
+  password: 'catlord',
+  email: 'catsby@catfancy.com',
+  dateOfBirth: '04/26/1984',
+  city: 'Boston'
 };
 
-const { name: localName } = person;
-console.log(localName); // Whitney Doe</code></pre>
-                </div>
+function register( { email, username, password, dateOfBirth, city }) {
+  // code to create a new user
+}</code></pre>
+                <pre class="fragment"><code class="javascript">const user = {
+  username: 'TheGreatCatsby',
+  password: 'catlord',
+  email: 'catsby@catfancy.com',
+  dateOfBirth: '04/26/1984',
+  city: 'Boston'
+};
+
+function register( { email, username, password, dateOfBirth, city }) {
+  // code to create a new user
+}
+
+register(user); // will be destructured within register() parameters</code></pre>
             </div>
+
+            <aside class="notes">
+                Order doesn't matter; just the name of the key does.
+            </aside>
+        </section>
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <p>Using Object Destructuring in Function Parameters</p>
+            <div style="min-height:325px;">
+                <p data-height="325" data-theme-id="0" data-slug-hash="EmONGj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Activity: Object Destructuring" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmONGj/">Activity: Object Destructuring</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/LyXbqR?editors=0010" target="_blank">View Solution</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Assigning to Different Local Variable Names</h2>
+            <p class="fragment">What if you want to use a different name for your destructured variables?</p>
+            <div class="fragment-progression">
+                <pre class="fragment"><code class="javascript">const { name, age } = person;</code></pre>
+                <pre class="fragment"><code class="javascript">const { name, age } = person;
+const localName = name;
+// localName is the variable name I want to use going forward</code></pre>
+            </div>
+            <p>&nbsp;</p>
+            <ol class="clear">
+                <li class="fragment">Use a <code>:</code> in the comma-separated list of keys</li>
+                <li class="fragment">The <span class="green">variable name after <code>:</code></span> can now be referenced as a local variable</li>
+            </ol>
+            <p>&nbsp;</p>
+            <pre class="fragment"><code class="javascript">const { name : localName, age } = person;
+// now I can reference localName going forward!</code></pre>
+        </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Destructuring Arrays</h1>
         </section>
 
         <section>
             <h2>Destructuring Arrays</h2>
-            <p>Unpack values from arrays into distinct variables</p>
+            <p>Array destructuring operates on <span class="green">positions within an array</span> rather than any named properties</p>
             <div class="clear small">
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES5:</h3>
-                    <pre><code class="javascript">var scores = [ 94, 89, 73 ];
+                    <pre><code class="javascript">var colors = ['red', 'green', 'blue'];
 
-var first = scores[0];
-var second = scores[1];
-var third = scores[2];
+var first = colors[0];
+var second = colors[1];
+var third = colors[2];
 
-console.log(first, second, third); // 94, 89, 73</code></pre>
+console.log(first, second, third);
+// red green blue</code></pre>
                     <p class="right small fragment">becomes</p>
                 </div>
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES6:</h3>
-                    <pre><code class="javascript">const scores = [ 94, 89, 73 ];
+                    <pre><code class="javascript">const colors = ['red', 'green', 'blue'];
 
-const [ first, second, third ] = scores;
+const [ first, second, third ] = colors;
 
-console.log(first, second, third); // 94, 89, 73</code></pre>
+console.log(first, second, third);
+// red green blue</code></pre>
                 </div>
             </div>
-            <ul class="small">
+            <ul class="">
                 <li class="fragment"><span class="green">Left-hand side of the equal sign (<code>=</code>)</span><br />A comma-separated list of the values you'd like to unpack, wrapped in <code>[]</code></li>
-                <li class="fragment"><span class="green">Right-hand side of the equal sign (<code>=</code>)</span><br />The array</li>
+                <li class="fragment"><span class="green">Right-hand side of the equal sign (<code>=</code>)</span><br />The array you're destructuring</li>
             </ul>
         </section>
 
         <section>
             <h2>Default Values</h2>
             <p>What if an array doesn't contain a value at that index?</p>
-            <p class="fragment">Set a default value with equal signs (<code>=</code>)</p>
+            <p class="fragment">Set a default value with an equal sign (<code>=</code>)</p>
             <div class="clear small">
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES5:</h3>
-                    <pre><code class="javascript">var scores = [ 94, 89, 73 ];
+                    <pre><code class="javascript">var scores = [ 94, 89 ];
 
 var first = scores[0];
 var second = scores[1];
-var third = scores[2];
-var fourth = scores[3] === undefined ? 0 : scores[3];
+var third = scores[2] === undefined ? 0 : scores[2];
 
-console.log(first, second, third, fourth); // 94, 89, 73, 0</code></pre>
+console.log(first, second, third); // 94, 89, 0</code></pre>
                     <p class="right small fragment">becomes</p>
                 </div>
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES6:</h3>
-                    <pre><code class="javascript">const scores = [ 94, 89, 73 ];
+                    <pre><code class="javascript">const scores = [ 94, 89 ];
 
-const [ first, second, third, fourth = 0 ] = scores;
+const [ first, second, third = 0 ] = scores;
 
-console.log(first, second, third, fourth); // 94, 89, 73, 0</code></pre>
+console.log(first, second, third); // 94, 89, 0</code></pre>
                 </div>
             </div>
         </section>
 
+
+
+        <section>
+            <h2>The Spread Operator &amp; Array Destructuring</h2>
+            <div class="fragment-progression">
+                <pre><code class="javascript">const scores = [ 94 89 73 ];
+
+const [ first, ...otherScores ] = scores;
+
+console.log(first, otherScores); // What would this output?
+
+</code></pre>
+                <pre class="fragment"><code class="javascript">const scores = [ 94 89 73 ];
+
+const [ first, ...otherScores ] = scores;
+
+console.log(first, otherScores); // What would this output?
+console.log(first, ...otherScores); // What would this output?
+</code></pre>
+            </div>
+
+            <aside class="notes">Ask students what the first item would output and how they could counteract that if they wanted a 1-D array.</aside>
+        </section>
+
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <p>Using Array Destructuring</p>
+            <p data-height="265" data-theme-id="0" data-slug-hash="EmOZZN" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Array Destructuring - Converting to Object - Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmOZZN/">Array Destructuring - Converting to Object - Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/pPQReo?editors=0010#0" target="_blank">View Solution</a>
+
+        </section>
+
         <section>
             <h2>Swapping Variables</h2>
-            <div class="clear small">
+            <p class="fragment info">Often you need to swap the values of two variables (especially in sorting algorithms). Use array destructuring to make it happen!</p>
+            <div class="clear">
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES5:</h3>
                     <pre><code class="javascript">var a = 1;
@@ -679,44 +757,197 @@ console.log(a); // 2
 console.log(b); // 1</code></pre>
                 </div>
             </div>
+            <p class="fragment orange">🌟 No need to create a temporary variable!</p>
         </section>
 
         <section>
-            <h2>Rest & Spread</h2>
-            <pre><code class="javascript">const scores = [ 94, 89, 73 ];
+            <h2>Object.entries() &amp; Array Destructuring</h2>
+            <div class="small">
+                <p class="fragment"><code>Object.entries()</code> returns an array. Each element is an array of <code>[ key, value ]</code>.</p>
+            </div>
+            <p>&nbsp;</p>
 
-const [ first, ...otherScores ] = scores;
+            <div class="small fragment fragment-progression">
+                <pre><code class="javascript">const animal = {
+  name: 'Rocko',
+  type: 'wallaby',
+  age: 3
+};
 
-console.log(first, otherScores); // What would this output?
-</code></pre>
-            <pre class="fragment"><code class="javascript">console.log(first, ...otherScores); // 94, 89, 73
-</code></pre>
-            <aside class="notes">Ask students what the first item would output and how they could counteract that if they wanted a 1-D array.</aside>
+const entries = Object.entries(animal);
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code></pre>
+                <pre class="fragment"><code class="javascript">const animal = {
+  name: 'Rocko',
+  type: 'wallaby',
+  age: 3
+};
+
+const entries = Object.entries(animal);
+console.log(entries);
+/*
+[
+  [ 'name', 'Rocko' ],
+  [ 'type', 'wallaby' ],
+  [ 'age', 3 ],
+]
+*/
+
+
+
+                </code></pre>
+                <pre class="fragment"><code class="javascript">const animal = {
+  name: 'Rocko',
+  type: 'wallaby',
+  age: 3
+};
+
+const entries = Object.entries(animal);
+console.log(entries);
+/*
+[
+  [ 'name', 'Rocko' ],
+  [ 'type', 'wallaby' ],
+  [ 'age', 3 ],
+]
+*/
+
+entries.forEach(entry => {
+  const [ key, value ] = entry; // store the key and value
+});</code></pre>
+                <pre class="fragment"><code class="javascript">const animal = {
+  name: 'Rocko',
+  type: 'wallaby',
+  age: 3
+};
+
+const entries = Object.entries(animal);
+console.log(entries);
+/*
+[
+  [ 'name', 'Rocko' ],
+  [ 'type', 'wallaby' ],
+  [ 'age', 3 ],
+]
+*/
+
+entries.forEach(entry => {
+  const [ key, value ] = entry; // store the key and value
+  console.log(`${key} has a value of ${value}`); // 'name has a value of Rocko' and so on
+});</code></pre>
+            </div>
+
+            <aside class="notes">You can use array destructuring to get each property's key and value</aside>
+
         </section>
 
-
-        <section class="activity" data-background="rgb(6, 116, 123)">
-            <h2>Activity</h2>
-            <h2>Using Array Destructuring</h2>
-            <div class="clear" style="min-height:300px;">
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h2>At-Home Challenge</h2>
+            <h3>Refactor a <code>detectCollision</code> function</h3>
+            <div class="clear">
                 <div class="halfblock">
-                    <h6 class="light">Activity 1</h6>
-                    <p data-height="265" data-theme-id="0" data-slug-hash="EmOZZN" data-default-tab="result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Array Destructuring - Converting to Object - Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmOZZN/">Array Destructuring - Converting to Object - Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-                    <div>
-                        <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/pPQReo?editors=0010#0" target="_blank">View Solution</a>
-                    </div>
+                    <p data-height="300" data-theme-id="0" data-slug-hash="gROvJv" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Class 3 Challenge - detectCollision()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/gROvJv/">Class 3 Challenge - detectCollision()</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
                 </div>
-                <div class="halfblock">
-                    <h6 class="light">Activity 2</h6>
-                    <div>
-                        <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/?editors=0010" target="_blank">View Solution</a>
+                <div class="halfblock small">
+                    Although <code>detectCollision</code> works as intended, we can refactor it to improve its performance and readability. Reformat <code>detectCollision</code> to use destructuring and an array helper.
+                    <div class="fragment" style="background-color:rgba(255,255,255,0.6);border: 1px solid black;padding:15px;margin: 15px 0">
+                        <p><strong>Hint:</strong> We'll return a single matched object. Which array helper would be best in this case?
                     </div>
-
                 </div>
             </div>
+            <a href="https://codepen.io/anythingcodes/pen/PjoQvR?editors=0010" class="solution solution__lesson-3" target="_blank">View Solution &raquo;</a>
         </section>
 
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h2>At-Home Challenge</h2>
+            <h3>Mixed Destructuring</h3>
+            <div class="clear">
+                <div style="font-size:80%" class="halfblock">
+							<pre><code contenteditable class ="javascript" >const node = {
+  location: {
+    start: {
+      line: 1,
+      column: 1
+    },
+    end: {
+      line: 1,
+      column: 4
+    }
+  },
+  range: [0, 3]
+};
 
+const {
+  location: { start },
+  range: [ index ]
+} = node;
+
+console.log(start.line);
+console.log(start.column);
+console.log(index);</code></pre>
+
+                </div>
+                <div class="halfblock small">
+                    <p>What would the following output to the console and why?</p>
+                </div>
+            </div>
+
+            <aside class="notes">
+                <a href="https://codepen.io/anythingcodes/pen/PjoQxE?editors=0010" target="_blank">View CodePen</a>
+            </aside>
+        </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Iterators and Generators</h1>
+        </section>
+
+        <section>
+            <h2>Terms</h2>
+            <ol>
+                <li><span class="green">Iterator</span><span class="fragment">: An object designed for iteration</span>
+                    <ul>
+                        <li class="fragment">Has a <code>next()</code> method that <span class="orange">returns a result object</span> containing 2 properties:
+                            <ol>
+                                <li class="fragment"><code>value</code>: The next value</li>
+                              <li class="fragment"><code>done</code>: A boolean that's true when there are no more values to return</li>
+                            </ol>
+                    </ul>
+                </li>
+                <li><span class="green">Generator</span><span class="fragment">: A function that <span class="orange">returns an iterator</span></span>
+                    <ul>
+                        <li class="fragment">Made by placing a <code>*</code> after the <code>function</code> keyword</li>
+                        <li class="fragment">Uses a <code>yield</code> keyword, which specifies what values he resulting iterator should return when <code>next()</code> is called</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Why generators?</h2>
+            <p><img src="dist/img/but-why.gif" alt="But why?" /></p>
+            <p class="fragment">Generators can be entered and exited multiple times</p>
+            <p class="fragment">You may <span class="orange">pause</span> in the middle, one or many times, and <span class="orange">resume later</span>, allowing other code to run during pauses</p>
+
+            <aside class="notes">
+                <ul>
+                    <li>Normally a function runs and returns something and then is done. Generators can run some code, return a value, and go right back into the function at the same place that we left off.</li>
+                </ul>
+            </aside>
+
+        </section>
     </div>
     <footer>
         <div class="copyright">
