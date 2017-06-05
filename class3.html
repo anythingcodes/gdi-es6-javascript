@@ -64,7 +64,7 @@
                 <li>Destructuring Objects</li>
                 <li>Destructuring Arrays</li>
                 <li>Promises</li>
-                <li>Fetch</li>
+                <li>The Fetch Helper</li>
             </ol>
         </section>
 
@@ -746,18 +746,8 @@ console.log(first, ...otherScores); // What would this output?
         </section>-->
 
 
-        <section class="activity" data-background="rgb(6, 116, 123)">
-            <h2>Activity</h2>
-            <p>Using Array Destructuring</p>
-            <div style="min-height:270px;">
-                <p data-height="265" data-theme-id="0" data-slug-hash="EmOZZN" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Array Destructuring - Converting to Object - Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmOZZN/">Array Destructuring - Converting to Object - Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-            </div>
-            <a class="solution solution__lesson-3" href="http://codepen.io/anythingcodes/pen/pPQReo?editors=0010#0" target="_blank">View Solution</a>
-
-        </section>
-
         <section>
-            <h2>Swapping Variables</h2>
+            <h2>Swapping Variables with Destructuring</h2>
             <p class="fragment info">Often you need to swap the values of two variables (especially in sorting algorithms). Use array destructuring to make it happen!</p>
             <div class="clear">
                 <div class="halfblock fragment">
@@ -787,96 +777,16 @@ console.log(b); // 1</code></pre>
             <p class="fragment small orange">🌟 No need to create a temporary variable!</p>
         </section>
 
-        <section>
-            <h2>Object.entries()</h2>
-
-            <p class="small fragment">Use <code>Object.entries()</code> on an object to get an array representing that object. Each element is an array containing <code>[ key, value ]</code>.</p>
-
-            <div class="small fragment fragment-progression">
-                <pre><code class="javascript">const animal = {
-  name: 'Rocko',
-  type: 'wallaby',
-  age: 3
-};
-
-const entries = Object.entries(animal);
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </code></pre>
-                <pre class="fragment"><code class="javascript">const animal = {
-  name: 'Rocko',
-  type: 'wallaby',
-  age: 3
-};
-
-const entries = Object.entries(animal);
-console.log(entries);
-/*
-[
-  [ 'name', 'Rocko' ],
-  [ 'type', 'wallaby' ],
-  [ 'age', 3 ],
-]
-*/
-
-
-
-                </code></pre>
-                <pre class="fragment"><code class="javascript">const animal = {
-  name: 'Rocko',
-  type: 'wallaby',
-  age: 3
-};
-
-const entries = Object.entries(animal);
-console.log(entries);
-/*
-[
-  [ 'name', 'Rocko' ],
-  [ 'type', 'wallaby' ],
-  [ 'age', 3 ],
-]
-*/
-
-entries.forEach(entry => {
-  const [ key, value ] = entry; // store the key and value
-});</code></pre>
-                <pre class="fragment"><code class="javascript">const animal = {
-  name: 'Rocko',
-  type: 'wallaby',
-  age: 3
-};
-
-const entries = Object.entries(animal);
-console.log(entries);
-/*
-[
-  [ 'name', 'Rocko' ],
-  [ 'type', 'wallaby' ],
-  [ 'age', 3 ],
-]
-*/
-
-entries.forEach(entry => {
-  const [ key, value ] = entry; // store the key and value
-  console.log(`${key} has a value of ${value}`); // 'name has a value of Rocko' and so on
-});</code></pre>
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <p>Using Array Destructuring</p>
+            <div style="min-height:270px;">
+                <p data-height="265" data-theme-id="0" data-slug-hash="EmOZZN" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Array Destructuring - Converting to Object - Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmOZZN/">Array Destructuring - Converting to Object - Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
             </div>
-
-            <aside class="notes">You can use array destructuring to get each property's key and value</aside>
+            <a class="solution solution__lesson-3" href="http://codepen.io/anythingcodes/pen/pPQReo?editors=0010#0" target="_blank">View Solution</a>
 
         </section>
+
 
         <section class="activity__challenge" data-background="#d2ccfc">
             <h2>At-Home Challenge</h2>
@@ -1010,7 +920,12 @@ console.log(index);</code></pre>
         <section>
             <h2>Creating a Promise</h2>
             <a class="fragment" href="https://codepen.io/anythingcodes/pen/awbKPO?editors=0010" target="_blank">View CodePen &raquo;</a>
-            <div class="fragment-progression">
+            <p class="fragment">Requires:</p>
+            <ol>
+                <li class="fragment">The Promise object, containing <code>resolve()</code> and <code>reject()</code> conditions</li>
+                <li class="fragment"><code>then()</code> and <code>catch()</code>blocks attached to the Promise object</li>
+            </ol>
+            <div class="small fragment-progression">
                 <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
 
 });
@@ -1148,6 +1063,7 @@ promise.catch(() => {
 
         <section>
             <h2>Promise-Based HTTP Requests</h2>
+            <p>Please don't memorize this 😊</p>
             <pre class="small"><code class="javascript" contenteditable>function request(url) {
   return new Promise((resolve, reject) => {
     var xhr = new XMLHttpRequest();

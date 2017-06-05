@@ -126,6 +126,97 @@
 });</code></pre>
             <a href="http://embed.plnkr.co/ttOCrNLWR3GncFlRU2ur/" target="_blank">Take a look &raquo;</a>
         </section>
+
+        <section>
+            <h2>Object.entries()</h2>
+
+            <p class="small fragment">Use <code>Object.entries()</code> on an object to get an array representing that object. Each element is an array containing <code>[ key, value ]</code>.</p>
+
+            <div class="small fragment fragment-progression">
+                <pre><code class="javascript">const animal = {
+  name: 'Rocko',
+  type: 'wallaby',
+  age: 3
+};
+
+const entries = Object.entries(animal);
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </code></pre>
+                <pre class="fragment"><code class="javascript">const animal = {
+  name: 'Rocko',
+  type: 'wallaby',
+  age: 3
+};
+
+const entries = Object.entries(animal);
+console.log(entries);
+/*
+[
+  [ 'name', 'Rocko' ],
+  [ 'type', 'wallaby' ],
+  [ 'age', 3 ],
+]
+*/
+
+
+
+                </code></pre>
+                <pre class="fragment"><code class="javascript">const animal = {
+  name: 'Rocko',
+  type: 'wallaby',
+  age: 3
+};
+
+const entries = Object.entries(animal);
+console.log(entries);
+/*
+[
+  [ 'name', 'Rocko' ],
+  [ 'type', 'wallaby' ],
+  [ 'age', 3 ],
+]
+*/
+
+entries.forEach(entry => {
+  const [ key, value ] = entry; // store the key and value
+});</code></pre>
+                <pre class="fragment"><code class="javascript">const animal = {
+  name: 'Rocko',
+  type: 'wallaby',
+  age: 3
+};
+
+const entries = Object.entries(animal);
+console.log(entries);
+/*
+[
+  [ 'name', 'Rocko' ],
+  [ 'type', 'wallaby' ],
+  [ 'age', 3 ],
+]
+*/
+
+entries.forEach(entry => {
+  const [ key, value ] = entry; // store the key and value
+  console.log(`${key} has a value of ${value}`); // 'name has a value of Rocko' and so on
+});</code></pre>
+            </div>
+
+            <aside class="notes">You can use array destructuring to get each property's key and value</aside>
+
+        </section>
     </div>
     <footer>
         <div class="copyright">
