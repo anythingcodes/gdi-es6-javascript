@@ -400,17 +400,35 @@ console.log([1, ...numbers]); // normal array: [1, 2, 3, 4]</code></pre>
         <section>
             <h2>Rest vs. Spread</h2>
             <p><code>...</code></p>
-            <p class="fragment"><span class="blue">rest parameters</span> used in function parameters to transform parameters <span class="green">into an array</span></p>
-            <p class="fragment"><span class="blue">spread operator</span> used on an array to transform the array <span class="green">into individual elements</span></p>
+            <p class="fragment"><span class="blue">Rest parameters</span>, primarily used in function parameters, to transform individual elements <span class="green">into an array</span></p>
+            <pre class="fragment"><code class="javascript">function sum(first, ...others) {
+  for ( let i = 0; i < others.length; i++ )
+    first += others[i];
+  return first;
+}</code></pre>
+
+            <p class="fragment"><span class="blue">Spread operator</span> used on an array to transform the array <span class="green">into individual elements</span></p>
+            <pre class="fragment"><code class="javascript">var arr1 = ['a', 'b', 'c'];
+var arr2 = ['x', 'y', 'z'];
+var combo = [...arr1, ...arr2];
+console.log(combo); // ['a', 'b', 'c', 'x', 'y', 'z']</code></pre>
         </section>
 
         <section class="activity" data-background="rgb(6, 116, 123)">
             <h2>Activity</h2>
-            <h3>Using rest parameters with the spread operator</h3>
-            <div style="min-height:265px;">
-                <p data-height="265" data-theme-id="0" data-slug-hash="PmOXaq" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Spread and Rest Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/PmOXaq/">Spread and Rest Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            <h3>Using the spread operator and rest parameters</h3>
+            <div class="clear">
+                <div style="min-height:300px;" class="halfblock">
+                    <h3>Activity 1</h3>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="zzxwqM" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Spread Operator Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/zzxwqM/">Spread Operator Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <p><a href="https://codepen.io/anythingcodes/pen/gRbWwM?editors=0010" target="_blank" class="solution__lesson-3 solution">View Solution &raquo;</a></p>
+                </div>
+                <div style="min-height:300px;" class="halfblock">
+                    <h3>Activity 2</h3>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="PmOXaq" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Spread and Rest Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/PmOXaq/">Spread and Rest Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                    <p><a href="https://codepen.io/anythingcodes/pen/aWVPja?editors=0010" target="_blank" class="solution__lesson-3 solution">View Solution &raquo;</a></p>
+                </div>
             </div>
-            <p><a href="https://codepen.io/anythingcodes/pen/aWVPja?editors=0010" target="_blank" class="solution__lesson-2 solution">View Solution &raquo;</a></p>
         </section>
 
         <section data-background="#f05b62">
@@ -472,7 +490,7 @@ dog.bark(); // yip!</code></pre>
 
             <p data-height="265" data-theme-id="0" data-slug-hash="OgJOzd" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Object Syntax" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/OgJOzd/">Object Syntax</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 
-            <a class="solution solution__lesson-2" href="https://codepen.io/anythingcodes/pen/awbVqW?editors=0012" target="_blank">View Solution</a>
+            <a class="solution solution__lesson-3" href="https://codepen.io/anythingcodes/pen/awbVqW?editors=0012" target="_blank">View Solution</a>
 
         </section>
 
@@ -521,7 +539,7 @@ console.log(name, age);
             <p>Using Object Destructuring</p>
             <div style="min-height:300px;">
                 <p data-height="265" data-theme-id="0" data-slug-hash="LyXxpy" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Object Destructuring Activity 1" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/LyXxpy/">Object Destructuring Activity 1</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-                        <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/gWQgPK?editors=0010#0" target="_blank">View Solution</a>
+                        <a class="solution solution__lesson-3" href="http://codepen.io/anythingcodes/pen/gWQgPK?editors=0010#0" target="_blank">View Solution</a>
             </div>
         </section>
 
@@ -610,7 +628,7 @@ register(user); // will be destructured within register() parameters</code></pre
             <p>Using Object Destructuring in Function Parameters</p>
             <div style="min-height:325px;">
                 <p data-height="325" data-theme-id="0" data-slug-hash="EmONGj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Activity: Object Destructuring" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmONGj/">Activity: Object Destructuring</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-                <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/LyXbqR?editors=0010" target="_blank">View Solution</a>
+                <a class="solution solution__lesson-3" href="http://codepen.io/anythingcodes/pen/LyXbqR?editors=0010" target="_blank">View Solution</a>
             </div>
         </section>
 
@@ -698,17 +716,17 @@ console.log(first, second, third); // 94, 89, 0</code></pre>
 
 
 
-        <section>
-            <h2>The Spread Operator &amp; Array Destructuring</h2>
+        <!--<section>
+            <h2>Rest Parameters &amp; Array Destructuring</h2>
             <div class="fragment-progression">
-                <pre><code class="javascript">const scores = [ 94 89 73 ];
+                <pre><code class="javascript">const scores = [ 94, 89, 73 ];
 
 const [ first, ...otherScores ] = scores;
 
 console.log(first, otherScores); // What would this output?
 
 </code></pre>
-                <pre class="fragment"><code class="javascript">const scores = [ 94 89 73 ];
+                <pre class="fragment"><code class="javascript">const scores = [ 94, 89, 73 ];
 
 const [ first, ...otherScores ] = scores;
 
@@ -717,15 +735,23 @@ console.log(first, ...otherScores); // What would this output?
 </code></pre>
             </div>
 
-            <aside class="notes">Ask students what the first item would output and how they could counteract that if they wanted a 1-D array.</aside>
-        </section>
+            <aside class="notes">
+                Steps:
+                <ol>
+                    <li>Destructuring makes 'first' into 94</li>
+                    <li>otherScores becomes individual elements but then the rest </li>
+                </ol>
+            </aside>
+        </section>-->
 
 
         <section class="activity" data-background="rgb(6, 116, 123)">
             <h2>Activity</h2>
             <p>Using Array Destructuring</p>
-            <p data-height="265" data-theme-id="0" data-slug-hash="EmOZZN" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Array Destructuring - Converting to Object - Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmOZZN/">Array Destructuring - Converting to Object - Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-            <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/pPQReo?editors=0010#0" target="_blank">View Solution</a>
+            <div style="min-height:270px;">
+                <p data-height="265" data-theme-id="0" data-slug-hash="EmOZZN" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Array Destructuring - Converting to Object - Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EmOZZN/">Array Destructuring - Converting to Object - Activity</a> by Liz Shaw (<a href="http://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+            </div>
+            <a class="solution solution__lesson-3" href="http://codepen.io/anythingcodes/pen/pPQReo?editors=0010#0" target="_blank">View Solution</a>
 
         </section>
 
@@ -1064,6 +1090,24 @@ promise.catch(() => {
             </aside>
         </section>
 
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <p>Using Promises</p>
+            <div class="clear">
+                <div class="halfblock">
+                    <h3>Activity 1</h3>
+                    <p data-height="187" data-theme-id="0" data-slug-hash="qjByPj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qjByPj/">Promises Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <a href="https://codepen.io/anythingcodes/pen/gROjGd?editors=0010" target="_blank" class="solution__lesson-3 solution">View Solution</a>
+                </div>
+                <div class="halfblock">
+                    <h3>Activity 2</h3>
+                    <p data-height="187" data-theme-id="0" data-slug-hash="JJoJRK" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises with an API" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/JJoJRK/">Promises with an API</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <a href="https://codepen.io/anythingcodes/pen/zzxzEq?editors=0010" target="_blank" class="solution solution__lesson-3">View Solution</a>
+                </div>
+            </div>
+
+        </section>
+
         <section>
             <h2>Grouping Multiple Promises</h2>
             <p class="fragment">Combine promises in an iterable, such as an array</p>
@@ -1080,6 +1124,8 @@ promise.catch(() => {
         <section>
             <h2>Promise.all()</h2>
             <p class="fragment">The returned promise is fulfilled when <span class="green">all</span> promises in the iterable are fulfilled</p>
+            <p class="fragment">Returns an <span class="green">array of result values</span></p>
+            <p class="fragment">If any of the promises in the array fail, the returned promise fails too</p>
             <div class="fragment" style="min-height:300px;">
                 <p data-height="300" data-theme-id="0" data-slug-hash="ZyEjOY" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promise.all()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/ZyEjOY/">Promise.all()</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </div>
@@ -1100,17 +1146,32 @@ promise.catch(() => {
         </section>
 
         <section>
-            <h2>Example HTTP Requests</h2>
-            <pre><code class="javascript" contenteditable>const promise = new Promise((resolve, reject) => {
-  const request = new XMLHttpRequest();
-  // make the request
-  request.onload = () => {
-    resolve();
-  };
-  request.onerror = () => {
-    reject();
-  };
-});</code></pre>
+            <h2>Promise-Based HTTP Requests</h2>
+            <pre class="small"><code class="javascript" contenteditable>function request(url) {
+  return new Promise((resolve, reject) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = function() {
+      if (this.status >= 200 && this.status < 300) {
+        resolve(JSON.parse(xhr.response));
+      } else {
+        reject({
+          status: this.status,
+          statusText: xhr.statusText
+        });
+      }
+    };
+    xhr.onerror = function() {
+      reject({
+        status: this.status,
+        statusText: xhr.statusText
+      });
+    };
+    xhr.send();
+  });
+}
+
+request('http://json.com'); // returns a promise</code></pre>
             <aside class="notes">This is very jumbled though, which is why ES6 includes a brand spankin' new API called Fetch, which is automatically promisified</aside>
         </section>
 
@@ -1134,20 +1195,20 @@ promise.catch(() => {
 
         <section class="activity" data-background="rgb(6, 116, 123)">
             <h2>Activity</h2>
-            <p>Using Promises and the Fetch Helper</p>
-            <div class="clear">
-                <div class="halfblock">
-                    <h3>Activity 1: Promises Warmup</h3>
-                    <p data-height="187" data-theme-id="0" data-slug-hash="qjByPj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qjByPj/">Promises Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-                    <a href="https://codepen.io/anythingcodes/pen/gROjGd?editors=0010" target="_blank" class="solution__lesson-3 solution">View Solution</a>
-                </div>
-                <div class="halfblock">
-                    <h3>Activity 2: Using the Fetch API</h3>
-                    <p data-height="187" data-theme-id="0" data-slug-hash="ZyEjmp" data-default-tab="js,result" data-user="anythingcodes" data-embed-version="2" data-pen-title="Fetch Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/ZyEjmp/">Fetch Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-                    <a href="https://codepen.io/anythingcodes/pen/XgWBxp" target="_blank" class="solution solution__lesson-3">View Solution</a>
-                </div>
+            <p>Using the Fetch Helper</p>
+            <div style="min-height:250px">
+                <p data-height="250" data-theme-id="0" data-slug-hash="ZyEjmp" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Fetch Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/ZyEjmp/">Fetch Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </div>
+            <a href="https://codepen.io/anythingcodes/pen/XgWBxp" target="_blank" class="solution solution__lesson-3">View Solution</a>
 
+        </section>
+
+        <section class="hide-pdf">
+            <h2>Questions</h2>
+            <div style="font-size:1200%; height:100%;" class="blue">?
+                <div class="clear"></div>
+            </div>
+            <aside class="notes">Can always email me!</aside>
         </section>
 
     </div>
