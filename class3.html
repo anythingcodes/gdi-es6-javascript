@@ -403,9 +403,7 @@ console.log([1, ...numbers]); // normal array: [1, 2, 3, 4]</code></pre>
             <p><code>...</code></p>
             <p class="fragment"><span class="blue">Rest parameters</span>, primarily used in function parameters, to transform individual elements <span class="green">into an array</span></p>
             <pre class="fragment"><code class="javascript">function sum(first, ...others) {
-  for ( let i = 0; i < others.length; i++ )
-    first += others[i];
-  return first;
+  // others will be an array here
 }</code></pre>
 
             <p class="fragment"><span class="blue">Spread operator</span> used on an array to transform the array <span class="green">into individual elements</span></p>
