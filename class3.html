@@ -583,7 +583,7 @@ console.log(name, active);
             <p>Destructuring is often used in function parameters</p>
             <p>&nbsp;</p>
             <div class="fragment-progression small">
-                <pre><code class="javascript">const user = {
+                <pre><code class="javascript" contenteditable>const user = {
   username: 'TheGreatCatsby',
   password: 'catlord',
   email: 'catsby@catfancy.com',
@@ -646,7 +646,7 @@ const localName = name;
 // localName is the variable name I want to use going forward</code></pre>
             </div>
             <p>&nbsp;</p>
-            <ol class="clear">
+            <ol class="clear small">
                 <li class="fragment">Use a <code>:</code> in the comma-separated list of keys</li>
                 <li class="fragment">The <span class="green">variable name after <code>:</code></span> can now be referenced as a local variable</li>
             </ol>
@@ -850,6 +850,9 @@ console.log(index);</code></pre>
 
         <section data-background="#f05b62">
             <h1 style="color: #fafafa;font-size:3.7em;">Promises</h1>
+            <aside class="notes">
+                A promise represents the eventual result of some sort of operation, typically asynchronous response. Could be animation or anything like that.
+            </aside>
         </section>
 
         <section>
@@ -923,12 +926,16 @@ console.log(index);</code></pre>
         <section>
             <h2>Creating a Promise</h2>
             <a class="fragment" href="https://codepen.io/anythingcodes/pen/awbKPO?editors=0010" target="_blank">View CodePen &raquo;</a>
-            <p class="fragment">Requires:</p>
-            <ol>
-                <li class="fragment">The Promise object, which accepts a callback function containing <code>resolve</code> and <code>reject</code></li>
-                <li class="fragment"><code>resolve()</code> and <code>reject()</code> are invoked depending on certain conditions</li>
-                <li class="fragment"><code>then()</code> and <code>catch()</code>blocks attached to the Promise object</li>
-            </ol>
+            <ul class="small">
+                <li class="fragment">
+                    You'll need:
+                    <ol>
+                        <li class="fragment">The Promise object, which accepts a callback function (called the <span class="green">executor</span>) with <code>resolve</code> and <code>reject</code> arguments</li>
+                        <li class="fragment"><code>resolve()</code> and <code>reject()</code> are invoked depending on certain conditions</li>
+                        <li class="fragment"><code>then()</code> and <code>catch()</code>blocks attached to the Promise object</li>
+                    </ol>
+                </li>
+            </ul>
             <div class="small fragment-progression">
                 <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
 
@@ -997,9 +1004,9 @@ promise.catch(() => {
 
                 </code></pre>
             </div>
-
             <p>&nbsp;</p>
-            <p class="orange info fragment">Always include a rejection handler! Otherwise your promise may silently fail.</p>
+
+            <p class="orange info small fragment">Always include a rejection handler! Otherwise your promise may silently fail.</p>
 
             <aside class="notes">
                 <ul>
