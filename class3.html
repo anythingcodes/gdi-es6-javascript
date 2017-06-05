@@ -1117,7 +1117,7 @@ request('http://json.com'); // returns a promise</code></pre>
   .then(data => console.log(data))
   .catch(err => console.log(err));</code></pre>
             <aside class="notes">
-                Point out that the first return value is the response, so you need to return <code>response.json()</code> to a second <code>then()</code>
+                Point out that the first return value is the response. Show that you need to call .json(), which returns another promise, to a second <code>then()</code>. Just a quirk of the Fetch API.
             </aside>
         </section>
 
