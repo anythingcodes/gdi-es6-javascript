@@ -467,7 +467,7 @@ console.log(combo); // ['a', 'b', 'c', 'x', 'y', 'z']</code></pre>
             <div class="clear">
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES5:</h3>
-                    <pre><code class="javascript">var dog = {
+                    <pre><code class="javascript" contenteditable>var dog = {
   name: 'Boo',
   bark: function() {
     console.log('yip!');
@@ -705,7 +705,7 @@ var first = scores[0];
 var second = scores[1];
 var third = scores[2] === undefined ? 0 : scores[2];
 
-console.log(first, second, third); // 94, 89, 0</code></pre>
+console.log(first, second, third); // 94 89 0</code></pre>
                     <p class="right small fragment">becomes</p>
                 </div>
                 <div class="halfblock fragment">
@@ -714,7 +714,7 @@ console.log(first, second, third); // 94, 89, 0</code></pre>
 
 const [ first, second, third = 0 ] = scores;
 
-console.log(first, second, third); // 94, 89, 0</code></pre>
+console.log(first, second, third); // 94 89 0</code></pre>
                 </div>
             </div>
         </section>
