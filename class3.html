@@ -453,11 +453,12 @@ console.log(combo); // ['a', 'b', 'c', 'x', 'y', 'z']</code></pre>
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES6:</h3>
                     <pre><code class="javascript">function saveData(url, data){
-  $.ajax({ method: 'POST', url, data });
+  $.ajax({ url, data, method: 'POST' });
 }</code></pre>
                 </div>
             </div>
             <p class="fragment">Sometimes referred to as <span class="green">enhanced literal notation</span></p>
+            <aside class="notes">Convention is to place shorthanded properties at beginning for readability</aside>
         </section>
 
         <section>
