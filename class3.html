@@ -1117,8 +1117,8 @@ request('http://json.com'); // returns a promise</code></pre>
 
         <section>
             <h2>Fetch</h2>
-            <p class="fragment">The <code>fetch()</code> helper is <span class="green">promise</span>-based</p>
-            <p class="fragment">Very useful for fetching data from endpoints</p>
+            <p class="fragment">The <code>fetch()</code> helper <span class="green">returns a promise</span> and is used for HTTP requests</p>
+            <p class="fragment">The initial return value is the Response object; use chaining and the <code>.json()</code> method to get the JSON you need</p>
             <p class="fragment"><a href="https://codepen.io/anythingcodes/pen/vZYaaa?editors=0010" target="_blank">Let's take a look &raquo;</a></p>
             <pre class="fragment"><code class="javascript">fetch('http://json.com')
   .then(response => response.json())
