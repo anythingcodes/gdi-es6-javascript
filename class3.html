@@ -64,7 +64,6 @@
                 <li>Destructuring Objects</li>
                 <li>Destructuring Arrays</li>
                 <li>Promises</li>
-                <li>The Fetch Helper</li>
             </ol>
         </section>
 
@@ -815,7 +814,7 @@ console.log(b); // 1</code></pre>
                     </div>
                 </div>
             </div>
-            <a href="https://codepen.io/anythingcodes/pen/PjoQvR?editors=0010" class="solution solution__lesson-3" target="_blank">View Solution &raquo;</a>
+            <a href="https://codepen.io/anythingcodes/pen/PjoQvR?editors=0010" class="solution solution__lesson-4" target="_blank">View Solution &raquo;</a>
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
@@ -1109,34 +1108,6 @@ promise.catch(() => {
 
 request('http://json.com'); // returns a promise</code></pre>
             <aside class="notes">This is very jumbled though, which is why ES6 includes a brand spankin' new API called Fetch, which is automatically promisified</aside>
-        </section>
-
-        <section data-background="#f05b62">
-            <h1 style="color: #fafafa;font-size:3.7em;">Fetch</h1>
-        </section>
-
-        <section>
-            <h2>Fetch</h2>
-            <p class="fragment">The <code>fetch()</code> helper <span class="green">returns a promise</span> and is used for HTTP requests</p>
-            <p class="fragment">The initial return value is the Response object; use chaining and the <code>.json()</code> method to get the JSON you need</p>
-            <p class="fragment"><a href="https://codepen.io/anythingcodes/pen/vZYaaa?editors=0010" target="_blank">Let's take a look &raquo;</a></p>
-            <pre class="fragment"><code class="javascript">fetch('http://json.com')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(err => console.log(err));</code></pre>
-            <aside class="notes">
-                Point out that the first return value is the response. Show that you need to call .json(), which returns another promise, to a second <code>then()</code>. Just a quirk of the Fetch API.
-            </aside>
-        </section>
-
-        <section class="activity" data-background="rgb(6, 116, 123)">
-            <h2>Activity</h2>
-            <p>Using the Fetch Helper</p>
-            <div style="min-height:250px">
-                <p data-height="250" data-theme-id="0" data-slug-hash="ZyEjmp" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Fetch Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/ZyEjmp/">Fetch Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </div>
-            <a href="https://codepen.io/anythingcodes/pen/XgWBxp" target="_blank" class="solution solution__lesson-3">View Solution</a>
-
         </section>
 
         <section class="hide-pdf">
