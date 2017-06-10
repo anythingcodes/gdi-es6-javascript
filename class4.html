@@ -52,16 +52,211 @@
         <section class="small">
             <h1>Getting Started with ES6 and ES7 JavaScript</h1>
             <img src="dist/img/es6-gdi.jpg" alt="ES6 and ES7 Intro Image" class="noborder"/>
-            <h2 class="green">Class 3</h2>
+            <h2 class="green">Class 4</h2>
         </section>
 
         <section>
             <h2>Today's Topics</h2>
             <ol>
                 <li>Review at-home challenges from last class</li>
-
+                <li>Promises Recap</li>
+                <li>The Fetch Helper</li>
+                <li>Generator Functions</li>
+                <li>Iterators</li>
+                <li>Classes</li>
+                <li>Importing and Exporting Modules</li>
+                <li>Sets and Maps</li>
+                <li>Transpiling Setup</li>
+                <li>Additional Resources</li>
             </ol>
         </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Promises Recap</h1>
+            <aside class="notes">
+                A promise represents the eventual result of some sort of operation, typically asynchronous response. Could be animation or anything like that.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Creating a Promise</h2>
+            <a class="fragment" href="https://codepen.io/anythingcodes/pen/awbKPO?editors=0010" target="_blank">View CodePen &raquo;</a>
+            <ul class="small">
+                <li class="fragment">
+                    You'll need:
+                    <ol>
+                        <li class="fragment">The Promise object, which accepts a callback function (called the <span class="green">executor</span>) with <code>resolve</code> and <code>reject</code> arguments</li>
+                        <li class="fragment"><code>resolve()</code> and <code>reject()</code> are invoked depending on certain conditions</li>
+                        <li class="fragment"><code>then()</code> and <code>catch()</code>blocks attached to the Promise object</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="small fragment-progression">
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+
+});
+
+
+
+
+
+
+
+                </code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+
+});
+
+promise.then(() => {
+  console.log('my resolution message');
+});
+
+
+
+                </code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+
+});
+
+promise.then(() => {
+  console.log('my resolution message');
+});
+
+promise.catch(() => {
+  console.log('my rejection message');
+});</code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+  resolve(); // outputs 'my resolution message'
+});
+
+promise.then(() => {
+  console.log('my resolution message');
+});
+
+promise.catch(() => {
+  console.log('my rejection message');
+});</code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+  reject(); // outputs 'my rejection message'
+});
+
+promise.then(() => {
+  console.log('my resolution message');
+});
+
+promise.catch(() => {
+  console.log('my rejection message');
+});</code></pre>
+                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
+  resolve(5); // chain callbacks and pass info between them
+})
+  .then((value) => {
+    console.log(value); // 5
+  })
+  .catch(() => {
+    console.log('my rejection message');
+  });
+
+                </code></pre>
+            </div>
+            <p>&nbsp;</p>
+
+            <p class="orange info small fragment">Always include a rejection handler! Otherwise your promise may silently fail.</p>
+
+            <aside class="notes">
+                <ul>
+                    <li>Recommendation is to chain them, and indent like so</li>
+                    <li>[[PromiseValue]] is a private symbol. It's an internal property. You cannot access it directly. Native promises may only be unwrapped in then() with promises or asynchronously in generally.</li>
+                </ul>
+
+            </aside>
+        </section>
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <p>Using Promises</p>
+            <div class="clear">
+                <div class="halfblock">
+                    <h3>Activity 1</h3>
+                    <p data-height="187" data-theme-id="0" data-slug-hash="qjByPj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qjByPj/">Promises Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <a href="https://codepen.io/anythingcodes/pen/gROjGd?editors=0010" target="_blank" class="solution__lesson-3 solution">View Solution</a>
+                </div>
+                <div class="halfblock">
+                    <h3>Activity 2</h3>
+                    <p data-height="187" data-theme-id="0" data-slug-hash="JJoJRK" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises with an API" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/JJoJRK/">Promises with an API</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <a href="https://codepen.io/anythingcodes/pen/zzxzEq?editors=0010" target="_blank" class="solution solution__lesson-3">View Solution</a>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>Grouping Multiple Promises</h2>
+            <p class="fragment">Combine promises in an iterable, such as an array</p>
+            <ol>
+                <li class="fragment">
+                    <code>Promise.all()</code> waits for <span class="green">all</span> promises in the group to fulfill
+                </li>
+                <li class="fragment">
+                    <code>Promise.race()</code> is fulfilled when <span class="green">the fastest</span> promise in the group is fulfilled
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Promise.all()</h2>
+            <p class="fragment">The returned promise is fulfilled when <span class="green">all</span> promises in the iterable are fulfilled</p>
+            <p class="fragment">Returns an <span class="green">array of result values</span></p>
+            <p class="fragment">If any of the promises in the array fail, the returned promise fails too</p>
+            <div class="fragment" style="min-height:300px;">
+                <p data-height="300" data-theme-id="0" data-slug-hash="ZyEjOY" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promise.all()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/ZyEjOY/">Promise.all()</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </div>
+            <aside class="notes">
+                If any promise passed to Promise.all() is rejected, the returned promise is immediately rejected without waiting for other promises to complete
+            </aside>
+        </section>
+
+        <section>
+            <h2>Promise.race()</h2>
+            <p class="fragment">Instead of waiting for all promises to be fulfilled like in <code>Promise.all()</code>, a promise using <code>Promise.race()</code> is fulfilled as soon as <span class="green">any</span> promise in the array is fulfilled</p>
+            <div class="fragment" style="min-height:220px;">
+                <p data-height="220" data-theme-id="0" data-slug-hash="eRYjgp" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promise.race()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/eRYjgp/">Promise.race()</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </div>
+            <aside class="notes">
+                If any promise passed to Promise.all() is rejected, the returned promise is immediately rejected without waiting for other promises to complete
+            </aside>
+        </section>
+
+        <section>
+            <h3>Promise-Based HTTP Requests</h3>
+            <pre class="small"><code class="javascript" contenteditable>function request(url) {
+  return new Promise((resolve, reject) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = function() {
+      if (this.status >= 200 && this.status < 300) {
+        resolve(JSON.parse(xhr.response));
+      } else {
+        reject({
+          status: this.status,
+          statusText: xhr.statusText
+        });
+      }
+    };
+    xhr.onerror = function() {
+      reject({
+        status: this.status,
+        statusText: xhr.statusText
+      });
+    };
+    xhr.send();
+  });
+}
+
+request('http://json.com'); // returns a promise</code></pre>
+            <aside class="notes">This is very jumbled though, which is why ES6 includes a brand spankin' new API called Fetch, which is automatically promisified</aside>
+        </section>
+
 
         <section data-background="#f05b62">
             <h1 style="color: #fafafa;font-size:3.7em;">Fetch</h1>
@@ -94,10 +289,134 @@
 
 
         <section data-background="#f05b62">
-            <h1 style="color: #fafafa;font-size:3.7em;">Iterators and Generators</h1>
+            <h1 style="color: #fafafa;font-size:3.7em;">Generator Functions</h1>
         </section>
 
         <section>
+            <h2>When might you use a generator function?</h2>
+            <p class="fragment">When there's a <span class="orange">distinct transition</span>, e.g. when you're awaiting a response from an external service</p>
+            <p class="fragment">When you need to <span class="orange">save your place within a function</span> and get back to that specific place later</p>
+            <p class="fragment">When you need to <span class="orange">pause execution</span> while you get data elsewhere or run some other code</p>
+        </section>
+
+        <section>
+            <h2>What is it?</h2>
+            <p class="fragment small">We want to run some errands at three stores: the grocery store, hardware store, and a cafe. Each time we enter a store, we'll spend time retrieving items.</p>
+
+            <div class="fragment-progression">
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__1.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__2.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__3.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__4.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__5.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__6.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__7.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__8.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__9.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip__10.svg" alt="Shopping trip with generator functions" />
+                </div>
+                <div class="fragment" style="background-color:white;">
+                    <img src="dist/img/diagram__generator-shopping-trip.svg" alt="Shopping trip with generator functions" />
+                </div>
+            </div>
+            <p class="small fragment">Each time we visit a store, time passes until we <code>yield</code> some items, then pick up where we left off in our shopping trip</p>
+            <a href="https://codepen.io/anythingcodes/pen/XgdXJL" target="_blank" class="small fragment">View CodePen &raquo;</a>
+
+        </section>
+
+        <section>
+            <h2>Making a generator function</h2>
+            <ul>
+                <li class="fragment">A generator function returns an <span class="green">iterator</span></li>
+                <li class="fragment">Generator functions look like regular functions, but have an asterisks (<code>*</code>) between <code>function</code> and its name:</li>
+            </ul>
+
+            <pre class="fragment small">
+                <code class="javascript">function *createIterator() {
+  // generator function body here
+}
+
+// generator functions are called like regular functions but return an iterator
+const iterator = createIterator();</code>
+            </pre>
+
+        </section>
+
+        <section>
+            <h2>Yielding and Pausing</h2>
+
+            <ul style="list-style: none;margin:0;">
+                <li class="fragment">Within the generator function, the <code>yield</code> keyword specifies the value to be returned with each iteration</li>
+            </ul>
+            <pre class="fragment small"><code class="javascript">function *createIterator() {
+  yield 30;
+  yield 31;
+  yield 32;
+}</code></pre>
+            <ul style="list-style: none;margin:0;">
+                <li class="fragment">To return the next <code>yield</code> value, call <code>yourIterator.next()</code> to return an object formatted like<br /><code>{ value: someYieldValue, done: trueOrFalse}</code></li>
+            </ul>
+            <pre class="fragment small"><code class="javascript">function *createIterator() {
+  yield 30;
+  yield 31;
+  yield 32;
+}
+
+const iterator = createIterator();
+console.log(iterator.next()); // { value: 30, done: false }
+console.log(iterator.next()); // { value: 31, done: false }
+console.log(iterator.next()); // { value: 32, done: false }
+
+// subsequent calls
+console.log(iterator.next()); // { value: undefined, done: true }</code></pre>
+
+            <aside class="notes">
+                Each time <code>yield</code> finishes returning a value, the generator function pauses execution. You can do anything you'd like before the next <code>next()</code> call and pick up where you left off at that place in the generator function
+            </aside>
+        </section>
+
+
+        <section>
+            <h2>The <code>next()</code> return value</h2>
+            <pre class="fragment small"><code class="javascript" contenteditable>function *createIterator() {
+  yield 30;
+  yield 31;
+  yield 32;
+}
+
+const iterator = createIterator();
+console.log(iterator.next()); // { value: 30, done: false }
+console.log(iterator.next()); // { value: 31, done: false }
+console.log(iterator.next()); // { value: 32, done: false }
+
+// subsequent calls
+console.log(iterator.next()); // { value: undefined, done: true }</code></pre>
+            <ol>
+                <li class="fragment"><code>value</code>: the value of the resulting <code>yield</code> statement</li>
+                <li class="fragment"><code>done</code>: true if <code>yourIterator.next()</code> is called after the last value has been returned or the function has returned</li>
+            </ol>
+        </section>
+
+        <!--<section>
             <h2>Terms</h2>
             <ol>
                 <li><span class="green">Iterator</span><span class="fragment">: An object designed for iteration</span>
@@ -118,7 +437,38 @@
                 </li>
             </ol>
             <aside class="notes">Mind-bending and not very straightforward. Not the easiest thing in the world! Don't worry if you don't get it immediately.</aside>
-        </section>
+        </section>-->
+
+        <!--<section>
+            <h2>Modifying Values</h2>
+            <pre class="fragment small"><code class="javascript">function *createUserIterator(username) {
+	const id = yield getIDFromAPI(username);
+	yield getProfileFromAPI(id);
+}
+
+function getIDFromAPI(username) {
+	// placeholder API request
+	return 4;
+}
+
+function getProfileFromAPI(id) {
+	// placeholder API request
+	return { id, bio: 'Just a very cool person' };
+}
+
+// Initiate the iterator
+const userIterator = createUserIterator('cool_person');
+
+// Store the user ID based on the API results
+const userId = userIterator.next().value;
+
+// Pass in the user ID, which will set the value of 'id' (line 2)
+// A value passed to next() will be treated as the result of the
+// last yield expression that paused the generator.
+const profile = userIterator.next(userId).value;
+console.log(profile); // {id: 4, bio: "Just a very cool person"}</code></pre>
+            <a href="https://codepen.io/anythingcodes/pen/JJGmjr?editors=0010" target="_blank">View CodePen &raquo;</a>
+        </section>-->
 
         <section>
             <h2>Why generator functions?</h2>
@@ -146,16 +496,118 @@
 
         </section>
 
+
+
         <section>
-            <pre><code class="javascript" contenteditable>Artist.findByID(id).then(artist => {
-  artist.getSongs().then(songs => {
-    console.log(songs);
-  });
-});</code></pre>
-            <a href="http://embed.plnkr.co/ttOCrNLWR3GncFlRU2ur/" target="_blank">Take a look &raquo;</a>
+            <h2>Preventing callback hell</h2>
+
+            <div class="clear fragment" style="margin-top:0;">
+                <div class="halfblock">
+                    <h6 class="green underlined">Callback Hell</h6>
+                    <pre class="small"><code class="javascript">function copyFile (source, dest, callback) {
+  fs.exists(source, function (exists) {
+    if (!exists) return callback('Source does not exist')
+    fs.exists(dest, function (exists) {
+      if (exists) return callback('Dest already exists')
+      fs.readFile(source, function (err, data) {
+        if (err) return callback(err)
+        fs.writeFile(dest, data, function (err) {
+          return callback(err)
+        })
+      })
+    })
+  })
+}</code></pre>
+                    <p class="fragment">
+                        <img src="dist/img/callback-hell-dog.gif" alt="Callback hell dog" />
+                    </p>
+                </div>
+                <div class="halfblock fragment">
+                    <h6 class="green underlined">Generator Functions</h6>
+                    <pre class="small"><code class="javascript">const copyFile = watt(function *(source, dest, next) {
+  if (!(yield fs.exists(source, next.arg(0)))) throw 'Source does not exist'
+  if (yield fs.exists(dest, next.arg(0))) throw 'Dest already exists'
+  var data = yield fs.readFile(source, next)
+  yield fs.writeFile(dest, data, next)
+})</code></pre>
+                    <p>&nbsp;</p>
+                    <a class="fragment" href="http://embed.plnkr.co/ttOCrNLWR3GncFlRU2ur/" target="_blank">Let's take a look &raquo;</a>
+                </div>
+
+                <p>&nbsp;</p>
+                <a class="small" style="clear: left;display: block;" href="https://github.com/mappum/watt" target="_blank">Source: <code>watt</code> library &raquo;</a>
+
+            </div>
+
+        </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Iterables</h1>
         </section>
 
         <section>
+            <h2>Creating Iterables</h2>
+            <p class="fragment">By default, objects you create are not iterable</p>
+            <p class="fragment">Make them iterable with a <code>[Symbol.iterator]</code> property containing a generator function and <code>for-of</code> loop:</p>
+            <pre class="fragment small"><code class="javascript">const team = {
+  members: [],
+  [Symbol.iterator]: function *(){
+    for (let member of this.members) {
+      yield member;
+    }
+  }
+};</code></pre>
+            <p class="fragment">Use <span class="orange">concise object methods</span> to trim it down further:</p>
+            <pre class="fragment small"><code class="javascript">const team = {
+  members: [],
+  *[Symbol.iterator](){
+    for (let member of this.members) {
+      yield member;
+    }
+  }
+};</code></pre>
+            <aside class="notes">
+                Useful when you have a custom object and need to iterate over particular properties in that object only -- and need to exclude others, or don't care about them being in the output. <strong>Iterable vs. iterator</strong>: An Iterable is a simple representation of a series of elements that can be iterated over. It does not have any iteration state such as a "current element". Instead, it has one method that produces an Iterator. An Iterator is the object with iteration state. It lets you check if it has more elements using hasNext() and move to the next element (if any) using next().
+            </aside>
+        </section>
+
+        <section>
+            <h2>When would we use iterables?</h2>
+            <p class="fragment">Parent and child nodes</p>
+            <div class="fragment-progression">
+                <div class="fragment">
+                    <img src="dist/img/diagram-iterator__1.svg" alt="Iterators with a delivery or project team" />
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram-iterator.svg" alt="Iterators with teams" />
+                </div>
+            </div>
+
+            <p class="fragment"><a href="https://codepen.io/anythingcodes/pen/GEZZJY?editors=0010" target="_blank">Let's take a look &raquo;</a></p>
+
+            <p class="solution__lesson-4 solution"><a href="https://codepen.io/anythingcodes/pen/JJXXdy?editors=0010" target="_blank">View Solution &raquo;</a></p>
+
+            <aside class="notes">
+                Note that aray helpers DO NOT work with generators, so you can't yield from inside a callback. That's why you need to use the for-of loop again.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Iterables and Trees</h2>
+            <p class="fragment">
+                <img src="dist/img/diagram-iterator-complex.svg" alt="Complex JavaScript node list using iterables" />
+            </p>
+            <aside class="notes">
+                Seen everywhere:
+                <ul>
+                    <li>Single comment and threaded conversations (Slack, Reddit, etc.)</li>
+                    <li>DOM elements</li>
+                    <li>Post as parent node with child comment nodes</li>
+                </ul>
+            </aside>
+        </section>
+
+        <!--<section>
             <h2>Object.entries()</h2>
 
             <p class="small fragment">Use <code>Object.entries()</code> on an object to get an array representing that object. Each element is an array containing <code>[ key, value ]</code>.</p>
@@ -244,7 +696,17 @@ entries.forEach(entry => {
 
             <aside class="notes">You can use array destructuring to get each property's key and value</aside>
 
+        </section>-->
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Classes and Subclasses</h1>
         </section>
+
+        <section>
+            <h2>Congrats!</h2>
+            <p><img src="dist/img/congrats.gif" alt="Tina Fey high five congrats gif" /></p>
+        </section>
+
     </div>
     <footer>
         <div class="copyright">
