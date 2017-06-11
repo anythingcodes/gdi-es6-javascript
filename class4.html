@@ -63,6 +63,7 @@
                 <li>The Fetch Helper</li>
                 <li>Generator Functions</li>
                 <li>Iterables</li>
+                <li>Built-In Iterators</li>
                 <li>Classes</li>
                 <li>Importing and Exporting Modules</li>
                 <li>Sets and Maps</li>
@@ -619,99 +620,40 @@ console.log(profile); // {id: 4, bio: "Just a very cool person"}</code></pre>
             </aside>
         </section>
 
-        <!--<section>
-            <h2>Object.entries()</h2>
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Sets and Maps</h1>
+        </section>
 
-            <p class="small fragment">Use <code>Object.entries()</code> on an object to get an array representing that object. Each element is an array containing <code>[ key, value ]</code>.</p>
+        <section>
+            <h2>Sets and Maps</h2>
+            <p class="fragment"><span class="blue">Set</span>: An ordered list of <span class="orange">unique</span> values. Allows fast access to the data it contains.</p>
+            <pre class="fragment small"><code class="javascript">const set = new Set([1, 2, 3, 4, 5, 5, 5, 5]);
+console.log(set.size); // 5</code></pre>
+            <pre class="fragment small"><code class="javascript">set.add(6);
+console.log(set.size); // 6</code></pre>
+            <p class="fragment small"><span class="blue">Map</span>: An ordered list of key-value pairs, where the key and value can be any type.</p>
+            <pre class="fragment small"><code class="javascript">const map = new Map();
+map.set('title', 'JS206: Intro to ES6');
+map.set('group', 'GDI');
 
-            <div class="small fragment fragment-progression">
-                <pre><code class="javascript">const animal = {
-  name: 'Rocko',
-  type: 'wallaby',
-  age: 3
-};
-
-const entries = Object.entries(animal);
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </code></pre>
-                <pre class="fragment"><code class="javascript">const animal = {
-  name: 'Rocko',
-  type: 'wallaby',
-  age: 3
-};
-
-const entries = Object.entries(animal);
-console.log(entries);
-/*
-[
-  [ 'name', 'Rocko' ],
-  [ 'type', 'wallaby' ],
-  [ 'age', 3 ],
-]
-*/
-
-
-
-                </code></pre>
-                <pre class="fragment"><code class="javascript">const animal = {
-  name: 'Rocko',
-  type: 'wallaby',
-  age: 3
-};
-
-const entries = Object.entries(animal);
-console.log(entries);
-/*
-[
-  [ 'name', 'Rocko' ],
-  [ 'type', 'wallaby' ],
-  [ 'age', 3 ],
-]
-*/
-
-entries.forEach(entry => {
-  const [ key, value ] = entry; // store the key and value
-});</code></pre>
-                <pre class="fragment"><code class="javascript">const animal = {
-  name: 'Rocko',
-  type: 'wallaby',
-  age: 3
-};
-
-const entries = Object.entries(animal);
-console.log(entries);
-/*
-[
-  [ 'name', 'Rocko' ],
-  [ 'type', 'wallaby' ],
-  [ 'age', 3 ],
-]
-*/
-
-entries.forEach(entry => {
-  const [ key, value ] = entry; // store the key and value
-  console.log(`${key} has a value of ${value}`); // 'name has a value of Rocko' and so on
-});</code></pre>
+console.log(map.get('title')); // JS206: Intro to ES6
+console.log(map.get('group')); // GDI</code></pre>
+            <aside class="notes">Map: You could have a key of 5 and a key of "5" and they'd be different because they're different types.</aside>
+        </section>
+        <section>
+            <h2>Built-In Iterators</h2>
+            <ul class="small">
+                <li class="fragment"><code>entries()</code> returns an iterator whose values are key-value pairs</li>
+                <li class="fragment"><code>values()</code> returns an iterator whose values are the values of the collection</li>
+                <li class="fragment"><code>keys()</code> returns an iterator whose values are the keys contained in the collection</li>
+            </ul>
+            <div class="fragment" style="min-height:346px">
+                <p data-height="346" data-theme-id="0" data-slug-hash="rwezxg" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Built-in iterators for Sets, Maps, and objects in ES6" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/rwezxg/">Built-in iterators for Sets, Maps, and objects in ES6</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </div>
-
-            <aside class="notes">You can use array destructuring to get each property's key and value</aside>
-
-        </section>-->
+        </section>
 
         <section data-background="#f05b62">
-            <h1 style="color: #fafafa;font-size:3.7em;">Classes and Subclasses</h1>
+            <h1 style="color: #fafafa;font-size:3.7em;">Classes</h1>
         </section>
 
         <section>
@@ -766,8 +708,43 @@ console.log(car instanceof Object); // true</code></pre>
         </section>
 
         <section>
-            <h2>Why use classes?</h2>
+            <h2>Derived Classes</h2>
+            <p class="fragment"><span class="blue">Derived classes</span>: Classes that inherit from other classes</p>
+            <p class="fragment">Within the derived class's <code>class {}</code> definition, use the <code>extends</code> keyword to specify the base class</p>
+            <p class="fragment">Within the derived class, access the base class constructor by calling <code>super()</code></p>
+            <pre class="fragment small"><code class="javascript">class Rectangle {
+  constructor(length, width) {
+    this.length = length;
+    this.width = width;
+  }
 
+  getArea() {
+    return this.length * this.width;
+  }
+}
+
+class Square extends Rectangle {
+  constructor(length) {
+    super(length, length); // calls the base class constructor
+  }
+}
+
+const square = new Square(5);
+console.log(square.getArea()); // 25</code></pre>
+
+            <aside class="notes">
+                Inheritance -- no true object inheritance, but there is prototypal inheritance. If you ask 5 different engineers how it works, you’ll get 5 different answers. This is ES6’s solution to prototypal inheritance. Whenever you use a class, under the hood, you’re still using prototypal inheritance.
+            </aside>
+        </section>
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <p>Using Derived Classes</p>
+            <div style="min-height:265px">
+                <p data-height="265" data-theme-id="0" data-slug-hash="EXKyOJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Shop Activity - Classes and Derived Classes" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EXKyOJ/">Shop Activity - Classes and Derived Classes</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            </div>
+
+            <a href="https://codepen.io/anythingcodes/pen/YQqWdw?editors=0010" target="_blank" class="solution solution__lesson-4">View Solution</a>
 
         </section>
 
