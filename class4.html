@@ -374,7 +374,7 @@ const iterator = createIterator();</code>
   yield 32;
 }</code></pre>
             <ul style="list-style: none;margin:0;">
-                <li class="fragment">To return the next <code>yield</code> value, call <code>yourIterator.next()</code> to return an object formatted like<br /><code>{ value: someYieldValue, done: trueOrFalse}</code></li>
+                <li class="fragment">To return the next <code>yield</code> value, call <code>yourIterator.next()</code> to return an object formatted like <code>{ value: yieldValue, done: trueOrFalse}</code></li>
             </ul>
             <pre class="fragment small"><code class="javascript">function *createIterator() {
   yield 30;
@@ -601,7 +601,7 @@ console.log(profile); // {id: 4, bio: "Just a very cool person"}</code></pre>
             <p class="solution__lesson-4 solution"><a href="https://codepen.io/anythingcodes/pen/JJXXdy?editors=0010" target="_blank">View Solution &raquo;</a></p>
 
             <aside class="notes">
-                Note that aray helpers DO NOT work with generators, so you can't yield from inside a callback. That's why you need to use the for-of loop again.
+                Note that aray helpers DO NOT work with generators, so you can't yield from inside a callback. That's why you need to use the for-of loop again. Mention that you'll post the solution after class.
             </aside>
         </section>
 
@@ -630,8 +630,9 @@ console.log(profile); // {id: 4, bio: "Just a very cool person"}</code></pre>
             <pre class="fragment small"><code class="javascript">const set = new Set([1, 2, 3, 4, 5, 5, 5, 5]);
 console.log(set.size); // 5</code></pre>
             <pre class="fragment small"><code class="javascript">set.add(6);
-console.log(set.size); // 6</code></pre>
-            <p class="fragment small"><span class="blue">Map</span>: An ordered list of key-value pairs, where the key and value can be any type.</p>
+console.log(set.size); // 6</code>
+            </pre>
+            <p class="fragment"><span class="blue">Map</span>: An ordered list of key-value pairs, where the key and value can be any type.</p>
             <pre class="fragment small"><code class="javascript">const map = new Map();
 map.set('title', 'JS206: Intro to ES6');
 map.set('group', 'GDI');
@@ -657,7 +658,7 @@ console.log(map.get('group')); // GDI</code></pre>
         </section>
 
         <section>
-            <h2>Make It Classy</h2>
+            <h2>Classes</h2>
             <div class="clear">
                 <div class="halfblock fragment">
                     <h3 class="green underlined">ES5:</h3>
@@ -709,9 +710,8 @@ console.log(car instanceof Object); // true</code></pre>
 
         <section>
             <h2>Derived Classes</h2>
-            <p class="fragment"><span class="blue">Derived classes</span>: Classes that inherit from other classes</p>
-            <p class="fragment">Within the derived class's <code>class {}</code> definition, use the <code>extends</code> keyword to specify the base class</p>
-            <p class="fragment">Within the derived class, access the base class constructor by calling <code>super()</code></p>
+            <p class="fragment small"><span class="blue">Derived classes</span>: Classes that inherit from other classes</p>
+            <p class="fragment small">Within the derived class's <code>class {}</code> definition, use the <code>extends</code> keyword to specify the base class. Then access the base class constructor by calling <code>super()</code>.</p>
             <pre class="fragment small"><code class="javascript">class Rectangle {
   constructor(length, width) {
     this.length = length;
@@ -721,9 +721,8 @@ console.log(car instanceof Object); // true</code></pre>
   getArea() {
     return this.length * this.width;
   }
-}
-
-class Square extends Rectangle {
+}</code></pre>
+            <pre class="fragment small"><code class="javascript">class Square extends Rectangle {
   constructor(length) {
     super(length, length); // calls the base class constructor
   }
@@ -732,6 +731,7 @@ class Square extends Rectangle {
 const square = new Square(5);
 console.log(square.getArea()); // 25</code></pre>
 
+
             <aside class="notes">
                 Inheritance -- no true object inheritance, but there is prototypal inheritance. If you ask 5 different engineers how it works, you’ll get 5 different answers. This is ES6’s solution to prototypal inheritance. Whenever you use a class, under the hood, you’re still using prototypal inheritance.
             </aside>
@@ -739,13 +739,47 @@ console.log(square.getArea()); // 25</code></pre>
 
         <section class="activity" data-background="rgb(6, 116, 123)">
             <h2>Activity</h2>
-            <p>Using Derived Classes</p>
-            <div style="min-height:265px">
-                <p data-height="265" data-theme-id="0" data-slug-hash="EXKyOJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Shop Activity - Classes and Derived Classes" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EXKyOJ/">Shop Activity - Classes and Derived Classes</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+            <p>Classes and Derived Classes</p>
+            <div class="clear">
+                <div class="halfblock" style="min-height:265px">
+                    <h3>Activity 1</h3>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="WOwEMY" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Classes" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/WOwEMY/">Classes</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <p><a href="https://codepen.io/anythingcodes/pen/vZGJRJ?editors=0011" target="_blank" class="solution solution__lesson-4">View Solution</a></p>
+                </div>
+                <div class="halfblock" style="min-height:265px">
+                    <h3>Activity 2</h3>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="EXKyOJ" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Shop Activity - Classes and Derived Classes" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/EXKyOJ/">Shop Activity - Classes and Derived Classes</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <a href="https://codepen.io/anythingcodes/pen/YQqWdw?editors=0010" target="_blank" class="solution solution__lesson-4">View Solution</a>
+                </div>
             </div>
+        </section>
 
-            <a href="https://codepen.io/anythingcodes/pen/YQqWdw?editors=0010" target="_blank" class="solution solution__lesson-4">View Solution</a>
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Transpiling Setup</h1>
+        </section>
 
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <h3>Node.js Check</h3>
+            <ol>
+                <li>Open your favorite command line application (such as <em>Terminal</em> or <em>cmd</em>)</li>
+                <li>Type in <code>node -v</code> and press <em>Enter</em></li>
+                <li>If your version is <em>6.0.0</em> or above, you're good to go!</li>
+            </ol>
+
+            <p><img src="dist/img/nodejs.png" alt="NodeJS logo" style="max-height: 150px;background-color:#fff;" /></p>
+            <p class="small"><em>No luck? No problem &mdash; we won't be using Node.js until a later session. See a TA or instructor after class and we'll help you out!</em></p>
+        </section>
+
+        <section class="activity" data-background="rgb(6, 116, 123)">
+            <h2>Activity</h2>
+            <h3>ES6 Transpilation and WebPack Setup</h3>
+            <ol>
+                <li>Let's head over to </li>
+            </ol>
+
+            <p><img src="dist/img/nodejs.png" alt="NodeJS logo" style="max-height: 150px;background-color:#fff;" /></p>
+            <p class="small"><em>No luck? No problem &mdash; we won't be using Node.js until a later session. See a TA or instructor after class and we'll help you out!</em></p>
         </section>
 
         <section>
