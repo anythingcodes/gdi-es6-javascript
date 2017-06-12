@@ -65,8 +65,9 @@
                 <li>Iterables</li>
                 <li>Sets and Maps</li>
                 <li>Classes</li>
-                <!--<li>Importing and Exporting Modules</li>-->
+                <li>Encapsulating Code with Modules</li>
                 <li>Our Final Activity: Transpilation!</li>
+                <li>Additional Resources</li>
             </ol>
         </section>
 
@@ -816,6 +817,66 @@ console.log(square.getArea()); // 25</code></pre>
             <h1 style="color: #fafafa;font-size:3.7em;">Encapsulating Code with Modules</h1>
         </section>
 
+        <section>
+            <h2>Modules</h2>
+
+            <p class="fragment">JavaScript has an error-prone <span class="orange">share everything</span> approach to loading code</p>
+            <p class="fragment"><span class="blue">Modules</span> are individual files that <span class="green">package and encapsulate</span> individual pieces of functionality (variables, functions, and classes)</p>
+            <p class="fragment">Export and import only the bindings you need rather than everything in a file</p>
+            <p>&nbsp;</p>
+            <p class="fragment orange">🌟 No more global scope pollution!</p>
+            <aside class="notes">Each module runs in strict mode. The "share evenything" approach makes code more error-prone, confusing, and difficult to troubleshoot.</aside>
+        </section>
+
+        <section>
+            <h2>Exporting</h2>
+            <ul>
+                <li class="fragment">Use the <code>export</code> keyword before elements you'd like to expose in a file</li>
+            </ul>
+            <pre class="fragment small"><code class="javascript">// myExports.js</code></pre>
+            <pre class="small fragment"><code class="javascript">// export variables
+export let description = 'GDI Fan';
+export const threshold = 7;
+
+// export functions
+export function multiply(a, b) {
+  return a * b;
+}
+
+// export classes
+export class Rectangle {
+  constructor(length, width) {
+    this.length = length;
+    this.width = width;
+  }
+}</code></pre>
+
+            <pre class="fragment small"><code class="javascript">// private to the module
+function sum(a, b) {
+  return a + b;
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>Importing</h2>
+            <ul>
+                <li class="fragment">Access the functionality in another module by using the <code>import</code> keyword</li>
+                <li class="fragment">Each <code>import</code> statement requires:
+                    <ol>
+                        <li class="fragment">the functionality you're importing</li>
+                        <li class="fragment">the module name (typically the file name)</li>
+                    </ol>
+                </li>
+                <li class="fragment">Always place <code>import</code> statements at the <span class="green">top</span> of a file</li>
+            </ul>
+            <pre class="fragment small"><code class="javascript">// index.js</code></pre>
+            <pre class="small fragment"><code class="javascript">import { Rectangle, description, multiply } from './myExports.js';
+
+const shape = new Rectangle(6, 8);
+console.log(description); // 'GDI Fan'
+console.log(multiply(3, 5)); // 15</code></pre>
+        </section>
+
         <section data-background="#f05b62">
             <h1 style="color: #fafafa;font-size:3.7em;">Transpiling Setup</h1>
         </section>
@@ -831,9 +892,69 @@ console.log(square.getArea()); // 25</code></pre>
             <p><img src="dist/img/nodejs.png" alt="NodeJS logo" style="max-height: 150px;background-color:#fff;" /></p>
         </section>
 
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Additional Resources</h1>
+        </section>
+
         <section>
-            <h2>Congrats!</h2>
-            <p><img src="dist/img/congrats.gif" alt="Tina Fey high five congrats gif" /></p>
+            <h2>Additional Resources</h2>
+            <div class="clear fragment">
+                <div style="float:left;width:33.333%;">
+                    <h6>Congrats!</h6>
+                    <p><img src="dist/img/congrats.gif" alt="Tina Fey high five congrats gif" /></p>
+                </div>
+                <div style="float:left;width:30%;margin-left:3.333%;" class="small">
+                    <h6>Challenges &amp; Exercises</h6>
+                    <ul>
+                        <li><a href="http://es6katas.org/" target="_blank">ES6 Katas</a>: Learn ES6 by doing it</li>
+                        <li><a href="http://marijnhaverbeke.nl/talks/es6_falsyvalues2015/exercises/">ES6 Sandbox</a></li>
+                        <li><a href="http://hackerrank.com">HackerRank</a></li>
+                        <li><a href="http://interviewcake.com">InterviewCake</a></li>
+                    </ul>
+
+                    <p>&nbsp;</p>
+                    <h6>Cheatsheets</h6>
+                    <ul>
+                        <li><a href="https://github.com/anythingcodes/gdi-es6-javascript/tree/gh-pages/resources/cheatsheets" target="_blank">Course Cheatsheets</a></li>
+                        <li><a href="https://github.com/bevacqua/es6" target="_blank">ES6 Overview in 350 Bullet Points</a></li>
+                        <li><a href="https://codetower.github.io/es6-features/" target="_blank">Interactive ES6 Features List</a></li>
+                        <li><a href="https://github.com/DrkSephy/es6-cheatsheet" target="_blank">DrkSephy's ES6 Cheatsheet</a></li>
+                    </ul>
+                </div>
+
+                <div style="float:left;width:30%;margin-left:3.333%;" class="small">
+                    <h6>Books</h6>
+                    <ul>
+                        <li><a href="http://a.co/3Z9KWEr" target="_blank">Beautiful JavaScript</a></li>
+                        <li><a href="http://a.co/bG5R4N8" target="_blank">Understanding ECMAScript 6</a></li>
+                    </ul>
+
+                    <p>&nbsp;</p>
+
+                    <h6>Keeping in the Loop</h6>
+                    <ul>
+                        <li><a href="http://2ality.com/" target="_blank">2ality</a></li>
+                        <li><a href="https://ponyfoo.com/" target="_blank">PonyFoo</a></li>
+                        <li><a href="https://medium.com/" target="_blank">Medium</a> and <a href="http://youtube.com">YouTube</a> channels</li>
+                        <li>Meetups: Girl Develop It, Node.js, Women Who Code, Tech Ladies, etc.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;">Thank you all!</h1>
+            <aside class="notes">
+                <ul>
+                    <li>Contact info</li>
+                    <li>Job callout</li>
+                    <li>Other Classes: Bot Dev for WWC, networking for Tech Ladies, etc.</li>
+                    <li>Free INBOUND community passes</li>
+                    <li>Class photo!</li>
+                </ul>
+            </aside>
         </section>
 
     </div>
