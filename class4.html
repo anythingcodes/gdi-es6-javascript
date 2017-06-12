@@ -57,19 +57,77 @@
 
         <section>
             <h2>Today's Topics</h2>
-            <ol>
-                <li>Review at-home challenges from last class</li>
+            <ol style="width:85%">
+                <li>Review at-home challenges from previous class</li>
                 <li>Promises Recap</li>
                 <li>The Fetch Helper</li>
                 <li>Generator Functions</li>
                 <li>Iterables</li>
-                <li>Built-In Iterators</li>
-                <li>Classes</li>
-                <li>Importing and Exporting Modules</li>
                 <li>Sets and Maps</li>
-                <li>Transpiling Setup</li>
-                <li>Additional Resources</li>
+                <li>Classes</li>
+                <!--<li>Importing and Exporting Modules</li>-->
+                <li>Our Final Activity: Transpilation!</li>
             </ol>
+        </section>
+
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h3>Review: Refactor a <code>detectCollision</code> function</h3>
+            <div class="clear">
+                <div class="halfblock">
+                    <p data-height="300" data-theme-id="0" data-slug-hash="gROvJv" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Class 3 Challenge - detectCollision()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/gROvJv/">Class 3 Challenge - detectCollision()</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+                </div>
+                <div class="halfblock small">
+                    Although <code>detectCollision</code> works as intended, we can refactor it to improve its performance and readability. Reformat <code>detectCollision</code> to use destructuring and an array helper.
+                    <div style="background-color:rgba(255,255,255,0.3);border: 1px solid black;padding:15px;margin: 15px 0">
+                        <p><strong>Hint:</strong> We'll return a single matched object. Which array helper would be best in this case?
+                    </div>
+                </div>
+            </div>
+            <a href="https://codepen.io/anythingcodes/pen/PjoQvR?editors=0010" class="solution solution__lesson-3" target="_blank">View Solution &raquo;</a>
+        </section>
+
+        <section class="activity__challenge" data-background="#d2ccfc">
+            <h3>Review: Mixed Destructuring</h3>
+            <div class="clear">
+                <div class="halfblock small">
+							<pre><code contenteditable class ="javascript" >const node = {
+  location: {
+    start: {
+      line: 1, // first
+      column: 1 // second
+    },
+    end: {
+      line: 1,
+      column: 4
+    }
+  },
+  range: [0, 3] // third: outputs first array element
+};
+
+const {
+  location: { start },
+  range: [ index ]
+} = node;
+
+console.log(start.line); // 1
+console.log(start.column); // 1
+console.log(index); // 0</code></pre>
+
+                </div>
+                <div class="halfblock small">
+                    <p>What would the following output to the console and why?</p>
+                    <div style="background-color:rgba(255,255,255,0.3);border: 1px solid black;padding:15px;margin: 15px 0">
+                        <p><strong>Answer:</strong>
+                        <pre><code>1
+1
+0</code></pre>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="https://codepen.io/anythingcodes/pen/PjoQxE?editors=0010" class="solution solution__lesson-3" target="_blank">View CodePen &raquo;</a>
         </section>
 
         <section data-background="#f05b62">
@@ -752,6 +810,10 @@ console.log(square.getArea()); // 25</code></pre>
                     <a href="https://codepen.io/anythingcodes/pen/YQqWdw?editors=0010" target="_blank" class="solution solution__lesson-4">View Solution</a>
                 </div>
             </div>
+        </section>
+
+        <section data-background="#f05b62">
+            <h1 style="color: #fafafa;font-size:3.7em;">Encapsulating Code with Modules</h1>
         </section>
 
         <section data-background="#f05b62">

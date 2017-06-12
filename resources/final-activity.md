@@ -8,7 +8,6 @@ Instructions for setting up Babel to transpile ES6 to a supported format. Part o
 	- [Setting up WebPack](#setting-up-webpack)
 	- [Setting up ESLint](#setting-up-eslint)
 		- [ESLint Setup in Sublime Text](#eslint-setup-in-sublime-text)
-		- [ESLint Setup in Atom](#eslint-setup-in-atom)
 - [Troubleshooting](#troubleshooting)
 
 ## Instructions
@@ -127,10 +126,6 @@ Helpful, right? But wouldn't it be better to see it in our text editor or IDE? C
 3. Search for `SublimeLinter` and hit Enter to install
 4. Search for `SubLinter-contrib-eslint` and hit Enter to install
 5. Restart Sublime Text and open your `src/index.js` file. Delete one of the semicolons and save. You should now see a red error message around the missing semicolon!
-
-#### ESLint Setup in Atom
-
-- TBA
 
 ## Troubleshooting
 
