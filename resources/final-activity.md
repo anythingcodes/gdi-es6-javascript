@@ -31,41 +31,33 @@ Instructions for setting up Babel to transpile ES6 to a supported format. Part o
 	│
 	└───src
 ```
-5. Install the babel command line interface: `npm install --save-dev babel-cli`
-6. Install the babel ES6 transpiler: `npm install --save-dev babel-preset-es2015`
-7. To the `gdi-es6` folder, add a `.babelrc` file containing the following:
+5. Install the babel command line interface and transpilation features: `npm install --save-dev babel-cli babel-preset-es2015 babel-preset-stage-2`
+6. To the `gdi-es6` folder, add a `.babelrc` file containing the following:
 ```
 {
 	"presets": ["es2015", "stage-2"]
 }
 ```
-8. We're now ready to transpile! Let's add some test files.
-9. Within `src`, create a file called `test.js` containing the following:
+7. We're now ready to transpile! Let's add some test files.
+8. Create a file called `test.js` in the `src` folder containing the following:
 ```
-const test = msg => {
+export const test = msg => {
 	console.log(msg)
 };
-
-export default test;
 ```
-10. Within `src`, create a file called `index.js` containing the following:
+9. Create a file called `index.js` in the `src` folder containing the following:
 
 ```
-import test from './test';
+import { test } from './test';
 
 test('Babel works!');
 ```
-11. Try running `node src/index.js`. You should get an error because `src/index.js` isn't transpiled.
+10. Type `babel src/index.js --watch --out-file build/bundle.js`. (Didn't work? Try the below steps or check the [Troubleshooting](#troubleshooting) section)
+	- **Windows**: If `babel src/index.js --watch --out-file build/bundle.js` doesn't work, run `.\node_modules\.bin\babel src/index.js --out-file build/bundle.js`
+	- **Mac**: If `babel src/index.js --watch --out-file build/bundle.js` doesn't work, run `./node_modules/.bin/babel src/index.js --out-file build/bundle.js` instead
+11. Check the `build/bundle.js` file for a transpiled version! When you edit index.js, it should automatically re-transpile because we have the `--watch` flag on.	
 
-12. Go back to your command line and type `babel src/index.js --watch --out-file build/bundle.js`. (Didn't work? Try the below steps or check the [Troubleshooting](#troubleshooting) section)
-	- **Windows**: If `babel src/index.js --watch --out-file build/bundle.js` doesn't work, run `.\node_modules\.bin\babel src/index.js --watch --out-file build/bundle.js`
-	- **Mac**: If `babel src/index.js --watch --out-file build/bundle.js` doesn't work, run `./node_modules/.bin/babel src/index.js --watch --out-file build/bundle.js` instead
-13. Check your `build` folder to make sure everything is transpiling properly. When you make a change to any file in `src`, it should automatically transpile for you!
-14. In the command line, try running `node build/bundle.js`. Note how you won't get an error with the transpiled file!
-15. Now that we have a bundled file, we'd like to run that every time we type in `npm start` (the default command for almost every Node project). To do so, open your `package.json` file. Within the `"scripts": {}` object, add a property `"start": "node build/bundle.js"`. When we type `npm start` in the command line, node will run our build file.
-16. Go to the command line and run `npm start`. It should output `Babel works!` (or whatever text you put in your `src/index.js` file).
-
-Congrats! Now we can move on to setting up WebPack.
+That's transpilation in a nutshell, but it's not terribly helpful on its own. We should set up a build tool like WebPack.
 
 ### Setting Up WebPack
 
@@ -73,7 +65,7 @@ We've now got Babel up and running, but typically we'd like to use a build tool 
 
 1. In the command line, navigate to your `gdi-es6` directory if you aren't there already (`cd gdi-es6`).
 2. Install WebPack by running `npm install --save-dev webpack`
-3. Let's make sure WebPack is working properly. In the command line, type `webpack ./src/index.js ./build/bundle.js` to transpile your `src JS files to `build/bundle.js`. (Didn't work? Try the below steps or check the [Troubleshooting](#troubleshooting) section)
+3. Let's make sure WebPack is working properly. In the command line, type `webpack src/index.js build/bundle.js` (**Note:** Windows users, flip the `/` to a `\`) to transpile your `src` JS files to `build/bundle.js`. (Didn't work? Try the below steps or check the [Troubleshooting](#troubleshooting) section)
 4. Instead of typing in our entry file (`./src/index.js`) and output file (`./build/bundle.js`) each time, let's have WebPack automate that. Create a file called `webpack.config.js` in your `gdi-es6` directory and paste the following:
 ```
 	module.exports = {
@@ -102,7 +94,7 @@ We've now got Babel up and running, but typically we'd like to use a build tool 
 ``` 
 8. Open your index.html file in Google Chrome. Check the console to see if your message appears.
 9. In your command line, run `webpack --watch`. The `--watch` flag will automatically transpile your files. Try changing the message in `src/index.js`, saving, and then refreshing the open `index.html` page in your browser to see the change.
-10. One problem with `webpack --watch` is that you have to refresh to see changes. Let's have our changes automatically reload instead using WebPack dev server. Install it by running `npm install --save-dev webpack-dev-server`.
+10. One problem with `webpack --watch` is that you have to refresh Chrome every time to see your changes. Let's have our changes automatically reload instead by using WebPack dev server. Install it by running `npm install --save-dev webpack-dev-server`.
 11. Run it with `webpack-dev-server`. (Having trouble? Try `.\node_modules\.bin\webpack-dev-server` on Windows or `./node_modules/.bin/webpack-dev-server` on a Mac)
 12. Go to the localhost URL it gives you and add a `/webpack-dev-server` at the end (e.g. `http://localhost:8080/webpack-dev-server`). Click on the `index` file, which is your index.html file.
 	- **Note**: Adding `/webpack-dev-server` is important! If you go to the root localhost URL, that won't automatically refresh.
