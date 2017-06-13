@@ -169,16 +169,4 @@ promise.then(res => {
 
 `Promise.all()` accepts an iterable (e.g. an array) of promises, and returns an array of result values. If any of the promises in the array fail, the returned promise fails too.
 
-`Promise.race()` accepts an iterable (e.g. an array) and returns the results of the first promise to become fulfilled.
-
-### Fetch
-
-The Fetch helper accepts a URL and returns a promise. Use `.json()` on the initially-returned `Response` promise to get the JSON you need via chaining `this()`, for example:
-
-
-```
-fetch('https://api.github.com/users/octocat/repos')
-  .then(response => response.json())
-  .then(data => console.log(data)) // the JSON data
-  .catch(err => console.log(err));
-```
+`Promise.race()` accepts an iterable (e.g. an array) and returns the results of the first promise to become fulfilled.```

@@ -129,6 +129,21 @@ Helpful, right? But wouldn't it be better to see it in our text editor or IDE? C
 
 ## Troubleshooting
 
+- Is `npm init` giving you an EACCES error? Try running the command with `sudo npm init`
+- Is `npm init` hanging after you enter the version? Likely this is due to a bug with Node.js version 8. You can either uninstall Node v8 by issuing the following command: `sudo rm -rf /usr/local/{lib/node{,/.npm,_modules},bin,share/man}/{npm*,node*,man1/node*}` and then installing Node version 6 or 7, _or_ create a new file called `package.json` within your `gdi-es6` folder containing the following:
+```
+{
+  "name": "gdi-es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
 - If you get the `You have mistakenly installed the babel package, which is a no-op in Babel 6` error message...
 	- run `npm uninstall -g babel` and try to run the command again
 - If you get a `moduleNameHere is not recognized as an internal or external command` error, first make sure you ran the correct `npm install` command for that module (see instructions). If that doesn't work, you can point to the correct executable by...

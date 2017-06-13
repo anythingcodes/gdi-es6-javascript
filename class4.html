@@ -326,11 +326,14 @@ request('http://json.com'); // returns a promise</code></pre>
             <h2>Fetch</h2>
             <p class="fragment">The <code>fetch()</code> helper <span class="green">returns a promise</span> and is used for HTTP requests</p>
             <p class="fragment">The initial return value is the Response object; use chaining and the <code>.json()</code> method to get the JSON you need</p>
-            <p class="fragment"><a href="https://codepen.io/anythingcodes/pen/vZYaaa?editors=0010" target="_blank">Let's take a look &raquo;</a></p>
-            <pre class="fragment"><code class="javascript">fetch('http://json.com')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(err => console.log(err));</code></pre>
+
+            <div class="fragment">
+                <pre><code class="javascript">fetch('http://json.com')
+      .then(serverResponse => serverResponse.json())
+      .then(json => console.log(json))
+      .catch(err => console.log(err));</code></pre>
+                <p><a href="https://codepen.io/anythingcodes/pen/vZYaaa?editors=0010" target="_blank">Let's take a look &raquo;</a></p>
+            </div>
             <aside class="notes">
                 Point out that the first return value is the response. Show that you need to call .json(), which returns another promise, to a second <code>then()</code>. Just a quirk of the Fetch API.
             </aside>
@@ -424,7 +427,7 @@ const iterator = createIterator();</code>
         <section>
             <h2>Yielding and Pausing</h2>
 
-            <ul style="list-style: none;margin:0;">
+            <ul style="list-style: none;margin:0;" class="small">
                 <li class="fragment">Within the generator function, the <code>yield</code> keyword specifies the value to be returned with each iteration</li>
             </ul>
             <pre class="fragment small"><code class="javascript">function *createIterator() {
@@ -432,7 +435,7 @@ const iterator = createIterator();</code>
   yield 31;
   yield 32;
 }</code></pre>
-            <ul style="list-style: none;margin:0;">
+            <ul style="list-style: none;margin:0;" class="small">
                 <li class="fragment">To return the next <code>yield</code> value, call <code>yourIterator.next()</code> to return an object formatted like <code>{ value: yieldValue, done: trueOrFalse}</code></li>
             </ul>
             <pre class="fragment small"><code class="javascript">function *createIterator() {
@@ -455,7 +458,7 @@ console.log(iterator.next()); // { value: undefined, done: true }</code></pre>
         </section>
 
 
-        <section>
+        <!--<section>
             <h2>The <code>next()</code> return value</h2>
             <pre class="fragment small"><code class="javascript" contenteditable>function *createIterator() {
   yield 30;
@@ -474,7 +477,7 @@ console.log(iterator.next()); // { value: undefined, done: true }</code></pre>
                 <li class="fragment"><code>value</code>: the value of the resulting <code>yield</code> statement</li>
                 <li class="fragment"><code>done</code>: true if <code>yourIterator.next()</code> is called after the last value has been returned or the function has returned</li>
             </ol>
-        </section>
+        </section>-->
 
         <!--<section>
             <h2>Terms</h2>
@@ -576,6 +579,7 @@ console.log(profile); // {id: 4, bio: "Just a very cool person"}</code></pre>
   })
 }</code></pre>
                     <p class="fragment">
+
                         <img src="dist/img/callback-hell-dog.gif" alt="Callback hell dog" />
                     </p>
                 </div>
@@ -587,12 +591,12 @@ console.log(profile); // {id: 4, bio: "Just a very cool person"}</code></pre>
   var data = yield fs.readFile(source, next)
   yield fs.writeFile(dest, data, next)
 })</code></pre>
+                    <a class="small" style="clear: left;display: block;" href="https://github.com/mappum/watt" target="_blank">Source: <code>watt</code> library &raquo;</a>
                     <p>&nbsp;</p>
                     <a class="fragment" href="http://embed.plnkr.co/ttOCrNLWR3GncFlRU2ur/" target="_blank">Let's take a look &raquo;</a>
                 </div>
 
-                <p>&nbsp;</p>
-                <a class="small" style="clear: left;display: block;" href="https://github.com/mappum/watt" target="_blank">Source: <code>watt</code> library &raquo;</a>
+
 
             </div>
 
@@ -622,7 +626,7 @@ console.log(profile); // {id: 4, bio: "Just a very cool person"}</code></pre>
             <p class="fragment">By default, objects you create are not iterable</p>
             <p class="fragment">Make them iterable with a <code>[Symbol.iterator]</code> property containing a generator function and <code>for-of</code> loop:</p>
             <pre class="fragment small"><code class="javascript">const team = {
-  members: [],
+  members: ['Sam', 'Tam', 'Lam'],
   [Symbol.iterator]: function *(){
     for (let member of this.members) {
       yield member;
@@ -631,7 +635,7 @@ console.log(profile); // {id: 4, bio: "Just a very cool person"}</code></pre>
 };</code></pre>
             <p class="fragment">Use <span class="orange">concise object methods</span> to trim it down further:</p>
             <pre class="fragment small"><code class="javascript">const team = {
-  members: [],
+  members: ['Sam', 'Tam', 'Lam'],
   *[Symbol.iterator](){
     for (let member of this.members) {
       yield member;
@@ -703,11 +707,12 @@ console.log(map.get('group')); // GDI</code></pre>
         <section>
             <h2>Built-In Iterators</h2>
             <ul class="small">
-                <li class="fragment"><code>entries()</code> returns an iterator whose values are key-value pairs</li>
-                <li class="fragment"><code>values()</code> returns an iterator whose values are the values of the collection</li>
-                <li class="fragment"><code>keys()</code> returns an iterator whose values are the keys contained in the collection</li>
+                <li><code>keys()</code> returns an iterator whose values are the keys contained in the collection</li>
+                <li><code>entries()</code> returns an iterator whose values are key-value pairs</li>
+                <li><code>values()</code> returns an iterator whose values are the values of the collection</li>
+
             </ul>
-            <div class="fragment" style="min-height:346px">
+            <div style="min-height:346px">
                 <p data-height="346" data-theme-id="0" data-slug-hash="rwezxg" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Built-in iterators for Sets, Maps, and objects in ES6" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/rwezxg/">Built-in iterators for Sets, Maps, and objects in ES6</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </div>
         </section>
