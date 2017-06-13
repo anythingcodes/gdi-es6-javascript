@@ -57,7 +57,7 @@ test('Babel works!');
 	- **Mac**: If `babel src/index.js --watch --out-file build/bundle.js` doesn't work, run `./node_modules/.bin/babel src/index.js --out-file build/bundle.js` instead
 11. Check the `build/bundle.js` file for a transpiled version! When you edit index.js, it should automatically re-transpile because we have the `--watch` flag on.	
 
-That's transpilation in a nutshell, but it's not terribly helpful on its own. We should set up a build tool like WebPack.
+That's transpilation in a nutshell, but it's not terribly scalable as our codebase expands. We should set up a build tool like WebPack.
 
 ### Setting Up WebPack
 
