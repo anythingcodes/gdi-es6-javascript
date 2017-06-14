@@ -40,11 +40,11 @@ _Note: All attendees are expected to abide by the [Girl Develop It Code of Condu
 
 ## Tech Requirements
 
-Please bring the following to each class:
+Please bring a laptop and charger to each class. Your laptop should have the following installed:
 
-- Laptop (Mac, PC, or Linux are all okay) and charger
-- A modern web browser such as Google Chrome
-- A text editor such as [Atom](http://atom.io) or [Sublime Text](http://www.sublimetext.com/2) (both free; available for Mac, PC, and Linux)
+- [Node.js](http://nodejs.org) version 6
+- Google Chrome
+- A text editor such as [Sublime Text](http://www.sublimetext.com/2) or [Atom](http://atom.io) (both free; available for Mac, PC, and Linux)
 
 ### Instructor
 
@@ -67,9 +67,3 @@ A huge thank you to <span style="color:red;">Company Name Here</span> for hostin
 [View map](#)
 
 <img src="http://placehold.it/300x75" alt="CompanyName logo" />
-
----
-
-<img src="https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/8/6/3/c/600_452194364.jpeg" alt="Join GDI on Slack" />
-
-_Get to know your GDI Boston community - [join us on Slack](https://gdiboston-slack.herokuapp.com/)!_
