@@ -1,5 +1,3 @@
-> **Note:** This class is still being developed. When it is ready for reuse, this warning will be removed.
-
 # Getting Started with ES6 and ES7 JavaScript
 
 Materials and slides for a Girl Develop It ES6 JavaScript course. Includes ES7's minor additions.
@@ -32,9 +30,9 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 
 ##### Meetup Content
 
-| Title | Suggested Cost | Suggested # of TAs | Questions for Attendees | Meetup Description | Example URLs |
-| ----- |:-----:| -----:| -----:| -----:| -----:|
-| Getting Started with ES6 JavaScript | $90/student | 2 | Have you used Node.js before? | [View](resources/meetup-description.md) | [View](https://www.meetup.com/Girl-Develop-It-Boston/events/239315429/) |
+| Title | Suggested Cost | Suggested # of TAs | Meetup Description | Example URLs |
+| ----- |:-----:| -----:| -----:| -----:| 
+| Getting Started with ES6 JavaScript | $90/student | 2 (potentially 3 for final class activity) |  [View](resources/meetup-description.md) | [View](https://www.meetup.com/Girl-Develop-It-Boston/events/239315429/) |
 
 ---
 
@@ -42,7 +40,7 @@ Pull requests are encouraged. Do your part to help us keep this curriculum up-to
 
 ### Compiling Slides and Running Locally
 
-1. Install [Node.js](https://nodejs.org) (v6 or higher)
+1. Install [Node.js](https://nodejs.org) (v6)
 2. Run `npm install` from this repository's directory
 3. Run `gem install sass` to install Sass. Note: You will need to [download Ruby](https://www.ruby-lang.org/en/documentation/installation) to run this `gem` command.
 4. Run `grunt` from this repository's directory to compile files. A window will open with the slides running locally. Any changes will automatically refresh.
