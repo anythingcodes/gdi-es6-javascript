@@ -63,7 +63,6 @@
                 <li>Object Syntax</li>
                 <li>Destructuring Objects</li>
                 <li>Destructuring Arrays</li>
-                <li>Promises</li>
             </ol>
         </section>
 
@@ -97,6 +96,8 @@ console.log(lessThanEighteen);
                 </div>
             </div>
 
+
+            <aside class="notes">Tip: Think about the type of object you'd like at the end — that'll guide you to choosing the correct array helper. Remember to pass in the item to your iterator function.</aside>
 
         </section>
 
@@ -145,6 +146,7 @@ pluck(cats, 'name');
 
                 </div>
             </div>
+            <aside class="notes">Think about what you want: a modified array</aside>
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
@@ -186,6 +188,7 @@ findWhere(animals, { type: 'marsupial' });</code></pre>
                     <pre><code class="javascript">{ id: 2, name: 'platypus', type: 'marsupial' }</code></pre>
                 </div>
             </div>
+            <aside class="notes">You had to read the hint for this, since Object.keys() is something we haven't yet discussed. Go through each example and ask, for instance, is 'reptile' === 'marsupial'?</aside>
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
@@ -224,7 +227,7 @@ filterWhere(animals, { type: 'marsupial' });</code></pre>
                 <a class="solution solution__lesson-2" href="https://codepen.io/anythingcodes/pen/BReXEP?editors=0012" target="_blank">View Solution</a>
             </div>
 
-            <aside class="notes">Much more difficult! Say it's optional and there are multiple ways you could solve this or the other challenge.</aside>
+            <aside class="notes">Much more difficult! Say it's optional and there are multiple ways you could solve this or the other challenge. Real-world problem.</aside>
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
@@ -252,6 +255,7 @@ console.log(uniqueArr);
             <div>
                 <a class="solution solution__lesson-2" href="http://codepen.io/anythingcodes/pen/QvOpKE?editors=0012" target="_blank">View Solution</a>
             </div>
+
         </section>
 
         <section class="activity__challenge" data-background="#d2ccfc">
@@ -326,7 +330,7 @@ makeRequest('/api', 0, requestData => updateDatabase(requestData));
 makeRequest('/api', undefined, requestData => updateDatabase(requestData));</code></pre>
             </div>
             <aside class="notes">
-                Point out that you can pass in <code>undefined</code>. However, <code>null</code> is a valid value so the function will use <code>null</code> instead of the default parameter.
+                Ask students: What would the timeout value be? Point out that you can pass in <code>undefined</code>. However, <code>null</code> is a valid value so the function will use <code>null</code> instead of the default parameter.
             </aside>
         </section>
 
@@ -340,6 +344,7 @@ makeRequest('/api', undefined, requestData => updateDatabase(requestData));</cod
 function doSomething(mustBeProvided = mandatory()) {
   return mustBeProvided;
 }</code></pre>
+            <aside class="notes">Throw an error if url not defined</aside>
         </section>
 
         <section class="activity" data-background="rgb(6, 116, 123)">
@@ -364,7 +369,7 @@ giveItARest(1, 2, 3, 4, 5, 6);
 // [2, 3, 4, 5, 6]</code></pre>
             <p class="fragment">Useful when you don't know how many arguments will be passed to a function</p>
             <aside class="notes">
-                To change a method name after deploying, when tons of existing apps are using a method by that name, e.g. changing calculateProduct() to multiply(). You can pass the call of one method to another and use the spread operator.
+                Compress the <strong>rest</strong> into an array. To change a method name after deploying, when tons of existing apps are using a method by that name, e.g. changing calculateProduct() to multiply(). You can pass the call of one method to another and use the spread operator.
             </aside>
         </section>
 
@@ -408,6 +413,8 @@ console.log([1, ...numbers]); // normal array: [1, 2, 3, 4]</code></pre>
             </div>
 
 
+            <aside class="notes">Ask what would the output be?</aside>
+
         </section>
 
         <section>
@@ -423,6 +430,8 @@ console.log([1, ...numbers]); // normal array: [1, 2, 3, 4]</code></pre>
 const arr2 = ['x', 'y', 'z'];
 const combo = [...arr1, ...arr2];
 console.log(combo); // ['a', 'b', 'c', 'x', 'y', 'z']</code></pre>
+
+            <aside class="notes">Ask: When you think "parameters", what do you think of? (function)</aside>
         </section>
 
         <section class="activity" data-background="rgb(6, 116, 123)">
@@ -444,6 +453,7 @@ console.log(combo); // ['a', 'b', 'c', 'x', 'y', 'z']</code></pre>
 
         <section data-background="#f05b62">
             <h1 style="color: #fafafa;font-size:3.7em;">Object Syntax</h1>
+            <aside class="notes">ES6 has a few minor changes to make code more understandable/easy-to-read</aside>
         </section>
 
         <section>
@@ -465,7 +475,7 @@ console.log(combo); // ['a', 'b', 'c', 'x', 'y', 'z']</code></pre>
                 </div>
             </div>
             <p class="fragment">Sometimes referred to as <span class="green">enhanced literal notation</span></p>
-            <aside class="notes">Convention is to place shorthanded properties at beginning for readability</aside>
+            <aside class="notes">Convention is to place shorthanded properties at beginning for readability. This example uses jQuery, but you don't need to know it; it's just an example.</aside>
         </section>
 
         <section>
@@ -494,6 +504,7 @@ dog.bark(); // yip!</code></pre>
 dog.bark(); // yip!</code></pre>
                 </div>
             </div>
+            <aside class="notes">Reformat ES5 version in front of students</aside>
         </section>
 
         <section class="activity" data-background="rgb(6, 116, 123)">
@@ -584,6 +595,7 @@ console.log(name, active);
 // Whitney false</code></pre>
                 </div>
             </div>
+            <aside class="notes">Ask: What do you think you'd use to set a default value? Similar patterns in ES6 — you can combine tons of different patterns/syntax, so try to give everything a shot.</aside>
         </section>
 
         <section>
@@ -856,259 +868,7 @@ console.log(index);</code></pre>
             </aside>
         </section>
 
-        <section data-background="#f05b62">
-            <h1 style="color: #fafafa;font-size:3.7em;">Promises</h1>
-            <aside class="notes">
-                A promise represents the eventual result of some sort of operation, typically asynchronous response. Could be animation or anything like that.
-            </aside>
-        </section>
 
-        <section>
-            <h2>Problems with Asynchronous Requests</h2>
-            <div class="fragment-progression">
-                <div class="fragment">
-                    <img src="dist/img/diagram__promises.svg" alt="Promises Start">
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/diagram__promises__1.svg" alt="Promises Step 1">
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/diagram__promises__2.svg" alt="Promises Step 2">
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/diagram__promises__3.svg" alt="Promises Step 3">
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/diagram__promises__4.svg" alt="Promises Final">
-                </div>
-            </div>
-            <aside class="notes">
-                <p>Promises address this problem. We don't know how long <code>makeRequest</code> will take</p>
-                <p>JavaScript has no way of pausing code</p>
-                <p>JavaScript engines are <span class="green">single-threaded</span> — only one piece of code is executed at a time and placed in a <span class="green">job queue</span></p>
-                <p>A promise specifies some code to be executed later, and whether the code succeeded or failed</p>
-                <p><span class="green">Promise</span>: An object with a <code>.then()</code> method that represents an operation whose result may be unknown. Whoever has access to the object can use the ".then()" method to add callbacks to be notified about the successful completion or failure of the operation.</p>
-            </aside>
-        </section>
-
-        <section>
-            <h2>The Ideal Scenario</h2>
-            <div class="fragment-progression">
-                <div class="fragment">
-                    <img src="dist/img/diagram__promises__es6__1.svg" alt="Promises Step 1">
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/diagram__promises__es6__2.svg" alt="Promises Step 2">
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/diagram__promises__es6__3.svg" alt="Promises Step 3">
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/diagram__promises__es6__4.svg" alt="Promises Final Step">
-                </div>
-            </div>
-
-            <aside class="notes">
-                ONLY after request is resolved, then work with the data variable. Main goal: execute line by line, but occasionally wait for network request to complete.
-            </aside>
-        </section>
-
-        <section>
-            <h2>Three Promise States</h2>
-            <div class="fragment-progression">
-                <div class="fragment">
-                    <img src="dist/img/es6-promise-states.svg" alt="Promises States Initial Step" />
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/es6-promise-states__1.svg" alt="Promises Step 1" />
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/es6-promise-states__2.svg" alt="Promises Step 2" />
-                </div>
-                <div class="fragment">
-                    <img src="dist/img/es6-promise-states__3.svg" alt="Promises Step 3" />
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Creating a Promise</h2>
-            <a class="fragment" href="https://codepen.io/anythingcodes/pen/awbKPO?editors=0010" target="_blank">View CodePen &raquo;</a>
-            <ul class="small">
-                <li class="fragment">
-                    You'll need:
-                    <ol>
-                        <li class="fragment">The Promise object, which accepts a callback function (called the <span class="green">executor</span>) with <code>resolve</code> and <code>reject</code> arguments</li>
-                        <li class="fragment"><code>resolve()</code> and <code>reject()</code> are invoked depending on certain conditions</li>
-                        <li class="fragment"><code>then()</code> and <code>catch()</code>blocks attached to the Promise object</li>
-                    </ol>
-                </li>
-            </ul>
-            <div class="small fragment-progression">
-                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
-
-});
-
-
-
-
-
-
-
-                </code></pre>
-                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
-
-});
-
-promise.then(() => {
-  console.log('my resolution message');
-});
-
-
-
-                </code></pre>
-                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
-
-});
-
-promise.then(() => {
-  console.log('my resolution message');
-});
-
-promise.catch(() => {
-  console.log('my rejection message');
-});</code></pre>
-                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
-  resolve(); // outputs 'my resolution message'
-});
-
-promise.then(() => {
-  console.log('my resolution message');
-});
-
-promise.catch(() => {
-  console.log('my rejection message');
-});</code></pre>
-                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
-  reject(); // outputs 'my rejection message'
-});
-
-promise.then(() => {
-  console.log('my resolution message');
-});
-
-promise.catch(() => {
-  console.log('my rejection message');
-});</code></pre>
-                <pre class="fragment"><code class="javascript">const promise = new Promise((resolve, reject) => {
-  resolve(5); // chain callbacks and pass info between them
-})
-  .then((value) => {
-    console.log(value); // 5
-  })
-  .catch(() => {
-    console.log('my rejection message');
-  });
-
-                </code></pre>
-            </div>
-            <p>&nbsp;</p>
-
-            <p class="orange info small fragment">Always include a rejection handler! Otherwise your promise may silently fail.</p>
-
-            <aside class="notes">
-                <ul>
-                    <li>Recommendation is to chain them, and indent like so</li>
-                    <li>[[PromiseValue]] is a private symbol. It's an internal property. You cannot access it directly. Native promises may only be unwrapped in then() with promises or asynchronously in generally.</li>
-                </ul>
-
-            </aside>
-        </section>
-
-        <section class="activity" data-background="rgb(6, 116, 123)">
-            <h2>Activity</h2>
-            <p>Using Promises</p>
-            <div class="clear">
-                <div class="halfblock">
-                    <h3>Activity 1</h3>
-                    <p data-height="187" data-theme-id="0" data-slug-hash="qjByPj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qjByPj/">Promises Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-                    <a href="https://codepen.io/anythingcodes/pen/gROjGd?editors=0010" target="_blank" class="solution__lesson-3 solution">View Solution</a>
-                </div>
-                <div class="halfblock">
-                    <h3>Activity 2</h3>
-                    <p data-height="187" data-theme-id="0" data-slug-hash="JJoJRK" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises with an API" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/JJoJRK/">Promises with an API</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-                    <a href="https://codepen.io/anythingcodes/pen/zzxzEq?editors=0010" target="_blank" class="solution solution__lesson-3">View Solution</a>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h2>Grouping Multiple Promises</h2>
-            <p class="fragment">Combine promises in an iterable, such as an array</p>
-            <ol>
-                <li class="fragment">
-                    <code>Promise.all()</code> waits for <span class="green">all</span> promises in the group to fulfill
-                </li>
-                <li class="fragment">
-                    <code>Promise.race()</code> is fulfilled when <span class="green">the fastest</span> promise in the group is fulfilled
-                </li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Promise.all()</h2>
-            <p class="fragment">The returned promise is fulfilled when <span class="green">all</span> promises in the iterable are fulfilled</p>
-            <p class="fragment">Returns an <span class="green">array of result values</span></p>
-            <p class="fragment">If any of the promises in the array fail, the returned promise fails too</p>
-            <div class="fragment" style="min-height:300px;">
-                <p data-height="300" data-theme-id="0" data-slug-hash="ZyEjOY" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promise.all()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/ZyEjOY/">Promise.all()</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </div>
-            <aside class="notes">
-                If any promise passed to Promise.all() is rejected, the returned promise is immediately rejected without waiting for other promises to complete
-            </aside>
-        </section>
-
-        <section>
-            <h2>Promise.race()</h2>
-            <p class="fragment">Instead of waiting for all promises to be fulfilled like in <code>Promise.all()</code>, a promise using <code>Promise.race()</code> is fulfilled as soon as <span class="green">any</span> promise in the array is fulfilled</p>
-            <div class="fragment" style="min-height:220px;">
-                <p data-height="220" data-theme-id="0" data-slug-hash="eRYjgp" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promise.race()" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/eRYjgp/">Promise.race()</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-            </div>
-            <aside class="notes">
-                If any promise passed to Promise.all() is rejected, the returned promise is immediately rejected without waiting for other promises to complete
-            </aside>
-        </section>
-
-        <section>
-            <h3>Promise-Based HTTP Requests</h3>
-            <pre class="small"><code class="javascript" contenteditable>function request(url) {
-  return new Promise((resolve, reject) => {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.onload = function() {
-      if (this.status >= 200 && this.status < 300) {
-        resolve(JSON.parse(xhr.response));
-      } else {
-        reject({
-          status: this.status,
-          statusText: xhr.statusText
-        });
-      }
-    };
-    xhr.onerror = function() {
-      reject({
-        status: this.status,
-        statusText: xhr.statusText
-      });
-    };
-    xhr.send();
-  });
-}
-
-request('http://json.com'); // returns a promise</code></pre>
-            <aside class="notes">This is very jumbled though, which is why ES6 includes a brand spankin' new API called Fetch, which is automatically promisified</aside>
-        </section>
 
         <section class="hide-pdf">
             <h2>Questions</h2>

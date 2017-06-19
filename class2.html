@@ -148,6 +148,7 @@ orange</code></pre>
 
             <aside class="notes">
                 <ul>
+                    <li>Refactor ES5 version in front of students. Ask about <code>const</code> and template strings</li>
                     <li>Skinny arrow is <code>-></code> like in Ruby and Coffeescript</li>
                     <li>If there are zero or more than one args, you need to include parentheses, e.g. <code>const sum = () => retVal;</code></li>
                 </ul>
@@ -176,6 +177,9 @@ orange</code></pre>
                     </div>
                 </div>
             </div>
+            <aside class="notes">
+                Activity 2 is a common interview question
+            </aside>
         </section>
 
         <section data-background="#f05b62">
@@ -211,7 +215,7 @@ obj.getName(); // Zeta</code></pre>
 
             <!--<p class="fragment"><a href="https://codepen.io/anythingcodes/pen/BRvYQp/?editors=0010" target="_blank">Let's take a look &raquo;</a></p>-->
 
-            <aside class="notes">Ask students what the code would output and how they would solve the issue.</aside>
+            <aside class="notes">Ask students what the output to console be when obj.getName() is called? This is straightforward with a small codebase but it quickly spirals out of control with nested functions.</aside>
         </section>
 
         <section>
@@ -226,6 +230,8 @@ obj.getName(); // Zeta</code></pre>
 
             <aside class="notes">
                 <ul>
+                    <li>Ask students: What would you expect to happen?</li>
+                    <li>Ask students: What are some ways around the problem that you've seen?</li>
                     <li>Refer to it as 'the this keyword' and then 'the keyword' going forward</li>
                     <li>The call to this.logEvent() is broken because <code>this</code> is a reference to the object that was the target of the event (<code>document</code>)</li>
                     <li>Ask students to transform existing code to arrow function per earlier steps
@@ -337,7 +343,7 @@ obj.getName(); // Zeta</code></pre>
                 <li class="fragment">More compact &mdash; why write more code?</li>
                 <li class="fragment">More maintainable and scalable</li>
             </ul>
-            <aside class="notes">Nothing wrong with for loops, but you probably don't need them anymore.</aside>
+            <aside class="notes">Nothing wrong with for loops, but you probably don't need them anymore. Array helpers describe your intent more easily to your teammates, so it's a best practice.</aside>
         </section>
 
         <section>
@@ -375,7 +381,7 @@ names.forEach(function(name, index, array) {
                 <p><a href="http://codepen.io/anythingcodes/pen/KagmxL?editors=0012" target="_blank">View CodePen &raquo;</a></p>
             </div>
             <aside class="notes">
-                Activity on this slide: Ask class to arrow functionitize the right-hand ES6 block
+                Activity on this slide: Ask class to arrow functionitize the right-hand ES6 block. Transform it in front of students!
             </aside>
         </section>
 
@@ -399,7 +405,7 @@ numbers.forEach(function(number, index, array) {
 
 
             <aside class="notes">
-                Code the arrow function version in front of students. Clarify how the iterator function automatically receives the current element, in this case <code>number</code>. Point out the convention of using the plural form as the array name and the singular form in your arrow function.
+                Ask students what they'd expect to see in the console. Code the arrow function version in front of students. Mention that all array helpers in the class will use arrow functions going forward. Clarify how the iterator function automatically receives the current element, in this case <code>number</code>. Point out the convention of using the plural form as the array name (numbers) and the singular form (number) in your arrow function.
             </aside>
         </section>
 
@@ -472,7 +478,7 @@ console.log(allPresent); // false</code></pre>
 
             </div>
             <aside class="notes">
-                Written in ES6, it’s so much cleaner! Only a few lines of code. Engineer will see ‘every’ and be able to instantaneously able to tell what the function does since they’ll recognize ‘every’ and have a reasonable idea of what it does.
+                Ask students: Which is easier to understand? Written in ES6, it’s so much cleaner! Only a few lines of code. Engineer will see ‘every’ and be able to instantaneously able to tell what the function does since they’ll recognize ‘every’ and have a reasonable idea of what it does.
             </aside>
         </section>
 
@@ -541,7 +547,11 @@ console.log(somePresent); // true</code></pre>
 
             </div>
             <aside class="notes">
-                Written in ES6, it’s so much cleaner! Only a few lines of code. Engineer will see ‘every’ and be able to instantaneously able to tell what the function does since they’ll recognize ‘every’ and have a reasonable idea of what it does.
+                <ul>
+                    <li>Before revealing slide contents, ask students: Now that we know about every(), what do you think some() would do?</li>
+                    <li>some() = <em>at least one</em></li>
+                </ul>
+
             </aside>
         </section>
 
@@ -634,7 +644,7 @@ console.log(activeUsers);</code></pre>
 
             </div>
             <aside class="notes">
-                Don't need to use an if statement, since <code>user.active</code> returns a boolean. Also <code>home.price < 600000</code> returns a boolean.
+                Don't need to use an if statement, since <code>user.active</code> returns a boolean. Also <code>home.price < 600000</code> returns a boolean. With <code>filter()</code>, you are not modifying the array; you're just returning an array of items that match a certain test.
             </aside>
         </section>
 
@@ -657,7 +667,7 @@ console.log(numbersLargerThan50); // [ 123, 500, 82 ]</code></pre>
 
 
             <p>&nbsp;</p>
-            <aside class="notes">At least 1</aside>
+            <aside class="notes">With filter(), the resulting array is always less than or equal to the size of the original array</aside>
         </section>
 
         <section class="activity" data-background="rgb(6, 116, 123)">
@@ -710,7 +720,7 @@ console.log(numbersLargerThan50); // [ 123, 500, 82 ]</code></pre>
             </p>
 
             <aside class="notes">
-                Describe one common use case for the filter helper, including filtering JSON to only reveal the comments associated with a specific post (e.g. postId 23 for post with ID for 23). Mention that we'll code an example of this on the next slide.
+                Describe one common use case for the filter helper, including filtering JSON to only reveal the comments associated with a specific post (e.g. postId 23 for post with ID for 23). Mention that we'll code an example of this on the next slide. Mention students should focus on refactoring lines 21 through 28.
             </aside>
         </section>
 
@@ -819,6 +829,9 @@ console.log(decrementedNumbers); // [ 122, 499, -51, 81, 7 ]</code></pre>
                     <p><img src="dist/img/diagram-map.svg" alt="map diagram" style="max-height: 47vh;"/></p>
                 </div>
             </div>
+            <aside class="notes">
+                Difference between forEach() and map(): map() returns an array at the end. Don't use map if you just need to loop through an array. forEach doesn't return anything, but map <em>modifies</em> the previous array values ti create a new array.
+            </aside>
         </section>
 
         <section class="activity" data-background="rgb(6, 116, 123)">
@@ -1072,6 +1085,7 @@ console.log(firstIndex); // 2 (the location of 35)</code></pre>
                 </div>
 
             </div>
+            <aside class="notes">No activity for this, but good to know about</aside>
         </section>
 
         <section>
@@ -1315,6 +1329,7 @@ console.log(uniqueArr);
             </ol>
 
             <aside class="notes">
+                Answers:
                 <ol>
                     <li>every()</li>
                     <li>forEach()</li>
@@ -1382,7 +1397,7 @@ console.log(uniqueArr);
                     <td>the modified array</td>
                 </tr>
             </table>
-            <aside class="notes"></aside>
+            <aside class="notes">No activities, but good to know</aside>
         </section>
 
         <section>

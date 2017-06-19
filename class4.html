@@ -59,14 +59,15 @@
             <h2>Today's Topics</h2>
             <ol style="width:85%">
                 <li>Review at-home challenges from previous class</li>
-                <li>Promises Recap</li>
+                <li>Promises</li>
+                <li>Fetch</li>
                 <li>The Fetch Helper</li>
                 <li>Generator Functions</li>
                 <li>Iterables</li>
                 <li>Sets and Maps</li>
                 <li>Classes</li>
                 <li>Encapsulating Code with Modules</li>
-                <li>Our Final Activity: Transpilation!</li>
+                <li>Transpiling Setup</li>
                 <li>Additional Resources</li>
             </ol>
         </section>
@@ -132,10 +133,79 @@ console.log(index); // 0</code></pre>
         </section>
 
         <section data-background="#f05b62">
-            <h1 style="color: #fafafa;font-size:3.7em;">Promises Recap</h1>
+            <h1 style="color: #fafafa;font-size:3.7em;">Promises</h1>
             <aside class="notes">
                 A promise represents the eventual result of some sort of operation, typically asynchronous response. Could be animation or anything like that.
             </aside>
+        </section>
+
+        <section>
+            <h2>Problems with Asynchronous Requests</h2>
+            <div class="fragment-progression">
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises.svg" alt="Promises Start">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__1.svg" alt="Promises Step 1">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__2.svg" alt="Promises Step 2">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__3.svg" alt="Promises Step 3">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__4.svg" alt="Promises Final">
+                </div>
+            </div>
+            <aside class="notes">
+                <p>Promises address this problem. We don't know how long <code>makeRequest</code> will take</p>
+                <p>JavaScript has no way of pausing code</p>
+                <p>JavaScript engines are <span class="green">single-threaded</span> — only one piece of code is executed at a time and placed in a <span class="green">job queue</span></p>
+                <p>A promise specifies some code to be executed later, and whether the code succeeded or failed</p>
+                <p><span class="green">Promise</span>: An object with a <code>.then()</code> method that represents an operation whose result may be unknown. Whoever has access to the object can use the ".then()" method to add callbacks to be notified about the successful completion or failure of the operation.</p>
+            </aside>
+        </section>
+
+        <section>
+            <h2>The Ideal Scenario</h2>
+            <div class="fragment-progression">
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__es6__1.svg" alt="Promises Step 1">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__es6__2.svg" alt="Promises Step 2">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__es6__3.svg" alt="Promises Step 3">
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/diagram__promises__es6__4.svg" alt="Promises Final Step">
+                </div>
+            </div>
+
+            <aside class="notes">
+                ONLY after request is resolved, then work with the data variable. Main goal: execute line by line, but occasionally wait for network request to complete.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Three Promise States</h2>
+            <div class="fragment-progression">
+                <div class="fragment">
+                    <img src="dist/img/es6-promise-states.svg" alt="Promises States Initial Step" />
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/es6-promise-states__1.svg" alt="Promises Step 1" />
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/es6-promise-states__2.svg" alt="Promises Step 2" />
+                </div>
+                <div class="fragment">
+                    <img src="dist/img/es6-promise-states__3.svg" alt="Promises Step 3" />
+                </div>
+            </div>
+            <aside class="notes">You have control over when something is resolved or rejected.</aside>
         </section>
 
         <section>
@@ -239,12 +309,12 @@ promise.catch(() => {
                 <div class="halfblock">
                     <h3>Activity 1</h3>
                     <p data-height="187" data-theme-id="0" data-slug-hash="qjByPj" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises Activity" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/qjByPj/">Promises Activity</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-                    <a href="https://codepen.io/anythingcodes/pen/gROjGd?editors=0010" target="_blank" class="solution__lesson-4 solution">View Solution</a>
+                    <a href="https://codepen.io/anythingcodes/pen/gROjGd?editors=0010" target="_blank" class="solution__lesson-3 solution">View Solution</a>
                 </div>
                 <div class="halfblock">
                     <h3>Activity 2</h3>
                     <p data-height="187" data-theme-id="0" data-slug-hash="JJoJRK" data-default-tab="js" data-user="anythingcodes" data-embed-version="2" data-pen-title="Promises with an API" class="codepen">See the Pen <a href="https://codepen.io/anythingcodes/pen/JJoJRK/">Promises with an API</a> by Liz Shaw (<a href="https://codepen.io/anythingcodes">@anythingcodes</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-                    <a href="https://codepen.io/anythingcodes/pen/zzxzEq?editors=0010" target="_blank" class="solution solution__lesson-4">View Solution</a>
+                    <a href="https://codepen.io/anythingcodes/pen/zzxzEq?editors=0010" target="_blank" class="solution solution__lesson-3">View Solution</a>
                 </div>
             </div>
 
@@ -261,6 +331,16 @@ promise.catch(() => {
                     <code>Promise.race()</code> is fulfilled when <span class="green">the fastest</span> promise in the group is fulfilled
                 </li>
             </ol>
+
+            <aside class="notes">
+                In CodePen, log the promise following these steps:
+                <ol>
+                    <li>console.log(thePromise) to show the pending state</li>
+                    <li>Add if(true) conditional</li>
+                    <li>Chain then()s to show how one value can be passed to another</li>
+                    <li>Underscore that you should ALWAYS put a catch() statement</li>
+                </ol>
+            </aside>
         </section>
 
         <section>
@@ -335,7 +415,7 @@ request('http://json.com'); // returns a promise</code></pre>
                 <p><a href="https://codepen.io/anythingcodes/pen/vZYaaa?editors=0010" target="_blank">Let's take a look &raquo;</a></p>
             </div>
             <aside class="notes">
-                Point out that the first return value is the response. Show that you need to call .json(), which returns another promise, to a second <code>then()</code>. Just a quirk of the Fetch API.
+                Point out that the first return value is the response. Show that you need to call .json(), which returns another promise, to a second <code>then()</code>. Just a quirk of the Fetch API. Unlike standard promises, you can use then() and catch() to just process your request.
             </aside>
         </section>
 
@@ -886,12 +966,13 @@ console.log(multiply(3, 5)); // 15</code></pre>
             <h1 style="color: #fafafa;font-size:3.7em;">Transpiling Setup</h1>
         </section>
 
-        <section class="activity" data-background="rgb(6, 116, 123)">
+        <section class="activity__challenge" data-background="#d2ccfc">
             <h2>🎉 Final Activity</h2>
             <h3>ES6 Transpilation and WebPack Setup</h3>
             <ol>
-                <li>Before we begin, make sure Node.js version <em>6</em> is installed by typing <code>node -v</code> in your favorite command line tool</li>
-                <li>Now let's get transpiling! We'll do this together, but you can also follow along at <strong><a href="http://tiny.cc/gdies6-final" target="_blank">tiny.cc/gdies6-final</a></strong></li>
+                <li>Install Node.js version 6. Make sure it's installed by typing <code>node -v</code> in your favorite command line tool (such as Terminal or X11 on a Mac, or cmd or Git Bash on Windows).</li>
+                <li>Now get transpiling! Follow along with the instructions at <strong><a href="http://tiny.cc/gdies6-final" target="_blank">tiny.cc/gdies6-final</a></strong></li>
+                <li>Keep the group posted with any roadblocks or solutions you come up with — the first time you transpile can take some time!</li>
             </ol>
             <p>&nbsp;</p>
             <p><img src="dist/img/transpiling.svg" alt="Transpiling" style="padding: 10px;max-height: 150px;background-color:rgba(255,255,255,0.67);" /></p>
@@ -951,15 +1032,6 @@ console.log(multiply(3, 5)); // 15</code></pre>
 
         <section data-background="#f05b62">
             <h1 style="color: #fafafa;">Thank you all!</h1>
-            <aside class="notes">
-                <ul>
-                    <li>Contact info</li>
-                    <li>Job callout</li>
-                    <li>Other Classes: Bot Dev for WWC, networking for Tech Ladies, etc.</li>
-                    <li>Free INBOUND community passes</li>
-                    <li>Class photo!</li>
-                </ul>
-            </aside>
         </section>
 
     </div>
